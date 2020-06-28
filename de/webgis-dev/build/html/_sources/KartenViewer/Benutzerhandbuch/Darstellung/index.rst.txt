@@ -1,0 +1,125 @@
+.. sectnum::
+    :start: 3
+
+Darstellung und Karteninhalte
+=============================
+
+Je nach Karte gibt es unterschiedliche Karteninhalte. So ist beispielsweise eine Karte mit Katasterdaten und eine anderer mit Daten aus der Flächenwidmung denkbar.
+Natürlich könnte eine Karte auch beide Themenbereiche abdecken. Welche Inhalte in einer Karte sind, bestimmt der Administrator. Hier werden nur die allgemeinen
+Konzepte beschrieben, wie Darstellung von Karteninhalten organisiert sein können und der Anwender diese beeinflussen kann.
+
+Die Karteninhalte werden im Kartenviewer hauptsächlich im Bereich **Darstellung** (am Desktop in der Regel im linken *Frame* und auf mobilen Geräten am unteren Bildschirmrand - siehe Übersicht)
+
+Ist gibt in der Regel unterschiedliche Arten von Geodaten die auch im Karten Viewer auf unterschiedliche Art und Weise bedient werden können:
+
+Dynamische Inhalte
+------------------
+
+sind meist sehr spezifische Daten und nicht in jeder Karte vorhanden. Sie werden in der Liste der Darstellungsinhalte in der Regel ganz oben angezeigt und können extra ein- oder ausgeblendet werden. 
+Die dynamischen Inhalte werden in der Karte als klickbare Marker dargestellt. Es kann von diesen Themen immer nur eines aktuell in der Karte dargestellt werden. 
+
+.. image:: img/dyn_inhalte1.png
+
+Dynamische Inhalte dienen in der Regel dazu sehr dynamische Themen (die sich schnell ändern können) in einer Karte bereitzustellen. 
+Das sie in der Karte als Marker dargestellt werden, verhalten sie sich wie Ergebnisse einer Abfrage/Suche und somit auch als vordefinierte Abfragen verstanden werden.
+Abfragen/Suchen werden in einem späteren Abschnitt noch genauer behandelt.
+
+Hintergrund (Basemaps)
+----------------------
+
+Diese Daten sind eher statisch und dienen hauptsächlich der Orientierung in der Karte. Sie liegen in der Regel in der Karte unter allen anderen Daten (Hintergrund). In der Regel handelt es sich bei diesen Hintergrund Daten um Luftbilder oder Orts- und Straßenkarten. Die Daten sind meistens flächenfüllend, daher kann immer nur ein Hintergrund gleichzeit angezeigt werden.
+
+Im Darstellungsbereich im Kartenviewer erscheinen die Hintergrund Karten etwas folgendermaßen:
+
+.. image:: img/basemap1.png
+
+Mittels Klick auf eine der Kacheln, wird der Hintergrund gewechselt. Der Button *Kein Hintergrund* setzt alle Hintergrund Karten auf *unsichtbar*.
+Gibt es mehr als drei mögliche Hintergrundkarten, kann die Kachelansicht mit dem Pfeilsymbol (Pfeil nach unten) unter den Kacheln erweitert werden.
+
+Die *xx% Buttons* geben die Transparenz des dargestellten Hintergrundes an. 
+
+.. note:: Durch die Transparenz erscheint der Hintergrund "heller" was für mache Anwendung bei der Überlagerung mit Fachdaten zu einem bessern Kontrast führen kann.
+
+Optionale Hintergrund Karten (sogenannte *Overlay*-Karten) können falls vorhanden über die eigentliche Hintergrund Karte gelegt werden (hier *Strassen Farbe*).
+Das macht beispielsweise Sinn, wenn über eine Luftbild Karte zur Orientierung noch Straßen und Straßen Namen gelegt werden sollten: 
+
+.. image:: img/basemap2.png
+
+.. note::
+   Da Hintergrund Karten in der Regel statische Daten enthalten, liegen sie als sogenannte Karten-Kacheln vor. Diese Kacheln liegen bereits vorberechnet für alle Maßstäbe auf dem Server, was die Darstellung besonders performant macht und 
+   beim Navigieren in der Karte für *flüssigen* Übergänge sorgt. 
+
+Darstellungsvariaten (Fachdaten)
+--------------------------------
+
+Dabei handelt es sich um die für eine Kartenanwendung eigentlich entscheidenden Daten. Im Gegensatz zu den Hintergrund Karten liegen diese Daten in der Regel nicht vorprozessiert für alle Maßstäbe vor, sondern werden
+für jeden Kartenausschnitt individuell auf Basis der Anforderungen des Anwenders erstellt. Damit gleichen diese Daten eher den *Dynamischen Inhalten*, mit dem unterschied, dass hier in der Karte nicht nur *klickbare* Kartenmarker
+angezeigt werden. Vielmehr erscheinen diese Daten als kartographisch aufbereitetes Kartenbild, das über die Hintergrundkarten gelegt wird.
+
+Aus dieser Tatsache ergibt sich natürlich, dass diese Daten nicht so *flüssig* dargestellt werden, wie beispielsweise die vorberechneteten Hintergrundkarten Kacheln. Dafür kann der Anwender bei diesen Daten
+wesentlich mehr Einfluss auf Inhalt und Darstellung nehmen. So kann der Anwender entscheiden, welche Datenebenen angezeigt werden sollten und welche nicht. Unterschiedlichste Datenebenen können mit Hilfe von Darstellungsvariaten
+beliebig kombiniert werden.
+
+.. note::
+   Aufgrund der Tatsache, dass die *Fachdaten* Kartenbilder dynamisch und individuell für jede Anwenderanfrage erzeugt werden, ist es Möglich, dass die Darstellung dem Änderen des Kartenausschnittes 
+   einige Augenblicke dauern kann. Die Performance dieser Dienste ist abhängig von der Anzahl der dargestellten Daten und der kartographischen Komplexität der Karten. Der Kartenviewer zeigt daher
+   in einer Statusleiste (links unten) eine Fortschrittsanzeige an:
+
+   .. image:: img/hourglass1.png
+
+   Sind alle Daten geladen, verschwindet die Fortschrittsanzeige und an ihrer Stelle wird ein aktuelle Maßstab und Maßstabsbalken angezeigt:
+   
+   .. image:: img/scale1.png
+
+   **Tipp:** ein Klick auf den Maßstab öffnet einen Dialog in dem der aktuelle Kartenmaßstab definiert werden kann.
+
+Die Darstellungsvariaten sind im Kartenviewer im *Darstellungs-Frame* in aufklappbaren Containern organisiert. Welche Darstellungsvarianten verfügbar sind ist vom Inhalt der Karte und den
+jeweiligen Berechtigungen abhängig
+
+.. image:: img/presentations1.png
+
+In den Containern befinden sich für jede Themengruppe die *schaltbaren* Darstellungsvarianten. In der Abbild ist auch ersichtlich, dass diese Darstellungsvariaten auch im Container (Basisdaten) noch einmal 
+in Gruppen unterteilt werden können (Kataster, Verwaltungsdaten). Spätestens nach dem öffnen dieser Gruppe, erscheinen die *klickbaren* Darstellungsvariaten:
+
+.. image:: img/presentations2.png
+
+
+Die Darstellungsvariaten können mit unterschiedlichen Symbolen angezeigt werden:
+
+* **Layer-Stapel Symbol:** Klickt man auf die Darstellungsvariante, werden die entsprechenden Layer sichtbar geschalten. Ein Klick auf einem Layer-Stapel betrifft im Hintergrund in der Regel mehrere Layer. Andere Layer, die für diese Ansicht nicht sinnvoll sind, werden ausgeblendet. Im Beispiel hier wird beispielsweise der Kataster mit grauen Farben ausgeblendet, wenn man auf die Darstellungsvariante mit Kataster in "Magenta" Farben klickt.
+
+* **Checkbox Symbol:** Über das *Häkchen* Symbol, lassen sich optionale Darstellungsvarianten ein- oder ausblenden. Auch hinter dieser Darstellungsvariante können sich im Hintergrund mehrere Datenebenen befinden, die logisch zu einer Darstellungsvariante gruppiert wurden.
+
+* **Optionbox Symbol:** Über ein *Ringerl* Symbol können gleich wie mit der *Häkchen* Symbol Themen optional eingeblendet werden. Der Unterschied ist hier, dass sich diese Themen gegenseitig ausschließen. Es kann nur eine *Optionbox* innerhalb einer Gruppe aktiv sein.
+
+.. note::
+   Wie die Darstellungsvarianten organisiert sind, und welche Datenebenen sie einblenden, wird vom Administrator der Karte definiert. Die sollten dem Anwender helfen möglichst einfach an Ziel zu kommen,
+   ohne genaue Kenntnis über die dahinterliegende Datenstruktur haben zu müssen. Der Anwender möchte beispielsweise nur die Möglichkeit haben, den Kataster einzublenden, es ist im aber egal,
+   ob das die Themen Grundstückgrenzen, Nutzungsgrenzen, Gebäudegrenzen, Nutzungssymbole, Grundstücksnummern, ... betrifft.
+
+.. note::
+   Einige Darstellungsvarianten wird in *grau* aufgelistet. Das bedeutet, dass die Themen Ebenen, die damit eingeblendet werden können im aktuellen Maßstab nicht sichtbar sind (ein Klick wird also in der Karte nicht sofort die
+   gewünschten Themen anzeigen. Zoomt man weiter in die Karte hinein, werden diese Themen dann irgendwann sichtbar bzw. die Darstellungsvariante erscheint nicht mehr *grau*.
+
+Der Grund für die Maßstabsabhängige Darstellung ist in der Regel, dass nicht alle Themen in jedem Maßstab sinn machen. Grundstücksgrenzen machen etwa in einem sehr kleinen Maßstab (zB komplettes Bundesland) keinen sind
+und wurden den Kartenaufbau nur verlangsamen.
+
+Tipps und Tricks
+----------------
+
+Karten mit sehr vielen Fachendaten, können recht umfangreiche Darstellungsvarianten Bäume haben. Um eine Darstellungsvariante zu finden sind dabei je nach Übung mehrere Klicks notwendig.
+Um diesen Vorgang zu beschleunigen nach Darstellungsvarianten im Baum gesucht werden. Dazu gibt es direkt über dem obersten Container (nur Desktop Variante) ein kleines Eingebfeld 
+mit der Beschriftung *Inhalte suchen...*
+
+Gibt man hier ein Wert ein, verschinden alle nicht relevanten Darstellungsvarianten und *Container* und alle relevanten Gruppen werden aufgeklappt dargestellt
+
+.. image:: img/presentations3.png
+
+Klickt man auf die gefundene Darstellungsvariante, wird diese aktiv und der Darstellungsvarianten Baum wird wieder in der ursprünglichen Form angezeigt.
+Man kann ebenfalls auf eine relevante Gruppe oder Container klicken um diese dann im ursprünglichen Baum zu öffen und die darunter liegenden Darstellungsvarianten anzuzeigen.
+
+Möchte man den Darstellungsvarianten Baum einfach wieder in der ursprünglichen Form darstellen, kann der Inhalte aus dem *Inhalte suchen* Eingabefeld einfach gelöscht werden.
+
+
+
+

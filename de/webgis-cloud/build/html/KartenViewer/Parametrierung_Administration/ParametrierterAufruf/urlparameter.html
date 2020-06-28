@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Url Parameter &#8212; WebGIS Cloud Dokumentation 2020 Dokumentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    <link rel="index" title="Stichwortverzeichnis" href="../../../genindex.html" />
+    <link rel="search" title="Suche" href="../../../search.html" />
+    <link rel="next" title="Tutorials" href="../../../Tutorials/index.html" />
+    <link rel="prev" title="Voraussetzung" href="voraussetzung.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="url-parameter">
+<h1>Url Parameter<a class="headerlink" href="#url-parameter" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Optional zum normalen Aufruf können noch Parameter übergeben werden:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://{Host}/{Portal-Applikation}/{Aortal-Seite}/{Kategorie}/{Kartenname}?param1=1&amp;param2=2
+</pre></div>
+</div>
+<div class="section" id="kartenausschnitt-und-marker">
+<h2>Kartenausschnitt und Marker<a class="headerlink" href="#kartenausschnitt-und-marker" title="Link zu dieser Überschrift">¶</a></h2>
+<p><strong>Parameter:</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">bbox</span></code></p>
+<p>Gibt eine Bounding-Box an, auf die Kartenansicht automatisch zoomt. Die Syntax lautet hier: [x-min],[y-min],[x-max],[y-max] bzw. bei geographischen Koordinaten [lng-min],[lat-min],[lng-max],[lat-max] wobei „lng“ für den geographischen Längegrad und „lat“ für den geographischen Beitengrad stehen. Die Werte werden mit Beistrich getrennt. Als Kommazeichen für die einzelnen Werte wird ein „.“ vorausgesetzt.</p>
+<p>Beispiel: <code class="docutils literal notranslate"><span class="pre">&amp;bbox=14.6,47.3,15.2,48.1</span></code></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">center</span></code></p>
+<p>Gibt das Zentrum an, auf das nach dem Start in der Kartenansicht gesprungen wird. Die Syntax lautet hier: [x],[y] bzw. [lng],[lat]</p>
+<p>Die Werte werden mit Beistrich getrennt. Als Kommazeichen für die einzelnen Werte wird ein „.“ vorausgesetzt.</p>
+<p>Beispiel: <code class="docutils literal notranslate"><span class="pre">&amp;center=14.6,47.3</span></code></p>
+<p>Wird kein Maßstab angeben (Parameter scale), zoomt die Ansicht auf einem Maßstab 1:1000</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">srs</span></code></p>
+<p>Der Viewer setzt voraus, dass die Koordinaten für <code class="docutils literal notranslate"><span class="pre">bbox</span></code> und <code class="docutils literal notranslate"><span class="pre">center</span></code> als geographische Koordinaten in WGS 84 übergeben werden. Ist dies nicht der Fall muss das Koordinatensystem über diesen Parameter spezifiziert werden. Übergeben wird hier der EPSG-Code des Koordinatensystems ohne dem „EPSG:“ Literal, also als Integer Zahl.</p>
+<p>Beispiel (GK-M34): <code class="docutils literal notranslate"><span class="pre">&amp;srs=31256</span></code></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scale</span></code></p>
+<p>Gibt den Maßstab an, auf dem in der Kartenansicht gezoomt wird. Der Parameter wird nur berücksichtigt, wenn auch die Parameter <code class="docutils literal notranslate"><span class="pre">center</span></code> oder <code class="docutils literal notranslate"><span class="pre">marker</span></code> übergeben werden.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">marker</span></code></p>
+<p>Soll ein Punkt in der Karte mittels Marker dargestellt werden, kann der Marker über diesen Parameter definiert werden. Hier wird als Syntax ein Javascript Objekt mit entsprechenden Eigenschaften übergeben.</p>
+<p>Beispiel (mind): <code class="docutils literal notranslate"><span class="pre">&amp;marker={lng:14.7,lat:47.2}</span></code></p>
+<p>Das Objekt wurd durch geschwungen Klammern abgegrenzt. Die einzelnen Eigenschaften des Objekts werden mittels Beistrich voneinander getrennt. Die Zuweisung einer Eigenschaft folgt mit folgender Syntax: [Eigenschaft]:[Wert] also beispielsweise lng:14.2</p>
+<p>Enspricht der Wert einem String muss dieser in einfachen Hochkommata angeführt werden:</p>
+<p>Text:‘Popup Text‘</p>
+<p>Eine Beschreibung der einzelnen Werte folgt unten.</p>
+<p>Wenn nicht über die Parameter center oder bbox anders definiert, zoomt die Kartenansicht auf den Marker. Der Maßstab kann dafür über den Parameter scale übergeben werden.</p>
+</li>
+</ul>
+<div class="section" id="marker-ubergeben">
+<h3>Marker übergeben<a class="headerlink" href="#marker-ubergeben" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Wie oben schon beschrieben kann über den Parameter <code class="docutils literal notranslate"><span class="pre">marker</span></code> ein Marker beim Aufruf in eine Karte übergeben werden. Die Übergabe Syntax ist dabei immer die Darstellung des Markers als Javascript Objekt (siehe oben). Folgende Tabelle führt alle möglichen Eigenschaften dieses Objekts an. Double-Werte sind immer Zahlen mit einen „.“ (Punkt) als Komma Separator. Integer Zahlen dürfen nur aus Zahlen bestehen. Strings müssen mit Hochkommata versehen werden. Die fett gedruckten Eigenschaften müssen angeführt werden:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">lng</span></code></p>
+<ul class="simple">
+<li><p><em>Double</em></p></li>
+<li><p>Der geographische Längengrad, an dem der Marker eingefügt werden soll</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code></p>
+<ul class="simple">
+<li><p><em>Double</em></p></li>
+<li><p>Der geographische Breitengrad, an dem der Marker eingefügt werden soll</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code></p>
+<ul class="simple">
+<li><p><em>Double</em></p></li>
+<li><p>Falls die Übergabe der Koordinaten nicht in geographischen Koordinaten erfolgt, können hier die X,Y Koordinaten und die Koordinatensystem (als EPGS-Wert) übergeben werden. Werden diese Werte angeführt, sind lng und lat keine Pflichtfelder mehr.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code></p>
+<ul class="simple">
+<li><p><em>Double</em></p></li>
+<li><p>Falls die Übergabe der Koordinaten nicht in geographischen Koordinaten erfolgt, können hier die X,Y Koordinaten und die Koordinatensystem (als EPGS-Wert) übergeben werden. Werden diese Werte angeführt, sind lng und lat keine Pflichtfelder mehr.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">srs</span></code></p>
+<ul class="simple">
+<li><p><em>Integer</em></p></li>
+<li><p>Falls die Übergabe der Koordinaten nicht in geographischen Koordinaten erfolgt, können hier die X,Y Koordinaten und die Koordinatensystem (als EPGS-Wert) übergeben werden. Werden diese Werte angeführt, sind lng und lat keine Pflichtfelder mehr.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">icon</span></code></p>
+<ul class="simple">
+<li><p><em>String</em></p></li>
+<li><p>(zZ nicht benutzt, es wird immer der Standardmarker gesetzt)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code></p>
+<ul>
+<li><p><em>Integer</em></p></li>
+<li><p>Soll der Marker Information in Form von Text besitzen, kann dies über diesen Parameter erfolgen. Der Text wird dann als Popup Text beim Klick auf den Marker angezeigt.</p>
+<p>Innerhalb des des Textes können auch Links auf Bilder angeführt werden. Bilder werden mit einem „img:“ als Prefix gekennzeichnet, also Beispielsweise img:http://…../bild.jpg</p>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">openPopup</span></code></p>
+<ul>
+<li><p><em>Boolean</em></p></li>
+<li><p>true/false</p>
+<p>Wird ein Text übergeben, kann hier angeführt werden, ob der Popup Text automatisch dargestellt wird oder erst durch einen Klick auf den Marker durch den Anwender.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Beispiele:</strong></p>
+<p>Ein Marker mit dem Text „Hallo Welt“</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&amp;marker={lng:14.7,lat:47.2,text:‘Hallo Welt‘}
+</pre></div>
+</div>
+<p>Ein Marker mit projezierten Koordinaten:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span><span class="n">marker</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span><span class="o">-</span><span class="mf">68014.6</span><span class="p">,</span><span class="n">y</span><span class="p">:</span><span class="mf">215601.4</span><span class="p">,</span><span class="n">srs</span><span class="p">:</span><span class="mi">31256</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Ein Marker mit Text und eingeschlossem Bild. Wird nach dem Öffnen des Viewers automatisch angezeigt (<code class="docutils literal notranslate"><span class="pre">openPopup=true</span></code>). Die Zeilenumbrüche dienen hier nur der Veranschaulichung:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&amp;marker={
+lng:15.4,
+lat:47.09,
+openPopup:true,
+text:
+‘Das ist ein Bild img:https://upload.wikimedia.org/wikipedia/de/6/68/Nandu_gesamtes_Bild.jpg mit Subtext‘
+}
+</pre></div>
+</div>
+<img alt="../../../_images/image22.png" src="../../../_images/image22.png" />
+</div>
+</div>
+<div class="section" id="abfragen">
+<h2>Abfragen<a class="headerlink" href="#abfragen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>An den Viewer kann beim Aufruf eine Abfrage mit Werten übergeben werden. Diese Abfrage ist dann automatisch im Viewer als aktuelles Abfrage/Identifythema aktiv. Wenn optional noch Werte übergeben werden, wird diese Abfrage ausgeführt und auf die Ergebnisse gezoomt. Ergebnisse werden im der Karte selektiert und mit Markern markiert.</p>
+<ul>
+<li><p>query, abfragethema</p>
+<p>Beide Parameter sind möglich, die Funktionsweise ist gleich. Übergeben wird die Abfrage-Url, wie sie im CMS festgelegt wurde.</p>
+<p>Beispiel: <code class="docutils literal notranslate"><span class="pre">&amp;query=gemeinden</span></code></p>
+</li>
+<li><p>Abragewerte: name, plz, str, hnr, …</p>
+<p>Die Abfragewerte heißen so, wie sie im CMS definiert wurden</p>
+</li>
+</ul>
+</div>
+<div class="section" id="sichtbarkeit-darstellungsvarianten">
+<h2>Sichtbarkeit/Darstellungsvarianten<a class="headerlink" href="#sichtbarkeit-darstellungsvarianten" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Um beim Aufruf schon eine bestimmte Darstellung anzugeben, kann hier eine Liste von Darstellungsvarianten angeführt werden. Diese werden dann in der angeführten Reihenfolge „automatisch angeklickt“. Im CMS hat jede Darstellungsvariante beim Dienst eine Url. Im Viewers können diese Darstellungsvarianten allerdings wieder zu Buttons und Checkboxes gruppiert sein, oder sich in Dropdowns befinden. Darum funktioniert die Übergabe der Url einer Darstellungsvariante nur, wenn diese in keiner Gruppe ist. Wenn sich die Darstellungsvariante in einer Gruppe befindet, kann nur die komplette Gruppe als Parameter übergeben werden. Die interne Url für eine Gruppe ist immer dvg_[Name der Gruppe in Kleinbuchstaben, Leerzeichen werden Underscore, …). Wenn man sich nicht sicher ist, wie der interne Name einer Gruppe oder einer Darstellungsvariante unterhalb eines Dropdowns oder einer Gruppe ist, kann dies über die Entwicklungstools des Browsers feststellen (F12). Jedes Element, auf das man in Darstellungsvarianten TOC klicken kann hat ein Attribut mit dem Namen „data-dvid“. Der Wert dieses Attributes entspricht der Id, die man über einen parametrierten Aufruf übergeben kann:</p>
+<img alt="../../../_images/image32.png" src="../../../_images/image32.png" />
+<ul>
+<li><p>presentation, darstellungsvariante</p>
+<p>Beide Parameter sind möglich, die Funktionsweise ist gleich.</p>
+<p>Beispiel: <code class="docutils literal notranslate"><span class="pre">&amp;presentation=dvg_strom-naturbestand/dv_ssg_nb_geb,dvg_kataster</span></code></p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">WebGIS Cloud Dokumentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Inhalt:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../DataLinq/index.html">DataLinq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../MapBuilder/index.html">Map Builder</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Karten Viewer</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Parametrierung und Administration von Karten</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tutorials/index.html">Tutorials</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Karten Viewer</a><ul>
+  <li><a href="../index.html">Parametrierung und Administration von Karten</a><ul>
+  <li><a href="index.html">Parametrierter Aufruf von Karten</a><ul>
+      <li>Previous: <a href="voraussetzung.html" title="vorheriges Kapitel">Voraussetzung</a></li>
+      <li>Next: <a href="../../../Tutorials/index.html" title="nächstes Kapitel">Tutorials</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Los" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, ENI.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/KartenViewer/Parametrierung_Administration/ParametrierterAufruf/urlparameter.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

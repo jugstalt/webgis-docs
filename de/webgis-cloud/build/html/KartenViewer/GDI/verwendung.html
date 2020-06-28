@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>GDI Schemes verwenden &mdash; WebGIS Cloud Dokumentation 2020 Dokumentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/eni.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/eni.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
+    <link rel="next" title="custom.js" href="../CustomJS/index.html" />
+    <link rel="prev" title="Parametrierung von Darstellungsvariaten" href="parametrierung.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> WebGIS Cloud Dokumentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Inhalt:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../DataLinq/index.html">DataLinq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../MapBuilder/index.html">Map Builder</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Karten Viewer</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Darstellungsvarianten &amp; Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="allgemeines.html">Allgemeines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="parametrierung.html">Parametrierung von Darstellungsvariaten</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">GDI Schemes verwenden</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CustomJS/index.html">custom.js</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ParametrierterAufruf/index.html">Parametrierter Aufruf von Karten</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/index.html">Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">WebGIS Cloud Dokumentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Karten Viewer</a> &raquo;</li>
+        
+          <li><a href="index.html">Darstellungsvarianten &amp; Karten Viewer Schemes</a> &raquo;</li>
+        
+      <li>GDI Schemes verwenden</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/KartenViewer/GDI/verwendung.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gdi-schemes-verwenden">
+<h1>GDI Schemes verwenden<a class="headerlink" href="#gdi-schemes-verwenden" title="Link zu dieser Überschrift">¶</a></h1>
+<p>GDI Schemes können nur im WebGIS 5 verwendet werden. Verwendet man WebGIS 5 auch am Handy und hat man eigene Darstellungsvarianten für mobile Anwendungen entwickelt, kann man in der api5/_config/api.config Datei einstellen, dass die mobile Variante bevorzugt verwendet werden sollten. Dazu ist folgender Config-Key zuständig:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">add</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;cmsgdischema_default&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;mobile&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>Der Value „mobile“ entspricht der Url-Id, die für dieses Schema im CMS vergeben wurde (siehe oben).</p>
+<p>Ruft ein Anwender jetzt die Karte aus dem Portal auf, erscheinen die Darstellungsvarianten aus dem „mobile“ Schema. Zum Testen kann man hier über den Url Parameter <em>gdischeme (scheme nicht schema!!)</em> steuern, welches Schema genommen wird (ohne diesen Parameter greift der Wert aus der api.config Datei).</p>
+<p>Für den <em>gdischeme</em> Parameter können folgende Werte übergeben werden:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>~, _root</p></td>
+<td><p>Da die Default Einstellung im CMS ja eigentlich kein Schema ist, und somit keine Id hat, kann hier ~ oder _root angeben werden.</p></td>
+</tr>
+<tr class="row-even"><td><p>Url_Id des Schemas</p></td>
+<td><p>Die im CMS vergebene Url-Id des gewünschten Schemas</p></td>
+</tr>
+</tbody>
+</table>
+<p>Die Darstellungsvarianten für unsre Basisdaten schauen dann unterschiedlich aus, je nachdem, mit welchen Parameter ich die Karte aufrufe.</p>
+<ul>
+<li><p><strong>Kein Schema übergeben oder &amp;gdischeme=mobile</strong></p>
+<img alt="../../_images/image19.png" src="../../_images/image19.png" />
+</li>
+<li><p><strong>&amp;gdischeme=~ oder &amp;gdischeme=_root</strong></p>
+<img alt="../../_images/image20.png" src="../../_images/image20.png" />
+</li>
+</ul>
+<p>Da das Übergeben von Url-Parametern nicht vorgesehen ist, wenn man die Karte über die Portalseite aufruft, gibt es noch andere Mechanismen, um das Schema zu steuern. So wäre es wünschenswert, wenn ein Anwender das „mobile“ Schema angezeigt bekommt, wenn er mit einem Handy oder Tablet den Viewer aufruft und die volle Darstellung, wenn der Viewer über den Desktop aufgerufen wird.</p>
+<p>Voraussetzung ist hier, dass man für die unterschiedlichen Bildschirmauflösungen unterschiedliche Layouts definiert hat. Im Ordner portal5/ViewerLayouts/eni (eni=url unserer Portalseite) liegen bei uns Layouts für die Bildschirmbreiten &gt;=1024 (Tablet) und &gt;=1200 (Desktop) Pixel.</p>
+<img alt="../../_images/image211.png" src="../../_images/image211.png" />
+<p>Um nun beispielsweise im Layout für &gt;1200 Pixel die Desktop Darstellungsvarianten anzuzeigen, kann dies im Layout über einen <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code>-Tag erfolgen.</p>
+<p>Eine Layout-Datei ist ja nur ein HTML-Fragment, das angibt, wo und wie die Kartenelemente angezeigt werden. In diesem Fragment können natürlich auch <code class="docutils literal notranslate"><span class="pre">&lt;style&gt;</span></code> und <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> Tags eingebettet werden. Welches Schema verwendet wird, lässt sich über die Javascript Konstante <code class="docutils literal notranslate"><span class="pre">webgis.gdiScheme</span></code> steuern (irgendwo in der Datei w1200.html):</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nx">webgis</span><span class="p">.</span><span class="nx">gdiScheme</span> <span class="o">=</span> <span class="o">!</span><span class="nx">webgis</span><span class="p">.</span><span class="nx">gdiScheme</span> <span class="o">?</span> <span class="s1">&#39;~&#39;</span> <span class="o">:</span> <span class="nx">webgis</span><span class="p">.</span><span class="nx">gdiScheme</span><span class="p">;</span>
+    <span class="c1">//console.log(webgis.gdiScheme);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Hier wird, falls die Variable noch nicht gesetzt wurde, die Tilde zugewiesen (man könnte theoretisch auch ‚_root‘ zuweisen). Das entspricht, wie oben schon gezeigt, der CMS Default Einstellung oder dem Desktop Schema. Man könnte hier natürlich auch wieder jedes beliebige Schema über die Url-Id angeben, beispielsweise wenn man eigene Darstellungsvarianten für Tablets parametriert hat, könnte der Eintrage in der w1024.html wie folgt aussehen:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nx">webgis</span><span class="p">.</span><span class="nx">gdiScheme</span> <span class="o">=</span> <span class="o">!</span><span class="nx">webgis</span><span class="p">.</span><span class="nx">gdiScheme</span> <span class="o">?</span> <span class="s1">&#39;tablet&#39;</span> <span class="o">:</span> <span class="nx">webgis</span><span class="p">.</span><span class="nx">gdiScheme</span><span class="p">;</span>
+    <span class="c1">//console.log(webgis.gdiScheme);</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Achtung:</strong> gibt man Schema an, das nicht existiert, werden gar keine Darstellungsvarianten angezeigt!</p>
+<p>Die Abfrage im Beispiel, ob die Variable bereits gesetzt wurde, gewährleistet, dass ein Schema, das beispielsweise über einen Url-Parameter übergeben wurde nicht überschrieben wird. Man könnte natürlich auch folgendes schreiben:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nx">webgis</span><span class="p">.</span><span class="nx">gdiScheme</span> <span class="o">=</span> <span class="s1">&#39;~&#39;</span><span class="p">;</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Dann ist der Url-Parameter nutzlos, weil immer der CMS Standard verwendet wird.</p>
+<p>Die <code class="docutils literal notranslate"><span class="pre">webgis.gdiScheme</span></code> Variable kann natürlich auch in Templates oder anderen API Anwendungen angegeben werden, um ein spezielles GDI-Schema zu erzwingen.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../CustomJS/index.html" class="btn btn-neutral float-right" title="custom.js" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="parametrierung.html" class="btn btn-neutral float-left" title="Parametrierung von Darstellungsvariaten" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, ENI
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

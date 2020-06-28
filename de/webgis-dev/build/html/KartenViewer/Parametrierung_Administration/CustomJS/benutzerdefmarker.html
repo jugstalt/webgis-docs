@@ -1,0 +1,465 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Benutzerdefinierte Marker &mdash; webgis 1.0 Dokumentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/eni.js"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/eni.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../../genindex.html" />
+    <link rel="search" title="Suche" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> webgis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Inhalt:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../API/index.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../DataLinq/index.html">DataLinq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../MapBuilder/index.html">Map Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tutorials/index.html">Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">webgis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Benutzerdefinierte Marker</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/KartenViewer/Parametrierung_Administration/CustomJS/benutzerdefmarker.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="benutzerdefinierte-marker">
+<h1>Benutzerdefinierte Marker<a class="headerlink" href="#benutzerdefinierte-marker" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Findet der Anwender im Kartenviewer Ergebnisse, werden diese standardmäßig mit einem blauen Marker markiert. Mit einem Klick auf den Marker werden dann die Attribute dieses Objektes angezeigt. In gewissen Fällen ist es jedoch wünschenswert, ein anderes Symbol für den Marker zu verwenden. Wie das bewerkstelligt wird, soll dieses Beschreibung zeigen.</p>
+<div class="section" id="allgemeine-vorgehensweise">
+<h2>Allgemeine Vorgehensweise<a class="headerlink" href="#allgemeine-vorgehensweise" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die Art, wie Marker dargestellt werden, erfolgt in den Javascripts der API innerhalb des <em>webgis-Objekts</em> über ein Array mit dem Namen <code class="docutils literal notranslate"><span class="pre">markerIcons</span></code>. Die Keys für dieses Array entsprechen Konstanten, die beim Entwickeln vergeben wurden. So ist beispielsweise der rote Marker für die aktuelle Position wie folgt definiert worden:</p>
+<div class="highlight-Javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">markerIcons</span><span class="p">[</span><span class="s2">&quot;currentpos_red&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">webgis</span><span class="p">.</span><span class="nx">css</span><span class="p">.</span><span class="nx">imgResource</span><span class="p">(</span><span class="s1">&#39;position_red.png&#39;</span><span class="p">,</span> <span class="s1">&#39;markers&#39;</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="p">[</span><span class="mi">38</span><span class="p">,</span> <span class="mi">38</span><span class="p">],</span>
+    <span class="nx">anchor</span><span class="o">:</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span>
+    <span class="nx">popupAnchor</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Jedes Objekt, das einen Marker beschreibt hat folgende Eigenschaften:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">url</span></code></p>
+<p>Ein Funktion, die die Url des Marker Bildes zurückgibt. Hier wird noch mit der Funktion <code class="docutils literal notranslate"><span class="pre">webgis.css.imgResource()</span></code> gearbeitet. Diese kann verwendet werden, wenn die Marker im api5/content/api/img Verzeichnis liegen. Der erste Parameter gibt den Namen der Datei an, der zweite den Unterordner.
+Wenn sich ein Marker Icon nicht in diesem Verzeichnis befindet, kann hier auch eine absolute Url angegeben werden: <a class="reference external" href="http://">http://</a>…..</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code></p>
+<p>Die Größe des Markerbildes in Pixel</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anchor</span></code></p>
+<p>Die Bildkoordinaten des Einfügepunktes des Markers (von links, oben) in Pixel</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">popupAnchor</span></code></p>
+<p>Der Einfügepunkt der Info-Blase relative zum Einfügepunkt des Markers in Pixel</p>
+</li>
+</ul>
+<p>Die Marker für die Abfrageergebnisse sind folgendermaßen definiert:</p>
+<div class="highlight-Javascript notranslate"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">markerIcons</span><span class="p">[</span><span class="s2">&quot;query_result&quot;</span><span class="p">][</span><span class="s2">&quot;default&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">feature</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">webgis</span><span class="p">.</span><span class="nx">css</span><span class="p">.</span><span class="nx">imgResource</span><span class="p">(</span><span class="s1">&#39;marker_blue.png&#39;</span><span class="p">,</span> <span class="s1">&#39;markers&#39;</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">feature</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">41</span><span class="p">];</span> <span class="p">},</span>
+    <span class="nx">anchor</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">feature</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">42</span><span class="p">];</span> <span class="p">},</span>
+    <span class="nx">popupAnchor</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="nx">feature</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">42</span><span class="p">];</span> <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Der Key für das markerIcons-Object ist hier „query_result“. Das ist wieder ein Array dem als Key die Url-Id einer Abfrage zugewiesen werden kann. Hier wird „default“ verwendet, weil die Definition für alle Abfragen (für die nichts anderes definiert wurde) verwendet werden soll.</p>
+<p>Der Unterschied zu zum ersten Beispiel ist außerdem, das hier auch die Größe und der Einfügepunkt Funktionen sind. Als Parameter wird dieser Funktion folgendes übergeben:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>:
+Eine fortlaufende Nummer. Gibt ein Index des Suchergebnisses an, für den der Marker abgeholt wird.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">features</span></code>:
+Das eigentliche Feature als Javascript Object (in GeoJSON-Notation) für das der Marker abgeholt wird.</p></li>
+</ul>
+<p>Die beiden Parameter dieser Funktion werden innerhalb des Funktionsrumpfes nicht berücksichtigt. Der Grund ist, dass standardmäßig immer der gleich Marker für alle Ergebnisse zurück geliefert wird.</p>
+<p>Wenn man nun eine Seite, die auf die WebGIS API zugreift, programmiert, können diese Werte nach den Laden der Datei api.min.js überschreiben werden. Die Syntax entspricht der oben gezeigten, allerdings kann hier natürlich nicht mit „this“ auf das markerIcons-Array zugegriffen werden, das geht nur innerhalb des webgis-Objekts. Anstelle von „this“ kann man direkt mit „webgis“ auf die Definitionen zugreifen:</p>
+<div class="highlight-Javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">webgis</span><span class="p">.</span><span class="nx">markerIcons</span><span class="p">[</span><span class="s2">&quot;currentpos_red&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">&quot;http://myserver.com/markers/mein_super_marker_symbol.png&quot;</span>
+    <span class="p">},</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+    <span class="nx">anchor</span><span class="o">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+    <span class="nx">popupAnchor</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">]</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="marker-in-der-custom-js">
+<h2>Marker in der custom.js<a class="headerlink" href="#marker-in-der-custom-js" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Der erste Wert, der in der Beispieldatei überschrieben wird, ist der default-QueryResult-Marker:</p>
+<div class="highlight-Javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">webgis</span><span class="p">.</span><span class="nx">markerIcons</span><span class="p">[</span><span class="s2">&quot;query_result&quot;</span><span class="p">][</span><span class="s2">&quot;default&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">webgis</span><span class="p">.</span><span class="nx">css</span><span class="p">.</span><span class="nx">imgResource</span><span class="p">(</span><span class="s1">&#39;marker_blue_&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.png&#39;</span><span class="p">,</span> <span class="s1">&#39;markers&#39;</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">f</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">41</span><span class="p">];</span> <span class="p">},</span>
+    <span class="nx">anchor</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">f</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">42</span><span class="p">];</span> <span class="p">},</span>
+    <span class="nx">popupAnchor</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">f</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">42</span><span class="p">];</span> <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Hier wird jetzt anstelle des blauen Markers ein blauer Marker mit einer Zahl darin angezeigt. Die Zahl gibt den Index des Abfrageergebnisses an. Wenn man ins portal5/content/api/img/markers Verzeichnis geht, erkennt man, dass es dort Dateien mit dem Namen marker_blue_1.png, marker_blue_2.png, …, marker_blue_1000.png gibt. Diese werden hier mit dem Index nachgebildet:</p>
+<div class="highlight-Javascript notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;marker_blue_&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.png&#39;</span><span class="p">,</span> <span class="s1">&#39;markers&#39;</span>
+</pre></div>
+</div>
+<p><strong>Achtung:</strong> Der Index, der der Funktion übergeben wird beginnt mit 0. Daher (i+1).</p>
+<p>Das Ergebnis dieser Änderung sieht wie folgt aus:</p>
+<img alt="../../../_images/image1.png" src="../../../_images/image1.png" />
+<p>Die Marker bekommen so eine fortlaufende Nummer, was auch für den Anwender sehr praktisch ist, weil so gleich optisch eine Zuordnung zwischen Liste und Karte möglich ist.</p>
+<p>Das nächste Beispiel bezieht sich nur auf die Abfrage „gemeinden“:</p>
+<div class="highlight-Javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">webgis</span><span class="p">.</span><span class="nx">markerIcons</span><span class="p">[</span><span class="s2">&quot;query_result&quot;</span><span class="p">][</span><span class="s2">&quot;gemeinden&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">f</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">Gemeinde</span> <span class="o">==</span> <span class="s2">&quot;Graz&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nx">webgis</span><span class="p">.</span><span class="nx">css</span><span class="p">.</span><span class="nx">imgResource</span><span class="p">(</span><span class="s1">&#39;marker_circle_sketch_vertex_99.png&#39;</span><span class="p">,</span> <span class="s1">&#39;markers&#39;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">webgis</span><span class="p">.</span><span class="nx">css</span><span class="p">.</span><span class="nx">imgResource</span><span class="p">(</span><span class="s1">&#39;marker_circle_sketch_vertex_&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.png&#39;</span><span class="p">,</span> <span class="s1">&#39;markers&#39;</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">f</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">21</span><span class="p">];</span> <span class="p">},</span>
+    <span class="nx">anchor</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">f</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">];</span> <span class="p">},</span>
+    <span class="nx">popupAnchor</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">f</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">];</span> <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Hier wird ebenfalls ein „runder“ Marker mit fortlaufender Nummer verwendet. Allerdings wird hier direkt auf die Attribute des abgefragten Features zugriffen. Im Beispiel wird einem Feature, bei dem das Attribut „Gemeinde“ gleich „Graz“ ist, ein fixer Marker mit der Nummer 99 zugewiesen (Eishockey Fans wissen warum).</p>
+<p>Alle anderen Funktionen sind nicht vom Index oder vom Feature abhängig, weil alle Marker gleich groß sind und den gleichen Einfügepunkt haben. Ist das nicht so, könnte man auch in diesen Funktionen das Feature abfragen und gegebenenfalls unterschiedliche Werte zurückgeben.</p>
+<p>Ein Beispiel für eine Zuordnung aufgrund von Feature-Eigenschaften könnte beispielsweise ein Thema „medizinische Einrichtungen“ sein. Man könnte so unterschiedliche Marker für Arzte, Krankenhäuser, Apotheken, usw. darstellen.</p>
+<p>Das Ergebnis aus diesem Beispiel würde etwa so aussehen:</p>
+<img alt="../../../_images/image2.png" src="../../../_images/image2.png" />
+<p>Die weitern Beispiele die her angeführt sind, betreffen nicht mehr die Marker, sondern die Darstellung der Ergebnisliste. In dieser Liste wird immer nur eine Vorschau (wenige Attribute) angezeigt. Diese angezeigten Attribute entsprechend den ersten drei Attributen nach denen für dieses Thema gesucht werden kann (WebGIS nimmt einmal an, dass diese Attribute aussagekräftig für eine Vorschau sind). Wenn man hier eine andere Darstellung möchte, kann das mit folgenden Beispielen bewerkstelligt werden:</p>
+<div class="highlight-Javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">webgis</span><span class="p">.</span><span class="nx">hooks</span><span class="p">[</span><span class="s2">&quot;query_result_feature&quot;</span><span class="p">][</span><span class="s2">&quot;grundstuecke&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">map</span><span class="p">,</span> <span class="nx">$parent</span><span class="p">,</span> <span class="nx">feature</span><span class="p">,</span> <span class="nx">base</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">base</span><span class="p">(</span><span class="nx">map</span><span class="p">,</span> <span class="nx">$parent</span><span class="p">,</span> <span class="nx">feature</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;&lt;a style=&#39;color:gray;font-size:.9em&#39; href=&#39;http://bev.gv.at&#39; target=&#39;_blank&#39;&gt;(c) 2017 BEV&lt;/a&gt;&quot;</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">$parent</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Der „Hook“ wird aufgerufen, wenn ein Ergebnis für die Vorschau gerendert wird. Es wird die Karte, das Parent-HTML-Element, das Feature und die Ursprungs- oder Default-Funktion übergeben.</p>
+<p>Im Beispiel wird erst einmal die Ursprungsfunktion aufgerufen, damit alles wieder so gerendert wird wie immer: base(map, $parent, feature). Dieser Funktion übergibt man die gleichen Werte außer base selbst!!</p>
+<p>Dahinter wird hier einfach ein Link zum BEV mit einem Copyright Meldung angefügt. Das Ergebnis entspricht dem Screenshot von oben mit den blauen Marken. In der Liste ist hinter jedem Ergebnis der Link in grauer Farbe erkennbar (könnte man natürlich auch in einer neuen Zeile machen).</p>
+<p>Interessanter ist diese Methode, wenn es für eine Abfrage keine aussagekräftigen Attribute für eine Vorschau gibt. Bei uns gibt es ein Thema mit Baustellenfotos, dass man mit Identify in der Karte abfragen kann. Ein einem Feld „Vorschau“ wird im CMS ein Imageexpression auf das Bild erzeugt. Um dieses Bild in der Vorschau anzuzeigen, dient folgender Code:</p>
+<div class="highlight-Javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">webgis</span><span class="p">.</span><span class="nx">hooks</span><span class="p">[</span><span class="s2">&quot;query_result_feature&quot;</span><span class="p">][</span><span class="s2">&quot;enetze_fotos&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">map</span><span class="p">,</span> <span class="nx">$parent</span><span class="p">,</span> <span class="nx">feature</span><span class="p">,</span> <span class="nx">base</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nx">feature</span><span class="p">.</span><span class="nx">properties</span><span class="p">.</span><span class="nx">Vorschau</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">$parent</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Hier wird die base-Funktion nicht mehr aufgerufen, sondern gleich das Bild eingefügt. Das Ergebnis ist folgendes:</p>
+<img alt="../../../_images/image3.png" src="../../../_images/image3.png" />
+<p>Die Bilder werden hier gleich in der Vorschau bei den Suchergebnissen angezeigt. Klickt man auf ein Foto wird in der Karte der entsprechend Marker Popup sichtbar.</p>
+</div>
+<div class="section" id="benutzerdefinierte-werkzeuge">
+<h2>Benutzerdefinierte Werkzeuge<a class="headerlink" href="#benutzerdefinierte-werkzeuge" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Benutzerdefinierte Werkzeuge, sind Werkzeuge, die in der Werkzeugleiste des Viewers aufscheinen, die aber nicht zu den Standardwerkzeugen von WebGIS gehören.</p>
+<p>Diese Werkzeuge können ein einfacher Button sein (Anzeige zu erweiterten Metadaten einer Karte). Benutzerdefinierte Werkzeuge können allerdings auf Interaktion mit der Karte reagieren (Klick in die Karte oder Rechteck aufziehen). In allen Fällen wird nach einer Benutzeraktion (Klick auf Button, Klick in die Karte, Rechteck aufziehen) ein Link aufgerufen, an den entsprechende Werte übergeben werden können.</p>
+<p>Die benutzerdefinierten Werkzeuge werden in der custom.js mit folgendem Befehl dem Viewer hinzugefügt:</p>
+<div class="highlight-Javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">webgis</span><span class="p">.</span><span class="nx">custom</span><span class="p">.</span><span class="nx">tools</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Super Tool&#39;</span><span class="p">,</span>
+    <span class="nx">command</span><span class="o">:</span> <span class="s1">&#39;https://www.google.com/maps/@{y},{x},19z&#39;</span><span class="p">,</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Fügt man ein benutzerdefiniertes Werkzeug in die custom.js ein, wird es in allen Karten dieser Portalseite hinzugefügt. Soll das Werkzeug nur einer bestimmten Karte oder bestimmten Karten auftauchen, kann dies über entsprechende Bedingen gelöst werden. So steht beispielsweise in der Variable mapUrlName der Name der aktuell aufgerufenen Karte:</p>
+<div class="highlight-Javascript notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">mapUrlName</span> <span class="o">===</span> <span class="s2">&quot;Geoland&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">webgis</span><span class="p">.</span><span class="nx">custom</span><span class="p">.</span><span class="nx">tools</span><span class="p">.</span><span class="nx">add</span><span class="p">({</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Super Tool&#39;</span><span class="p">,</span>
+        <span class="nx">command</span><span class="o">:</span> <span class="s1">&#39;https://www.google.com/maps/@{y},{x},19z&#39;</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Tipp:</strong> Diese Methode kann natürlich auf alle hier beschriebenen Methoden angewandt werden (Marker, Usability usw.)</p>
+<p>Der Übergabeparameter ist ein Objekt, welches das Werkzeug beschreibt. Das Objekt muss mindestens die Eigenschaften <code class="docutils literal notranslate"><span class="pre">name</span></code> und <code class="docutils literal notranslate"><span class="pre">command</span></code> aufweisen.</p>
+<p>Die folgende Liste beschreibt die möglichen Eigenschaften:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p>
+<p>Ein Name für den Button</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">command</span></code></p>
+<p>Ein Link, der aufgerufen wird, sobald die entsprechende Useraktion ausgeführt wurde. Diesem Link können über Platzhalter Werte über den aktuellen Kartenauschnitt oder der geklickten Position übergeben werden (siehe unten)</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">command_target</span></code></p>
+<p>Gibt an, wie der Link aufgerufen werden soll:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">command_target:</span> <span class="pre">'self'</span></code></p>
+<p>Der Link wird im aktuellen Browser-Tab geöffnet</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">command_target:</span> <span class="pre">'dialog'</span></code></p>
+<p>Der Link wird in einem Dialog innerhalb des Viewers ausgeführt.</p>
+<p><strong>Achtung:</strong> Das funktioniert oft nicht mit Drittseiten (zB Google Maps). Diese Seiten lassen sich nicht innerhalb eines IFrames anzeigen, um nicht die allgemeinen Regeln ihrer API zu umgehen.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">command_target:</span> <span class="pre">'_blank'</span> <span class="pre">(Defaultwert)</span></code></p>
+<p>Der Link wird in einem neuen Browser-Tab geöffnet</p>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tooltype</span></code></p>
+<ul>
+<li><p>Keine Angabe (Defaultwert)</p>
+<p>Das Werkzeut ist ein einfacher Button. Ein Klick auf diesen Button ruft den Command-Link auf</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tooltype:</span> <span class="pre">'click'</span></code></p>
+<p>Nach dem auswählen des Werkzeuges, muss der Anwender in die Karte klicken, um den Command-Link aufzurufen.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tooltype:</span> <span class="pre">'box'</span></code></p>
+<p>Nach dem auswählen des Werkzeuges, muss der Anwender in der Karte ein Rechteck aufziehen, um den Command-Link aufzurufen.</p>
+<p><strong>Hinweis zur Usability:</strong> Das Ziehen der Maus bei gedrückter Maustaste ist eigentlich für das Verschieden des Kartenausschnittes reserviert. Das Aufziehen eines Rechtecks ist hier die Ausnahme. Da der Anwender in den meisten Fällen ersteres möchte, funktioniert das Rechteck aufziehen immer nur einmal, nachdem ein entsprechendes Werkzeug ausgewählt wurde. So werden beispielsweise beim Auswählen von Geoobjekte mittels Rechteck nach dem Aufziehen die Ergebnisse angezeigt. Im Hintergrund schaltet sich das Rechteckaufziehen wieder ab und der Anwender kann normal in der Karte navigieren. Will er weitere Geoobjekte selektieren muss er zum Identify-Werkzeug zurückkehren und wieder Rechteck auswählen.</p>
+<p>Bei den benutzerdefinierten Werkzeugen bedeutet das, dass nach dem Aufziehen des Rechtecks die Aktion ausgeführt wird. Der Viewer schaltet danach allerdings automatisch zum Default-Werkzeug zurück, damit in der Karte wieder normal navigiert werden kann. Möchte der Anwender erneut ein Fenster aufziehen, muss er das Werkzeug wieder aktiv auswählen.</p>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">container</span></code></p>
+<p>Gibt an, wo in der Werkzeugleiste das Werkzeug angezeigt wird. Der Defaultwert ist hier „Werkzeuge“:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">container:'Navigation'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">container:'Auswahl'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">container:'Werkzeuge'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">container:'Darstellung'</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">image</span></code></p>
+<p>Ein Link zu einem Icon (26x26 Pixel), für den Werkzeug Button.
+Dieser Link kann ein absolute Link sein:
+<code class="docutils literal notranslate"><span class="pre">image:'https://www....../icon.png'</span></code></p>
+<p>Befindet sich das Icon bei der API im content/api/img/tools Verzeichnis, recht es auch aus nur den Namen des Bildes anzugeben:
+<code class="docutils literal notranslate"><span class="pre">image:</span> <span class="pre">'cursor-plus-26-b.png'</span></code></p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tooltip</span></code></p>
+<p>Ein Tooltip, der angezeigt wird, wenn man den Mauszeiger über den Button bewegt.</p>
+</li>
+</ul>
+<p>Für die Eigenschaft <code class="docutils literal notranslate"><span class="pre">command</span></code> können verschiede Platzhalter in dir Url eingefügt werden, um Parameter aus der Karte in einen andere Web-Seite zu übergeben. Abhängig vom <em>tooltype</em> können unterschiedle Platzhalter verwenden werden, bzw. hab diese unterschiedliche Bedeutungen:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">{map.minx},</span> <span class="pre">{map.miny},</span> <span class="pre">{map.maxx},</span> <span class="pre">{map.maxy}</span></code></p>
+<ul class="simple">
+<li><p><em>ToolTypes:</em> kein, click, box</p></li>
+<li><p>Die Ausdehnung des aktuellen Kartenausschnittes in geographischen Koordinaten. X entspricht hier dem Rechtswert (geographische Länge) und Y dem Hochwert (geographische Breite)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{map.bbox}</span></code></p>
+<ul>
+<li><p><em>ToolTypes:</em> kein, click, box</p></li>
+<li><p>Die Boundingbox des aktuellen Kartenausschnittes in geographischen Koordinaten.</p>
+<p>Entspricht: <code class="docutils literal notranslate"><span class="pre">{map.minx},</span> <span class="pre">{map.miny},</span> <span class="pre">{map.maxx},</span> <span class="pre">{map.maxy}</span></code></p>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{map.centerx},</span> <span class="pre">{map.centery}</span></code></p>
+<ul class="simple">
+<li><p><em>ToolTypes:</em> kein, click, box</p></li>
+<li><p>Der Mittelpunkt des aktuellen Kartenausschnittes in geographischen Koordinaten</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{map.MINX},</span> <span class="pre">{map.MINY},</span> <span class="pre">{map.MAXX},</span> <span class="pre">{map.MAXY},</span> <span class="pre">{map.BBOX},</span> <span class="pre">{map.CENTERX},</span> <span class="pre">{map.CENTERY}</span></code></p>
+<ul>
+<li><p><em>ToolTypes:</em> kein, click, box</p></li>
+<li><p>Wie oben, nur werden hier geographischen Koordinaten übergeben, sondern Koordinaten im Karten Koordinatensystem (z.B. GK-M34)</p>
+<p>X entspricht hier dem Rechtswert und Y dem Hochwert</p>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{x},</span> <span class="pre">{y}</span></code></p>
+<ul>
+<li><p><em>ToolTypes:</em> click, box</p></li>
+<li><p>Der Punkt auf den der Anwender geklickt hat in geographischen Koordinaten.</p>
+<p>Zieht der Anwender ein Fenster auf, entspricht dieser Wert dem Mittelpunkt des Fensters</p>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{X},</span> <span class="pre">{Y}</span></code></p>
+<ul class="simple">
+<li><p><em>ToolTypes:</em> click, box</p></li>
+<li><p>Wie oben, nur für Koordinaten im Karten Koordinatensystem.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{minx},</span> <span class="pre">{miny},</span> <span class="pre">{maxx},</span> <span class="pre">{maxy}</span></code></p>
+<ul class="simple">
+<li><p><em>ToolTypes:</em> box</p></li>
+<li><p>Das Rechteck, das der Anwender aufgezogen hat in geographischen Koordinaten</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{bbox}</span></code></p>
+<ul>
+<li><p><em>ToolTypes:</em> box</p></li>
+<li><p>BoundingBox des Rechteckes, das der Anwender aufgezogen hat.</p>
+<p>Entspricht: <code class="docutils literal notranslate"><span class="pre">{minx},</span> <span class="pre">{miny},</span> <span class="pre">{maxx},</span> <span class="pre">{maxy}</span></code></p>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{MINX},</span> <span class="pre">{MINY},</span> <span class="pre">{MAXX},</span> <span class="pre">{MAXY},</span> <span class="pre">{BBOX}</span></code></p>
+<ul class="simple">
+<li><p><em>ToolTypes:</em> box</p></li>
+<li><p>Wie oben, nur für Koordinaten im Karten Koordinatensystem.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, ENI
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

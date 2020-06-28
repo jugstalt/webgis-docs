@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Koordinaten &mdash; WebGIS Manual 2020 Dokumentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/eni.js"></script>
+        <script src="../../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/eni.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../../genindex.html" />
+    <link rel="search" title="Suche" href="../../../search.html" />
+    <link rel="next" title="Stationierung" href="stat.html" />
+    <link rel="prev" title="Identifizieren/Auswählen" href="identify.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> WebGIS Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Benutzerhandbuch Karten Viewer</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../general/index.html"><span class="sectnum">1</span> Übersicht</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../navigation/index.html"><span class="sectnum">2</span> Navigation in der Karte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../presentation/index.html"><span class="sectnum">3</span> Darstellung und Karteninhalte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../legend/index.html"><span class="sectnum">4</span> Legende und Themen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../search_identify/index.html"><span class="sectnum">5</span> Suchen und Abfragen</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html"><span class="sectnum">6</span> Werkzeuge</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../map/index.html">Karten Werkzeuge</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Abfrage Werkzeuge</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="identify.html">Identifizieren/Auswählen</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Koordinaten</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stat.html">Stationierung</a></li>
+<li class="toctree-l4"><a class="reference internal" href="table.html">Abfrageergebnisse (Tabelle)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../general/index.html">Allgemeine Werkzeuge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../presentation/index.html">Darstellungswerkzeuge</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sketch/index.html">Sketch/Entwurfswerkzeuge</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">WebGIS Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Benutzerhandbuch Karten Viewer</a> &raquo;</li>
+        
+          <li><a href="../index.html"><span class="sectnum">6</span> Werkzeuge</a> &raquo;</li>
+        
+          <li><a href="index.html">Abfrage Werkzeuge</a> &raquo;</li>
+        
+      <li>Koordinaten</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/mapviewer/tools/identify/coords.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="koordinaten">
+<h1>Koordinaten<a class="headerlink" href="#koordinaten" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="koordinaten-eingeben-und-abfragen">
+<h2>Koordinaten eingeben und abfragen<a class="headerlink" href="#koordinaten-eingeben-und-abfragen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Mit dem <em>Koordinaten Abfragen</em> Werkzeug, können einerseits Koordinaten durch Klicken in die Karte abgefragt,
+als auch Koordinaten eingegeben und angezeigt werden.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p><strong>Tip:</strong> Das Werkzeug kann nicht nur über den Werkzeugkasten aufgerufen werden, sondern öffnet sich auch
+wenn man auf die Mitlaufenden Koordinaten im Kartenviewer klickt:</p>
+</div>
+<p>Möchte man zu einer einer bestimmte Koordinate springen, erfolgt dies über das Sub-Werkzeug <em>Koordinaten eingeben</em>.
+Zuvor empfiehlt es sich auch einmal die <em>Eingabe Tipps</em> aufzuklappen, wo unterschiedliche Eingabemöglichkeiten
+für geographische und projizierte Koordinaten gezeigt werden.</p>
+<p>Koordinaten werden in folgendem Dialog eingegeben:</p>
+<img alt="../../../_images/coords2.png" src="../../../_images/coords2.png" />
+<p>In der Auswahlliste muss zuerst ein Koordinatensystem ausgewählt und danach in den Eingabefeldern Rechts- und
+Hochwert eingetragen werden. Durch bestätigen des Dialog mit <em>Koordinate anzeigen</em> wechselt der Kartenausschnitt
+zur gewünschten Position und es wird ein Marker angezeigt.</p>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p><strong>Tip:</strong> Will man nur zu einem Punkt mit gekannten geographischen Koordinaten springen, besteht auch die
+Möglichkeit, die Koordinaten in die Schnellsuche einzutragen (siehe Abschnitt <em>Suchen und Abfragen</em>)</p>
+</div>
+<p>Marker können ebenfalls durch einen Klick in die Karte erzeugt werden. Wird der Kartenviewer am Desktop
+verwendet, werden die Koordinaten in einer Listenansicht im Werkzeugdialog angezeigt:</p>
+<img alt="../../../_images/coords3.png" src="../../../_images/coords3.png" />
+<p>In der Auswahlliste über der Koordinatenliste kann ein Koordinatensystem gewählt werden. In dem hier
+gewählten Koordinatensystem werden die Koordinaten in der Liste angezeigt.</p>
+<p>Mit dem Button <em>Marker entferenen</em> verschwinden alle Marker aus der Karte und Einträge aus der Liste.</p>
+</div>
+<div class="section" id="koordinaten-herunterladen">
+<h2>Koordinaten herunterladen<a class="headerlink" href="#koordinaten-herunterladen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die Liste der Koordinaten kann als CSV Datei herunter geladen werden. Dazu dient das Sub-Werkzeug
+<em>Koordinaten herunterladen (CSV)</em>. Herunter geladen werden die Koordinaten in dem Koordinatensystem,
+das aktuell für die Koordinatenliste ausgewählt ist. Es wird also die Liste so herunter geladen, wie sie im
+Werkzeugdialog angezeigt wird.</p>
+<p>Bei CSV handelt es sich um eine Text Datei, die in jedem Texteditor geöffnet werden kann. Auch
+Tabellenkalkulationsprogramme wie MS-Excel können mit diesen Datei in der Regel umgehen:</p>
+<img alt="../../../_images/coords4.png" src="../../../_images/coords4.png" />
+</div>
+<div class="section" id="koordinaten-hochladen">
+<h2>Koordinaten hochladen<a class="headerlink" href="#koordinaten-hochladen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Eine Koordinatenliste kann ebenfalls hochgeladen werden. Die Daten müssen hier ebenfalls in einer CSV
+Datei vorliegen (Trennzeichen muss ein Strickpunkt sein, als Komma wird Beistrich oder Punkt akzeptiert):</p>
+<img alt="../../../_images/coords5.png" src="../../../_images/coords5.png" />
+<p>Beim Hochladen muss in einem Dialog zuerst das Koordinatensystem angegeben werden, in dem die Koordinaten vorliegen.
+Danach kann die Datei hochgeladen werden.</p>
+<p>Ist der Upload erfolgreich, werden die Koordinaten durch Marker in der Karte markiert und als Koordinatenliste
+im Werkzeugdialog angezeigt.</p>
+</div>
+<div class="section" id="koordinaten-projizieren-umwandeln">
+<h2>Koordinaten projizieren (umwandeln)<a class="headerlink" href="#koordinaten-projizieren-umwandeln" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Mit den oben gezeigten Methoden ist es auch möglich, Koordinatenlisten von einem Koordinatensystem in ein anderes
+zu überzuführen. Voraussetzung ist dabei, dass die gewünschten Koordinatensysteme vom Kartenviewer angeboten werden.</p>
+<p>Die Vorgehensweise ist dabei folgende:</p>
+<ul class="simple">
+<li><p>Koordinatenliste als CSV hochladen</p></li>
+<li><p>In der Karte kontrolliren, ob alle Koordinaten korrekt hochgeladen wurden. Falls die Lage dort nicht richtig ist, wurde beim Hochladen wahrscheinlich ein falsches Koordinatensystem angegeben</p></li>
+<li><p>Im Werkzeugdialog für die Koordinatenliste das gewünschte Ziel-Koordinatensystem auswählen</p></li>
+<li><p>Koordinaten im CSV Format herunterladen</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="stat.html" class="btn btn-neutral float-right" title="Stationierung" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="identify.html" class="btn btn-neutral float-left" title="Identifizieren/Auswählen" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, ENI
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

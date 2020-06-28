@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CMS &mdash; WebGIS Cloud Dokumentation 2020 Dokumentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/eni.js"></script>
+        <script src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/eni.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="../genindex.html" />
+    <link rel="search" title="Suche" href="../search.html" />
+    <link rel="prev" title="MapBuilder" href="mapbuilder.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> WebGIS Cloud Dokumentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Inhalt:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../DataLinq/index.html">DataLinq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MapBuilder/index.html">Map Builder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../KartenViewer/index.html">Karten Viewer</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="einfuehrung.html">WebGIS Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mapbuilder.html">MapBuilder</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CMS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cms-account">CMS Account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cms-web-oberflache">CMS Web Oberfläche</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wmts-tilecache-dienst-einbinden">WMTS Tilecache Dienst einbinden</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arcgis-server-dienst-einbinden">ArcGIS Server Dienst einbinden</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#layerschaltungen">Layerschaltungen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#darstellungsvarianten-layer-schaltungen-fur-den-viewer-bereitstellen">Darstellungsvarianten (Layer-Schaltungen für den Viewer bereitstellen)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cms-veroffentlichen">CMS Veröffentlichen</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">WebGIS Cloud Dokumentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Tutorials</a> &raquo;</li>
+        
+      <li>CMS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Tutorials/cms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cms">
+<h1>CMS<a class="headerlink" href="#cms" title="Link zu dieser Überschrift">¶</a></h1>
+<div class="section" id="cms-account">
+<h2>CMS Account<a class="headerlink" href="#cms-account" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Zum Anlegen eines CMS Accounts ist eine „bezahlte“ Subscription notwendig.
+Dazu auf in der Sidebar (links) auf <code class="docutils literal notranslate"><span class="pre">Account</span></code> klicken. Dort findet sich bei den <code class="docutils literal notranslate"><span class="pre">Tasks</span></code> ein Punkt <code class="docutils literal notranslate"><span class="pre">Promotion</span> <span class="pre">Code</span></code>:</p>
+<img alt="../_images/image103.png" src="../_images/image103.png" />
+<p>Nachdem der Promotion Code erfolgeich eingegeben wurde, sind in der Sidebar nun alle Menüpunkte auswählbar. Bei einem Klick auf <code class="docutils literal notranslate"><span class="pre">CMS</span> <span class="pre">Account</span></code> kommt allerdings noch folgende Meldung:</p>
+<img alt="../_images/image106.png" src="../_images/image106.png" />
+<p>Grund: manche Resourcen (wie ein CMS) brauchen einen eindeutigen Namen. Damit es nicht zu Konflikten mit anderen Kunden kommt, muss für eine Subscription ein Namespace angeben werden. Dafür verwendet man idealerweise ein Kürzel, von dem man auf die Organisation zurück schließen kann. zB kagis, sagis, noegis, vogis, gis-stmk, e-netze, …  (nur kleinbuchstaben und Bindestrich, keine Umlaute)</p>
+<img alt="../_images/image107.png" src="../_images/image107.png" />
+<p>Danach kann ein CMS Account angelegt werden:</p>
+<img alt="../_images/image108.png" src="../_images/image108.png" />
+<p>Zuerst muss noch das Projekt ausgewählt werden, in dem der CMS Account angelegt werden soll:</p>
+<img alt="../_images/image113.png" src="../_images/image113.png" />
+<p>Im nächsten Schritt sind eine Id und ein Name für das CMS zu vergeben. Die Id muss später eindeutig sein. Gibt es schon ein CMS mit dieser Id, kommt beim der Erstellung eine Fehlermeldung und mit dem Erstellen muss von vorne begonnen werden.</p>
+<img alt="../_images/image1101.png" src="../_images/image1101.png" />
+<p>Der Displayname sollte ein sprechender Name sein (muss nicht eindeutig sein) und wird später im CMS als Überschrift angezeigt.</p>
+<p>Außerdem muss noch die Region ausgewählt werden, in der das CMS bereitgestellt wird (zur Zeit nur West Europe)</p>
+<p>Ist das Erstellen erfolgreich wird in etwa folgendes angezeigt:</p>
+<img alt="../_images/image111.png" src="../_images/image111.png" />
+<p>Tritt ein Fehler auf, muss mit dem Erstellen wieder von Vorne begonnen werden. Mit <code class="docutils literal notranslate"><span class="pre">Go</span> <span class="pre">to</span> <span class="pre">resource…</span></code> kommt man zur Eigenschaftenseite des neu erstellen CMS Accounts:</p>
+<img alt="../_images/image112.png" src="../_images/image112.png" />
+<p><strong>Hinweis:</strong> die bis hier gezeigten Schritte beziehen sich nur auf das Erstellen eines CMS Accounts in der WebGIS Cloud. Bei einer WebGIS Installation bei einem Kunden erfolgt das Anlegen eines Neues CMS über die Datei _config/cms.config im CMS Installationsverzeichnis. Dabei handelt es sich um eine JSON Datei. Dort muss Wurzelverzeichnis eines Neues CMS und weitere Parameter für das Veröffentlichen des CMS zu einer cms.xml Datei angeführt werden. Die genaue Struktur kann man der CMS Installationsdokumentation entnehmen.
+Die weiteren Schritte zur Parametrierung im CMS sollte sich gleich wie in der WebGIS Cloud verhalten.</p>
+</div>
+<div class="section" id="cms-web-oberflache">
+<h2>CMS Web Oberfläche<a class="headerlink" href="#cms-web-oberflache" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Über die Eigenschaftenseite des CMS Accounts kommt man mit dem Button <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">CMS</span> <span class="pre">Account</span></code> zur eigentlichen CMS Web-Oberfläche (der erste Aufruf kann einige Sekunden dauern, da hier noch der CMS Baum angelegt wird).</p>
+<img alt="../_images/image114.png" src="../_images/image114.png" />
+<p>Im ersten Schritt sollten einmal Hintergrunddienste angelegt werden.</p>
+<p><strong>Hinweis:</strong> In der Praxis würde man in einem leeren CMS zuerst auch eine Rechteckausdehnungen definieren. Diese sind im WebGIS 5 notwendig um überhaupt eine Karte Initialisieren zu können. In diesem Objekte wird nicht nur die koordinative Ausdehnung einer Karte, sondern auch die Maßstäbe (Resolutions) angeführt. Diese müssen den Auflösungen der eingebunden Tile Caches ensprechen.
+In der Cloud können wir allerdings später vorgefertigte Ausdehnung für WebMercator aus dem öffentlichen CMS „webgiscloud“ verwenden.
+Im öffentlichen Cloud CMS „webgiscloud“ sind ebenfalls die Basemap.at Tiles bereits vorhanden und könnten verwendet werden. Trotzdem werden diese hier zur Demonstration eingebunden.</p>
+</div>
+<div class="section" id="wmts-tilecache-dienst-einbinden">
+<h2>WMTS Tilecache Dienst einbinden<a class="headerlink" href="#wmts-tilecache-dienst-einbinden" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Dazu im CMS Baum zu <code class="docutils literal notranslate"><span class="pre">Dienste/OGC</span> <span class="pre">Dienst/WMTS</span></code> wechseln:</p>
+<img alt="../_images/image115.png" src="../_images/image115.png" />
+<p>Auf <code class="docutils literal notranslate"><span class="pre">Neuen</span> <span class="pre">Dienst</span> <span class="pre">einbinden</span></code> klicken</p>
+<p>Im Dialog die Url zum WMTS Dienst eingeben (<a class="reference external" href="https://www.basemap.at/wmts/1.0.0/WMTSCapabilities.xml">https://www.basemap.at/wmts/1.0.0/WMTSCapabilities.xml</a>) und auf <code class="docutils literal notranslate"><span class="pre">Aktualisieren</span></code> klicken:</p>
+<img alt="../_images/image116.png" src="../_images/image116.png" />
+<p>Die fehlenden Werte werden automatisch ausgefüllt. Im Falle von WMTS kann noch der gewünschte Tiled-Layer ausgewählt werden, wodurch sich wiederum die restliche Werte anpassen.</p>
+<p>Danach auf <code class="docutils literal notranslate"><span class="pre">Übernehmen</span></code> klicken:</p>
+<p><strong>Achtung:</strong> Damit ein Dienst später auch wie ein Hintergrunddienst geschalten werden kann, muss in den Erweiterten Eigenschaften noch das Wert Basemap auf „true“ gesetzt werden.
+Das Web CMS sollte das automatisch erkennen von richtig ausfüllen. Sollte es sich beim dem Dienst noch zusätzlich um einen Overlay Tile Cache handelt (Straßennamen über Orhtofoto), muss auf die gleiche Weise noch für die Option „Overlay“ gehandhabt werden.</p>
+<img alt="../_images/image118.png" src="../_images/image118.png" />
+<p>Auf den Dienst klicken:</p>
+<img alt="../_images/image117.png" src="../_images/image117.png" />
+<img alt="../_images/image119.png" src="../_images/image119.png" />
+<p>Auf die gleiche Weise kann nur verfahren werden, um noch weiter Tiled-Layer der Basemap hinzuzuladen.</p>
+<p><strong>Hinweis:</strong> Das Einbinden eines Dienstes als WMTS hat den Vorteil, dass hier auch gleich Beschreibungen und Copyright Verweise vorhanden sind. Diese werden direkt übernommen und später im Viewer angezeigt.</p>
+</div>
+<div class="section" id="arcgis-server-dienst-einbinden">
+<h2>ArcGIS Server Dienst einbinden<a class="headerlink" href="#arcgis-server-dienst-einbinden" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Dazu im CMS Baum auf <code class="docutils literal notranslate"><span class="pre">Dienste/ArcGIS</span> <span class="pre">Server/MapServer</span> <span class="pre">Dienst</span></code> wechseln:</p>
+<img alt="../_images/image120.png" src="../_images/image120.png" />
+<p>Auf <code class="docutils literal notranslate"><span class="pre">Neuen</span> <span class="pre">Dienst</span> <span class="pre">einbinden</span></code> klicken:</p>
+<img alt="../_images/image121.png" src="../_images/image121.png" />
+<p>Danach auf <code class="docutils literal notranslate"><span class="pre">Services</span> <span class="pre">Aktualisieren</span></code> klicken, einen Namen vergeben und auf <code class="docutils literal notranslate"><span class="pre">Übernehmen</span></code> klicken</p>
+<p><strong>Hinweis:</strong> Wird der Name im Falle von AGS in der MXD gepflegt, wir auch dieser schon automatisch übernommen. Wird dieser nicht gepflegt, seht als Name im Dienst Layer oder Layers =&gt; wird nicht ins CMS übernommen =&gt; zu Allgemein</p>
+<p>Das Übernehmen kann einige Sekunden dauern. Danach kann man in der Ansicht auf den Dienst klicken und kann so noch weitere Eigenschaften des Dienstes bearbeiten:</p>
+<img alt="../_images/image123.png" src="../_images/image123.png" />
+<img alt="../_images/image124.png" src="../_images/image124.png" />
+<p><strong>Export Map Format:</strong>
+Im Normalfall liefert der AGS das Ergebnis eines Kartenrequest im JSON Format zurück. Darin steht dann die Url zum eigentlichen Bild im Output Verzeichnis. In unserem Fall wird das Bild im Outputverzeichnis hinter unserer Filewall abgelegt und ist NICHT über das Internet erreichbar. Das Kartenbild würde somit zwar erstellt werden, ist aber für den Browser nicht erreichbar.
+Abhilfe für dieses Problem schafft der Wert „Image“. Dabei kommt das Ergebnis vom AGS nicht als JSON sondern als Bild (Bytes). Dieses nimmt WebGIS direkt in Empfang und legt es ins „Cloud“ – Output verzeichnis ab, das über das Internet verfügbar ist.
+Diese Methode hat in der Cloud auch den Vorteil, dass über das Internet nicht nachvollzogen werden kann, woher der Kartendienst kommt.
+Client (Broser) &lt;-&gt; WebGIS &lt;-&gt; ArcGIS Server</p>
+<p><strong>Achtung:</strong> Für eine beim Kunden installierte WebGIS Instanz sollte dieser Werte in der Regel leer bzw auf JSON gestellt werden, weil ein Client meistens Zugriff auf das Output Verzeichnis hat. So folgt in der Regel weniger Trafik:
+1.      Client (Browser) &lt;-&gt; WebGIS &lt;-&gt; ArcGIS Server (ImageRequest/JSON)
+2.      Client (Browser)            &lt;-&gt;           Output Verzeichnis</p>
+</div>
+<div class="section" id="layerschaltungen">
+<h2>Layerschaltungen<a class="headerlink" href="#layerschaltungen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Später in Kartenviewer sollte einige ausgewählte Themen auf einfache Weise als Darstellungsvarianten geschalten werden. In der Regel sind Dienste mittlerweile sehr umfangreich und nicht alle Themen sind für einen jeden Anwender intersannt. Darum sind wir dazu übergegangen, nur die jene Themen über den Darstellungsvarianten TOC zugänglich zu machen, die für den Großteil der Anwender relevant sind. Über einen bei den Neuerungen gezeigten Umweg kann ein versierter Anwender bei bedarf auf alle Themen zugreifen. Ein zu Umfangreicher TOC überfordert die meisten Anwender in der Regel.</p>
+<p>Über <em>Schemes</em> kann später sogar noch unterschieden werden, ob ein Anwender über den Desktop oder über ein Mobiles Gerät eingestiegen ist. Für Mobile Geräte kann können Darstellungsvarianten noch weiter eingeschränkt werden bzw. komplett unterschiedlich aussehen (siehe unten).</p>
+<p>Um Layer-Schaltungen zu erstellen muss beim Dienst auf den entsprechenden Abschnitt zu klicken:</p>
+<img alt="../_images/image137.png" src="../_images/image137.png" />
+<p>Eine Layer-Schaltung ist eine Menge von Layern die mit einem Klick geschalten werden können. Ein Anwender kann so mit einem Klick mehre Layer aus dem Dienst schalten ohne von der Struktur des Dienstes etwas wissen zu müssen.</p>
+<p>Bei einfachen Diensten wie hier beim Basisdaten Dienst (besteht hauptsächlich aus Verwaltungsgrenzen) sind in der Regel keine komplizierten Layer-Schaltungen notwendig. Hier ist es legitim, pro Layer eine Layer-Schaltung zu machen. Für diesen Fall sollte man auf den Button <code class="docutils literal notranslate"><span class="pre">Mehrere</span> <span class="pre">Einzellayer-Schaltungen</span> <span class="pre">anlegen</span></code> klicken:</p>
+<img alt="../_images/image125.png" src="../_images/image125.png" />
+<p>Wähle die gewünschten Layer aus und drücke auf <code class="docutils literal notranslate"><span class="pre">Übernehmen</span></code>.</p>
+<p>Die Reihenfolge lässt sich durch Verschieben festlegen. Diese hat später im Viewer aber keine Relevanz, dass das eigentliche Aussehen des Darstellungsvarianten Baumes später unter dem CMS Knoten „Karten Viewer“ (früher GDI) festgelegt wird.</p>
+</div>
+<div class="section" id="darstellungsvarianten-layer-schaltungen-fur-den-viewer-bereitstellen">
+<h2>Darstellungsvarianten (Layer-Schaltungen für den Viewer bereitstellen)<a class="headerlink" href="#darstellungsvarianten-layer-schaltungen-fur-den-viewer-bereitstellen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Dazu um Knoten <code class="docutils literal notranslate"><span class="pre">Karten</span> <span class="pre">Viewer/Darastellungsvarianten</span></code> wechseln</p>
+<img alt="../_images/image128.png" src="../_images/image128.png" />
+<p>Im ersten Schritt ist ein Container zu erstellen. Dieser stellt die oberste Ebene im Darstellungsvarianten TOC dar. Diese Container können später vom Anwender einzeln aufgeklappt werden. Innerhalb eines Containers können sich die eigentlichen Layer-Schaltungen oder eine/mehrere aufklappbare Gruppe(n)  befinden, die wiederum Layer-Schaltungen enthalten können. Die maximale Tiefe ist also drei. Dies gewährleistet auch, dass der Darstellungsvarianten Baum nicht zu komplex wird und der Anwender in der Regel mit wenigen Klicks zum Ziel kommt.</p>
+<p>Im Tutorial parametrieren wir zwei Dienste:</p>
+<ul class="simple">
+<li><p>Basisdaten (Verwaltungsgrenzen)</p></li>
+<li><p>Kataster</p></li>
+</ul>
+<p>Die Layer-Schaltungen beider Dienste sollte sich im Viewer in einen Container „Basisdaten“ befinden.</p>
+<p>Dazu ist dieser Container über den Button <code class="docutils literal notranslate"><span class="pre">Neuen</span> <span class="pre">Container</span> <span class="pre">erstellen</span></code> anzulegen.</p>
+<img alt="../_images/image127.png" src="../_images/image127.png" />
+<p>Innerhalb dieses Containers kann man nun Layer-Schaltungen hinzufügen:</p>
+<img alt="../_images/image129.png" src="../_images/image129.png" />
+<p>In diesem Tutorial möchten wir allerdings noch eine aufklappbare Gruppe mit dem Namen <em>Verwaltungsgrenzen</em> anlegen:</p>
+<img alt="../_images/image130.png" src="../_images/image130.png" />
+<p>Hier können nun die vorhin erstellten Layer Schaltung hinzugefügt werden. Wenn sich im CMS mehre Dienste befinden, muss im Dialog eventuell noch bis zum gewünschten Dienst navigiert werden:</p>
+<img alt="../_images/image131.png" src="../_images/image131.png" />
+<p>Für die hier eingefügten Layer-Schaltungen ist jetzt auch die Reihenfolge für die Auflistung im Viewer relevant. Diese kann durch Ziehen der Knoten festgelegt werden.</p>
+</div>
+<div class="section" id="cms-veroffentlichen">
+<h2>CMS Veröffentlichen<a class="headerlink" href="#cms-veroffentlichen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Um zu überprüfen, wie die bisherige Parametrierung im Viewer aussieht, kann das CMS einmal veröffentlicht werden. Dazu klickt man in der Sidebar auf <code class="docutils literal notranslate"><span class="pre">Deploy</span></code>:</p>
+<img alt="../_images/image132.png" src="../_images/image132.png" />
+<p>Es erscheint ein Dialog mit einer Schaltfläche in der noch einmal der Name und gegebenfalls das Datum der letzten Veröffentlichung angeführt wird.</p>
+<p>Ein Klick auf diese Schaltfläche startet den Erstellungsprozess:</p>
+<img alt="../_images/image133.png" src="../_images/image133.png" />
+<p>Dieser Vorgang kann je nach Größe des CMS Baumes einige Momente dauern. Ist das Erstellen erfolgreich, wird am Ende die Meldung <em>Succeeded</em> ausgegeben und der Dialog kann mit <code class="docutils literal notranslate"><span class="pre">X</span></code> geschlossen werden.</p>
+<p>Treten beim Veröffentlichen Warnungen auf, etwa weil es Darstellungsvarianten gibt, die auf gelöschte Layer-Schaltungen verweisen, bricht der Vorgang ab:</p>
+<img alt="../_images/image35.png" src="../_images/image35.png" />
+<p>Ein CMS mit einer Warnung kann nicht mehr veröffentlicht werden. Zum Lösen des Konfliktes gibt es zwei Möglichkeiten:</p>
+<ol class="arabic simple">
+<li><p>Aufgrund der ausgegebenen Meldung das Problem suchen und den entsprechenden Verweis löschen (hier eine Darstellungsvariante)</p></li>
+<li><p>Die Warnung automatisch löschen</p></li>
+</ol>
+<p>Zu 2:
+Nach der Ausgabe von Warnungen das Fenster schließen. Die Deploy Dialog erscheint jetzt der Hinweis, dass es beim letzten Veröffentlichen Warnungen gegeben hat:</p>
+<img alt="../_images/image36.png" src="../_images/image36.png" />
+<p>Klickt man auf die rote Schaltfläche, wird versucht, die Warnungen automatisch zu beheben, was so viel bedeutet, dass die entsprechenden Verweise gelöscht werden.</p>
+<p><strong>Achtung:</strong> Diesen Vorgang sollte man nur durchführen, wenn das Löschen der zB Layer-Schaltung beabsichtigt war. Ansonsten werden vielleicht unabsichtlich Verweise gelöscht:</p>
+<img alt="../_images/image37.png" src="../_images/image37.png" />
+<p>Nach diesem Vorgang ist die rote Schaltfläche im Deploy Dialog verschwunden und das CMS kann neu Veröffentlicht werden.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="mapbuilder.html" class="btn btn-neutral float-left" title="MapBuilder" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, ENI
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

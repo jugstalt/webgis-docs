@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Usability &#8212; WebGIS Cloud Dokumentation 2020 Dokumentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script src="../../../_static/translations.js"></script>
+    <link rel="index" title="Stichwortverzeichnis" href="../../../genindex.html" />
+    <link rel="search" title="Suche" href="../../../search.html" />
+    <link rel="next" title="Spezielle Themen" href="speziellethemen.html" />
+    <link rel="prev" title="Benutzerdefinierte Marker" href="benutzerdefmarker.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="usability">
+<h1>Usability<a class="headerlink" href="#usability" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Einige Features aus API lassen sich sogenannte Usability-Konstante steuern. Diese können natürlich auch über die custom.js für einzelne Karte oder komplette Portalseiten gesetzt werden.</p>
+<p>Die ClickBubble dient zur besseren Bedienbarkeit des Viewers auf Touch Geräten. Werkezeuge, die einen Klick in die Karte voraussetzen, (z.B. Identify) sind oft schwer zu bedienen, weil ein Klick mit dem Finger meist zu genau ist. Aktiviert man die ClickBubble erscheint diese bei jedem Werkzeug, das Klick-Interaktion voraussetzt:</p>
+<img alt="../../../_images/image4.png" src="../../../_images/image4.png" />
+<p>Der Anwender kann jetzt nicht mehr wie gewohnt in die Karte klicken, sondern zieht die Bubble an den gewünschten Ort um eine Aktion auszulösen. Die Spitze markiert dabei den Punkt, für den die Aktion ausgelöst werden soll. Ist die Bubble am gewünschten Ort, kann sie einfach wieder losgelassen werden und kehrt automatisch an den rechten oberen Rand zurück und die Aktion (z.B. Identify) wird gestartet.</p>
+<p>Klickt der Anwender auf die Bubble (ohne ziehen) öffnet sich eine Beschreibung, wie diese bedient werden kann.</p>
+<p>Manche Werkezuge setzen auch die Möglichkeit einer rechten Maustaste voraus (z.B. das Kontextmenü für den Sketch beim Messen oder Editieren). Dafür gibt es eine weitere Bubble, die aktiviert werden kann. Auf diese kann der Anwender Klicken, um das Kontextmenü zu öffnen. Ebenso kann man diese an eine bestimmte Stelle ziehen, um genau für einen bestimmten Ort das Kontextmenü zu öffnen (z.B. einen bestimmten Vertex verschieben oder löschen, rechtwinklig zu Kante konstruieren, usw.).</p>
+<img alt="../../../_images/image5.png" src="../../../_images/image5.png" />
+<p>Mit diesen Werkzeugen stehen einem versierten Anwender alle Möglichkeiten des Konstruierens (inkl. Snapping) auch auf mobilen Geräten zur Verfügung.</p>
+<p>Diese Werkzeuge stehen normalerweise nicht zur Verfügung, sondern müssen über die custom.js  aktiviert werden.</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="c1">// ClickBubble aktiviern</span>
+<span class="nx">webgis</span><span class="p">.</span><span class="nx">usability</span><span class="p">.</span><span class="nx">clickBubble</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="c1">// ContextMenu Bubble aktiviern</span>
+<span class="nx">webgis</span><span class="p">.</span><span class="nx">usability</span><span class="p">.</span><span class="nx">contextMenuBubble</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Da die Werkzeuge nur Geräten mit Touch Bedienung praktisch sind, kann anstelle von true/false auch die Methode isTouchDevice() verwendet werden:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="nx">webgis</span><span class="p">.</span><span class="nx">usability</span><span class="p">.</span><span class="nx">clickBubble</span> <span class="o">=</span>
+<span class="nx">webgis</span><span class="p">.</span><span class="nx">usability</span><span class="p">.</span><span class="nx">contextMenuBubble</span> <span class="o">=</span> <span class="nx">webgis</span><span class="p">.</span><span class="nx">isTouchDevice</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Beim Sketch bestand bisher für den Anwender die Möglichkeit, auf einen Vertex zu klicken und so ein Popup Menü zu öffnen:</p>
+<img alt="../../../_images/image6.png" src="../../../_images/image6.png" />
+<p>Dieses ist allerdings nicht mehr notwendig, wenn eine rechte Maustaste bzw. die ContextMenu Bubble zur Verfügung steht. Mit folgender Variable kann dieses Menü trotzdem wieder aktivieren:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="nx">webgis</span><span class="p">.</span><span class="nx">usability</span><span class="p">.</span><span class="nx">sketchMarkerPopup</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>  <span class="c1">// Empfehlung: false!!</span>
+</pre></div>
+</div>
+<p>Ebenfalls ist es oft wünschenswert, dem Anwender weniger Werkzeuge beim Zeichnen anzubieten. So sind die Konstruktionswerkzeuge eher für versierte Anwender und nicht in jeder Karte sinnvoll. Mit folgender Variabel können die Konstruktionswerkzeuge deaktiviert werden:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="nx">webgis</span><span class="p">.</span><span class="nx">usability</span><span class="p">.</span><span class="nx">constructionTools</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Das komplette Kontextmenü beim Zeichnen kann man mit:</p>
+<div class="highlight-JavaScript notranslate"><div class="highlight"><pre><span></span><span class="nx">webgis</span><span class="p">.</span><span class="nx">usability</span><span class="p">.</span><span class="nx">sketchContextMenu</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">WebGIS Cloud Dokumentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Inhalt:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../DataLinq/index.html">DataLinq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../MapBuilder/index.html">Map Builder</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Karten Viewer</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Parametrierung und Administration von Karten</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Tutorials/index.html">Tutorials</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Karten Viewer</a><ul>
+  <li><a href="../index.html">Parametrierung und Administration von Karten</a><ul>
+  <li><a href="index.html">custom.js</a><ul>
+      <li>Previous: <a href="benutzerdefmarker.html" title="vorheriges Kapitel">Benutzerdefinierte Marker</a></li>
+      <li>Next: <a href="speziellethemen.html" title="nächstes Kapitel">Spezielle Themen</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Schnellsuche</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Los" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, ENI.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/KartenViewer/Parametrierung_Administration/CustomJS/usability.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

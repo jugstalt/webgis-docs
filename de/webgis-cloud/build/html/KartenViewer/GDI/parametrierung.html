@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="de" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="de" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Parametrierung von Darstellungsvariaten &mdash; WebGIS Cloud Dokumentation 2020 Dokumentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/eni.js"></script>
+        <script src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/eni.css" type="text/css" />
+    <link rel="index" title="Stichwortverzeichnis" href="../../genindex.html" />
+    <link rel="search" title="Suche" href="../../search.html" />
+    <link rel="next" title="GDI Schemes verwenden" href="verwendung.html" />
+    <link rel="prev" title="Allgemeines" href="allgemeines.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> WebGIS Cloud Dokumentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Inhalt:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../DataLinq/index.html">DataLinq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../MapBuilder/index.html">Map Builder</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Karten Viewer</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Darstellungsvarianten &amp; Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="allgemeines.html">Allgemeines</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Parametrierung von Darstellungsvariaten</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dienst-darstellungsvarianten">Dienst Darstellungsvarianten</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#container-gruppen-darstellungsvarianten">Container – Gruppen – Darstellungsvarianten</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sichtbarkeit-von-container-und-gruppen">Sichtbarkeit von Container und Gruppen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gdi-schemes-parametrieren">GDI Schemes Parametrieren</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="verwendung.html">GDI Schemes verwenden</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CustomJS/index.html">custom.js</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ParametrierterAufruf/index.html">Parametrierter Aufruf von Karten</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/index.html">Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">WebGIS Cloud Dokumentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Karten Viewer</a> &raquo;</li>
+        
+          <li><a href="index.html">Darstellungsvarianten &amp; Karten Viewer Schemes</a> &raquo;</li>
+        
+      <li>Parametrierung von Darstellungsvariaten</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/KartenViewer/GDI/parametrierung.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="parametrierung-von-darstellungsvariaten">
+<h1>Parametrierung von Darstellungsvariaten<a class="headerlink" href="#parametrierung-von-darstellungsvariaten" title="Link zu dieser Überschrift">¶</a></h1>
+<p>Darstellungsvarianten erscheinen im Viewer ähnlich wie ein Inhaltsverzeichnis. Die Anzahl der ebenen ist allerdings begrenz. Da man durch richtige Parametrierung die Anzahl der Darstellungsvarianten aber klein halten kann, ist eine tiefere Verschachtelung auch nicht notwendig.</p>
+<p>Es gibt insgesamt drei Ebenen:</p>
+<img alt="../../_images/ad2_11.png" src="../../_images/ad2_11.png" />
+<p>Wie hier gezeigt unterscheiden sich Darstellungsvarianten von normalen schaltbaren Layern darin, dass sie mehre Layer auf einmal schalten können. Aufgrund der Vielfalt der Themen die entstehen kann, wenn sich Karten aus mehreren Diensten zusammensetzten, wird es für den Anwender manchmal sehr schwer, sich in einem klassischen TOC mit Gruppen und verschachtelten Untergruppen zurecht zu finden. In den meisten Fällen reichen in der Karte wenige Standardschaltungen (und deren Kombination). Bei diesen Standardschaltungen sprechen wir von Darstellungsvarianten. Der Anwender will beispielsweise nicht, um den Kataster einzuschalten, mehre Themen anklicken (Grundstücksgrenzen, Grundstücksnummer, Nutzungsgrenzen, Nutzungssymbole, Sonstige Linien, S-Klammer, Z-Klammern, …) sondern es ist eine Standardschaltung „Kataster ein/aus“ ausreichend.</p>
+<img alt="../../_images/image21.png" src="../../_images/image21.png" />
+<p>Spezielle Themen (beispielswiese die Grenzpunkte) könnte dann zusätzlich noch über eine Darstellungsvariante mit Checkbox aus- oder eingeschalten werden.</p>
+<img alt="../../_images/image31.png" src="../../_images/image31.png" />
+<p>Um Darstellungsvarianten zu parametrieren, sollte man daher auch wissen, was die Anwender brauchen. Das stellt natürlich einen gewissen aufwand dar, der sich allerdings lohnt, da man damit einfache und auf die Anforderungen angepasste Lösungen erstellen kann.</p>
+<div class="section" id="dienst-darstellungsvarianten">
+<h2>Dienst Darstellungsvarianten<a class="headerlink" href="#dienst-darstellungsvarianten" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Die Parametrierung der Darstellungsvarianten beginnt im CMS bei den Diensten. Für jeden Dienst gibt es den Ordner Darstellungsvarianten. Hier kann man beliebig viele Darstellungsvarianten anlegen, jede entspricht dabei einer bestimmten Layerschaltung. Über die Eigenschaften einer Darstellungsvariante kommt man über den Punkt „Sichtbare Layer“ zu einer Auswahl der Layer (Button „…“ ganz rechts im Eingabefeld). Hier kann man angeben, welche Layer von einer Darstellungsvariante betroffen sind:</p>
+<img alt="../../_images/image41.png" src="../../_images/image41.png" />
+<p>Eine Darstellungsvariante kann mehre Layer beeinflussen. So kann eine Darstellungsvariante beispielsweise den gesamten Kataster schalten. Dem Anwender kann dabei egal sein aus wie vielen Layern der Kataster besteht.</p>
+<p>Wie die Darstellungsvariante später in der Karte geschalten wird (zB nur diese Layer einschalten oder diese Layer optional dazuschalten), wird später festgelegt (siehe nächster Abschnitt).</p>
+<p>Der Bereich „Nur wenn Dienst mit Gdi verwendet wird“ ist nicht mehr relevant, sondern kann jetzt über den GDI Knoten im CMS abgebildet werden (siehe nächster Abschnitt).</p>
+<p><em>Vereinfachte Variante:</em></p>
+<p>Die einfachste Variante einer Darstellungsvariante ist eine, die auch nur einen Layer beeinflusst. Stellt man diese dann später in der Karte auch noch als Checkbox dar, würde das einem einfach schaltbaren Layer im klassischen TOC gleich kommen. Da dieser Fall immer wieder vorkommt (gerade am Anfang, wenn nicht ganz klar ist, welche Darstellungsvarianten sinnvoll sind), gibt es zum Anlegen diese Darstellungsvarianten eine Abkürzung (ohne diese Abkürzung müsste man für jeden Layer einzeln eine Darstellungsvariante anlegen und mit den entsprechend Layer verknüpfen). Die Vorgehensweise ist hier folgende:</p>
+<ol class="arabic simple">
+<li><p>Im CMS beim entsprechenden Dienst in den Knoten „Darstellungsvarianten“ wechseln.</p></li>
+<li><p>Im Menü erscheint neben „Neue Darstellungsvariante“ auch der Punkt „Mehrere Darstellungsvarianten anlegen“:</p></li>
+</ol>
+<blockquote>
+<div><img alt="../../_images/image51.png" src="../../_images/image51.png" />
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Ein Klick auf den Button öffnet einen Dialog der alle Themen des Dienstes anzeigt:</p></li>
+</ol>
+<blockquote>
+<div><img alt="../../_images/image61.png" src="../../_images/image61.png" />
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Alle auswählen und mit OK bestätigen</p></li>
+<li><p>Für jeden Layer wird genau ein Darstellungsvariante angelegt, die diesen Layer beeinflusst:</p></li>
+</ol>
+<blockquote>
+<div><img alt="../../_images/image71.png" src="../../_images/image71.png" />
+</div></blockquote>
+<p>Die Url (eindeutige ID) für diese Darstellungsvariante wird automatisch aus dem Layernamen ermittelt. Ebenso wird der Name der Darstellungsvariante aus dem Layernamen übernommen (ohne Gruppenbezeichnung).</p>
+<p><strong>Achtung:</strong> Man kann diese Methode öfter Verwenden. Besteht eine Darstellungsvariante mit der aus dem Namen ermittelten Url (eindeutige ID) bereits, wir sich überschrieben!</p>
+<p><strong>Hinweis:</strong> Die hier gezeigte vereinfachte Variante sollte nur bei sehr einfachen Diensten verwendet werden, da ansonsten der Darstellungsvarianten Baum schnell sehr unübersichtlich wird. Ebenso kann diese Variante verwendet werden um mit dem Parametrieren von Darstellungsvarianten zu beginnen und Idee der Möglichkeiten von Darstellungsvarianten zu bekommen.</p>
+</div>
+<div class="section" id="container-gruppen-darstellungsvarianten">
+<h2>Container – Gruppen – Darstellungsvarianten<a class="headerlink" href="#container-gruppen-darstellungsvarianten" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Darstellungsvarianten werden jetzt nicht mehr bei den Karten definiert, sondern im CMS unter dem Knoten GDI:</p>
+<img alt="../../_images/image81.png" src="../../_images/image81.png" />
+<p>Direkt unter Darstellungsvarianten können Container angelegt werden. Container sind wie oben schon erwählt, die oberste Ebene im Darstellungsvarianten-Baum.</p>
+<img alt="../../_images/image9.png" src="../../_images/image9.png" />
+<p>Der Container „Hintergrund (Basemap)“ wird automatisch vom KartenViewer angelegt, wenn sich Tiling Dienste in der Karte befinden.</p>
+<p>Zum Erstellen klickt man im Knoten GDI/Darstellungsvariaten auf den Button „Neuen Container erstellen“. Danach muss man einen Namen und eine Url-Id für den Container vergeben.</p>
+<p>Innerhalb eines Containers lassen sich Darstellungsvarianten hinzufügen oder eine Gruppe anlegen:</p>
+<img alt="../../_images/image10.png" src="../../_images/image10.png" />
+<p>Wählt man <em>Darstellungsvariante hinzufügen</em> kann man auf eine (mehrere) Darstellungsvariante(n) aus den Diensten zugreifen und diese einfügen. Die Darstellungsvarianten für die einzelnen Dienste müssen vorher wie oben gezeigt angelegt werden. Eine Darstellungsvariante eines Dienstes gibt an, welche Layer von dieser Darstellungsvariante betroffen sind (siehe oben).</p>
+<p>Erst nach dem Einfügen einer Darstellungsvariante in einen Container kann man entscheiden, wie diese Darstellungsvariante in Erscheinung tritt. Entscheidend ist der <em>DisplayStyle</em>, der folgende Werte annehmen kann:</p>
+<ul class="simple">
+<li><p><em>Button:</em> die Darstellungsvariante erscheint als Button. Der Anwender kann auf diesen Button klicken und schaltet vom entsprechenden Dienst nur die Layer ein, die angegeben sind. Alle anderen Layer für diesen Dienst werden ausgeblendet. Buttons erscheinen in folgender Form:</p></li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/image11.png" src="../../_images/image11.png" />
+<p>Hier gibt es beispielsweise auch eine Darstellungsvariante, die den gesamten Kataster Dienst ausschaltet. Beim Dienst ist das eine Darstellungsvariante bei der keine Layer angeben werden. Da diese dann im Container als Button eingefügt wurde, werden alle nicht betroffen Layer (in diesem Falle alle Layer) dieses Dienstes ausgeschalten, danach alle betroffenen Layer (in diesem Fall keiner) sichtbar geschalten.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><em>Checkbox:</em> Die Darstellungsvariante erscheint mit einer Checkbox. Der Anwender kann auf diese Checkbox klicken und die betroffenen Layer aus dem Dienst werden sichtbar bzw. unsichtbar geschalten:</p></li>
+</ul>
+<blockquote>
+<div><img alt="../../_images/image12.png" src="../../_images/image12.png" />
+<p>Bei Checkboxes wird die Sichtbarkeit aller nicht betroffen Layer in einem Dienst nicht verändert. Checkboxes dienen also dazu, Themen optional durch den Anwender hinzuschalten bzw. wegzuschalten.</p>
+</div></blockquote>
+<ul>
+<li><p><em>Dropdown:</em> Diese Option gibt es nur für Gruppen innerhalb eines Containers. Eine Gruppe kann mehrere Darstellungsvarianten aus einem oder mehreren Diensten enthalten. Ist die Gruppe ein Dropdown, kann man diese Gruppe im Viewer aufklappen und auf die darunter liegenden Darstellungsvarianten zugreifen. Diese können dann wieder Buttons oder Checkboxes sein:</p>
+<img alt="../../_images/image13.png" src="../../_images/image13.png" />
+</li>
+</ul>
+<p>Gruppen enthalten wir erwähnt mehre Darstellungsvarianten aus einem oder mehreren Diensten. Eine Gruppe kann außer als Dropdown aber auch wie eine einfache Darstellungsvariante als Button oder Checkbox erscheinen. Das Verhalten ist dann gleich als wäre die Gruppe eine einfache Darstellungsvariante:</p>
+<ul class="simple">
+<li><p><em>Gruppe als Button:</em> Alle Layer aus betroffenen Diensten werden ausgeblendet und nur die betroffenen Layer aus den Dienst-Darstellungsvarianten eingeschalten.</p></li>
+<li><p><em>Gruppe als Checkbox:</em> Die Layer aus den betroffenen Dienst-Darstellungsvarianten werden ein oder ausgeschalten. Die Sichtbarkeit aller anderen Layer bleibt erhalten.</p></li>
+</ul>
+<p><em>Vereinfachte Variante:</em></p>
+<p>Möchte man zum Beginnen die oben erwähnte vereinfachte Variante (Eine Darstellungsvariante pro Layer) umsetzen, ist die Vorgehensweise folgende:</p>
+<ol class="arabic simple">
+<li><p>Einen Container anlegen</p></li>
+<li><p>Eine Gruppe anlegen (optional). Nach den anlegen kann man in den Eigenschaften der Gruppen festlegen, das diese erweiterbar (Dropdown) ist:</p></li>
+</ol>
+<blockquote>
+<div><img alt="../../_images/image14.png" src="../../_images/image14.png" />
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Unterhalb der Gruppe (oder des Conatiners) auf Darstellungsvariante hinzufügen klicken</p></li>
+<li><p>Im Dialog zum entsprechend Dienst gehen und mehrere oder alle Darstellungsvarianten des Dienstes auswählen. Danach den Dialog mit „OK“ bestätigen.</p></li>
+<li><p>In der Liste erscheinen die ausgewählten Darstellungsvarianten. Über die Eigenschaften kann überprüft werden, ob der DisplayStyle „Checkbox“ entspricht. Damit ist die Darstellungsvariante wie ein einfacher Layer schaltbar:</p></li>
+</ol>
+<blockquote>
+<div><img alt="../../_images/image15.png" src="../../_images/image15.png" />
+</div></blockquote>
+</div>
+<div class="section" id="sichtbarkeit-von-container-und-gruppen">
+<h2>Sichtbarkeit von Container und Gruppen<a class="headerlink" href="#sichtbarkeit-von-container-und-gruppen" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Da Container und Gruppen Darstellungsvarianten aus mehreren Diensten enthalten können, wird die Sichtbarkeit dieser Elemente ein Thema. Unter Sichtbarkeit verstehen wir hier, ob der Container oder die Gruppe im TOC angezeigt wird, also für den Anwender sichtbar sind. Standardmäßig wird ein Container und eine Gruppe dargestellt, wenn ein betroffener Dienst in der Karte vorkommt. Das ist aber nicht immer wünschenswert. Man kann sich etwa folgendes Szenario vorstellen:</p>
+<p>Es gibt einen Container mit Themen aus der Geologie. Darin gibt es auch einen Gruppe, die als Button dargestellt wird und mit der die Standardansicht für die Geologie anzeigen werden soll. Über diesen Button werden unterschiedliche Themen aus dem Geologie Dienst eingeschalten, aus einem Basis Dienst die Hektarnetzmarken eingeschalten und alle Themen aus dem Katasterdienst ausgeblendet (weil der Geologe im Standard nicht mehr sehen will). Das heißt, dass die Standard-Geologie Darstellungsgruppe (Button), drei Dienste beeinflusst (Geologie, Basisdaten, Kataster).</p>
+<p>Jetzt ergibt sich allerdings folgendes Problem: Ein Container oder eine Gruppe wird in der Karte im Darstellungsvarianten-Baum angezeigt, wenn ein Dienst in der Karte ist, der von einer Gruppe beeinflusst wird. Da die Geologie Darstellungsvariante jetzt einen Basisdaten Dienst und den Kataster Dienst beeinflusst, wird dieser Container auch immer angezeigt, wenn einer dieser Dienste in einer Karte eingebunden ist. Das wird dann störend, wenn man eine Karte mit einem dieser Dienste baut, in der der Dienst Geologie nicht vorkommt, weil dann der Container trotzdem angezeigt wird. Das WebGIS hat ja keine Ahnung, dass diese Darstellungsvariante nur einen Sinn macht, wenn auch der Geologie Dienst in der Karte ist.</p>
+<p>Um dieses Problem zu lösen, kann bei jeder Darstellungsvariante innerhalb einer Gruppe angeben werden, wann diese sichtbar ist. Eine Gruppe wird im Baum dann nur sichtbar, wenn sie mindestens eine sichtbare Darstellungsvariante enthält.</p>
+<p>Die Sichtbarkeit für eine Darstellungsvariante ist abhängig, ob ein Dienst in der Karte eingebunden ist. Im CMS hat man bei jeder Darstellungsvariante in der Gruppe folgende Sichtbarkeitsmöglichkeiten:</p>
+<img alt="../../_images/image16.png" src="../../_images/image16.png" />
+<ul class="simple">
+<li><p><em>Sichtbar, wenn dieser Dienst in Karte:</em> Die Darstellungsvariante ist nur sichtbar, wenn der Dienst, in dem sie parametriert wurde, in der Karte vorkommt. In diesem Beispiel ist diese Darstellungsvariante (bzw. der dazugehörige Dienst) nicht für die Sichtbarkeit der Gruppe in der sie sich befindet verantwortlich. Wenn also nur dieser Dienst in der Karte eingebunden wäre, wäre diese Darstellungsvariante nicht im TOC sichtbar, was beim obigen Beispiel mit der Geologie wünschenswert ist. In dieser Gruppe würde man nur bei jenen Darstellungsvarianten diesen Wert auf „true“ setzen, die auch zum Geologie Dienst gehören. Eine Generelle Regel für die Parametrierung lautet: Handelt es sich bei einer Gruppe um einen Button, Checkbox oder Dropdown (also immer) dann sollte dieser Wert für alle Darstellungsvarianten, die nicht zum eigentlichen Thema gehören (also beispielsweise Kataster gehört nicht zu Geologie) auf „false“ gesetzt werden. Ist nur der betreffende Dienst in der Karte, ist diese Variante nicht sichtbar. Hat die Gruppe keine sichtbaren Darstellungsvarianten unter sich wird sie im Baum auch nicht angezeigt. Ein Container ohne sichtbare Gruppen wird auch nicht angezeigt. Fügt man dann allerdings einen Dienst hinzu, der eine Darstellungsvariante mit dem Wert „true“ für eine Darstellungsvariante in dieser Gruppe besitzt, wird sowohl die Gruppe als auch der Container sichtbar. Die darunterliegenden Darstellungsvarianten werden ab dem Zeitpunkt mit dieser Gruppe mitgeschalten, wenn diese für den Anwender sichtbar ist, egal ob dieser Wert auf „true“ oder „false“ gesetzt ist.</p></li>
+<li><p><em>Sichtbar, wenn einer dieser Dienste in der Karte vorkommt:</em> Sollte diese Darstellungsvariante sichtbar sein, wenn ein anderen Dienst in der Karte vorkommt, muss dieser hier eingetragen werden. Einzutragen ist die Url-Id des Dienstes. Es können auch mehrere Dienste mit Beistrich getrennt angeführt werden. Diese Option sollte normalerwiese nur sehr selten und in Spezialfällen notwendig sein.</p></li>
+</ul>
+</div>
+<div class="section" id="gdi-schemes-parametrieren">
+<h2>GDI Schemes Parametrieren<a class="headerlink" href="#gdi-schemes-parametrieren" title="Link zu dieser Überschrift">¶</a></h2>
+<p>Ein GDI Scheme ist eine eigene Variante von Darstellungsvarianten für speziellere Zwecke. Ein möglicher Anwendungsfall ist beispielsweise, dass in einer mobilen Anwendung nicht alle Darstellungsvarianten angezeigt werden sollten, sondern nur eine abgespeckte Untermenge, um Scrollen am Handy zu vermeiden. Weiters könnte man für eine Spezialanwendung ein eigenes Schema mit Darstellungsvarianten basteln, weil weder die Standard noch die mobilen Darstellungsvarianten optimal für diese Anwendung sind. Bei WebGIS 4 hätte man zu diesem Zweck eine eigene Karte gebaut und dort die Darstellungsvarianten nur für diese Applikation angepasst. Für WebGIS 5 erledigt man das über ein GDI Schema. Dieses Schema kann man dem Kartenviewer dann über einen Url-Parameter mitgeben. Es ist auch möglich, dass das verwendet Schema abhängig von der Bildschirmgröße ist, die dem Anwender zur Verfügung stehen.</p>
+<div class="section" id="best-practice">
+<h3>Best Practice<a class="headerlink" href="#best-practice" title="Link zu dieser Überschrift">¶</a></h3>
+<p>Als gute Praxis hat sich gezeigt, dass man in einem ersten Schritt einmal wie oben beschreiben, die Darstellungsvarianten parametriert. Diese Darstellungsvarianten sollten dem Standard entsprechen, wie er am Desktop (WebGIS 4 und 5) angezeigt wird. Da WebGIS 4 nicht auf die GDI Schemes zugreift und WebGIS 4 hauptsächlich am Desktop verwendet wird, sollten die Darstellungsvarianten hier dem Standard für Desktop entsprechen!</p>
+<p>In einem nächsten Schritt sollte man ein neues Schema für die mobilen Anwendungen angelegen. Dazu gibt es im GDI Konten im CMS den Ordner „GDI Schemata“. Unter diesem lässt sich ein neues Schema anlegen:</p>
+<img alt="../../_images/image17.png" src="../../_images/image17.png" />
+<p>Dieses Schema erscheint dann als Ordner, in dem sich wieder die gleiche Struktur von Verzeichnissen befindet wie im GDI Konten (natürlich sind noch alle Ordner leer).</p>
+<img alt="../../_images/image18.png" src="../../_images/image18.png" />
+<p>Unter „Darstellungsvarianten“ kann man jetzt wieder beginnen die Darstellungsvarianten für die mobilen Anwendungen nachzubauen. Diese Arbeit macht man jetzt natürlich zum Teil doppelt, allerdings vervielfacht sich durch die mobilen Geräte natürlich auch der Anwenderkreis, was den Aufwand wieder gerechtfertigt. Es hilft auch, wenn man das CMS ein zweites Mal öffnet, um die vereinfachten Darstellungsvarianten nachzubauen. Versierte Anwender können sich die notwendigen Darstellungsvarianten auch im Filesystem des CMS Verzeichnisses kopieren. Das erfolgt allerdings auf eigene Gefahr. Ein kopieren direkt im CMS ist zZ noch nicht vorgesehen.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="verwendung.html" class="btn btn-neutral float-right" title="GDI Schemes verwenden" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="allgemeines.html" class="btn btn-neutral float-left" title="Allgemeines" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, ENI
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
