@@ -1,8 +1,0 @@
-Allgemeines
-===========
-
-Mit *GDI Schemes* können im CMS für unterschiedliche Anwendungsbereiche unterschiedliche Darstellungsvarianten, Drucklayouts usw. angelegt werden. Es ist beispielsweise nicht sinnvoll, in einer mobilen Karte am Handy alle Darstellungsvarianten anzuzeigen, die man auch am Desktop sieht. Um ein übermäßiges Scrollen am Handy zu vermeiden, empfiehlt es sich, nur die wichtigsten Darstellungsvarianten am Handy anzuzeigen.
-
-Seit WebGIS 5 kann/braucht man keine Karten mehr im CMS parametrieren. Der Grund für diese Entscheidung war, dass WebGIS 5 eine API bereitstellt, mit der Karten in jede beliebige Webseite eingebaut werden können. Beim Erstellen eines Karten-Controls in einer WebSeite gibt man im Javascript nur noch die gewünschten Dienste an, die angezeigt werden sollten. Außerdem gibt es Möglichkeiten, dem Karten-Control noch Werkzeuge und Widgets hinzuzufügen, unabhängig vom den eingebunden Diensten. Karten im Sinne von CMS-Karten sind somit nicht mehr notwendig. Da auch der Standviewer von WebGIS 5 Portal auf der API basiert, kann auch dieser nicht mehr auf die CMS-Karten zugreifen. Als Ersatz bietet das Portal allerdings einen MapBuilder in Form einer Weboberfläche an.
-
-In diesem Dokument wird gezeigt, wie man diese *GDI Schemes* parametriert und sie dann in unterschiedlichen Anwendungsfällen verwenden kann. Da die *GDI Schemes* hauptsächlich die Darstellungsvarianten betreffen, wird hier im ersten Punkt noch einmal auf das Konzept und die Parametrierung von Darstellungsvarianten eingegangen.
