@@ -272,6 +272,10 @@ Die folgende Liste beschreibt die möglichen Eigenschaften:
 
     Ein Tooltip, der angezeigt wird, wenn man den Mauszeiger über den Button bewegt.
 
+*   ``description``
+
+    Damit kann eine Beschreibung für das Werkzeug angegeben werden. Wenn ein Werkzeug eine Benutzeraktion erfordert (zB in die Karte klicken) wird dieser Text im Werkzeug Dialog angezeigt. Für länge Beschreibungen könne einzelne Absätze im String mit ``|`` getrennt werden.
+
 Für die Eigenschaft ``command`` können verschiede Platzhalter in dir Url eingefügt werden, um Parameter aus der Karte in einen andere Web-Seite zu übergeben. Abhängig vom *tooltype* können unterschiedle Platzhalter verwenden werden, bzw. hab diese unterschiedliche Bedeutungen:
 
 
