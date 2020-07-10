@@ -6,4 +6,4 @@ Tutorials
 
     einfuehrung
     mapbuilder
-    cms
+    cms/index
