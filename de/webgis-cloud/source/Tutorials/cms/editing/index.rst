@@ -34,4 +34,7 @@ wird an einigen Ausgewählten Themen gezeigt.
 .. toctree::
     :maxdepth: 2
 
-    create_edittheme 
+    create_edittheme
+    theme_properties
+    fields
+    snapping 
