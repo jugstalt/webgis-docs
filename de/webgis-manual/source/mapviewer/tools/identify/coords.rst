@@ -11,7 +11,7 @@ als auch Koordinaten eingegeben und angezeigt werden.
    **Tip:** Das Werkzeug kann nicht nur über den Werkzeugkasten aufgerufen werden, sondern öffnet sich auch
    wenn man auf die Mitlaufenden Koordinaten im Kartenviewer klickt:
 
-   .. img/coords1.png
+   .. image:: img/coords1.png
 
 Möchte man zu einer einer bestimmte Koordinate springen, erfolgt dies über das Sub-Werkzeug *Koordinaten eingeben*.
 Zuvor empfiehlt es sich auch einmal die *Eingabe Tipps* aufzuklappen, wo unterschiedliche Eingabemöglichkeiten
@@ -37,6 +37,9 @@ verwendet, werden die Koordinaten in einer Listenansicht im Werkzeugdialog angez
 In der Auswahlliste über der Koordinatenliste kann ein Koordinatensystem gewählt werden. In dem hier
 gewählten Koordinatensystem werden die Koordinaten in der Liste angezeigt.
 
+.. note::
+   Mit dem Koordinaten Werkzeug werden neben XY Koordinaten auch Höhen angezeigt.
+
 Mit dem Button *Marker entferenen* verschwinden alle Marker aus der Karte und Einträge aus der Liste.
 
 Koordinaten herunterladen
@@ -45,7 +48,7 @@ Koordinaten herunterladen
 Die Liste der Koordinaten kann als CSV Datei herunter geladen werden. Dazu dient das Sub-Werkzeug
 *Koordinaten herunterladen (CSV)*. Herunter geladen werden die Koordinaten in dem Koordinatensystem,
 das aktuell für die Koordinatenliste ausgewählt ist. Es wird also die Liste so herunter geladen, wie sie im 
-Werkzeugdialog angezeigt wird.
+Werkzeugdialog angezeigt wird (inklusive Höhenwerte)
 
 Bei CSV handelt es sich um eine Text Datei, die in jedem Texteditor geöffnet werden kann. Auch 
 Tabellenkalkulationsprogramme wie MS-Excel können mit diesen Datei in der Regel umgehen:
@@ -65,6 +68,9 @@ Danach kann die Datei hochgeladen werden.
 
 Ist der Upload erfolgreich, werden die Koordinaten durch Marker in der Karte markiert und als Koordinatenliste 
 im Werkzeugdialog angezeigt.
+
+.. note:: 
+   Für jede Koordinate werden auch die Höhen immer wieder neu ermittelt.
 
 
 Koordinaten projizieren (umwandeln)

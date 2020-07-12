@@ -9,7 +9,9 @@ Unter *Werkzeuge* befinden sich folgende Werkzeuge (abhängig von den Einstellun
    :maxdepth: 3
 
 
-   measure-line.rst
-   measure-area.rst
-   circle.rst
-   Redlining/index.rst
+   measure-line
+   measure-area
+   circle
+   profile
+   Redlining/index
+   print
