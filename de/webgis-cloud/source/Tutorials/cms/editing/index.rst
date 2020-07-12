@@ -37,4 +37,7 @@ wird an einigen Ausgewählten Themen gezeigt.
     create_edittheme
     theme_properties
     fields
+    fields_validation
+    fields_autovalues
+    fields_domains
     snapping 
