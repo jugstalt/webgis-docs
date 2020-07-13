@@ -35,3 +35,19 @@ und eine neues Objekte angelegt werden können:
 
 .. image:: img/edit5.png
 
+Je nach Editthema kann es unterschiedliche Methoden zum Speichern eines neuen Objektes geben. Neben dem ``Speichern``
+kann es beispielsweise auch noch ``Speichern aus Auswählen`` geben:
+
+.. image:: img/edit6.png
+
+Dabei wird die Editierumgebung verlassen und das neue erstellte Objekte wie nach einer Abfrage ausgewählt (selektiert) in der Karte
+angezeigt. Das kann hilfreich sein, wenn das neu erstellte Objekte beispielsweise für eine Nachbarschaftsbrechnung weiterverwendet werden sollte.
+
+Je nach Anwendung kann der Kartenautor auch noch weiter Möglichkeiten anbieten, zB ``Speichern und alle Eingabefelder`` beigehalten (im 
+Normfall werden nach den Speichern alle Eingabefelder auf den Standard zurückgesetzt)  
+
+Das Erstellen von Objekte kann mit dem ``Beenden`` Button oder durch Schließen des Werkzeugdialogs beendet werden.
+
+.. note::
+   Auf Endgeräten kann sich der hier beschriebene Ablauf leicht ändern. Hier muss zuerst die Geometrie erfasst werden. Danach kann man
+   über einen Button ``Sachdaten bearbeiten`` zur Eingabemaske für die Sachdaten wechseln. Darin befindest sich dann auch der ``Speichern`` Button. 

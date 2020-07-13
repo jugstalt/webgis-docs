@@ -22,3 +22,5 @@ Button im Werkzeugdialog gestartet werden.
    edit_create
    edit_update
    edit_delete
+   edit_undo
+   edit_selection
