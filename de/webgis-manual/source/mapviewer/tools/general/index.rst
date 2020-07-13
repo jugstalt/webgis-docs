@@ -13,5 +13,6 @@ Unter *Werkzeuge* befinden sich folgende Werkzeuge (abhängig von den Einstellun
    measure-area
    circle
    profile
-   Redlining/index
+   redlining/index
+   editing/index
    print

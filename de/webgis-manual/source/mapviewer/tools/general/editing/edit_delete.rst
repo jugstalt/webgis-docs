@@ -1,0 +1,2 @@
+Bestehendes Objekt löschen
+==========================
