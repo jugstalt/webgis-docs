@@ -8,7 +8,8 @@ Unter *Abfragen* befinden sich folgende Werkzeuge (abhängig von den Einstellung
 .. toctree::
    :maxdepth: 3
 
-   identify.rst
-   coords.rst
-   stat.rst
-   table.rst
+   identify
+   coords
+   rasterinfo
+   stat
+   table

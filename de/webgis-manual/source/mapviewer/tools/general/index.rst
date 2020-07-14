@@ -15,4 +15,5 @@ Unter *Werkzeuge* befinden sich folgende Werkzeuge (abhängig von den Einstellun
    profile
    redlining/index
    editing/index
+   georeference
    print
