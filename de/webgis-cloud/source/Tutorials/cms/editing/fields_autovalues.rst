@@ -17,12 +17,12 @@ dass ein Feld (zB QUELLE) immer  ``WEBGIS`` eingetragen werden sollte.
 Weiters sind auch automatische Attributierungen über räumliche Beziehungen zu anderen Featureklassen möglich,
 beispielsweise:
 
-``NR FROM GDBAbfrage``
+``NR FROM GDBAbfrage service kataster``
 
 In das Feld wird das Attribut NR jener Objekte aus dem Thema GDBAbfrage geschrieben, welche sich mit dem gespeicherten 
 Objekt räumlich decken. Gibt es mehrer Ergebnisse, werden diese mit Strichpunkten getrennt.
 
-``TYP FROM kasten BUFFERDIST 20 SEPERATOR space-space MAX 10``
+``TYP FROM kasten service strom@mycms BUFFERDIST 20 SEPERATOR space-space MAX 10``
 
 In das Feld wird das Attribute TYP jener Objekte aus dem Thema kasten geschrieben, welche im Umkreis von 20m
 liegen (BUFFERDIST 20). Gibt es mehrer Ergebnisse werden diese mittels Leerzeichen-Bindestrich-Leerzeichen 

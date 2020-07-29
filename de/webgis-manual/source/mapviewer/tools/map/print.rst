@@ -2,6 +2,8 @@ Drucken
 =======
 
 Mit diesem Werkzeug können Kartenausschnitte maßstabsgetreu ausgedruckt bzw. als PDF Dateien heruntergeladen werden.
+Die Karte wird im PDF zusätzlich einem speziellem Layout eingebettet das Zusatzinformationen wie Nordpfeil, 
+Legende, Copyright Hinweise, Koordinatenmarken usw. enthalten kann.
 
 Über den Werkzeugdialog lassen diverse Einstellunge zum Ausdruck machen. Die möglichen Werte dieser Einstellungen,
 werden von Kartenautor definiert: 

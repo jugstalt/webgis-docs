@@ -13,4 +13,6 @@ Unter *Karte* befinden sich folgende Werkzeuge (abhängig von den Einstellungen 
    save.rst
    load.rst
    share.rst
+   print.rst
+   downloadmapimage.rst
 
