@@ -299,6 +299,12 @@ Für die Eigenschaft ``command`` können verschiede Platzhalter in dir Url einge
 
     *   Der Mittelpunkt des aktuellen Kartenausschnittes in geographischen Koordinaten
 
+*  ``{map.scale}``
+
+    *   *ToolTypes:* kein, click, box
+
+    *   Der aktuelle Kartenmaßstab
+
 *   ``{map.MINX}, {map.MINY}, {map.MAXX}, {map.MAXY}, {map.BBOX}, {map.CENTERX}, {map.CENTERY}``
 
     *   *ToolTypes:* kein, click, box

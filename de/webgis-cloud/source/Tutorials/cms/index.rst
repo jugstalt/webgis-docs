@@ -11,4 +11,5 @@ CMS
     layers
     presentations
     editing/index
+    security/index
     deploy

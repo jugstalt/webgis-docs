@@ -170,7 +170,12 @@ An den Viewer kann beim Aufruf eine Abfrage mit Werten übergeben werden. Diese 
 Sichtbarkeit/Darstellungsvarianten
 ----------------------------------
 
-Um beim Aufruf schon eine bestimmte Darstellung anzugeben, kann hier eine Liste von Darstellungsvarianten angeführt werden. Diese werden dann in der angeführten Reihenfolge „automatisch angeklickt“. Im CMS hat jede Darstellungsvariante beim Dienst eine Url. Im Viewers können diese Darstellungsvarianten allerdings wieder zu Buttons und Checkboxes gruppiert sein, oder sich in Dropdowns befinden. Darum funktioniert die Übergabe der Url einer Darstellungsvariante nur, wenn diese in keiner Gruppe ist. Wenn sich die Darstellungsvariante in einer Gruppe befindet, kann nur die komplette Gruppe als Parameter übergeben werden. Die interne Url für eine Gruppe ist immer dvg_[Name der Gruppe in Kleinbuchstaben, Leerzeichen werden Underscore, …). Wenn man sich nicht sicher ist, wie der interne Name einer Gruppe oder einer Darstellungsvariante unterhalb eines Dropdowns oder einer Gruppe ist, kann dies über die Entwicklungstools des Browsers feststellen (F12). Jedes Element, auf das man in Darstellungsvarianten TOC klicken kann hat ein Attribut mit dem Namen „data-dvid“. Der Wert dieses Attributes entspricht der Id, die man über einen parametrierten Aufruf übergeben kann:
+Um beim Aufruf schon eine bestimmte Darstellung anzugeben, kann hier eine Liste von Darstellungsvarianten angeführt werden. Diese werden dann in der angeführten Reihenfolge „automatisch angeklickt“. 
+Im CMS hat jede Darstellungsvariante beim Dienst eine Url. Im Viewers können diese Darstellungsvarianten allerdings wieder zu Buttons und Checkboxes gruppiert sein, 
+oder sich in Dropdowns befinden. Darum funktioniert die Übergabe der Url einer Darstellungsvariante nur, wenn diese in keiner Gruppe ist. Wenn sich die Darstellungsvariante in einer Gruppe befindet, 
+kann nur die komplette Gruppe als Parameter übergeben werden. Die interne Url für eine Gruppe ist immer dvg_[Name der Gruppe in Kleinbuchstaben, Leerzeichen werden Underscore, …). 
+Wenn man sich nicht sicher ist, wie der interne Name einer Gruppe oder einer Darstellungsvariante unterhalb eines Dropdowns oder einer Gruppe ist, kann dies über die Entwicklungstools des Browsers feststellen (F12).
+Jedes Element, auf das man in Darstellungsvarianten TOC klicken kann hat ein Attribut mit dem Namen „data-dvid“. Der Wert dieses Attributes entspricht der Id, die man über einen parametrierten Aufruf übergeben kann:
 
 .. image:: img/image3.png
 
@@ -180,3 +185,32 @@ Um beim Aufruf schon eine bestimmte Darstellung anzugeben, kann hier eine Liste 
 
     Beispiel: ``&presentation=dvg_strom-naturbestand/dv_ssg_nb_geb,dvg_kataster``
 
+Sichtbarkeit von einzelnen Layern
+---------------------------------
+
+Ist das Sichtbarschalten nicht über Darstellungsvariaten möglich, können auch einzelne Layer sichtbar bzw. unsichtbar geschalten werden. Hierzu werden die Namen (inklusive Gruppe) über einen Parameter übergeben.
+Befindet sich der Layer in einer Gruppe, muss der komplette Pfad mit *Backslash* als Trennzeichen in der Url übergeben werden.
+
+.. image:: img/image4.png
+
+würde somit folgenden Layernamen ergeben ``Verwaltungsdaten\Bezirke``
+
+Mehrere Layer können mit Beistrich getrennt abgeführt werden.
+
+*   showlayers, sichtbar
+    
+    Beide Parameter sind möglich, die Funktionsweise ist gleich. Die hier angeführten Layer wurden zusätzlich sichtbar geschalten.
+
+*   hidelayers, unsichtbar
+    
+    Beide Parameter sind möglich, die Funktionsweise ist gleich. Die hier angeführten Layer wurden unsichtbar geschalten.
+
+
+Beispiele:
+
+``showlayers=Verwaltungsdaten\Bezirke,Verwaltungsdaten\Landesgrenze``
+``hidelayers=Verwaltungsdaten\Bezirke,Verwaltungsdaten\Landesgrenze``
+
+.. note::
+   Das Schalten einzelner Layer sollte wenn möglich vermieden und nur in Ausnahmefällen verwendet werden. Layernamen und Gruppen können sich im Laufe der Zeit für einen Dienst ändern, was die verwendeten Aufruflinks unbrauchbar macht.
+   Ebenso wird nicht unterschieden, in welchem Dienst sich ein Layer mit dem Namen befinden muss. Gibt es hier Doppeldeutigkeiten, kann das zu Fehlern in der Darstellung führen.

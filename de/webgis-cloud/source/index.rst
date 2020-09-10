@@ -13,4 +13,5 @@ WebGIS Cloud
    DataLinq/index.rst
    MapBuilder/index.rst
    KartenViewer/index.rst
+   AppBuilder/index.rst
    Tutorials/index.rst
