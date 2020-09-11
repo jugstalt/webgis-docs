@@ -21,10 +21,13 @@ Durch einen Klick auf einen Parameter klappt der entsprechtende Bereich auf. Wen
 Ist eine App erstellt und erscheint korrekt im Vorschaubereich, kann sie über den Button ``App Veröffentlichen`` als Kachel in die Portalseite übernommen.
 Gleich wie beim *MapBuilder* muss auch hier eine Name und eine Kategorie vergeben werden.
 
-In dieser Beschreibung werden einige diese Vorlagen kurz vorgestellt.
+In dieser Beschreibung werden einige diese Vorlagen kurz vorgestellt und gezeigt, wie eine App veröffentlicht und aufgerufen werden kann.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    redirect/index
    service-side-by-side/index
+   publish
+   edit
+   invoke

@@ -1,5 +1,5 @@
-Redirect App
-============
+App Template: Redirect App
+==========================
 
 Die wohl einfachste *App* ist die Vorlage, die unter WebGIS-Redirect zu finden ist. Diese Vorlage dient dazu einen
 Anwender zu einer bestimmten Webseite umzuleiten.
@@ -16,3 +16,4 @@ Klickt der Anwender auf diese Kachel, wir er auf die hier angegebene Webseite um
 
 Mit die *App* ist es möglich beliebige Webseiten über die Portalseite anzuspringen. So können beispielsweise auch 
 *DataLinq* Seiten wie eine Karte auf der Portalseite angeboten werden.
+

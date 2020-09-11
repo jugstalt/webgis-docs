@@ -1,7 +1,7 @@
 Map Builder
 ===========
 
-Eine grundlegende Einführung in die Funktionsweise des MapBuilders wird im Tutorial gezeigt.
+Eine grundlegende Einführung in die Funktionsweise des MapBuilders wird im `Tutorial <./../Tutorials/mapbuilder.html>`__ gezeigt.
 
 Hier werden weiterführende Themen beschrieben.
 
