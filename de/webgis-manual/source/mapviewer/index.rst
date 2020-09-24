@@ -24,3 +24,4 @@ an Desktopbenutzer, die mit dem Kartenviewer bildschirmfüllend arbeiten. Anwend
    legend/index.rst
    search_identify/index.rst
    tools/index.rst
+   news/info.rst
