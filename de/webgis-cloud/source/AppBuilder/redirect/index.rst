@@ -17,3 +17,9 @@ Klickt der Anwender auf diese Kachel, wir er auf die hier angegebene Webseite um
 Mit die *App* ist es möglich beliebige Webseiten über die Portalseite anzuspringen. So können beispielsweise auch 
 *DataLinq* Seiten wie eine Karte auf der Portalseite angeboten werden.
 
+.. note::
+   Die App leitet Anwender sofort auf die gewünschte Seite weiter. Das gilt nicht nicht für den Ersteller dieser App.
+   Der Ersteller bleibt auf einer Zwischenseite und muss die Weiterleitung per Klick veranlassen. Der Grund ist, dass
+   die Administration dieser App nur über diese Zwischenseite erfolgen kann:
+
+   .. image:: img/redirect2.png
