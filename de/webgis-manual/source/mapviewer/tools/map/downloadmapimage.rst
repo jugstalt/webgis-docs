@@ -1,9 +1,9 @@
 Kartenbild herunterladen
 ========================
 
-Mit diesem Werkzeug kann das aktuelle Kartenbild als JPG oder PNG Format herunterladen werden.
-Das Kartenbild wird im Gegensatz zum *Drucken* nicht in eine Kartenbild eingebettet. Dafür besteht die Möglichkeit
-zusätzlich zum Kartenbild eine *WorldFile* für dieses Bild zu erzeugen. Damit kann das Kartenbild in
+Mit diesem Werkzeug kann das aktuelle Kartenbild als JPG oder PNG Format heruntergeladen werden.
+Das Kartenbild wird im Gegensatz zum *Drucken* nicht in ein Kartenbild eingebettet. Dafür besteht die Möglichkeit
+zusätzlich zum Kartenbild ein *WorldFile* für dieses Bild zu erzeugen. Damit kann das Kartenbild in
 GI Anwendungen (ArcGIS, QGIS, ...) geladen werden und wird dadurch an der korrekten geographischen Position 
 eingefügt. Man spricht hier auch von einem georeferenziertem Bild.
 
@@ -16,7 +16,7 @@ Die Ausdehnung muss in Koordinaten in der Kartenprojektion angeführt werden.
 
 Das Werkzeug bietet über die beiden *Buttons* folgende Optionen:
 
-* **Aktuellen Kartenschnitt übernehmen**: *BoundingBox* und *Größe* werden aus der aktuellen Ansicht übernommen. Ändert man den Ausschnitt, ändern sich auch die Werte für die geographische Ausdehnung und Größe.
+* **Aktuellen Kartenausschnitt übernehmen**: *BoundingBox* und *Größe* werden aus der aktuellen Ansicht übernommen. Ändert man den Ausschnitt, ändern sich auch die Werte für die geographische Ausdehnung und Größe.
 * **Rechteck aufziehen**: Damit kann ein Fenster in der Karte aufgezogen werden. Geographische Ausdehnung und Größe werden daraus übernommen.
 
 .. note::
@@ -24,22 +24,22 @@ Das Werkzeug bietet über die beiden *Buttons* folgende Optionen:
    gedrückter Maustaste ein Rechteck aufgezogen wird. Möchte man den Kartenausschnitt verschieben, muss wieder zum
    Werkzeug **Aktuellen Kartenausschnitt übernehmen** gewechselt werden.
 
-Neben geographischer Ausdehnung und Bildgröße können noch folgende Auswahl getroffen werden:
+Neben geographischer Ausdehnung und Bildgröße können noch folgende Auswahlen getroffen werden:
 
-* **Auflösung (DPI)** Hier kann die Qualität der Ausgabe bestimmt werden. Ein Wert von *96 DPI* entspricht dabei der Auflösung, die auch auf dem Bildschirm dargestellt wird.
+* **Auflösung (DPI):** Hier kann die Qualität der Ausgabe bestimmt werden. Ein Wert von *96 DPI* entspricht dabei der Auflösung, die auch auf dem Bildschirm dargestellt wird.
 
 .. note::
-   Wählt man hier eine Wert größer als *96 DPI** wird das Bild größer als die oben angeführte Bildgröße in Pixel.
+   Wählt man hier einen Wert größer als *96 DPI* wird das Bild größer als die oben angeführte Bildgröße in Pixel.
    Diese Größe bezieht sich auf 96 DPI. Ein größeres Bild benötigt natürlich auch mehr Speicherplatz. Trotzdem macht 
    es manchmal Sinn, hier eine höhere Auflösung zu wählen, wenn das Kartenbild beispielsweise in ein Dokument
-   eingefügt wird, dass später ausgedruckt wird. Auf einem Ausdruck wirkt ein Bild mit höherer Auflösung *schärfer*.
+   eingefügt wird, das später ausgedruckt wird. Auf einem Ausdruck wirkt ein Bild mit höherer Auflösung *schärfer*.
 
-* **Bildformat**: Als Bildformat kann entweder JPG (Jpeg) oder PNG angegeben werden. JPG Dateien haben den Vorteil, dass sie in der Regel weniger Speicherplatz benötigen, wenn sich im Kartenbild Luftbilder befinden. Für Karten ohne Luftbilder liefern allerdings oft PNG Dateien schärfere und kleinere Ergebnisse.
+* **Bildformat:** Als Bildformat kann entweder JPG (Jpeg) oder PNG angegeben werden. JPG Dateien haben den Vorteil, dass sie in der Regel weniger Speicherplatz benötigen, wenn sich im Kartenbild Luftbilder befinden. Für Karten ohne Luftbilder liefern allerdings oft PNG Dateien schärfere und kleinere Ergebnisse.
 
-* **Georeferenzieren:** Hier kann gewählt werden, ob zusätzlichem zum Bild auch noch ein *WorldFile* angelegt werden sollte. Wählt man diese Option, ist das Ergebnis ein ZIP Datei, die sowohl Bilddatei (jpg, png) als auch das *WorldFile* (jgw, pgw) enthält. Ansinsten wird direkt die Bilddatei heruntergeladen.
+* **Georeferenzieren:** Hier kann gewählt werden, ob zusätzlich zum Bild auch noch ein *WorldFile* angelegt werden sollte. Wählt man diese Option, ist das Ergebnis eine ZIP Datei, die sowohl Bilddatei (jpg, png) als auch das *WorldFile* (jgw, pgw) enthält. Ansonsten wird direkt die Bilddatei heruntergeladen.
 
 .. note::
-   Ein *WorldFile* ist eine Textdatei in er die Koordinaten der oberen linken Ecke des Kartenbildes sowie die
+   Ein *WorldFile* ist eine Textdatei in der die Koordinaten der oberen linken Ecke des Kartenbildes sowie die
    Größe eine Pixels in X- und Y-Richtung stehen. Die Koordinaten beziehen sich auf das Kartenkoordinatensystem.
 
 .. note::

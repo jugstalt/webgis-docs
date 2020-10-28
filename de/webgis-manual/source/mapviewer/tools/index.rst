@@ -5,7 +5,7 @@ Werkzeuge
 =========
 
 In diesem Abschnitt werden die Werkzeuge des Kartenviewers beschrieben.
-Ein Einteilung der Werkzeug erfolgt der Standard und kann für verschiedene Anwendungen variieren. Auch werden sich nicht 
+Die Einteilung der Werkzeug erfolgt nach einem Standard und kann für verschiedene Anwendungen variieren. Auch werden sich nicht 
 in allen Karten alle Werkzeuge befinden. 
 
 Die Beschreibung zeigt die Bedienung anhand des Desktop Layouts. Auf mobilen Geräten mit kleinen Displays kann der Funktionsumfang

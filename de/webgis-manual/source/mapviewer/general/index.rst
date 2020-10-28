@@ -4,7 +4,7 @@
 Übersicht
 =========
 
-Nach dem Öffnen einer Karte, erscheint der Kartenviewer in folgender Form:
+Nach dem Öffnen einer Karte erscheint der Kartenviewer in folgender Form:
 
 .. image:: img/viewer1.png
 

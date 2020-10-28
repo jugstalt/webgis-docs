@@ -4,13 +4,13 @@ Build 3.0.3902 (24.09.2020)
 Attribute Editieren aus Suchergebnissen
 ---------------------------------------
 
-Werden Geo-Objekte über eine Suche oder Abfrage gefunden, die auch editierbar sind, können die Sachdaten
+Werden Geo-Objekte, die auch editierbar sind, über eine Suche oder Abfrage gefunden, können die Sachdaten
 direkt bearbeitet werden. Dazu muss nicht mehr wie früher ins *Bearbeiten* Werkzeug gewechselt und
 die Geo-Objekte dort ausgewählt werden.
 
 .. note::
-   Geo-Objekte können sowohl mit der Schnellsuche oder der Detailsuche gefunden werden. 
-   Abgefragt werden Geo-Objekte mit dem *Identify* Werkzeug durch anklicken oder Fenster aufziehen.
+   Geo-Objekte können sowohl mit der Schnellsuche als auch mit der Detailsuche gefunden werden. 
+   Abgefragt werden Geo-Objekte mit dem *Identify* Werkzeug durch Anklicken oder Fenster aufziehen.
 
 Dafür erscheint jetzt in den Detailergebnissen des entsprechenden Geo-Objektes ein neuer Button:
 
@@ -20,11 +20,11 @@ Dafür erscheint jetzt in den Detailergebnissen des entsprechenden Geo-Objektes 
    Der *Button* steht nur für Geo-Objekte zur Verfügung, die auch bearbeitet werden dürfen.
    Ein Anwender muss dazu spezielle Berechtigungen besitzen.
 
-Klickt man auf den *Button* öffnet sich eine Attributmaske mit dem die Sachdaten geändert werden können.
+Klickt man auf den *Button*, öffnet sich eine Attributmaske mit dem die Sachdaten geändert werden können.
 
 .. image:: img/edit-attributes2.png
 
-Wird der Dialog mit ``Speichern`` abgeschlossen, werden die Sachdaten entsprechend die Datenbank geändert.
+Wird der Dialog mit ``Speichern`` abgeschlossen, werden die Sachdaten entsprechend in der Datenbank geändert.
 
 Kategorisierte Auswahllisten für Such- und Editthemen
 -----------------------------------------------------
@@ -33,7 +33,7 @@ In umfangreichen Karten wird die Auswahl von Suchthemen in der Detailsuche oder 
 Die Themen werden zwar in Gruppen (Diensten) mit Überschriften zusammengefasst dargestellt, da die Liste
 allerdings sehr lange sein kann, muss zum Auffinden des gewünschten Themas oft lange *gescrollt* werden.
 
-Ein Vereinfachung bieten hier *kategorisierte* Auswahllisten. Diese stehen für die Detailsuche, für
+Eine Vereinfachung bieten hier *kategorisierte* Auswahllisten. Diese stehen für die Detailsuche, für
 das Identify Werkzeug und beim Editthemen zur Verfügung.
 Für die Detailsuche sieht die Auswahlliste etwa folgendermaßen aus:
 
@@ -58,7 +58,7 @@ Dadurch erscheint anstelle der zweiten Auswahlliste ein Eingabefeld:
 
 .. image:: img/cat-combo3.png
 
-In dieses Feld können Begriffe eingeben werden, die dem Namen des Themas entsprechen.
+In dieses Feld können Begriffe eingegeben werden, die dem Namen des Themas entsprechen.
 Sofort nach der Eingabe jedes Zeichens, werden in der Liste passende Themen angezeigt. Wählt man einen Vorschlag
 aus (anklicken), wird dieser automatisch in die Auswahlliste übernommen.
 

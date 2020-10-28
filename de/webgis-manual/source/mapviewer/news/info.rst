@@ -5,7 +5,7 @@ Neuerungen
 ==========
 
 In diesem Abschnitt werden Neuerungen am Kartenviewer beschrieben, die für den Anwender relevant sind.
-Als Referenz entsprehenden hier die einzelnen Kapiteln den Build-Nummern der Software und dem *Release* Datum.
+Als Referenz entsprechen hier die einzelnen Kapitel den Build-Nummern der Software und dem *Release* Datum.
 
 .. toctree::
    :maxdepth: 1
@@ -17,7 +17,7 @@ aktuelle Version an unterschiedlichen Stellen in der Oberfläche ersichtlich:
 
 **Portal Startseite**
 
-Die Versionnummer wird hier *Footer* (Fußzeile) der Seite angezeigt:
+Die Versionsnummer wird hier im *Footer* (Fußzeile) der Seite angezeigt:
 
 .. image:: img/news1.png
 

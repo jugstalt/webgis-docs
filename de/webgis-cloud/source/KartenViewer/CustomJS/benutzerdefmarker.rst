@@ -166,6 +166,42 @@ Hier wird die base-Funktion nicht mehr aufgerufen, sondern gleich das Bild einge
 
 Die Bilder werden hier gleich in der Vorschau bei den Suchergebnissen angezeigt. Klickt man auf ein Foto wird in der Karte der entsprechend Marker Popup sichtbar.
 
+Dynamische Marker
+-----------------
+
+Die oben gezeigten Beispiele verweisen auf statische Marker Icons. Zusätzlich gibt es noch die Möglichkeit die Marker dynamisch erzeugen zu lassen. Dabei kann die Größe und die Farben übergeben werden.
+Um für die Abfrageergebnisse dynamische Marker zu verwenden, würde der Eintrag in der custom.js folgendermaßen lauten:   
+
+.. code-block :: Javascript
+
+   webgis.markerIcons["query_result"]["default"] = {
+       url: function (i, f) {
+           return webgis.baseUrl + '/rest/numbermarker/' + (i + 1);
+       },
+       size: function (i, f) { return [33, 41]; },
+       anchor: function (i, f) { return [16, 42]; },
+       popupAnchor: function (i, f) { return [0, -42]; }
+    };
+
+Die Url zu dynamischen Markern lautet `{ webgis-api-url }/rest/numbermarker` also beispielsweise https://api.webgiscloud.com/rest/numbermarker
+
+Hier ein paar Beispiele für den Aufruf mit Übergabe von diversen Eigenschaften:
+
+Marker mit Number:
+
+https://api.webgiscloud.com/rest/numbermarker/42
+
+Marker mit bestimmter Größe (default 33/41):
+
+https://api.webgiscloud.com/rest/numbermarker/42?w=100&h=120
+
+**Achtung:** Der Wert für die Höhe muss immer größer sein als die Breite
+
+Marker Farben übergeben (Füllfarbe, Umrandungsfarbe, Textfarbe als RGB Hex-Code, 3- oder 6-stellig):
+
+https://api.webgiscloud.com/rest/numbermarker/42?w=100&h=120&c=fff,f88,fcc
+
+
 
 Benutzerdefinierte Werkzeuge
 ----------------------------

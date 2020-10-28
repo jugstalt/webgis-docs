@@ -2,48 +2,48 @@ Suche und Abfrage Ergebnisse
 ----------------------------
 
 Nach einer erfolgreichen Suche oder Abfrage werden die Ergebnisse in der Karte inklusive deren Sachdaten angezeigt.
-Welche Handhabung und Möglichkeiten von Ergebnissen wird in diesem Abschnitt beschreiben.
+Welche Handhabungen und Möglichkeiten von Ergebnissen es gibt, wird in diesem Abschnitt beschrieben.
 
 Detailergebnisse
 ++++++++++++++++
 
-Liefert eine Sucher oder Abfrage genau ein Ergebnis, wird neben der Markierung in der Karte (durch ein Marker Symbol),
+Liefert eine Suche oder Abfrage genau ein Ergebnis, wird neben der Markierung in der Karte (durch ein Marker Symbol)
 auch eine Dialog mit den Detailergebnissen (Sachdaten) geöffnet:
 
 .. image:: img/ergebnisse1.png
 
 Die Sachdaten werden hier in einer Tabelle angezeigt. Die angezeigten Attribute sind bei jeder Themenebene unterschiedlich
-und werden vom Kartenautor festgelegt. Bei einer Adresse könnten die Attribute wir hier im Beispiel etwa Postleitzahl, Strasse, 
-Hausnummer, Ort, Bezirk lauten. Neben dem Attributnamen wird der entsprechende Wert angezeigt. 
+und werden vom Kartenautor festgelegt. Bei einer Adresse könnten die Attribute wie hier im Beispiel etwa Postleitzahl, Strasse, 
+Hausnummer, Ort, Bezirk lauten. Neben den Attributnamen wird der entsprechende Wert angezeigt. 
 
 .. note::
-   **Tipp:** ganz rechts wird in jeder Spalte noch ein graues *Clipboard* Symbol angezeigt. Damit kann durch Ergebnissen
-   Klick der entsprechende Attributwert in die Zwischenablage kopiert und so weiter verarbeitet werden.
+   **Tipp:** Ganz rechts wird in jeder Spalte noch ein graues *Clipboard* Symbol angezeigt. Damit kann 
+   der entsprechende Attributwert in die Zwischenablage kopiert und so weiter verarbeitet werden.
 
 .. note::
-   **Tipp:** werden bei einem Thema sehr viele Attribute angezeigt, werden diese erst durch *Scrollen* nach unten sichtbar.
+   **Tipp:** Wenn bei einem Thema sehr viele Attribute angezeigt werden, werden diese erst durch *Scrollen* nach unten sichtbar.
    Alternativ kann man die Höhe des Dialogs mit einem Klick auf die Titelzeile maximieren. Auf die gleiche Weise kann der 
    Dialog auch wieder verkleinert werden.
 
-Neben Attributwerten kann eine Abfrageergebnis auch noch weiterführende Links enthalten. Beispielsweise kann das Ergebnis
+Neben Attributwerten kann ein Abfrageergebnis auch noch weiterführende Links enthalten. Beispielsweise kann das Ergebnis
 einer Abfrage einer Gemeinde einen Link enthalten, der auf die Homepage der Gemeinde verweist. Diese werden dann ebenfalls
 in diesem Fenster angezeigt und können auch in die Zwischenablage kopiert werden.
 
-Über der Ergebnistabelle befindet sich Werkzeuge. Je nach Abfrage können dies mehr oder weniger als die hier dargestellen
+Über der Ergebnistabelle befinden sich Werkzeuge. Je nach Abfrage können diese mehr oder weniger die hier dargestellen
 Werkzeuge sein.
 
-Immer dabei sind die Werkzeuge:
+Immer dabei sind die folgenden Werkzeuge:
 
-* **Zoom auf Objekt:** Durch einen Klick wird der Kartenausschnitt auf das Ergebniss angepasst.
+* **Zoom auf Objekt:** Durch einen Klick wird der Kartenausschnitt auf das Ergebnis angepasst.
 
-* **Objekt hervorheben:** Ist dieser Button ausgewählt, wird das aktuelle Objekt hervorgehoben (in der Regel *gelb* hinterlegt)
+* **Objekt hervorheben:** Ist dieser Button ausgewählt, wird das aktuelle Objekt hervorgehoben (in der Regel *gelb* hinterlegt).
 
-* **Objekte selektieren:** Durch auswählen dieses Buttons, werden die Ergebnisse ausgewählt (Selektiert, in der Regel *cyan* hinterlegt).
+* **Objekte selektieren:** Durch Drücken dieses Buttons, werden die Ergebnisse ausgewählt (selektiert, in der Regel *cyan* hinterlegt).
 
 .. note::
-   Der Punkt **Objekte selektieren** bezieht sich auf alle Ergebnisse einer Abfrage und nicht nur das gerade angezeigte.
-   Eine von Ergebnissen ist für die weiterverarbeitung der Ergebnissen notwendig, beispielsweise beim Editieren von
-   Geo-Objekte oder bei der Übernahme von Abfrageergebnissen ins Redling (siehe später bei der Beschreibung der Ergebnisse).
+   Der Punkt **Objekte selektieren** bezieht sich auf alle Ergebnisse einer Abfrage und nicht nur auf  das gerade angezeigte.
+   Eine Selektion von Ergebnissen ist für die Weiterverarbeitung der Ergebnisse notwendig, beispielsweise beim Editieren von
+   Geo-Objekten oder bei der Übernahme von Abfrageergebnissen ins Redlining (siehe später bei der Beschreibung der Ergebnisse).
    Außerdem ist die Selektion auch im Ausdruck sichtbar.
 
 
@@ -55,7 +55,7 @@ Die Anzeige von Detailergebnissen erfolgt allerdings nicht sofort, weil immer nu
 werden kann.
 
 .. note::
-   eine Ausnahme ist die Tabellenansicht alle Ergebnisse.
+   Eine Ausnahme ist die Tabellenansicht aller Ergebnisse.
 
 Darum werden die Ergebnisse im ersten Schritt als Liste mit wenigen (Vorschau) Attributen angezeigt:
 
@@ -76,7 +76,7 @@ Eine Zuordnung der (Vorschau) Ergebnisse mit den Geo-Objekten in der Karte kann 
 erfolgen.
 
 .. note::
-   **Tipp:** Eine weiter Möglichkeit die Detailergebnisse eines Geo-Objektes besteht in einem Klick auf den entsprechenden 
+   **Tipp:** Eine weitere Möglichkeit, um die Detailergebnisse eines Geo-Objektes anzuzeigen, besteht durch einen Klick auf den entsprechenden 
    Kartenmarker.
 
 **Werkzeuge in der Ergebnisliste**
@@ -85,11 +85,11 @@ Oben in der (Vorschau) Ergebnisliste werden kontextabhängig weitere Werkzeuge a
 
 .. image:: img/ergebnisse9.png
 
-* **Objekte Selektieren:** Entspricht dem Button, der auch bei den Detailergebnissen angezeigt wird. Mit werden alle Ergebnisse für die weitere Verarbeitung ausgewählt und *cyan* hinterlegt.
+* **Objekte Selektieren:** Entspricht dem Button, der auch bei den Detailergebnissen angezeigt wird. Damit werden alle Ergebnisse für die weitere Verarbeitung ausgewählt und mit *cyan* hinterlegt.
 
-* **Nachbarschaftsbrrechnung (Puffern):** Damit kann Puffer für die aktuellen Ergebnisse gelegt werden, aufgrund Detailergebnissen dann eine neue Abfrage durchgeführt wird.
+* **Nachbarschaftsberechnung (Puffern):** Damit kann ein Puffer für die aktuellen Ergebnisse gelegt werden, aufgrund dessen Detailergebnisses dann eine neue Abfrage durchgeführt wird.
 
-In einem Dialog wird davor noch abgefragt, welches Thema die Nachbarschaftsbrrechnung betreffen und groß der Puffer gewählt werden sollte:
+In einem Dialog wird davor noch abgefragt, welches Thema die Nachbarschaftsberechnung betrifft und wie groß der Puffer gewählt werden sollte:
 
 .. image:: img/buffer1.png
 
@@ -97,10 +97,10 @@ In einem Dialog wird davor noch abgefragt, welches Thema die Nachbarschaftsbrrec
 
 .. image:: img/ergebnisse4.png
 
-Die Tabelle kann ebenfalls wieder mit einem einem Klick auf die Titelzeile des Dialogs maximiert werden.
-Klickt man auch eine Zeile, wird die Tabelle geschlossen, die Detailergebnisse angezeigt und auf das entsprechende 
+Die Tabelle kann ebenfalls wieder mit einem Klick auf die Titelzeile des Dialogs maximiert werden.
+Klickt man auf eine Zeile, wird die Tabelle geschlossen, die Detailergebnisse angezeigt und auf das entsprechende 
 Geo-Objekt gezoomt.
-Zusätzlich bietet die Tabelle diverse Exportmöglichkeiten, z.B. Export nach MS-Excel (über CSV)
+Zusätzlich bietet die Tabelle diverse Exportmöglichkeiten, z.B. Export nach MS-Excel (über CSV).
 
 * **Ergebnisse entfernen:** Damit werden die Ergebnisse aus der Karte und der Vorschauansicht entfernt.
 
@@ -111,11 +111,11 @@ Zusätzlich bietet die Tabelle diverse Exportmöglichkeiten, z.B. Export nach MS
 
    .. image:: img/ergebnisse5.png
 
-   Ein Klick entfernt ebenfalls alle Ergebnismarker aus der Karte und der Vorschauliste
+   Ein Klick entfernt ebenfalls alle Ergebnismarker aus der Karte und der Vorschauliste.
 
 .. note::
    **Tip:** Werden Abfrageergebnisse entfernt, sind sie innerhalb einer Kartenviewer Sitzung nicht komplett verloren.
-   Über die *Ergebnisse Verlauf* (siehe unten) kann immer wieder auf die Bereits durchgeführten Abfragen zugegriffen werden.
+   Über *Ergebnisse Verlauf* (siehe unten) kann immer wieder auf die Bereits durchgeführten Abfragen zugegriffen werden.
 
 
 Ergebnisse erweitern/einschränken
@@ -125,22 +125,22 @@ Im Kartenviewer kann immer nur das Ergebnis einer Abfrage oder Suche angezeigt w
 eine bestehendes Ergebnis nachträglich zu erweitern oder einzuschränken.
 
 Am einfachsten eingeschränkt kann ein Ergebnis werden, indem der entsprechende Eintrag aus der Vorschauliste entfernt wird.
-Dazu wird (wenn mindestens zwei Ergebnisse vorhanden sind) ein *x* Symbol beim jedem Eintrag:
+Dazu wird (wenn mindestens zwei Ergebnisse vorhanden sind) ein *X* Symbol bei jedem Eintrag angezeigt:
 
 .. image:: img/ergebnisse6.png
 
 Damit wird dieses Objekt sofort aus der Liste und der entsprechende Marker aus der Karte entfernt.
 
 Eine weitere Möglichkeit ist die geographische Einschränkung/Erweiterung von Ergebnissen. Dazu ist mit dem 
-entsprechend Werkzeug ein bereits vorhandenes oder neues Objekt in der Karte anzuklicken.
+entsprechenden Werkzeug ein bereits vorhandenes oder neues Objekt in der Karte anzuklicken.
 
-Diese Werkezeuge befinden sich bei den Werkzeug über der Vorschauliste sind nur sichtbar, wenn die Ergebnisse ausgewählt (selektiert) sind:
+Diese Werkezeuge befinden sich bei den Werkzeugen über der Vorschauliste und sind nur sichtbar, wenn die Ergebnisse ausgewählt (selektiert) sind:
 
 .. image:: img/ergebnisse7.png
 
-* **Selektion erweitern:** Werkzeug auswählen und in der Karte auf zusätzliche Geo-Objekte klicken
+* **Selektion erweitern:** Werkzeug auswählen und in der Karte auf zusätzliche Geo-Objekte klicken.
 
-* **Selection einschränken:** Werkzeug auswählen und in die Karte auf selektierte Objekte klicken
+* **Selection einschränken:** Werkzeug auswählen und in die Karte auf selektierte Objekte klicken.
 
 .. note::
    Das **Selektion einschränken** Werkzeug ist nur sichtbar, solange mindestens zwei Ergebnisse vorliegen.
@@ -154,15 +154,15 @@ Diese Werkezeuge befinden sich bei den Werkzeug über der Vorschauliste sind nur
 Ergebnisse Verlauf (History)
 ++++++++++++++++++++++++++++
 
-Wie oben schon erwähnt können Abfrageergebnisse auf unterschiedliche Weise aus der Karte entfernt werden:
+Wie oben schon erwähnt, können Abfrageergebnisse auf unterschiedliche Weise aus der Karte entfernt werden:
 
-* **Entfernen Button** über der Vorschau Liste klicken
+* **Entfernen Button** über die Vorschau Liste klicken
 
-* **Marker Entfernen Button** beim den Schnellwerkzeugen (Profitipp)
+* **Marker Entfernen Button** bei den Schnellwerkzeugen (Profitipp)
 
 * **Neue Suche/Abfrage auslösen** entfernt automatisch die aktuell dargestellten Ergebnisse
 
-Oft ist es allerdings wünschenswert noch einmal auf bereits gemachte Such/Abfrageergebnisse zuzugreifen. Mach man beispielsweise
+Oft ist es allerdings wünschenswert, noch einmal auf bereits gemachte Such/Abfrageergebnisse zuzugreifen. Macht man beispielsweise
 eine Nachbarschaftsberechnung, werden die ursprünglichen Ergebnisse (auf denen die Nachbarschaftsberechnung beruht) *überschrieben*.
 Um später wieder auf diese Ergebnisse zugreifen zu können, dient der *Ergebnisse Verlauf*.
 
@@ -172,15 +172,15 @@ Verlauf am Ende der Liste):
 .. image:: img/ergebnisse8.png
 
 Alle bereits getätigten Abfragen (innerhalb einer Kartenviewer Sitzung) werden angezeigt. Der (Vorschau) Text gibt an,
-welche Themenebene die Ergebnisse geliefert hat bzw. wie viele Geo-Objekte betroffen sind.
+welche Themenebenen die Ergebnisse geliefert haben bzw. wie viele Geo-Objekte betroffen sind.
 
-Das vorangestellte Symbol zeigt noch an, wie dieses Ergebnisse erzeugt worden ist:
+Das vorangestellte Symbol zeigt noch an, wie dieses Ergebnis erzeugt worden ist:
 
-* **Fernglas Symbol:** Das Ergebnis wurde über eine Suche erzeugt
+* **Fernglas Symbol:** Das Ergebnis wurde über eine Suche erzeugt.
 
-* **Puffer Symbol:** Das Ergebnis wurde über eine Nachbarschaftsberechnung erzeugt
+* **Puffer Symbol:** Das Ergebnis wurde über eine Nachbarschaftsberechnung erzeugt.
 
-* **Identifizieren Symbol:** Das Ergebnis wurde über eine Abfrage erhalten
+* **Identifizieren Symbol:** Das Ergebnis wurde über eine Abfrage erhalten.
 
-Kickt man auf ein Verlaufselement, wird die Abfrage soft wieder hergestellt. Möchte man ein Element aus dem Verlauf endgültig 
-entfernen kann das mit dem *X* Symbol erreicht werden. Die entsprechenden Abfrageergebnisse sind danach endgültig entfernt.
+Kickt man auf ein Verlaufselement, wird die Abfrage sofort wieder hergestellt. Möchte man ein Element aus dem Verlauf endgültig 
+entfernen, kann das mit dem *X* Symbol erreicht werden. Die entsprechenden Abfrageergebnisse sind danach endgültig entfernt.

@@ -16,3 +16,4 @@ Unter *Werkzeuge* befinden sich folgende Werkzeuge (abhängig von den Einstellun
    redlining/index
    editing/index
    georeference
+   measure-3d
