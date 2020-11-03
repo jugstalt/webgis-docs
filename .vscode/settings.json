@@ -6,6 +6,7 @@
         "kartenviewers",
         "redlining",
         "shapefile",
-        "shapefiles"
+        "shapefiles",
+        "vertex"
     ]
 }

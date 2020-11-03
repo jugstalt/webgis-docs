@@ -16,7 +16,8 @@ Alternativ können die Koordinaten auch händisch eingetragen werden.
 **Auflösung**
 
 Des weiteren muss die Auflösung des 3D-Modelles festgelegt werden.
-Wie klein kann die Auflösung sein???????
+Die bestmögliche Auflösung, welche von der Größe des Ausschnitts sowie vom Oberflächenmodell im Hintergrund abhängt, wird bereits im Feld vorgeschlagen. 
+Wird dei Auflösung zu fein gewählt, wird eine Warnung beim Erstellen des 3D-Modelles kommen.
 
 .. note::
    Je größer die Bounding Box und je feiner die Auflösung ist, desto umfangreicher wird das 3D-Modell. 
@@ -32,7 +33,6 @@ Mit ``3D Modell erzeugen ...`` wird zum ausgewähltem 3D-Modell gewechselt.
 
 .. image:: img/meas3d2.png
 
-Die Daten kommen???????
 
 In diesem View gibt es folgende Navigationsmöglichkeiten:
 
@@ -56,3 +56,4 @@ Gelb hinterlegt ist die Summe der Längen sowie der summierte Höhenunterschied 
 Mit dem ``Undo`` Button kann der zuletzt gesetzte Stützpunkt entfernt werden. Durch einen Klick auf den ``Alle entfernen`` Button werden alle Stützpunkte entfernt.
 
 
+Über das ``X`` rechts oben kann das 3d-Modell wieder geschlossen werden.

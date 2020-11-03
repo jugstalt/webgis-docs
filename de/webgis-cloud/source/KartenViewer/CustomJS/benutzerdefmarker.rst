@@ -383,3 +383,58 @@ Für die Eigenschaft ``command`` können verschiede Platzhalter in dir Url einge
 
     *   Wie oben, nur für Koordinaten im Karten Koordinatensystem.
 
+    ``{wkt}, {wkt-4326}``
+
+    *   *ToolTypes:* sketch0d (=point), sketch1d (=line), sketch2d (=polygon)
+
+    *   Damit kann über ein benutzerdefiniertes Werkzeug die Sketchgeometrie als Well-Known-Text ``POINT(...), LINESTRING(...), POLYGON(...)`` übergeben werden.
+        Der Geometrie kann in WGS84 oder der aktuellen Kartenprojektion übergeben werden.
+
+
+**Benutzerdefinierte Werkzeuge mit Eingabefeldern**
+
+Falls schon im aus dem Viewer heraus Parameter ausgewählt werden sollten, die dann an die Zielseite übergeben werden, kann dies über die ``uiElements`` Eigenschaften erfolgen:
+
+.. code::
+
+   webgis.custom.tools.add({
+        name: 'Höhenprofil',
+        command: 'https://server.com/profile?ueberhoehung={ueberhoehung}&hintergrund=bmapgrau&stuetzpunktabstand={stuetzpunktabstand}&polygonzug={wkt}&crs=31256',
+        command_target: 'dialog',
+        tooltype: 'sketch1d',
+        image: 'profil.png',
+        uiElements: [
+            { type:'label', label:'Überhöhung' },
+            {
+                id: 'ueberhoehung',
+                type: 'select',
+                options: [
+                    { label: '1:1', value: 1 },
+                    { label: '2:1', value: 2 },
+                    { label: '3:1', value: 3 }
+                ]
+            },
+            { type: 'label', label: 'Punktabstand [m]' },
+            {
+                id: 'stuetzpunktabstand',
+                label: 'Punktabstand [m]',
+                type: 'select',
+                options: [
+                    { label: '1 m', value: 1 },
+                    { label: '2 m', value: 2 },
+                    { label: '3 m', value: 3 }
+                ]
+            }
+        ]
+    });
+
+Im Beispiel wird gezeigt wie ein Werkzeug für Höhenprofile erstellt werden kann. Der Anwender kann im Viewer vor dem Aufruf der Ziel-Url noch eine Überhöhung und einen Stützpunktabstand angeben.
+Die ``id`` des jeweiligen Eingabeelements kann als Platzhalter in der Url verwendet werden.
+
+Der Werkzeugdialog für dieses Beispiel würde wie folgt aussehen:
+
+.. image:: img/custom1.png
+
+
+
+

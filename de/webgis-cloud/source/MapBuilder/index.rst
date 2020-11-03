@@ -8,5 +8,6 @@ Hier werden weiterführende Themen beschrieben.
 .. toctree::
    :maxdepth: 1
 
+   mapdescription/index
    uimaster/index
    

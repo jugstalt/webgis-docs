@@ -1,0 +1,23 @@
+.wy-side-nav-search {
+    background-color: #eee;
+    color:#000;
+}
+
+.wy-nav-top {
+    background-color: #eee;
+    color:#000
+}
+
+span.caption-text {
+    color: #333;
+  }
+
+  .wy-side-nav-search>a, 
+  .wy-side-nav-search .wy-dropdown>a,
+  .wy-nav-top a {
+    color: #333;
+  }
+
+  .wy-nav-side {
+    background: #ccc;
+}
