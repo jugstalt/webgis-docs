@@ -13,11 +13,16 @@ Dafür muss zuerst der Bereich des 3D-Modells bestimmt werden. Dieser kann entwe
 Alternativ können die Koordinaten auch händisch eingetragen werden.
 
 
+**Höhenmodell**
+
+Unter Höhenmodell kann das gewünschte Höhenmodell ausgewählt werden, auf dessen Basis das 3D-Modell erstellt wird.
+
+
 **Auflösung**
 
 Des weiteren muss die Auflösung des 3D-Modelles festgelegt werden.
 Die bestmögliche Auflösung, welche von der Größe des Ausschnitts sowie vom Oberflächenmodell im Hintergrund abhängt, wird bereits im Feld vorgeschlagen. 
-Wird dei Auflösung zu fein gewählt, wird eine Warnung beim Erstellen des 3D-Modelles kommen.
+Wird die Auflösung zu fein gewählt, wird eine Warnung beim Erstellen des 3D-Modelles kommen.
 
 .. note::
    Je größer die Bounding Box und je feiner die Auflösung ist, desto umfangreicher wird das 3D-Modell. 

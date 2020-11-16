@@ -26,3 +26,9 @@ Geteilt werden:
 .. note::
    LiveShare kann nicht nur von unterschiedlichen Teilnehmern genutzt werden. Manchmal macht es auch Sinn, eine Session nur für den eigenen Gebrauch zu machen. Arbeitet man beispielsweise mit mehreren Bildschirmen, dann kann man auf jedem
    Bildschirm einen Kartenviewer (eventuell mit unterschiedlichen Kartenebenen) öffnen. Damit beide Kartenviewer immer den gleichen Ausschnitt anzeigen, kann dafür eine "lokale" LiveShare Session verwendet werden.
+
+
+.. toctree::
+   :maxdepth: 3
+
+   procedure

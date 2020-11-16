@@ -1,17 +1,19 @@
 .. sectnum::
     :start: 1
 
-Übersicht
-=========
+Allgemeines
+===========
 
-Nach dem Öffnen einer Karte erscheint der Kartenviewer in folgender Form:
+WebGIS ist eine Web-Anwendung zum anzeigen, abfragen und bearbeiten von Geo-Daten. Geo-Daten sind Daten mit einem geographischen Bezug, sprich einer geographischen Lage.
+Die Daten werden in kartographischer Aufbereitung als Karte(n) angeboten. 
 
-.. image:: img/viewer1.png
+Die Hauptanwendung zum Anzeigen der Karten ist der Kartenviewer, für den auch das vorliegende Handbuch konzipiert wurde.
 
+Einleitend sollt hier allerdings noch auf einige Grundkonzepte eingegangen werden, die zum Verständnis der angeboten Karten dienen sollten.
 
-Es müssen in einer Karte nicht alle hier gezeigten Elemente sichtbar sein. Die einzelnen Elemente werden vom Karten Administrator so festgelegt,
-dass eine effiziente Bedienung für die jeweilige Anwendung möglich ist. 
+.. toctree::
+   :maxdepth: 1
 
-Auf mobilen Geräten kann sich das Erscheinungsbild entsprechend anpassen:
-
-.. image:: img/viewer2.png
+   maps_services
+   portal
+   ui

@@ -214,3 +214,26 @@ Beispiele:
 .. note::
    Das Schalten einzelner Layer sollte wenn möglich vermieden und nur in Ausnahmefällen verwendet werden. Layernamen und Gruppen können sich im Laufe der Zeit für einen Dienst ändern, was die verwendeten Aufruflinks unbrauchbar macht.
    Ebenso wird nicht unterschieden, in welchem Dienst sich ein Layer mit dem Namen befinden muss. Gibt es hier Doppeldeutigkeiten, kann das zu Fehlern in der Darstellung führen.
+
+Sichtbarkeit von Hintergrunddiensten
+------------------------------------
+
+Hintergrunddienste (Basemaps) können über den Parameter ``basemap`` eingeschalten werden. Es können mit Beistrich getrennt mehrere Dienste (ids) angegeben werden, wobei der erste Dienst Hintergrund Basemaps und alle weiteren *Oberlayer* Basemaps sein müsssen.
+
+Beispiele:
+
+``basemap=orhto_tiles_gray@my_cms``
+
+oder mit zusätzlichem Basemap *Overlay* Dienst:
+
+``basemap=ortho_tiles_gray@my_cms,streets_tiles_default@my_cms``
+
+Dienste hinzufügen
+------------------
+
+Beim Aufruf einer Karten können noch zusätzliche Dienste übergeben werden. Dazu muss über den Parameter ``append-services`` oder ``gdiservices`` eine mit Bestrich getrennt Liste von Dienst Ids übergeben werden.
+Die angeführten Dienste werden in der Reihenfolge in die Karte eingefügt, wie sie übergeben werden. Neue Dienste werden werden einer Karte grundsätzlich ganz eingefügt. Der am letzten eingefügte Dienst überdeckt alle bereits eingefügten Dienst.
+Befindet sich ein Dienst bereits in der Karte, wird dieser ignoriert.
+
+*  ``append-services`` gleichbedeutend mit ``gdiservices``
+   z.B.: ``append-services=service1,service2,service1@cms1``

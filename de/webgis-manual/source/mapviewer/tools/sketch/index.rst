@@ -3,7 +3,7 @@ Sketch/Entwurfswerkzeuge
 
 Beim Zeichnen eines Sketches (zB beim Redlining, Editieren, Höhenprofil erstellen, ...) stehen mehrere Werkzeuge zur Verfügung, die je nach Anwendung sehr hilfreich sein können.
 
-Dazu muss während des Zeichens mit der rechten Maustaste in die Karte geklickt werden. Je nach Typ des Sketches (Linie, Polygon) werden folgende Optionen angeboten:
+Dazu muss während des Zeichnens mit der rechten Maustaste in die Karte geklickt werden. Je nach Typ des Sketches (Linie, Polygon) werden folgende Optionen angeboten:
 
 .. image:: img/sketch1.png
 
@@ -12,6 +12,7 @@ Dazu muss während des Zeichens mit der rechten Maustaste in die Karte geklickt 
    :maxdepth: 2
 
    construct
+   presentation
 
 
 
@@ -26,8 +27,8 @@ Mit ``Rückgängig/Undo`` können die letzten Befehle, welche unter *Rückgängi
 Sketch entfernen
 ----------------
 
-Mit ``Sketch entfernen`` werden die gezeichneten Sketches entfernt. Falls dieser Befehl unabsichtlich ausgeführt wurde, kann er mittels ``Rückgängig/Undo`` wiederhergestellt werden.
-
+Mit ``Sketch entfernen`` werden die gezeichneten Sketches entfernt. Falls dieser Befehl unabsichtlich ausgeführt wurde, können die Sketches mittels ``Rückgängig/Undo`` wiederhergestellt werden.
+In den meisten Werkzeugen lässt sich der Sketch auch seitlich links im Menü über den ``Sketch entfernen`` Button entfernen.
 
 
 Abschnitt schließen/neuen beginnen
@@ -45,13 +46,13 @@ Vertices nennt man die sogenannten Stützpunkte der Linie, welche über verschie
 
 * **Vertex verschieben:** Auf den Vertex klicken und mit gedrückter Maustaste den Vertex beliebig verschieben.
 
-* **Vertex hinzufügen:** In die Karte klicken.
+* **Vertex hinzufügen:** Dafür gibt es mehrere Möglichkeiten: in die Karte klicken, über *Richtung/Entfernung* (siehe unten) oder über *Koordinaten (absolut)*.
 
 * **Vertex auf bestehender Linie hinzufügen:** Rechte Maustaste auf die Linie und dann *Vertex hinzufügen* wählen.
 
-* **Vertex entfernen:** Rechte Maustaste auf den Vertex und dann *Vertex entfernen* wählen. In den meisten Werkzeugen lässt sich der Sketch auch seitlich links im Menü über den ``Sketch entfernen`` Button entfernen.
+* **Vertex entfernen:** Rechte Maustaste auf den Vertex und dann *Vertex entfernen* wählen. 
 
-* **Vertex fixieren/anschließen:** Rechte Maustaste auf den Vertex und dann *Vertex fixieren/anschließen* wählen. Diese Vertices bleiben dann beim Verschieben und Versetzen fixiert. Mit rechte Maustaste und dann *Fixierung aufheben* kann die Fixierung des Vertex wieder aufgehoben werden.
+* **Vertex fixieren/anschließen:** Rechte Maustaste auf den Vertex und dann *Vertex fixieren/anschließen* wählen. Diese Vertices bleiben dann beim Verschieben und Versetzen fixiert und sind als blaue größere Punkte erkennbar. Mit rechte Maustaste und dann *Fixierung aufheben* kann die Fixierung des Vertex wieder aufgehoben werden.
 
 
 
