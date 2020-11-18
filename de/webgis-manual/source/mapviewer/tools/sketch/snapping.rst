@@ -2,7 +2,7 @@ Snapping
 ========
 
 Über rechte Maustaste (egal ob in Karte oder auf Sketch) und *Snapping ...* kann ausgewählt werden, auf welche Schema der Objektfang (Snapping) aktiviert werden soll.
-Des weiteren kann festgelegt werden, ob nur Kanten, Knoten oder Endpunkt snapbar sind. Snapbare Linien werden dann in gelb dargestellt, wenn man mit der Maus in deren Nähe fahrt.
+Des weiteren kann festgelegt werden, ob nur Kanten, Knoten oder Endpunkt snapbar sind. Snapbare Linien werden dann in gelb dargestellt, wenn man mit der Maus in deren Nähe fährt.
 
 .. image:: img/snapping1.png
 
@@ -15,7 +15,7 @@ Trace-Modus starten
 
 Mit dem *Trace-Modus* können snapbare Kanten verfolgt werden. 
 Dafür muss mit der rechten Maustaste in die Karte geklickt werden und dann *Trace-Modus starten* gewählt werden.
-Nachdem der erste Knoten auf einen Endpunkt der Kante gesetzt wird, kann mit der Maus über Knoten des selben Themas gefahren werden. Es wird dann der kürzeste Weg über die Linien des Themas angezeigt.
+Nachdem der erste Knoten auf einen Endpunkt der Kante gesetzt wurde, kann mit der Maus über Knoten des selben Themas gefahren werden. Es wird dann der kürzeste Weg über die Linien des Themas angezeigt.
 
 Im folgendem Beispiel wurde so eine Linie entlang der Grundstücksgrenze gezeichnet.
 
@@ -65,7 +65,7 @@ Sketch parallel versetzen ...
 
 Mittels *Sketch parallel versetzen ...* kann eine Sketch Linie parallel versetzt werden. 
 Dazu muss, nachdem eine Sketch Linie gezeichnet wurde, mit der rechten Maustaste auf die Seite des Sketches geklick werden, in welche Richtung der Sketch parallel versetzt werden soll.
-Es öffnet sich dann ein Fenster in welchem sich die Distanz auch noch manuell einstellen lassen würde. Als Defaultwert steht die Distanz des Klickes zum Sketch bereits im Feld.
+Es öffnet sich dann ein Fenster, in welchem sich die Distanz auch noch manuell einstellen lassen würde. Als Defaultwert steht die Distanz des Klickes zum Sketch bereits im Feld.
 
 Falls gewisse Vertices nicht verschoben werden sollen, also fixiert werden sollen, kommt die bereits beschriebene Funktion *Vertex fixieren/anschließen* ins Spiel.
 Fixierte Vertices werden nämlich nicht bewegt.

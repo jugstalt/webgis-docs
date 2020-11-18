@@ -25,3 +25,4 @@ beschrieben wurden.
    general/index.rst
    presentation/index.rst
    sketch/index.rst
+   clickbubble/index.rst

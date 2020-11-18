@@ -11,7 +11,7 @@ Im Werkzeugdialog muss bestimmt werden, für welchen Fall (Maßstab/Überhöhung
    beispielsweise einen sehr großen Maßstab für einen sehr langen Linienzug, kann die Erstellung des Profils sehr lange
    dauern, weil dann sehr viele Zwischenpunkte abgefragt werden. Im schlimmsten Fall ist die Abfrage gar nicht möglich.
 
-In der kann jetzt eine Linie mit mehreren Zwischenpunkten erstellt werden.
+In der Karte kann jetzt eine Linie mit mehreren Zwischenpunkten erstellt werden.
 
 .. image:: img/profile2.png
 

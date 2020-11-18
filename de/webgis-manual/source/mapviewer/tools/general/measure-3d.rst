@@ -50,7 +50,7 @@ In diesem View gibt es folgende Navigationsmöglichkeiten:
 Rechts unten befindet sich eine Box mit den Lageinformationen zur Mausposition.
 
 
-Durch einfaches Klicken in die Karte wird ein Stützpunkt gesetzt. Werden weitere Stützpunkte wird die Länge in 2D und 3D sowie die Höhendifferenz zwischen den jeweiligen Stützpunkten berechnet. 
+Durch einfaches Klicken in die Karte wird ein Stützpunkt gesetzt. Werden weitere Stützpunkte gesetzt, wird die Länge in 2D und 3D sowie die Höhendifferenz zwischen den jeweiligen Stützpunkten berechnet. 
 
 .. image:: img/meas3d4.png
 
@@ -61,4 +61,4 @@ Gelb hinterlegt ist die Summe der Längen sowie der summierte Höhenunterschied 
 Mit dem ``Undo`` Button kann der zuletzt gesetzte Stützpunkt entfernt werden. Durch einen Klick auf den ``Alle entfernen`` Button werden alle Stützpunkte entfernt.
 
 
-Über das ``X`` rechts oben kann das 3d-Modell wieder geschlossen werden.
+Über das ``X`` rechts oben kann das 3D-Modell wieder geschlossen werden.

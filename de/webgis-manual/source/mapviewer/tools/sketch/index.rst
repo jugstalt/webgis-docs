@@ -1,7 +1,7 @@
 Sketch/Entwurfswerkzeuge
 ========================
 
-Beim Zeichnen eines Sketches (zB beim Redlining, Editieren, Höhenprofil erstellen, ...) stehen mehrere Werkzeuge zur Verfügung, die je nach Anwendung sehr hilfreich sein können.
+Beim Zeichnen eines Sketches (zB beim Redlining, Editieren, Höhenprofil erstellen, ...) stehen mehrere Optionen zur Verfügung, die je nach Anwendung sehr hilfreich sein können.
 
 Dazu muss während des Zeichnens mit der rechten Maustaste in die Karte geklickt werden. Je nach Typ des Sketches (Linie, Polygon) werden folgende Optionen angeboten:
 
@@ -15,6 +15,9 @@ Dazu muss während des Zeichnens mit der rechten Maustaste in die Karte geklickt
    presentation
 
 
+.. note::
+   Auf (mobilen) Geräten mit Touch Bedienung funktioniert der Klick in der Karte über das *Klick Bubble* Werkzeug (siehe Abschnitt *Click Bubble* unter Werkzeuge).
+   Der Vorteil der *Klick Bubble* ist die Vermeidung von unabsichtlichen Klicks beim Navigieren und die höhere Präzision beim Klicken.
 
 Rückgängig/Undo
 ---------------
@@ -46,7 +49,7 @@ Vertices nennt man die sogenannten Stützpunkte der Linie, welche über verschie
 
 * **Vertex verschieben:** Auf den Vertex klicken und mit gedrückter Maustaste den Vertex beliebig verschieben.
 
-* **Vertex hinzufügen:** Dafür gibt es mehrere Möglichkeiten: in die Karte klicken, über *Richtung/Entfernung* (siehe unten) oder über *Koordinaten (absolut)*.
+* **Vertex hinzufügen:** Dafür gibt es mehrere Möglichkeiten: in die Karte klicken, über *Richtung/Entfernung* (siehe unten) oder über *Koordinaten (absolut)* (siehe Konstruieren).
 
 * **Vertex auf bestehender Linie hinzufügen:** Rechte Maustaste auf die Linie und dann *Vertex hinzufügen* wählen.
 
@@ -68,7 +71,7 @@ Es erscheint dann ein Symbol, mit welchem man dann den Sketch mit gedrückter Ma
 Vertexreihenfolge umkehren
 --------------------------
 
-Mit Vertexreihenfolge umkehren kann bei einem Linien Sketch der Endpunkt mit dem Startpunkt umgekehrt werden. 
+Mit Vertexreihenfolge umkehren kann bei einem Linien Sketch der Endpunkt mit dem Startpunkt umgekehrt werden. Es kann dadurch am anderen Ende der Linie weitergezeichnet werden.
 
 
 

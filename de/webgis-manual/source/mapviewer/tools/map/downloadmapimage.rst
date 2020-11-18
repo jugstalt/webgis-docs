@@ -2,7 +2,7 @@ Kartenbild herunterladen
 ========================
 
 Mit diesem Werkzeug kann das aktuelle Kartenbild als JPG oder PNG Format heruntergeladen werden.
-Das Kartenbild wird im Gegensatz zum *Drucken* nicht in ein Kartenbild eingebettet. Dafür besteht die Möglichkeit
+Das Kartenbild wird im Gegensatz zum *Drucken* nicht in ein Drucklayout eingebettet. Dafür besteht die Möglichkeit
 zusätzlich zum Kartenbild ein *WorldFile* für dieses Bild zu erzeugen. Damit kann das Kartenbild in
 GI Anwendungen (ArcGIS, QGIS, ...) geladen werden und wird dadurch an der korrekten geographischen Position 
 eingefügt. Man spricht hier auch von einem georeferenziertem Bild.

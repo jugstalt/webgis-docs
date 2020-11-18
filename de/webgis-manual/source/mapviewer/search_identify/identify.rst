@@ -30,7 +30,7 @@ Mit dem *Standard* Werkzeug können folgende Funktion ausgeübt werden:
    Die ersten beiden Punkte funktionieren auch bei fast allen Werkzeugen aus dem Werkzeugkasten.
 
 .. note::
-   Auf (mobilen) Geräten mit Touch Bedienung funktioniert der Klick in der Karte über das *Klick Bubble* Werkzeug (siehe Abschnitt...)
+   Auf (mobilen) Geräten mit Touch Bedienung funktioniert der Klick in der Karte über das *Klick Bubble* Werkzeug (siehe Abschnitt *Click Bubble* unter Werkzeuge).
    Der Vorteil der *Klick Bubble* ist die Vermeidung von unabsichtlichen Klicks beim Navigieren und die höhere
    Präzision beim Klicken.
 
@@ -52,3 +52,4 @@ Wählt man eine Themenebene aus, wird die Abfrage eindeutig und die Ergebnisse w
 .. note::
    Der hier beschrieben Zwischenschritt ist notwendig, weil im Kartenviewer immer nur die Abfrage- und Suchergebnisse
    von genau einer Themenebene gleichzeitig angezeigt werden können.
+   
