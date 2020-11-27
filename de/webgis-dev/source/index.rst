@@ -11,4 +11,5 @@ WebGIS Development
    :caption: Inhalt:
 
    API/index.rst
+   embedded/index
 
