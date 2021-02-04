@@ -136,7 +136,7 @@ aktuellen Karte in unterschiedlichen Formaten anbietet:
 
         <title></title>
         
-        <script src="https://localhost:44341/scripts/api/embedding/webgis-embedding.js"></script>
+        <script src="https://api.webgiscloud.com/scripts/api/embedding/webgis-embedding.js"></script>
         
     </head>
     <body>
