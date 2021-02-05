@@ -20,4 +20,6 @@ aber nur einem eingeschränkten Benutzerkreise vorbehalten ist. Und auch dabei k
 
     node
     security-button
+    exclusive
+    instanceroles
 
