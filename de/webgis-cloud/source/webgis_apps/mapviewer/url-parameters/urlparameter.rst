@@ -167,6 +167,23 @@ An den Viewer kann beim Aufruf eine Abfrage mit Werten übergeben werden. Diese 
     Die Abfragewerte heißen so, wie sie im CMS definiert wurden
 
 
+Werkzeuge
+---------
+
+Der Viewer kann mit einem voreingestelltem Werkzeug aufgerufen werden:
+
+*  tool
+   
+   mit diesem Parameter wird die es Werkzeugs übergeben, dass beim Aufruf der Karte ausgewählt werden sollte.
+
+   Beispiel: ``&tool=webgis.tools.measureline``
+
+Die möglichen Werkzeug Ids können unter https://api.webgiscloud.com/rest/tools nachgeschlagen werden.
+
+.. note::
+   Es können nur Werkzeuge und keine einfachen Werkzeug Buttons übergeben werden. *Einfache Werkzeugbuttons* sind Werkzeuge,
+   die schon beim anklicken die gewünschte Aktion ausführen wie *gesamter Ausschnitt*, *Refresh*, *Zurück*.
+
 Sichtbarkeit/Darstellungsvarianten
 ----------------------------------
 

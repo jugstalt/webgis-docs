@@ -10,8 +10,6 @@ WebGIS Cloud
    :maxdepth: 2
    :caption: Inhalt:
 
-   DataLinq/index.rst
-   MapBuilder/index.rst
-   KartenViewer/index.rst
-   AppBuilder/index.rst
-   Tutorials/index.rst
+   portal/index.rst
+   webgis_apps/index.rst
+   tutorials/index.rst
