@@ -22,3 +22,4 @@ der benötigten *Resourcen*) und den entstehenden Zugriffen.
  
     resources.rst
     pricing.rst
+    resources/index.rst

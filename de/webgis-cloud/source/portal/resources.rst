@@ -1,5 +1,5 @@
-WebGIS Cloud Resourcen
-======================
+WebGIS Cloud Resourcen (Übersicht)
+==================================
 
 Unter *WebGIS Cloud Resourcen* können Software Komponenten verstanden werden, die für den Betrieb von *WebGIS*
 benötigt werden. Welche *WebGIS Cloud Resourcen* für eine Anwendung notwendig, hängt von der Komplexität 
@@ -52,5 +52,6 @@ Steht kein einegen Kartenserver zu bereitstellen der eigenen Geodaten zur Verfü
 **WebGIS Cloud** Dienste gehosten werden. Diese können dann in beliebige GIS Anwendungen bzw. über einen 
 **(WebIGS) CMS Account** eine die **WebGIS Cloud** eingebunden werden, sowohl für gehostet Karten als
 auch für **WebGIS API Client** Karten auf der eigenen Infrastruktur. 
+
 
   
