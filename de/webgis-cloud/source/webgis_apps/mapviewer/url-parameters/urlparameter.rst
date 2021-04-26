@@ -154,25 +154,58 @@ Ein Marker mit Text und eingeschlossem Bild. Wird nach dem Öffnen des Viewers a
 Abfragen
 --------
 
-An den Viewer kann beim Aufruf eine Abfrage mit Werten übergeben werden. Diese Abfrage ist dann automatisch im Viewer als aktuelles Abfrage/Identifythema aktiv. Wenn optional noch Werte übergeben werden, wird diese Abfrage ausgeführt und auf die Ergebnisse gezoomt. Ergebnisse werden im der Karte selektiert und mit Markern markiert.
+An den Viewer kann beim Aufruf eine Abfrage mit Werten übergeben werden. Diese Abfrage ist dann automatisch im Viewer als aktuelles Abfrage/Identifythema aktiv. 
+Wenn optional noch Werte übergeben werden, wird diese Abfrage ausgeführt und auf die Ergebnisse gezoomt. Ergebnisse werden im der Karte selektiert und mit Markern markiert.
 
-*   query, abfragethema
+*   ``query``, ``abfragethema``
 
     Beide Parameter sind möglich, die Funktionsweise ist gleich. Übergeben wird die Abfrage-Url, wie sie im CMS festgelegt wurde.
 
     Beispiel: ``&query=gemeinden``   
 
-*   Abragewerte: name, plz, str, hnr, …
+*   Abragewerte: ``name``, ``plz``, ``str``, ``hnr``, …
 
     Die Abfragewerte heißen so, wie sie im CMS definiert wurden
 
+
+Darstellungsfilter
+------------------
+
+Werden in einer Karte Darstellungsfilter angeboten, kann ein Filter über einen Url parameter übergen werden.
+
+*   ``filter``
+
+    Die id des Filters (wie im CMS)
+
+*   ``filterarg_{argument}`` 
+ 
+    Für jedes Argument des Filters muss eine Wert übergeben werden. ``{argument}`` ist hier der Platzhalter für das entsprechende Argument. 
+
+*  ``filterservice`` (optional)
+
+   Die Id für den Filter ist nicht eindeutig und kann in unterschiedlichen Diensten vorkommen. Möchte man den Filter für genau einem bestimmten Dienst aktieren,
+   kann die Id des Dienstes hier angegeben werden. Ansonsten wird der Filter für jeden Dienst mit diesem Filter angewendet. Die Dienst Id besteht in der Regel aus ``{Dienst Id}@{CMS Id}``.
+   Eine Alternative ist, den die Dienst-Id gleich über den Parameter ``filter`` zu definieren: ``{service-id}~{filterid}``. 
+
+.. note::
+   Sollte Filter auch über das Darstellungsfilter Werkzeug angezeigt werden (wenn der Anwender auf das Werkzeug ``Darstellungsfilter`` klickt), MUSS die Dienst Id mitübergeben werden!
+   
+Beispiel:
+
+``&filter=my-filter&filterarg_WERT1=abc``
+
+mit eindeutiger Dienst Zuweisung:
+
+``&filter=my-filter&filterservice=my-service@my-cms&filterarg_WERT1=abc``
+oder
+``&filter=my-service@my-cms~my-filter&filterarg_WERT1=abc``
 
 Werkzeuge
 ---------
 
 Der Viewer kann mit einem voreingestelltem Werkzeug aufgerufen werden:
 
-*  tool
+*  ``tool``
    
    mit diesem Parameter wird die es Werkzeugs übergeben, dass beim Aufruf der Karte ausgewählt werden sollte.
 
@@ -196,7 +229,7 @@ Jedes Element, auf das man in Darstellungsvarianten TOC klicken kann hat ein Att
 
 .. image:: img/image3.png
 
-*   presentation, darstellungsvariante
+*   ``presentation``, ``darstellungsvariante``
 
     Beide Parameter sind möglich, die Funktionsweise ist gleich.
 
@@ -214,11 +247,11 @@ würde somit folgenden Layernamen ergeben ``Verwaltungsdaten\Bezirke``
 
 Mehrere Layer können mit Beistrich getrennt abgeführt werden.
 
-*   showlayers, sichtbar
+*   ``showlayers``, ``sichtbar``
     
     Beide Parameter sind möglich, die Funktionsweise ist gleich. Die hier angeführten Layer wurden zusätzlich sichtbar geschalten.
 
-*   hidelayers, unsichtbar
+*   ``hidelayers``, ``unsichtbar``
     
     Beide Parameter sind möglich, die Funktionsweise ist gleich. Die hier angeführten Layer wurden unsichtbar geschalten.
 
