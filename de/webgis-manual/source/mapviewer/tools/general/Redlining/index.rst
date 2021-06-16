@@ -19,6 +19,7 @@ Wenn Sie das Tool zum ersten Mal nutzen, sollten Sie eventuell die unten stehend
    :maxdepth: 3
 
    manual.rst
+   advanced-tools.rst
    manage.rst
    selection.rst
 
