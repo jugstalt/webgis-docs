@@ -9,5 +9,6 @@ Hier werden weiterführende Themen beschrieben.
    :maxdepth: 1
 
    mapdescription/index
+   dynamiccontent/index
    uimaster/index
    
