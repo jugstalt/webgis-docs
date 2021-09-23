@@ -1,6 +1,12 @@
 Layerschaltungen
 ================
 
+.. note::
+   Dieser Abschnitt kann nicht für *dynamische Dienste* (siehe vorheriges Kapitel) angewendet 
+   werden. Ist bei den Eigenschaften des Dienste im CMS unter ``Dynamische Darstellungsvarianten`` 
+   ein Wert ungleich ``None`` eingestellt, steht dieser Abschnitt im CMS nicht zur 
+   Verfügung.
+
 Später in Kartenviewer sollte einige ausgewählte Themen auf einfache Weise als Darstellungsvarianten geschalten werden. In der Regel sind Dienste mittlerweile sehr umfangreich und nicht alle Themen sind für einen jeden Anwender intersannt. Darum sind wir dazu übergegangen, nur die jene Themen über den Darstellungsvarianten TOC zugänglich zu machen, die für den Großteil der Anwender relevant sind. Über einen bei den Neuerungen gezeigten Umweg kann ein versierter Anwender bei bedarf auf alle Themen zugreifen. Ein zu Umfangreicher TOC überfordert die meisten Anwender in der Regel.
 
 Über *Schemes* kann später sogar noch unterschieden werden, ob ein Anwender über den Desktop oder über ein Mobiles Gerät eingestiegen ist. Für Mobile Geräte kann können Darstellungsvarianten noch weiter eingeschränkt werden bzw. komplett unterschiedlich aussehen (siehe unten).

@@ -7,7 +7,31 @@ Neben Kartenkacheln und Kartendiensten können auch sogenannte *dynamische Inhal
 Für *dynamische Inhalte* sind folgende Quellen möglich:
 
 * **GeoJSON**: Ein GeoJSON mit Punkten, der über das Internet abrufbar ist.
+
+  .. code::
+
+     {
+        "type":"FeatureCollection",   // A GeoJSON Response
+        "features": [ ...]
+     }
+
+* **GeoJSON (Embedded)**: Hier handelt es sich um eine Sonderform von GeoJSON. Der zugrunde liegende Dienst liefert hier nicht direct ein GeoJSON zurück sondern liefern einen JSON Response zurück, in dem in einen ``response`` Attribute,
+  das eigentliche GeoJSON enthält. 
+
+  .. code::
+
+     {
+         ...
+         "response":{ 
+            "type":"FeatureCollection",   // The GeoJSON Response
+            "features": [ ...]
+         }
+     }
+   
+  Dieses Format kann beispielsweise das Ergebnis eines *Solr* Suchdienstes sein. Ein Beispiel dafür folgt unten, um zu zeigen, wie ein ausschnittsabhänger Solr Dienst eingebunden werden. 
+
 * **GeoRSS**: Ein GeoRSS Feed Punkten, der über das Internet abrufbar ist.
+
 * **API Abfrage**: Eine Abfrage auf einen Kartendienst, der von der WebGIS API bereitgestellt wird.
 
 Für den Anwender erscheinen *dynamische Inhalte* im Darstellungsvarianten TOC in einem eigenen *Container*:
@@ -37,6 +61,18 @@ Der Dialog für das Erstellen oder Bearbeiten eines *dynamischen Inhalts* ersche
 Unter ``Allgemeine Eigenschaften`` muss zuerst der Typ des Dienstes gewählt werden (z.B. ``GeoJSON``). Außerdem muss Name vergeben werden, unter dem der Dienst im Kartenviewer im Container ``Dynamische Inhalte`` angezeigt wird.
 Ist der Typ ``GeoJSON`` oder ``GeoRSS`` muss hier ebenfalls die Url angegeben, von der der Inhalt abgeholt werden soll.
 
+Für die Url können bei den Typen ``GeoJSON``, ``GeoJSON (Embedded)``, ``GeoRSS`` Platzhalter gesetzt werden, die zur Laufzeit entsprechende gesetzt:
+
+* ``{lat_min}``, ``{lng_min}``, ``{lat_max}``, ``{lng_max}``: Die aktuelle Ausdehnung der Karte in geographischen Koordinaten. Voraussetzung ist hier, das der Inhalt über die ``Erweiterten Eigenschaften`` (siehe unten) als ``Abschnittsabhängig``
+  markiert wird.
+
+  Beispiel: Solr Dienst mit übergabe der BoundingBox:
+
+  .. code::
+
+     https://myserver.com/suche/...?q=*&rows=200&fq=geowgs:[{lat_min},{lng_min} TO {lat_max},{lng_max}]
+
+
 Wählt man als Typ ``API Abfrage`` muss keine Url angegeben werden, sondern eine bestehende Abfrage eines Dienstes gewählt werden. 
 Um die Objekte einzuschränken, kann diese optional über die angebotenen Suchbegriffe der Abfrage erfolgen (zB nur Adressen einer bestimmten Straße):
 
@@ -47,7 +83,7 @@ So ist für manche Inhalte sinnvoll, wenn nach der Auswahl automatisch auf an di
 
 Eine Besonderheit ist der Punkt ``Ausschnittsabhängig``. Wird dieser Punkt für einen *dynamischen Inhalt* ausgewählt wird die Daten immer neu geladen, wenn der Anwender ein Ausschnitt in der Karte (Pan, Zoom)
 ändert. Das ist für Inhalt mit sehr vielen Ergebnissen sinnvoll. Der Anwender erhält immer nur die im aktuellen Ausschnitt relevanten Daten.
-Voraussetzung ist hier, dass die angeführte Quelle die Übergage eines aktuellen Ausschnitts über den ``bbox`` parameter unterstützt. Beim Typ ``API Abfrage`` wird das automatisch bereitgestellt. Bei anderen Typen
+Voraussetzung ist hier, dass die angeführte Quelle die Übergage eines aktuellen Ausschnitts unterstützt. Beim Typ ``API Abfrage`` wird das automatisch bereitgestellt. Bei anderen Typen
 hängt es vom dahinterliegenden Dienst ab. Unterstützt ein Dienst diese Möglichkeiten nicht, sollte diese Option nicht gewählt werden, weil der komplette Inhalt dann beim jedem Zoom geladen wird.
 
 .. note::
