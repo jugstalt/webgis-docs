@@ -13,3 +13,4 @@ WebGIS Cloud
    portal/index.rst
    webgis_apps/index.rst
    tutorials/index.rst
+   install/index.rst
