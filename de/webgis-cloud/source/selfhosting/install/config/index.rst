@@ -10,3 +10,6 @@ Die Konfiguration der Web Applikationen erfolgt in ``*.config`` Dateien, die bei
    :caption: Inhalt:
 
    cms/index.rst
+   api/index.rst
+   portal/index.rst
+   etc/index.rst
