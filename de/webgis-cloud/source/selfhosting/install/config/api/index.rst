@@ -301,3 +301,24 @@ Sollten hier andere Werte angeboten werden, kann dies über die ``api.config`` e
 .. image:: img/config-tools8.png 
 
 Die Syntax für den Key duration lautet: ``[Anzahl de Tage(Integer)]:[Anzeigetext], []…``
+
+Werkzeug Identify
++++++++++++++++++
+
+Geo-Objekte können mit den Identify Werkzeug abgefragt werden. Klickt der Anwender in die Karte (Punkt-Identify)
+wird mit einer bestimmten Pixel Toleranz angefragt. Diese Toleranz gibt an, wie groß der Bereich ist, in dem 
+gesucht werden soll. Das ist notwendig, weil nicht gewährleistet ist, das der Anwender das gewünschte Geo-Objekt genau 
+trifft. Beim punkt- und linienhaften Objekte ist das quasi unmöglich.
+
+Standardmaßig wird mit einer Toleranz von +/- 15 Pixel um dem Mauszeiger gesucht.
+Bei flächenhaften Objekte kann das allerdings nicht wünschenswert sein. In der ``api.config`` kann eine
+*Section* für das Identify Werkzeug angegeben werden, in der für jeden Geometrietyp eine Toleranz angegeben werden kann:
+
+.. code::
+
+   <section name="tool-identify">
+		  <add key="tolerance" value="20" />   <!-- Standardwert -->   <!-- pixel -->
+		  <add key="tolerance-for-point-layers" value="10" />   <!-- optional -->
+		  <add key="tolerance-for-line-layers" value="5" />     <!-- optional -->
+		  <add key="tolerance-for-polyline-layers" value="0" /> <!-- optional -->
+	  </section>
