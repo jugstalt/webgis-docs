@@ -320,5 +320,5 @@ Bei flächenhaften Objekte kann das allerdings nicht wünschenswert sein. In der
 		  <add key="tolerance" value="20" />   <!-- Standardwert -->   <!-- pixel -->
 		  <add key="tolerance-for-point-layers" value="10" />   <!-- optional -->
 		  <add key="tolerance-for-line-layers" value="5" />     <!-- optional -->
-		  <add key="tolerance-for-polyline-layers" value="0" /> <!-- optional -->
+		  <add key="tolerance-for-polygone-layers" value="0" /> <!-- optional -->
 	  </section>
