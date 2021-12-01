@@ -11,4 +11,5 @@ Hier werden weiterführende Themen beschrieben.
    mapdescription/index
    dynamiccontent/index
    uimaster/index
+   snapshots/index
    
