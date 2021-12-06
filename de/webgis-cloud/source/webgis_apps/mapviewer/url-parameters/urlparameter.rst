@@ -56,8 +56,8 @@ Kartenausschnitt und Marker
 
     Wenn nicht über die Parameter center oder bbox anders definiert, zoomt die Kartenansicht auf den Marker. Der Maßstab kann dafür über den Parameter scale übergeben werden.  
 
-Marker übergeben
-^^^^^^^^^^^^^^^^
+Einen Marker übergeben
+-----------------------
 
 Wie oben schon beschrieben kann über den Parameter ``marker`` ein Marker beim Aufruf in eine Karte übergeben werden. Die Übergabe Syntax ist dabei immer die Darstellung des Markers als Javascript Objekt (siehe oben). Folgende Tabelle führt alle möglichen Eigenschaften dieses Objekts an. Double-Werte sind immer Zahlen mit einen „.“ (Punkt) als Komma Separator. Integer Zahlen dürfen nur aus Zahlen bestehen. Strings müssen mit Hochkommata versehen werden. Die fett gedruckten Eigenschaften müssen angeführt werden:
 
@@ -117,10 +117,6 @@ Wie oben schon beschrieben kann über den Parameter ``marker`` ein Marker beim A
 
             
 
-
-
-
-
 **Beispiele:** 
 
 Ein Marker mit dem Text „Hallo Welt“
@@ -149,7 +145,17 @@ Ein Marker mit Text und eingeschlossem Bild. Wird nach dem Öffnen des Viewers a
 
 .. image:: img/image2.png
 
+Mehrere Marker übergeben
+------------------------
 
+Über den Parameter ``markers`` können auch mehrerer Marker übergeben werden. Die Syntax muss dabei einem ``Array`` aus einzelnen Markern entsprechen.
+Die Marker werden hier nicht nur in der Karte angezeigt, sondern werden in der Karte als ``Dynamischer Inhalt`` übernommen.
+
+**Beispiel**:
+
+.. code-block::
+
+   &markers=[{lng:14.7,lat:47.2,text:'Ziel 1'},{lng:14.9,lat:46.8,text:'Ziel 2'},{lng:14.8,lat:47.4,text:'Ziel 3'},{lng:15.8,lat:47.1,text:'Ziel 4'},{lng:15.2,lat:46.9,text:'Ziel 5'}]
 
 Abfragen
 --------
