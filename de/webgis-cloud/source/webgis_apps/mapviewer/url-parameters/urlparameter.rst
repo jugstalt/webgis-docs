@@ -149,13 +149,14 @@ Mehrere Marker übergeben
 ------------------------
 
 Über den Parameter ``markers`` können auch mehrerer Marker übergeben werden. Die Syntax muss dabei einem ``Array`` aus einzelnen Markern entsprechen.
-Die Marker werden hier nicht nur in der Karte angezeigt, sondern werden in der Karte als ``Dynamischer Inhalt`` übernommen.
+Die Marker werden hier nicht nur in der Karte angezeigt, sondern werden in der Karte als *Dynamischer Inhalt* übernommen. Über den optionalen Parameter ``markers_name`` 
+kann ein Name übergeben werden, mit dem der *Dynamische Inhalt* im TOC angezeigt wird. 
 
 **Beispiel**:
 
 .. code-block::
 
-   &markers=[{lng:14.7,lat:47.2,text:'Ziel 1'},{lng:14.9,lat:46.8,text:'Ziel 2'},{lng:14.8,lat:47.4,text:'Ziel 3'},{lng:15.8,lat:47.1,text:'Ziel 4'},{lng:15.2,lat:46.9,text:'Ziel 5'}]
+   &markers_name=Ziele&markers=[{lng:14.7,lat:47.2,text:'Ziel 1'},{lng:14.9,lat:46.8,text:'Ziel 2'},{lng:14.8,lat:47.4,text:'Ziel 3'},{lng:15.8,lat:47.1,text:'Ziel 4'},{lng:15.2,lat:46.9,text:'Ziel 5'}]
 
 Abfragen
 --------
