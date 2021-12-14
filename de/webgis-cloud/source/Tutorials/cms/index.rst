@@ -12,5 +12,6 @@ CMS
     layers
     presentations
     editing/index
+    secrets/index.rst
     security/index
     deploy
