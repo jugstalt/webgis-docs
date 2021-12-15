@@ -34,3 +34,9 @@ Unter ``Placeholder`` wird angezeigt, wie dieses Secret verwendet werden kann. D
 
 .. image:: img/secrets5.png
 
+Für unterschiedliche Umgebung (*Environments*) können unterschiedliche *Secret-Werte* angelegt werden. Ist für eine Umgebung keine Wert angegeben, wird der Wert aus ``Default`` verwendet.
+Die Umgebung für eine Deployment können System Administratoren in der ``cms.config`` eingestellt werden (Knoten ``deployment`` unter ``environment``).
+
+.. note:: beim Veröffentlichen eines CMS wird die die verwendet Umgebung angezeigt:
+
+   .. image:: img/secrets6.png 

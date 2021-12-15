@@ -62,7 +62,7 @@ Knoten ``deployments``
 ++++++++++++++++++++++
 
 * ``name``
-  Ein spechender Name für das Deployment (z.B: localhost, Entwicklung, Schulung, Test, Produktion, …)
+  Ein sprechender Name für das Deployment (z.B: localhost, Entwicklung, Schulung, Test, Produktion, …)
 
 * ``target``
   Der Pfad für die CMS Datei. Das CMS erstellt im gleichen Ordner später noch ein Verzeichnis ``_archive``, 
@@ -81,6 +81,12 @@ Knoten ``deployments``
 
 * ``postEvents`` (optional)
   Ein Array von Events, die nach erfolgreicher Erstellung ausgeführt werden sollte. 
+
+* ``environment`` (optional)
+  Gibt du Umgebung für das Deployment an. Die Umgebung ist beispielsweise bei den ``Secrets`` wichtig. 
+  Für ein ``Secret`` kann für jede Umgebung ein eigener Wert angegeben werden. So können für die Test und Produktivsysteme unterschiedliche 
+  *ConnectionStrings* definiert werden.
+  Mögliche Werte sind hier: ``Default``, ``Test``, ``Staging``, ``Production``
 
 Knoten ``postEvents``
 +++++++++++++++++++++
