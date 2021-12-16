@@ -13,3 +13,4 @@ Die Konfiguration der Web Applikationen erfolgt in ``*.config`` Dateien, die bei
    api/index.rst
    portal/index.rst
    etc/index.rst
+   authentication/index.rst

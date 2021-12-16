@@ -8,5 +8,6 @@
         "shapefile",
         "shapefiles",
         "vertex"
-    ]
+    ],
+    "restructuredtext.confPath": ""
 }
