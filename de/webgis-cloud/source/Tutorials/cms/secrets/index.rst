@@ -23,7 +23,8 @@ eine Teil der Url (inklusive Token) in als Secret zu übernehmen.
 
 .. image:: img/secrets2.png 
 
-Das neue erstelle Secret erhält einen Namen inklusive vorangestelltem ``secret-``:
+Das neu erstelle Secret erhält einen Namen inklusive vorangestelltem ``secret-``:
+
 .. image:: img/secrets3.png
 
 Klickt man auf das *Secret* öffnet sich folgender Dialog:
@@ -33,6 +34,11 @@ Klickt man auf das *Secret* öffnet sich folgender Dialog:
 Unter ``Placeholder`` wird angezeigt, wie dieses Secret verwendet werden kann. Das Secret kann überall im CMS als Teil eines *ConnectionString* oder als Passwort eingefügt werden:
 
 .. image:: img/secrets5.png
+
+In jedem Dialog werd oben ein Symbol angezeigt, über das man die für das CMS vorhandenen *Secret-Platzhalter* anzeigen kann. Klickt man auf einen Platzhalter,
+dieser in die Zwischenablage kopiert:
+
+.. image:: img/secrets7.png
 
 Für unterschiedliche Umgebung (*Environments*) können unterschiedliche *Secret-Werte* angelegt werden. Ist für eine Umgebung keine Wert angegeben, wird der Wert aus ``Default`` verwendet.
 Die Umgebung für eine Deployment können System Administratoren in der ``cms.config`` eingestellt werden (Knoten ``deployment`` unter ``environment``).

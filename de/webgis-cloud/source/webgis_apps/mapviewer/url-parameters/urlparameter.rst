@@ -285,6 +285,17 @@ oder mit zusätzlichem Basemap *Overlay* Dienst:
 
 ``basemap=ortho_tiles_gray@my_cms,streets_tiles_default@my_cms``
 
+Snapshots
+---------
+
+Wurde im *MapBuilder* für eine Karte mehre *Snapshots* angelegt, keine ein bestimmter *Snapshot* über den Url-Parameter ``snapshot`` übergeben werden.
+Die Karte wird dann mit der für den Snapshot eingestellen Layer-Sichtbarkeit und Ausschnitt geladen.
+
+Beispiel:
+
+``snapshot=snapshot-name``
+
+
 Dienste hinzufügen
 ------------------
 
