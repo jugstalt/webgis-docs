@@ -52,13 +52,17 @@ Abschnitt ``Security``
 
 * ``use-local-url-scheme``
   ``true`` / ``false``
+
+
   Für Lokale oder Offline Anwendung kann hier auf ``true`` gesetzt werden. 
   Der Austausch von Schlüsseln erfolgt dann über eine normale HTTP Verbindung ohne SSL. 
   Betreibt man ein Portal im Internet, sollte dieser Wert auf „false“ gesetzt werden. 
   Allerdings muss hier auch eine Verbindung per HTTPS möglich sein.
+
   .. note::
-     Dieser Wert solle nur für Lokale oder Offline Lösung (oder im Testfall) auf ``false`` gesetzt werden. 
-     Auch für Intranetanwendungen sollte eine Verbindung ohne SSL heute kein Thema mehr sein.
+    
+    Dieser Wert solle nur für Lokale oder Offline Lösung (oder im Testfall) auf ``false`` gesetzt werden. 
+    Auch für Intranetanwendungen sollte eine Verbindung ohne SSL heute kein Thema mehr sein.
 
 Abschnitt ``Auswahllisten``
 +++++++++++++++++++++++++++

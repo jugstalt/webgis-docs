@@ -174,6 +174,18 @@ Wenn optional noch Werte übergeben werden, wird diese Abfrage ausgeführt und a
 
     Die Abfragewerte heißen so, wie sie im CMS definiert wurden
 
+*   ``query2``, ``abfragethema2``, ``querythemeid``
+
+    Wird ein Abfrage übergeben, stellt sich das Abfragethema für *Identify* und *Suche* in der Benutzeroberfläche 
+    ebenfalls auf diese dieses Thema.
+    Möchte man das voreingestellte Abfragethema auf ein (anderes) Thema setzen kann einer dieser Parameter verwendet werden.
+
+    Beispiel: ``querythemeid=bezirke``, ``querythemeid=%23``
+
+.. note::
+   Die Abfrage Id für "sichtbare Themen" ist ``#``. Dieses Zeichen ist allerdings in Urls reserviert und kann nicht 1:1 verwendet 
+   werden, sondern muss als ``%23`` kodiert werden.          
+
 
 Darstellungsfilter
 ------------------

@@ -79,9 +79,10 @@ Beschreibung der Keys
   Trennzeichen angegeben werden.
 
 * ``role-parameters-separator``  (default ``,``)
-
-  Das Trennzeichen das zum *Parsen* einzelnen Rollenparameter verwendet werden sollte.
-  ``(param1=1,param2=2,...) 
+  
+   Das Trennzeichen das zum *Parsen* einzelner Rollenparameter verwendet werden sollte.
+  
+  ``(param1=1,param2=2,...)`` 
 
 * ``user-prefix``, ``role-prefix``
   

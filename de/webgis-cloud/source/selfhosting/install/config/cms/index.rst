@@ -25,8 +25,8 @@ Der Wert für cms-items muss ein Array sein. Ein cms-item-Objekt hat dann wieder
 geben beispielsweise an, wo sich die Wurzel des CMS Baumes befindet (path) und wohin ein CMS veröffentlicht wird (target). 
 Hier werden die einzelnen Attribute von CMS Item erläutert:
 
-Knoten ``ms-item``
-++++++++++++++++++
+Knoten ``cms-item``
++++++++++++++++++++
 
 * ``id``
   Eine eindeutige Id für das CMS. Sollte nur Keinbuchstaben und Nummern bestehen (keine umlaute)
@@ -39,6 +39,12 @@ Knoten ``ms-item``
 
 * ``scheme``
   =webgis (hier immer webgis angeben!)
+
+* ``secrets-password``: (optional)
+  Möchte man in diesem CMS auf die Secrets zugreifen, erscheint ein Passwort Dialog.
+  Hier kann das Passwort vergeben werden, dass eingegeben werden muss. Diese Wert kann auch
+  weg oder leer gelassen werden. Der Dialog erscheint dann im CMS trotzdem. Er muss in diesem
+  Fall aber einfach ohne Eingabe bestätigt werden.
 
 * ``deployments``
   Ein Array von Deployment-Objeken. Pro Baum können 1:n Deployments angelegt werden. 

@@ -241,7 +241,7 @@ Ein Beispiel für View-Inhalte die häufig am selben Client aktualisiert werden 
 
 Hier macht es Sinn, den statischen, immer gleich bleibenden Code (JavaScript, CSS) vom dynamischen Teil (HTML) zu trennen und nur diesen neu zu laden. Immer wenn ein View neu geladen wurde, wird das Event „onpageloaded“ gefeuert. Auf dieses Ereignis kann im statischen Teil wird reagiert und bspw. Klick-Listener gesetzt werden:
 
-.. code-block :: html
+.. code-block:: html
 
     <script> 
         webgis_datalinq.events.on('onpageloaded, function(channel, sender, args){ 
