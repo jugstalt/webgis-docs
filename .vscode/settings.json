@@ -9,5 +9,6 @@
         "shapefiles",
         "vertex"
     ],
-    "restructuredtext.confPath": ""
+    "restructuredtext.confPath": "",
+    "esbonio.sphinx.confDir": ""
 }

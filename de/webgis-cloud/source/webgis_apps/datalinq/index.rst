@@ -8,6 +8,7 @@ DataLinq
 
     allgemeines
     technischeumsetzung
+    oberflaeche
     parametrierung
     aufrufundbeispiele
     tippsundtricks

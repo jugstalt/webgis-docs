@@ -33,6 +33,10 @@ Dadurch wird die Verlängerung der Linie in grün dargestellt.
 
 .. image:: img/snapping3.png
 
+Zudem kann man hierbei auch mit einem weiteren rechten Mausklick in die Karte eine gewünschte Distanz für die Länge der neuen parallelen Kante eingeben.
+
+.. image:: img/snapping11.png
+
 
 
 Richtung fixieren, Rechtwinklig
@@ -40,8 +44,23 @@ Richtung fixieren, Rechtwinklig
 
 Mit dieser Option kann ähnlich wie beim *Richtung fixieren, parallel* der neue Vertex rechtwinklig auf die zuvor gesetzte Kante positioniert werden.
 
-
 .. image:: img/snapping4.png
+
+
+Orthogonalmodus
+---------------
+
+Eine weitere Möglichkeit rechtwinklige/orthogonale Kanten zu zeichnen, bietet der Orthogonalmodus. Im Orthogonalmodus können beliebig viele orthogonale Kanten gezeichnet werden.
+
+.. image:: img/orthomodus2.png
+
+Klickt man im Orthogonalmodus mit rechter Maustaste in die Karte erscheint folgendes Fenster, mit welchem man eine bestimmte Distanz für den nächsten Punkt im Bezug auf den zuletzt gesetzten Punkt eingeben kann.
+
+.. image:: img/orthomodus1.png
+
+Beendet wird der Orthogonalmodus mittels rechter Mausklick in die Karte und *Orthogonal-Modus beenden*.
+
+
 
 
 Mittelpunkt Kante
@@ -59,7 +78,8 @@ Mit *Distanz fixieren* lässt sich die Distanz zwischen dem zuletzt gesetztem Ve
 Vertex in der fixierten Distanz platziert werden.
 Diese Funktion lässt sich über einen erneuten rechten Mausklick und anschließendem *Distanz fixieren: aus* wieder beenden.
 
- 
+
+
 Sketch parallel versetzen ...
 -----------------------------
 

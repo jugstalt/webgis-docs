@@ -1,5 +1,5 @@
 .. sectnum::
-    :start: 5
+    :start: 6
 
 Tipps und tricks für Views
 ==========================
