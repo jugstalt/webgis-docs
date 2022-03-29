@@ -12,5 +12,5 @@ DataLinq
     parametrierung
     aufrufundbeispiele
     tippsundtricks
-    examples
+    examples/index
 
