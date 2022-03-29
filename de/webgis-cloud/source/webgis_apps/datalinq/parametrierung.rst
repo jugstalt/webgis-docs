@@ -1,10 +1,10 @@
 .. sectnum::
     :start: 4
 
+.. _Anchor31 :
+
 Parametrierung
 ==============
-
-.. _Anchor31 :
 
 Endpunkte 
 ---------
@@ -143,9 +143,11 @@ Unter „New EndPoint Query“ wird eine neue Abfrage erstellt:
                 #endif
 
 
-    *   Test Parameter: hier kann die Query mit Parametern getestet werden. Bei Klick auf Test wird die Abfrage-URL erstellt, siehe :ref:`Kapitel 4.1<Anchor41>`.
+    *   Test Parameter: hier kann die Query mit Parametern getestet werden. Beim Ausführen der Abfrage wird die Abfrage-URL erstellt, siehe :ref:`Kapitel 5.1<Anchor41>`.
 
-        .. image:: img/ad3_3.jpg
+        .. image:: img/ad3_3.png
+        
+        .. note:: Bei Abfragen mit Parametern sollte man die Test Parameter so wählen, dass man die Abfrage jederzeit testen kann.
 
 *   Domains: zum Übersetzen von Werten, siehe :ref:`Kapitel 5.7<Anchor57>`
 
