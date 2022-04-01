@@ -15,7 +15,7 @@ Auf der Startseite von DataLinq.Code erscheinen folgende Felder.
 .. image:: img/oberfl_start.png
 
 
-Mit **Verify All Views** können alle Views verifiziert werden. Dabei wird auf Syntax und auch sicherheitsrelevante Keywords geachtet.
+Mit **Verify All Views** können alle Views verifiziert werden. Dabei wird auf Syntax und auch sicherheitsrelevante Keywords geachtet. Dies wird vor allem nach Updates empfohlen!
 
 
 Sidebar

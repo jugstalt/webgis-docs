@@ -6,154 +6,166 @@
 Parametrierung
 ==============
 
+Der Navigationsbaum links bildet die Struktur der Endpoints, Queries und Views ab. Damit kann schnell ein Element ausgewählt und bearbeitet werden.
+
 Endpunkte 
 ---------
 
-Unter „DataLinq EndPoints“ kann ein neuer Endpunkt erstellt oder bestehende Endpunkte bearbeitet werden.
+Ein neuer Endpunkt kann seitlich an der Sidebar erstellt werden. Das oberste Element bietet die Möglichkeit den Namen für den neuen Endpoint einzugeben und mit *Enter* zu bestätigen.
 
-Mit Klick auf die Schaltfläche „Edit CSS“ kann ein CSS-Dokument erstellt werden, auf dessen Stile von allen – in diesem Endpunkt vorhandenen – Views zugegriffen werden kann (:ref:`Kapitel 3.5<Anchor35>`). Durch Klick auf „Queries“ können neue Abfragen für den jeweiligen Endpunkt erstellt werden (:ref:`Kapitel 3.2<Anchor32>`).
+.. image:: img/hello_world1.png
 
-Mit Klick auf „Nav Tree“ wird links ein Navigationsbaum mit der Struktur der Endpoints, Query und Views angezeigt mithilfe dessen schnell ein Element ausgewählt und bearbeitet werden kann.
+.. note::
+   Für die Namen von Endpunkten sind nur bestimmte Zeichen zulässig: Kleinbuchstaben, Nummern und `-`.
+   Es sollten keine Sonderzeichen verwendet werden, weil der Name von Endpoints, Abfragen und Views später 
+   ein Teil der *Aufruf Url* wird.
 
-.. image:: img/ad3_1.jpg
+Ein Klick auf den Endpunkt öffnet den *Eigenschaften Dialog*, in welchem folgende EInstellungen getätigt werden können.
 
-Über die Schaltfläche „New Endpoint“ kann in drei Schritten ein neuer Endpunkt erstellt werden:
+**General**
 
-*   General
+*   **EndPoint Id:** Eindeutiger Name des Endpoints, wird bei URL Aufruf verwendet
 
-    *   EndPoint Id
+*   **EndPoint Name:** Bezeichnung des Endpunktes
 
-        * Eindeutiger Name des Endpoints, wird bei URL Aufruf verwendet
+*   **Description:** Optional, Beschreibung
 
-    *   EndPoint Name
+**Connection**
 
-        * Bezeichnung des Endpunktes
+*   Type
 
-    *   Description
+    *   Database: DB-Verbindung, bspw. 
 
-        * Optional, Beschreibung
+        .. code-block::
 
-* Connection
+            SQL:Server=db123.firma.at\instanz;Database=ssg;User Id=user1;Password=pwd1;
 
-    *   Type
+    *   Api: ArcGIS Rest Schnittstelle, bspw. http://localhost/test_api5
 
-        *   Database: DB-Verbindung, bspw. 
-
-            .. code-block::
-
-                SQL:Server=db123.firma.at\instanz;Database=ssg;User Id=user1;Password=pwd1;
-
-        *   Api: ArcGIS Rest Schnittstelle, bspw. http://localhost/test_api5
-
-            *   Falls der Dienst berechtigt ist, können die Zugangsdaten eines berechtigten Subscribers mit 
-
-                .. code-block::
-
-                    service=http://server123.at/api5test;user=username;pwd=12345
-            
-                angegeben werden
-
-        *   DataLinq: Eine andere WebGIS DataLinq Anwendung, bspw.
+        *   Falls der Dienst berechtigt ist, können die Zugangsdaten eines berechtigten Subscribers mit 
 
             .. code-block::
 
-                ...
+                service=http://server123.at/api5test;user=username;pwd=12345
+        
+            angegeben werden
 
-        *   Plugins, bspw. Wetterdienste, Twitter, etc.
+    *   DataLinq: Eine andere WebGIS DataLinq Anwendung, bspw.
 
-*   Security
+        .. code-block::
 
-    *   Setzen von autorisierten Usern / Rollen, siehe :ref:`Kapitel 3.2<Anchor32>`
+            ...
 
+    *   Plugins, bspw. Wetterdienste, Twitter, etc.
+
+**Security**
+
+Setzen von autorisierten Usern / Rollen, siehe :ref:`Berechtigung<param_berechtigung>`
+
+**Info**
+
+Unter *Info* wird das Erstelldatum des Endpoints angezeigt.
+
+**Styling**
+
+Mit Klick auf die Schaltfläche `Open EndPoint CSS...` kann das CSS-Dokument bearbeitet werden, auf dessen Stile von allen – in diesem Endpunkt vorhandenen – Views zugegriffen werden kann.
+
+
+**Delete**
+
+Mittels `Delete` kann der Endpoint gelöscht werden.
 
 .. _Anchor32 :
+
 
 Query (Abfragen) 
 ----------------
 
-Nach der Auswahl einer Endpoints können für diesen Abfragen erstellt werden. Damit kann der Datenbestand des Endpoints (dort wird die Verbindung zum Datenbestand definiert) abgefragt werden. Je nach Verbindungstyp kann diese Abfrage unterschiedlich formuliert sein. Bei Abfragen auf Datenbanken wird dies in der Regel SQL-Code sein, bei Abfragen auf REST-Schnittstellen wird es eine URL sein.
+Nach der Auswahl eines Endpoints können für diesen Abfragen erstellt werden. Damit kann der Datenbestand des Endpoints (dort wird die Verbindung zum Datenbestand definiert) abgefragt werden. Je nach Verbindungstyp kann diese Abfrage unterschiedlich formuliert sein. Bei Abfragen auf Datenbanken wird dies in der Regel SQL-Code sein, bei Abfragen auf REST-Schnittstellen wird es eine URL sein.
 
-.. image:: img/ad3_2.png
+Ähnlich wie zum Endpoint kann an der Sidebar unter dem dementsprechenden Endpoint eine neue Abfrage erstellt werden:
 
-Unter „New EndPoint Query“ wird eine neue Abfrage erstellt:
+.. image:: img/hello_world3.png
 
-*   General
+Anschließend können folgende Einstellungen getätigt werden.
 
-    *   Query Id
+**General**
 
-        *   Eindeutiger Name der Abfrage, wird bei URL Aufruf verwendet
+*   Query Id
 
-    *   Query Name
+    *   Eindeutiger Name der Abfrage, wird bei URL Aufruf verwendet
 
-        *   Bezeichnung des Abfrage
+*   Query Name
 
-    *   Description
+    *   Bezeichnung des Abfrage
 
-        *   Optional, Beschreibung
+*   Description
 
-*   Statement (über Editor)
+    *   Optional, Beschreibung
 
-    *   Je nach Verbindungstyp kann diese Abfrage unterschiedlich formuliert sein
+**Statement (über Editor)**
 
-        *   Abfrage aus Datenbanken: SQL
+*   Je nach Verbindungstyp kann diese Abfrage unterschiedlich formuliert sein
 
-        *   Abfrage aus REST-Schnittstellen: URL
+    *   Abfrage aus Datenbanken: SQL
 
-    *   Auch Parameter, bspw. zur Einschränkung der Ergebnisse sind möglich
+    *   Abfrage aus REST-Schnittstellen: URL
 
-        *   SQL-Parameter: **@Parametername** 
+*   Auch Parameter, bspw. zur Einschränkung der Ergebnisse sind möglich
 
-            .. code-block:: SQL
+    *   SQL-Parameter: **@Parametername** 
 
-                SELECT
-                    [OBJECTID], 
-                    [NAME]
-                FROM projekt_gebaeude 
-                    WHERE gebaeudeid = @GebaeudeId
+        .. code-block:: SQL
 
-        *   REST: **{{Parametername}}** 
-        
-            .. code-block:: REST
+            SELECT
+                [OBJECTID], 
+                [NAME]
+            FROM projekt_gebaeude 
+                WHERE gebaeudeid = @GebaeudeId
 
-                URL/gebaeude?gebaeudeid={{GebaeudeId}}&…
+    *   REST: **{{Parametername}}** 
+    
+        .. code-block:: REST
 
-            Bei der REST-Abfrage müssen die Parameter im CMS als Suchbegriff definiert sein.
+            URL/gebaeude?gebaeudeid={{GebaeudeId}}&…
 
-    *   Optionale Parameter werden nur eingefügt, wenn sie im Aufruf übergeben wurden. Sie können im Query-Statement mit ``#if PARAMETERNAME […] #endif`` definiert werden, der Inhalt zwischen diesen beiden Keywords wird dem Statement angehängt.
+        Bei der REST-Abfrage müssen die Parameter im CMS als Suchbegriff definiert sein.
 
-        *   SQL-Parameter: **@Parametername**
+*   Optionale Parameter werden nur eingefügt, wenn sie im Aufruf übergeben wurden. Sie können im Query-Statement mit ``#if PARAMETERNAME […] #endif`` definiert werden, der Inhalt zwischen diesen beiden Keywords wird dem Statement angehängt.
 
-            .. code-block:: SQL
+    *   SQL-Parameter: **@Parametername**
 
-                SELECT
-                    [NAME],
-                    [FARBE]
-                    WHERE gebaeudeart = @GebaeudeArt
-                    #if dachfarbe
-                        AND FARBE = @dachfarbe
-                    #endif
+        .. code-block:: SQL
 
-        *   REST: **{{Parametername}}** 
-        
-            .. code-block:: REST
-
-                URL/gebaeude?gebaeudeart={{GebaeudeArt}}
+            SELECT
+                [NAME],
+                [FARBE]
+                WHERE gebaeudeart = @GebaeudeArt
                 #if dachfarbe
-                        &farbe = @dachfarbe
+                    AND FARBE = @dachfarbe
                 #endif
 
+    *   REST: **{{Parametername}}** 
 
-    *   Test Parameter: hier kann die Query mit Parametern getestet werden. Beim Ausführen der Abfrage wird die Abfrage-URL erstellt, siehe :ref:`Kapitel 5.1<Anchor41>`.
+        .. code-block:: REST
 
-        .. image:: img/ad3_3.png
-        
-        .. note:: Bei Abfragen mit Parametern sollte man die Test Parameter so wählen, dass man die Abfrage jederzeit testen kann.
+            URL/gebaeude?gebaeudeart={{GebaeudeArt}}
+            #if dachfarbe
+                    &farbe = @dachfarbe
+            #endif
+
+
+*   Test Parameter: hier kann die Query mit Parametern getestet werden. Beim Ausführen der Abfrage wird die Abfrage-URL erstellt, siehe :ref:`Kapitel 5.1<Anchor41>`.
+
+    .. image:: img/ad3_3.png
+    
+    .. note:: Bei Abfragen mit Parametern sollte man die Test Parameter so wählen, dass man die Abfrage jederzeit testen kann.
 
 *   Domains: zum Übersetzen von Werten, siehe :ref:`Kapitel 5.7<Anchor57>`
 
-*	Security
+**Security**
 
-    *   Setzen von autorisierten Usern / Rollen, siehe :ref:`Kapitel 3.2<Anchor32>`
+    *   Setzen von autorisierten Usern / Rollen, siehe :ref:`Berechtigungen<param_berechtigung>`
 
 
 .. _Anchor33 :
@@ -163,36 +175,38 @@ Views (Ansichten)
 
 Zur Darstellung der Ergebnisse einer Abfrage können ein oder mehrere Ansichten erstellt werden.
 
-.. image:: img/ad3_4.png
+.. image:: img/hello_world7.png
 
 Unter „New EndPoint Query View“ wird eine neue Abfrage erstellt:
 
-*	General
+**General**
 
-    *	View Id
+*	View Id
 
-        *	Eindeutiger Name der Ansicht, wird bei URL Aufruf verwendet
+    *	Eindeutiger Name der Ansicht, wird bei URL Aufruf verwendet
 
-    *	View Name
+*	View Name
 
-        *	Bezeichnung des Ansicht
+    *	Bezeichnung des Ansicht
 
-    *	Description
+*	Description
 
-        *	Optional, Beschreibung
+    *	Optional, Beschreibung
 
-*	Code (über Editor)
+**Code (über Editor)**
 
-        *	HTML mit ASP.NET Razor Markup
+    *	HTML mit ASP.NET Razor Markup
 
-            .. image:: img/ad3_5.png
- 
-        *	Mit „Compile and Save“ wird der Code kompiliert und gespeichert, bzw. sonst eventuelle Fehlermeldungen ausgegeben.
+        .. image:: img/param_editor.png
 
-        *	Im Editor ist unter „Help“ ein Link mit Beispielen zu DataLinqHelper-Funktionen (:ref:`Kapitel 5.2<Anchor52>`) finden
+    *	Mit „Compile and Save“ wird der Code kompiliert und gespeichert, bzw. sonst eventuelle Fehlermeldungen ausgegeben.
+
+    *	Im Editor ist unter „Help“ ein Link mit Beispielen zu DataLinqHelper-Funktionen (:ref:`Kapitel 5.2<Anchor52>`) finden
 
 
 .. _Anchor34 :
+
+.. _param_berechtigung :
 
 Berechtigung
 ------------
@@ -201,7 +215,7 @@ Für Endpunkte und Abfragen können hierarchisch Berechtigungen gesetzt werden. 
 
 Dazu ist die Art (User, Rolle, etc.) zu wählen und der Name einzugeben und mit Klick auf das „+“-Symbol bzw. Enter zu bestätigen. Mit „*“ werden uneingeschränkte Berechtigungen gesetzt.
 
-.. image:: img/ad3_6.jpg
+.. image:: img/param_berechtigung.png
 
 
 .. _Anchor35 :
