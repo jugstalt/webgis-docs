@@ -76,11 +76,13 @@ empfiehlt es sich bei hoch ausgelasteten Instanzen einen Cache neben der Datenba
 Dieser ermöglicht schnelle Zugriffe.
 
 * ``cache-aside-provider``
-  ``value="redis"`` => Redis Cache verwenden
+  ``value="redis"`` => Redis Cache verwenden (Mehrere Instanzen können hier den gleiche Side-Cache verwenden)
+  ``value="InApp"`` => InApp Cache verwenden (Daten werden in der Applikation im Speicher gehalten)
   ``value=""`` => Kein Cache Aside 
 
 * ``cache-aside-connectionstring``
-  Der dazugehörige Connection String: zB ``localhost:6379``
+  Der dazugehörige Connection String: zB ``localhost:6379`` bei Redis
+  Bei InApp wird hier der Wert in Sekunden angegeben, für die ein Wert im Side-Cache gehalten werden soll, zB ``3600``
 
 Abschnitt ``Subscriber Datenbank``
 ++++++++++++++++++++++++++++++++++
@@ -314,11 +316,52 @@ Standardmaßig wird mit einer Toleranz von +/- 15 Pixel um dem Mauszeiger gesuch
 Bei flächenhaften Objekte kann das allerdings nicht wünschenswert sein. In der ``api.config`` kann eine
 *Section* für das Identify Werkzeug angegeben werden, in der für jeden Geometrietyp eine Toleranz angegeben werden kann:
 
-.. code::
+.. code:: XML
 
    <section name="tool-identify">
-		  <add key="tolerance" value="20" />   <!-- Standardwert -->   <!-- pixel -->
-		  <add key="tolerance-for-point-layers" value="10" />   <!-- optional -->
-		  <add key="tolerance-for-line-layers" value="5" />     <!-- optional -->
-		  <add key="tolerance-for-polygone-layers" value="0" /> <!-- optional -->
-	  </section>
+      <add key="tolerance" value="20" />   <!-- Standardwert -->   <!-- pixel -->
+      <add key="tolerance-for-point-layers" value="10" />   <!-- optional -->
+      <add key="tolerance-for-line-layers" value="5" />     <!-- optional -->
+      <add key="tolerance-for-polygone-layers" value="0" /> <!-- optional -->
+   </section>
+
+DataLinq 
+++++++++
+
+Über die *Section* an gegeben werden, ob DataLinq von einer WebGIS API Instanz angeboten wird.
+
+.. code:: XML
+
+   <section name="datalinq">
+      <add key="include" value="true" />
+      <add key="allow-code-editing" value="true" />
+      <!-- optional -->
+      <add key="allowed-code-api-clients" value="https://my-server/cms" >
+      <add key="environment" value="production" /> <!-- default, production, development, test -->
+      <add key="add-namespaces" value="" />
+   </section>
+
+* ``include``: gibt an, ob DataLinq über diese Instanz angeboten wird.
+
+* ``allow-code-editing``: Über diesen Parameter wird angegeben, ob DataLinq Objekte (Endpoints, Queries, Views)
+  über eine DataLinq.Code Instanz bearbet werden kann. 
+  Aus Sicherheitsgründen sollte das nur für lokake oder intranet Instanzen möglich sein. Produkivsystem sollten
+  DataLinq Views nur anbieten. Die Entwicklung sollte nur lokal oder über das sichere Intranet erfolgen. 
+  
+* ``environment``: Hier kann optional ein Environment angegeben werden. DataLinq entsteidet darauf hin etwa,
+  welcher *Connection String* bei Endpunkte verwendet werden soll.
+
+* ``allowed-code-api-clients``: Lässt das Bearbeiten über DataLinq.Code zu, können hier mit Beistrich 
+  getrennt, die Urls angegeben werden, auf denen erlaubte DataLinq.Code instanzen laufen (zusätzliche Security)
+  Im WebGIS Umfeld ist DataLinq.Code in der *WebGIS CMS Applikation* ungebracht. Hier sollte also der Link
+  zum CMS stehen. Die versucht über eine andere DataLinq.Code Instanz die Objekte zu editiern, kommt eine Fehlermeldung.
+
+* ``add-namespaces``: Hier können mit Beistrich getrennt Namespaces angegeben werden, auf die innerhalb
+  Views unbedingt zugegriffen werden muss. Diese werden dann über ``@using`` Derektiven im Hintergrund im View
+  hinzugefügt. Standardmäßig sind ``System``, ``System.Linq``, ``System.Text`` eingebunden.
+  **Achtung**: jeder weieter Namensraum kann ein Sicherheitsrisiko sein. 
+
+Um zu Überprüfen, ob die Einstellungen von DataLinq richtig eingestellt sind, dann die API mit dem 
+Pfad ``/datalinq`` aufgerufen werden:
+
+.. image:: img/config-tools9.png

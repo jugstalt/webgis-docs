@@ -82,3 +82,15 @@ welche Themen sichtbar, abfragbar oder bearbeitbar sind.
 
 Die Konfiguration der Kartendienste erfolgt über eine Web-Oberfläche in einer Baumstruktur. Dieser *CMS-Baum* kann dann für eine *WebGIS API* Instanz veröffentlicht werden. In diesem Schritt wird der Baum zu einem 
 *CMS File* zusammengefasst. Dieses File kann über *WebGIS API Konfiguration* in eine *WebGIS API Instanz* einbunden werden. Eine *WebGIS API* kann dabei mehrere *CMS Files* einbinden. 
+
+(WebGIS) DataLinq
+-----------------
+
+WebGIS beinhaltet eine *DataLinq Instanz*, die DataLinq um den Umgang mit integrierten Karten erweitert.
+Das DataLinq Rendering erfolgt dabei innerhalb einer WebGIS API Instanz. Die Konfiguration erfolgt in 
+``api/_config/api.config`` Abschnit ``datalinq``.
+
+Das Editieren von DataLinq Objekten (Endpoints, Queries, Views) erfolgt über *DataLinq.Code*. Der Editor
+ist im WebGIS in der CMS Anwendung integriert und kann über die Datei ``cms/_config/datalinq.config`` 
+konfiguriert werden.
+

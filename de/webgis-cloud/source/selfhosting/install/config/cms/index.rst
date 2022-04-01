@@ -193,3 +193,33 @@ Hier dürfen in alle Anwender, die die Rolle „gis-admin-webgis-cms“ haben,
 ins CMS einsteigen. ``ClientId`` und ``ClientSecret`` müssen am OpenId Server eingestellt werden. 
 Also Scopes müssen für den Client mindestens ``openid``, ``profile`` und ``role`` zur möglich sein.
 
+Datei ``_config/datalinq.config``
+---------------------------------
+
+Die CMS Applikation beinhaltet auch *DataLinq.Code* zum Bearbeiten von DataLinq Endpoints, Queries und Views.
+Die eigentliche *DataLinq Engine* läuft bei WebGIS immer innerhalb einer WebGIS API Instanz.
+
+Welche Instanzen über die CMS Startseite zum Editieren angezeigt werden, kann über die Datei 
+``_config/datalinq.config`` gesteuert werden:
+
+.. code-block::
+
+   {
+      "instances": [
+         {
+            "name": "Local WebGIS Api",
+            "description": "My local WebGIS test and developing API",
+            "url": "https://my-server/webgis-api"
+         }
+      ]
+   }
+
+
+Über das *Array* können mehrere Instanzen angegeben werden. Ruft man eine dieser Instanzen über die CMS Startseite
+auf, erscheint ein Anmeldefenster. Hier muss man sich mit einem *Subscriber* für die jeweilige API Instanz anmelden.
+
+.. note::
+  Die jeweilige API Instanz kann über die Konfiguration (api.config: ``datalinq => allowed-code-api-clients``)
+  festlegen, von welcher Url DataLinq.Code Editing möglich ist. Ist die entsprechende CMS Instanz dort nicht 
+  eingetragen, kommt beim Aufruf eine Fehlermeldung (*Invalid Client*).
+

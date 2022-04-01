@@ -92,6 +92,11 @@ Hier die gleiche Werte, wie in der ``api.config`` angeben:
 * ``cache-connectionstring``
   Connection-String auf die Datenbank oder Pfad in Filesystem.
 
+Abschnitt ``Cache Aside`` (optional)
+++++++++++++++++++++++++++++++++++++
+
+Hier die gleiche Werte, wie in der ``api.config`` angeben:
+
 Abschnitt ``Subscriber Datenbank``
 ++++++++++++++++++++++++++++++++++
 

@@ -215,7 +215,7 @@ Sortieren der Abfrageergebnisse
 
 Neben der Filterung steht mit DataLinqHelper.SortView ein weiterer Baustein zur Verfügung, mit dem die Datensätze im View per GUI sortiert werden können. Die Sortier-Felder werden wie die Filterparameter im Hintergrund an der Aufruf-URL mit ``_orderby=…`` angehängt. Absteigende Sortierungen werden mit einem Minus („-“) vor dem Spaltennamen übergeben.
 
-.. code-block ::
+.. code-block::
 
     @DLH.SortView( 
         "Sortierung", 
@@ -241,7 +241,7 @@ Ein Beispiel für View-Inhalte die häufig am selben Client aktualisiert werden 
 
 Hier macht es Sinn, den statischen, immer gleich bleibenden Code (JavaScript, CSS) vom dynamischen Teil (HTML) zu trennen und nur diesen neu zu laden. Immer wenn ein View neu geladen wurde, wird das Event „onpageloaded“ gefeuert. Auf dieses Ereignis kann im statischen Teil wird reagiert und bspw. Klick-Listener gesetzt werden:
 
-.. code-block:: html
+.. code-block::
 
     <script> 
         webgis_datalinq.events.on('onpageloaded, function(channel, sender, args){ 
