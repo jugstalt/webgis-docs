@@ -94,3 +94,4 @@ Das Editieren von DataLinq Objekten (Endpoints, Queries, Views) erfolgt über *D
 ist im WebGIS in der CMS Anwendung integriert und kann über die Datei ``cms/_config/datalinq.config`` 
 konfiguriert werden.
 
+.. image:: img/datalinq1.png

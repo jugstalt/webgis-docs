@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'webgis'
-copyright = '2019, ENI'
+copyright = '2022, ENI'
 author = 'ENI'
 
 # The full version, including alpha/beta/rc tags

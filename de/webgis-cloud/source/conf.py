@@ -18,11 +18,11 @@
 # -- Project information -----------------------------------------------------
 
 project = 'WebGIS Cloud Dokumentation'
-copyright = '2020, ENI'
+copyright = '2022, ENI'
 author = 'ENI'
 
 # The full version, including alpha/beta/rc tags
-release = '2020'
+release = '2022'
 
 
 # -- General configuration ---------------------------------------------------
