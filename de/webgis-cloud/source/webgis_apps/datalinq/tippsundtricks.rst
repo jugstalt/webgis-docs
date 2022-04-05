@@ -255,11 +255,16 @@ Hier macht es Sinn, den statischen, immer gleich bleibenden Code (JavaScript, CS
 Queries mit Domain-Übersetzung
 ------------------------------
 
-Wer kennt es nicht: In einer Tabelle wird ein Attribut eines Objektes mit einem Wert kodiert, bspw. 0 für 0 „Wald“, 1 für „Wiese“ und 2 für „verbautes Gebiet“. In einer Tabellenansicht möchte man diese Werte nun mit den richtigen Namen übersetzen um es den NutzerInnen verständlicher zu machen. Natürlich könnte man im Code des Views eine Unterscheidung bauen. Kling kompliziert? Ist es ja auch! Wir haben eine viel einfachere Lösung für Sie: Query-Domains! 
+Query-Domains kommen zur Anwendung, wenn in einer Tabelle ein Attribut eines Objektes mit einem Wert kodiert wird, bspw. 0 für „Wald“, 1 für „Wiese“ und 2 für „verbautes Gebiet“. 
+In einer Tabellenansicht möchte man diese Werte nun mit den richtigen Namen übersetzen um es den NutzerInnen verständlicher zu machen. 
 
-.. image:: img/ad5_8.png
+.. image:: img/tipps_domains2.png
 
-Im „Destination Field“ wird die Spaltenbezeichnung (kann auch ein Alias sein) jenes Feldes angegeben, das die kodierten Werte enthält. Unter „Query Id“ wird eine Lookup-Tabelle angegeben, die einerseits die kodierten Werte enthält und andererseits die Übersetzung. „Value-“ bzw. „Name Field“ geben die Spaltennamen dieser Lookup-Tabelle an. Wird im View des ursprünglichen Query auf das Feld (in der Grafik „STATUS_NAME“) zugegriffen, so wird nicht der kodierte Werte (bspw. 1) sondern die Übersetzung („Wiese“) ausgegeben. Tja, mit Query-Domains kann das Leben so einfach sein! Starten Sie jetzt.
+Im „Destination Field“ wird die Spaltenbezeichnung (kann auch ein Alias sein) jenes Feldes angegeben, das die kodierten Werte enthält. 
+Unter „Query Id“ wird eine Lookup-Tabelle angegeben, die einerseits die kodierten Werte enthält und andererseits die Übersetzung. 
+„Value-“ bzw. „Name Field“ geben die Spaltennamen dieser Lookup-Tabelle an. 
+Wird im View des ursprünglichen Query auf das Feld (in der Grafik „STATUS_NAME“) zugegriffen, so wird nicht der kodierte Werte (bspw. 1) sondern die Übersetzung („Wiese“) ausgegeben. 
+
 
 
 

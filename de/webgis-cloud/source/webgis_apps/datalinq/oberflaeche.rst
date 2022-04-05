@@ -92,8 +92,6 @@ Toolbar rechts oben:
 *	**Ausloggen**
 *	**DataLinqHelper:** Beschreibung zu den DataLinqHelper-Funktionen 
 
-		(TODO!!!!! suche in Help, mit Bsp und Code kopieren)
-
 
 Editor
 ------

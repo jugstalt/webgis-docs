@@ -17,31 +17,11 @@ Die Kartenserver greifen in der Regel über ihr Backend auf Geodaten in einer Da
 
 Auf mit dieser Methode lassen sich sehr gut verteilte Kartenanwendungen erstellen. Möchte man eigene Daten über *WebGIS* veröffentlichen, ist zusätzlich ein Kartenserver notwendig:
 
-.. code::
-
-    +--- Datenbank ----+      +--- Kartenserver --+     +---   WebGIS   ----+
-    |                  |      |                   |     |                   |
-    | PostGIS, ArcSDE  |  =>  |  AGS, WMS, gView  |  => |  API, CMS, Portal |
-    |                  |      |                   |     |                   |
-    +------------------+      +-------------------+     +-------------------+
+.. image:: img/architecture1.png
 
 Die WebGIS Plattform besteht aus mehreren (Web-) Applikationen, die je nach Anforderungen installiert/gestartet werden müssen.
 
-
-.. code::
-
-    +------------------+                          +-------------------+
-    |                  |                          |                   |
-    |    WebGIS API    |      +-------------+     |    WebGIS CMS     |
-    |                  |  <=  | CMS File(s) |  <= |                   |
-    +------------------+      +-------------+     +-------------------+
-              ^ 
-              | 
-    +------------------+            
-    |                  |                               
-    |  WebGIS Portal   |    <=  Client/Browser  
-    |                  |                              
-    +------------------+            
+.. image:: img/architecture2.png      
 
 
 WebGIS API

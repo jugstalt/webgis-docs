@@ -325,6 +325,29 @@ Bei flächenhaften Objekte kann das allerdings nicht wünschenswert sein. In der
       <add key="tolerance-for-polygone-layers" value="0" /> <!-- optional -->
    </section>
 
+Proxy Server
+++++++++++++
+
+Werden Dienste aus dem Internet eingebunden, dann dafür ein Proxy Server notwendig sein. Die entsprechenden Einstellungen erfolgen in der optionalen 
+*Section* ``proxy``:
+
+.. code-block:: XML
+
+  <section name="proxy">
+		  <add key="use" value="true" />
+		  <add key="server" value="webproxy.mydomain.com" />
+		  <add key="port" value="8080" />
+
+		  <add key="user" value="" />
+		  <add key="pwd" value="" />
+		  <add key="domain" value="" />
+		  <add key="ignore" value="localhost;localhost:8080;.my-domain.com$;^8\.;" />
+	  </section>
+
+
+``user``, ``pwd`` und ``domain`` sind optional. Bei ``ignore`` können mehrere Regeln mit ``;`` getrennt angegeben werden. Beginnt der aufgerufene Server mit 
+einer dieser Zeichenkette, wird der Proxy ignoriert. Hier können ebenfalls reguläre Ausdrücke eingetragen werden.
+
 DataLinq 
 ++++++++
 

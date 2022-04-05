@@ -4,7 +4,7 @@ Headerbasierte Authentifizierung
 Bei dieser Methode werden der angemeldete Benutzername und die Rollen über
 **HTTP Header Variablen** des Requests ausgelesen.
 
-Diese Methode mach Sinn, wenn sich die Installation des *WebGIS Portals* hinter 
+Diese Methode macht Sinn, wenn sich die Installation des *WebGIS Portals* hinter 
 einem *Reverse Proxy* befindet. Dabei erfolgt die *Authentifizierung* und 
 die *Autorisierung* der Zugriffe über den *Reverse Proxy*. Bei der Weiterleitung
 werden vom *Reverse Proxy* jedem Request Header Variablen hinzugefügt, die 

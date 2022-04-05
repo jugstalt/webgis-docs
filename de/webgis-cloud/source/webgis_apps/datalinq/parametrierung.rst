@@ -56,6 +56,8 @@ Ein Klick auf den Endpunkt öffnet den *Eigenschaften Dialog*, in welchem folgen
 
             ...
 
+    *   PlainText: PlainText bedeutet, dass Daten später in den Abfragen zeilenweise als Text eingetragen werden. Die Angabe eines Connection Strings entfällt für diesen Connection Type.
+
     *   Plugins, bspw. Wetterdienste, Twitter, etc.
 
 **Security**
@@ -87,6 +89,10 @@ Nach der Auswahl eines Endpoints können für diesen Abfragen erstellt werden. D
 
 .. image:: img/hello_world3.png
 
+Klickt man in der Baumansicht auf den neu entstandenen Knoten der Abfrage wird im Content Bereich ein leeres Editorfenster angezeigt. 
+Hier gibt man die eigentlich Abfrage ein, die die Daten liefern sollte. (Beim Endpoint Connection Type *Database* wäre das beispielsweise ein SQL Select Statement. 
+Bei Endpoints von Type *PlainText* kann hier jetzt ein beliebiger Text eingegeben werden, wobei jede Zeile (ausgeschlossen Leerzeilen) als Datensatz Interpretiert wird.)
+
 Anschließend können folgende Einstellungen getätigt werden.
 
 **General**
@@ -95,7 +101,7 @@ Anschließend können folgende Einstellungen getätigt werden.
 
     *   Eindeutiger Name der Abfrage, wird bei URL Aufruf verwendet
 
-*   Query Name
+*   Name
 
     *   Bezeichnung des Abfrage
 
@@ -155,13 +161,13 @@ Anschließend können folgende Einstellungen getätigt werden.
             #endif
 
 
-*   Test Parameter: hier kann die Query mit Parametern getestet werden. Beim Ausführen der Abfrage wird die Abfrage-URL erstellt, siehe :ref:`Kapitel 5.1<Anchor41>`.
+*   Test Parameter: Hier kann die Query mit Parametern getestet werden. Beim Ausführen der Abfrage wird die Abfrage-URL erstellt, siehe :ref:`Kapitel 5.1<Anchor41>`.
 
     .. image:: img/ad3_3.png
     
     .. note:: Bei Abfragen mit Parametern sollte man die Test Parameter so wählen, dass man die Abfrage jederzeit testen kann.
 
-*   Domains: zum Übersetzen von Werten, siehe :ref:`Kapitel 5.7<Anchor57>`
+*   Domains: zum Übersetzen von Werten, siehe :ref:`Kapitel 6.7<Anchor57>`
 
 **Security**
 
@@ -177,7 +183,7 @@ Zur Darstellung der Ergebnisse einer Abfrage können ein oder mehrere Ansichten 
 
 .. image:: img/hello_world7.png
 
-Unter „New EndPoint Query View“ wird eine neue Abfrage erstellt:
+Klickt man auf den neu erstellten View, erscheint im Content Bereich die Razor Vorlage für den neuen View, von welchem man über das *Zahnrad*-Symbol rechts unten zu den Einstellungen wechseln kann.
 
 **General**
 
@@ -185,7 +191,7 @@ Unter „New EndPoint Query View“ wird eine neue Abfrage erstellt:
 
     *	Eindeutiger Name der Ansicht, wird bei URL Aufruf verwendet
 
-*	View Name
+*	Name
 
     *	Bezeichnung des Ansicht
 
@@ -198,10 +204,6 @@ Unter „New EndPoint Query View“ wird eine neue Abfrage erstellt:
     *	HTML mit ASP.NET Razor Markup
 
         .. image:: img/param_editor.png
-
-    *	Mit „Compile and Save“ wird der Code kompiliert und gespeichert, bzw. sonst eventuelle Fehlermeldungen ausgegeben.
-
-    *	Im Editor ist unter „Help“ ein Link mit Beispielen zu DataLinqHelper-Funktionen (:ref:`Kapitel 5.2<Anchor52>`) finden
 
 
 .. _Anchor34 :
@@ -223,4 +225,4 @@ Dazu ist die Art (User, Rolle, etc.) zu wählen und der Name einzugeben und mit 
 Stile
 -----
 
-CSS-Stile können sowohl für einen Endpoint und alle darauf aufbauenden Views definiert werden (siehe :ref:`Kapitel 3.1<Anchor31>`) als auch innerhalb eines Views mit HTML ``<style>``-Tags bzw. als Inline ``style``-Attribut.
+CSS-Stile können sowohl für einen Endpoint und alle darauf aufbauenden Views definiert werden (siehe :ref:`Kapitel 4.1<Anchor31>`) als auch innerhalb eines Views mit HTML ``<style>``-Tags bzw. als Inline ``style``-Attribut.
