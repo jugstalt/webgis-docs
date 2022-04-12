@@ -317,3 +317,36 @@ Befindet sich ein Dienst bereits in der Karte, wird dieser ignoriert.
 
 *  ``append-services`` gleichbedeutend mit ``gdiservices``
    z.B.: ``append-services=service1,service2,service1@cms1``
+
+
+Allgemeine (originäre) Url Parameter
+------------------------------------
+
+Neben den hier angeführten Url Paramatern können auch allgeime Parameter übergeben werden. Als allgemeiner Parameter wird jeder Parameter behandelt, der keinen oben angeführten Parameter Schlüsselwort (``query``, ``abfragethema``, ...)
+entspricht.
+
+Diese Parameter werden als *originale* Aufrufparameter behandelt und bei jedem Request innerhalb der Viewer Session an den Server übergeben. Dort können diese Parameter dann verarbeitet werden.
+
+**Anwendungsbeispiele für allgemene (originäre) Url Parameter:**
+
+Eine Karte zum Bearbeiten von Projekten soll immer mit einer Projekt-ID aufgerufen werden. In der Karte soll durch einen gesperrten Filter gewährleistet sein, dass nur die Objekte auf dem 
+ensprechenden Projekt dargestellt werden. 
+
+Aufruf: ``http://...?...&project_id=4711...``
+
+Der gesperrte (*locked*) Filter, die der Anwender innerhalb der ViewerSession nicht ändern kann, kann auf *originänre* Url-Parameter folgerndermaßen zugreifen:
+  
+Filter: ``PROJECT_ID='[url-parameter:project_id]'`` 
+
+Über den Prefix ``url-parameter:`` wird zum setzen des Filters auf den Url-Parameter zugegriffen (funktioniert nur für gesperrte Filter)
+
+Außerdem sollt der Anwender neue und bestehende Objekte editieren können. Damit die Filter funktionieren muss dazu die Projekt-ID automatisch beim Editieren in ein Feld übernommen werden.
+Dazu muss im CMS für dieses Edit Feld bei ``AutoValue`` der Wert ``custom`` eingestellt werden. Im Eingabefeld für den *custom* AutoValue muss man folgendes eingeben:
+
+``url-parameter:project_id``
+
+Auch hier wird über den Prefix ``url-parameter:`` angegeben, das der Wert aus einem *originären* Url Parameter kommt.
+Für weitere Prefixe kann angegeben werden, ob der Wert nur beim INSERT oder UPDATE gesetzt werden soll:
+
+``oninsert:url-parameter:project_id``
+``onupdate:url-parameter:project_id``

@@ -10,9 +10,13 @@ Im folgenden Beispiel wir beispielsweise die Länge der erstellten Liniengeometr
 
 .. image:: img/editing18.png
 
-Wird als *Autovalue* Custom verwendet, kann im Eingabefeld der Autovalue eingegeben werden.
+Wird als *Autovalue* ``custom`` verwendet, kann im Eingabefeld der Autovalue eingegeben werden.
 Hier könnten beispielsweise Konstante Werte mit ``=WEBGIS`` eingegeben werden, wenn man möchte,
 dass ein Feld (zB QUELLE) immer  ``WEBGIS`` eingetragen werden sollte.
+
+Über ``custom`` können Werte aus den Url-Parametern verwendet werden, über den der Viewer aufgerufen wurde. Die funktioniert für sogenannte *originäre* Url-Parameter (siehe Abschnitt: Auf des Viewers).
+Auf diese Werte kann man beispielsweise folgendermaßen zugreifen: ``url-parameter:project_id``.
+
 
 Weiters sind auch automatische Attributierungen über räumliche Beziehungen zu anderen Featureklassen möglich,
 beispielsweise:
@@ -35,3 +39,5 @@ muss hier der *ConnectionString* und das *SQL Stamtement* eingeben werden:
 .. image:: img/editing19.png
 
 Über Platzhalter wie ``{{VORGANG_TEXT}}`` kann dabei auf aktuelle Eingaben zugegriffen werden.
+
+
