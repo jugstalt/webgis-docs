@@ -11,5 +11,6 @@ API
    :maxdepth: 1
 
    JavaScript<API_JavaScript/index.rst>
+   C# Clients<clients/index.rst>
 
 
