@@ -39,6 +39,24 @@ Die folgende Liste beschreibt die möglichen Eigenschaften:
 
     Ein Name für den Button
 
+*  ``id`` (optional ab Build 5.22.2401)
+
+    Die *ID* für ein benutzerdefiniertes Werkzeug wird vom System automatsich zufällig und eindeutig vergeben. Der Parameter muss hier in der Regel nicht angegeben werden. 
+    Eine Ausnahme kann sein, wenn das Werkzeug über einem parametrierten Aufruf des Kartenviewers ausgewählt werden soll (Parameter ``tool``). 
+    Hier kann eine *ID* angebenben werden bei der selber sichergestellt werden muss, dass diese *ID* eindeutig ist.
+
+    Beispiel:
+
+     .. code-block :: Javascript
+
+        webgis.custom.tools.add({
+            id: 'my_supertool',
+            name: 'Super Tool',
+            ...
+        });
+
+    Dieses Werkzeug kann mit dem Url Parameter ``https://.....?...&tool=webgis.tools.custom.my_supertool`` aufgerufen werden (``webgis.tools.custom`` wird vom System automatsich an die ageführte *ID* vorangestellt).
+
 *   ``command``
 
     Ein Link, der aufgerufen wird, sobald die entsprechende Useraktion ausgeführt wurde. Diesem Link können über Platzhalter Werte über den aktuellen Kartenauschnitt oder der geklickten Position übergeben werden (siehe unten) 
