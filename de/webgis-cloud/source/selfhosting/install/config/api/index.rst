@@ -362,6 +362,8 @@ DataLinq
       <add key="allowed-code-api-clients" value="https://my-server/cms" >
       <add key="environment" value="production" /> <!-- default, production, development, test -->
       <add key="add-namespaces" value="" />
+      <add key="add-razor-whitelist" value="DXImageTransform.Microsoft." />
+      <add key="add-razor-blacklist" value="FobiddenNamespace." />
    </section>
 
 * ``include``: gibt an, ob DataLinq über diese Instanz angeboten wird.
@@ -383,6 +385,16 @@ DataLinq
   Views unbedingt zugegriffen werden muss. Diese werden dann über ``@using`` Derektiven im Hintergrund im View
   hinzugefügt. Standardmäßig sind ``System``, ``System.Linq``, ``System.Text`` eingebunden.
   **Achtung**: jeder weieter Namensraum kann ein Sicherheitsrisiko sein. 
+
+* ``add-razor-whitelist``:
+  Hier können mit Beistrich getrennt Werte angegeben werden, die beim Validieren der Razor Views ignoriert werden.
+  Der Zeck ist hier, Werte aus der *Blacklist* zu overrulen. Enthält eine View beispielsweise Styles mit ``DXImageTransform.Microsoft...`` wird diese beim Kompilieren geblocked, weil ``Microsoft.`` 
+  standardmäßig in der *Blacklist* steht. Führt man diese Ausnhame hier ein, kann ein Validierungsfehler für dies Fall ignoriert werden. 
+  Man könnte hier auch direkt ``Microsoft.`` angeben. Allerdings würden dann mögliche Schwachstellen entstehen, weil Microsft dann als Namespace ohne Validierung einbunden werden kann. 
+  Whitespaces sollte eimmer sehr genau wiedergeben, welche Ausnahmen möglich sind.
+
+* ``add-razor-backlist``:
+  Hier kann die *Blacklist* zusätzlich erweitert werden. Standardnäßig enthält die Backlist folgende Begriffe: ``System.``, ``Microsoft.``
 
 Um zu Überprüfen, ob die Einstellungen von DataLinq richtig eingestellt sind, dann die API mit dem 
 Pfad ``/datalinq`` aufgerufen werden:
