@@ -146,9 +146,40 @@ Mithilfe von (optionalen) Parameter in den Queries lassen sich Abfrageergebnisse
     ) 
 
 
-Ein Filterfeld kann als Auswahlliste definiert werden, dessen Werte aus einer anderen DataLinq-Query kommen, siehe Feld ``STATUS``. Bei Bedarf können auch mehrere Listenwerte mit ``;`` getrennt übergeben werden (``multiple=“multiple“``). Im SQL-Statement muss diese Aneinanderreihung wieder aufgesplittet werden. Bei einer REST-API Abfrage muss im CMS die Abfrage-Methode des Suchfeldes als „In“ definiert werden. 
+Ein Filterfeld kann als Auswahlliste definiert werden, dessen Werte aus einer anderen DataLinq-Query kommen, siehe Feld ``STATUS``. Bei Bedarf können auch mehrere 
+Listenwerte mit ``;`` getrennt übergeben werden (``multiple=“multiple“``). Im SQL-Statement muss diese Aneinanderreihung wieder aufgesplittet werden. Bei einer REST-API Abfrage 
+muss im CMS die Abfrage-Methode des Suchfeldes als „In“ definiert werden. 
 
-Falls alle Filterfelder optional sind (also auch ohne eine einzige Einschränkung gesucht werden kann), kann man bei SQL-Statements eine allgemein gültige WHERE-Bedingung definieren und alle anderen optionalen Bedingungen mit „AND …“ anhängen. 
+Falls alle Filterfelder optional sind (also auch ohne eine einzige Einschränkung gesucht werden kann), kann man bei SQL-Statements eine allgemein gültige 
+WHERE-Bedingung definieren und alle anderen optionalen Bedingungen mit „AND …“ anhängen. 
+
+Die Auswahllisten im Filter können kaskadierend sein, das heißt ein Eingabefeld ist von einem anderen Feld abhängig. Immer wenn diesens Feld über die Auswahlliste geändert wird,
+änderen sich der Wert der abhängigen Auswahlliste(n). 
+
+.. code-block ::
+
+    @DLH.FilterView(
+       "Filter", 
+        new Dictionary<string, object>(){ 
+           {"APP", new { displayname="App(s)", source="read@wlogging-apps", valueField="VALUE", nameField="VALUE", prependEmpty=true }},
+           {"TYPE", new { displayname="Type(s)", source="read@logging-types?APP=[APP]", valueField="VALUE", nameField="VALUE", prependEmpty=true } }
+        }
+    )
+
+Das Feld ``TYPE`` ist hier von der Auswahlliste ``APP`` durch den Platzhalter ``[APP]`` abhängig (``APP=[APP]``). Immer wenn im Filter die Auswahl für ``APP`` geändret wird, 
+wird die Auswahlliste ``TYPE`` neu befüllt.
+Die entsprechende Abfrage (hier Datenbankabfrage) muss natürlich den übergebenen Parameter ``APP`` berücksichtigen, zB:
+
+.. code-block ::
+
+   SELECT 
+      DISTINCT(TYPE) as VALUE
+      FROM LOG_TABLE
+      WHERE 1=1
+
+    #if APP
+        AND APP = @APP
+    #endif    
 
 **REST-API**
 
