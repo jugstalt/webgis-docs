@@ -1,7 +1,7 @@
 Darstellung
 ===========
 
-In den Darstellungseinstellungen kann ganz einfach je nach Sketchtyp die Füllfarbe, Deckkraft, Linienfarbe, Linienstärke und Linienart geändert werden. 
+In den Darstellungseinstellungen kann ganz einfach die Linienfarbe und Linienstärke geändert werden. 
 
 .. image:: img/sketch5.png
 

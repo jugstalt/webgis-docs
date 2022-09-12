@@ -55,4 +55,12 @@ Das komplette Kontextmenü beim Zeichnen kann man mit:
 
     webgis.usability.sketchContextMenu = false;
 
+Beim Konstruieren des Sketches können diverse *Tastatur Shortcuts* verwendet werden, zB können bei gedrückter ``a`` Taste Vertices auf einer Kante gesetzt bzw. mit gedrückter ``d`` Taste gelöscht werden.
+Mit gedrückter ``Ctrl`` Taste kann ein Fenster aufgezogen werden und damit Vertices selektiert werden. Diese können dann im *Bulg* gelöscht oder verschoben werden.
 
+Ob diese Funktionalität zur Verfügung steht erflogt über folgende Schalter:
+
+.. code-block :: JavaScript
+
+   webgis.usability.allowSketchShortcuts = true;
+   webgis.usability.allowSelectSketchVertices = true;

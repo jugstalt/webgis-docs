@@ -1,17 +1,23 @@
 Sketch/Entwurfswerkzeuge
 ========================
 
-Beim Zeichnen eines Sketches (z.B. beim Redlining, Editieren, Höhenprofil erstellen, ...) stehen mehrere Optionen zur Verfügung, die je nach Anwendung sehr hilfreich sein können.
+Beim Zeichnen eines Sketches (zB beim Redlining, Editieren, Höhenprofil erstellen, ...) stehen mehrere Optionen zur Verfügung, die je nach Anwendung sehr hilfreich sein können.
 
 Dazu muss während des Zeichnens mit der rechten Maustaste auf den Sketch oder in die Karte geklickt werden. Je nach Typ des Sketches (Linie, Polygon) werden folgende Optionen angeboten:
 
 .. image:: img/sketch1.png
 
 
+.. toctree::
+   :maxdepth: 2
+
+   construct
+   presentation
+
+
 .. note::
    Auf (mobilen) Geräten mit Touch Bedienung funktioniert der Klick in der Karte über das *Click Bubble* Werkzeug (siehe Abschnitt *Click Bubble* unter Werkzeuge).
    Der Vorteil der *Click Bubble* ist die Vermeidung von unabsichtlichen Klicks beim Navigieren und die höhere Präzision beim Klicken.
-
 
 Rückgängig/Undo
 ---------------
@@ -39,42 +45,37 @@ Vertices nennt man die sogenannten Stützpunkte der Linie, welche über verschie
 * **Vertex fixieren/anschließen:** Rechte Maustaste auf den Vertex und dann *Vertex fixieren/anschließen* wählen. Diese Vertices bleiben dann beim Verschieben und Versetzen fixiert und sind als blaue größere Punkte erkennbar. Mit rechte Maustaste und dann *Fixierung aufheben* kann die Fixierung des Vertex wieder aufgehoben werden.
 
 
-Shortcuts
----------
 
-+------------+------------------------------------------------------------------------------------+
-| ``A``      | neuen Vertex auf Liniensegement setzen                                             |
-+------------+------------------------------------------------------------------------------------+
-| ``D``      | Vertex löschen: ``D``-Taste gedrückt halten und Vertices zum Löschen auswählen     |
-+------------+------------------------------------------------------------------------------------+
-| ``O``      | aktiviert/deaktviert Orthogonalmodus                                               |
-+------------+------------------------------------------------------------------------------------+
-| ``T``      | aktiviert/deaktviert Trace-Modus                                                   |  
-+------------+------------------------------------------------------------------------------------+
-| ``S``      | Snapping Dialog anzeigen                                                           |
-+------------+------------------------------------------------------------------------------------+
-| ``Strg+Z`` | Undo                                                                               |
-+------------+------------------------------------------------------------------------------------+
-| ``Strg``   | Bei grückter Taste können Vertices selelktiert werden (siehe unten)                |
-+------------+------------------------------------------------------------------------------------+
+Sketch verschieben
+------------------
+
+Wenn man mit der rechten Maustaste auf einen Vertex des Sketches klickt, kann man den gesamten Sketch mit *Sketch verschieben* verschieben.
+Es erscheint dann ein Symbol, mit welchem man dann den Sketch mit gedrückter Maustaste verschieben kann.
+
+.. image:: img/sketch2.png
 
 
-Vertices selektieren
---------------------
+Sketch drehen
+-------------
 
-Mit **Strg** können mehrere Vertices ausgewählt werden. Dazu kann man mit geddrückter ``Strg``-Taste entweder mehrere Vertices durch Anklicken auswählen oder mit der Maus ein Rechteck aufziehen, wodurch alle im Rechteck liegenden Vertices ausgewählt werden.
+Bei *Sketch drehen* gibt es zwei Optionen: Entweder man setzt den rechten Mausklick auf einen Vertex oder auf eine Kante des Sketches.
 
-.. image:: img/sketch11.png
+* **Vertex:** Dabei fallt die Bezugsrichtung des Winkels auf die Koordinatenachse in Richtung Osten und der gewählte Vertex wird zum Drehpunkt. Damit kann der Sketch um einen Absolutwert gedreht werden.
 
-Anschließend erscheinen im Menü nach dem rechten Mausklick folgende neuen Optionen:
+   .. image:: img/sketch9.png
 
-.. image:: img/sketch10.png
+* **Kante:** Dabei wird die gewählte Kante der Nullrichtung nach Osten zugeordnet. Somit kann der Sketch anhand der Kante gedreht werden.
 
-* **Aufheben:** Hebt die Auswahl auf.
+   .. image:: img/sketch8.png
 
-* **Umkehren:** Kehrt die Auswahl der Vertices um.
+Über einen rechten Mausklick in die Karte kann auch direkt ein Winkelwert in Grad eingegeben werden.
 
-* **Entfernen:** Entfernt alle ausgewählten Vertices.
+.. image:: img/sketch6.png
+
+Über *Weitere Funktionen* erscheint folgendes Menü, welches weitere Funktionen ermöglicht.
+
+.. image:: img/sketch7.png
+
 
 
 Sketch entfernen
@@ -92,12 +93,17 @@ Somit kann man mehrere Linien/Polygone zeichnen.
 
 
 
+Vertexreihenfolge umkehren
+--------------------------
 
-.. toctree::
-   :maxdepth: 2
+Mit Vertexreihenfolge umkehren kann bei einem Linien Sketch der Endpunkt mit dem Startpunkt umgekehrt werden. Es kann dadurch am anderen Ende der Linie weitergezeichnet werden.
 
-   segmentmodus
-   sketchtools
-   snapping
-   construct
-   presentation
+
+Richtung/Entfernung
+-------------------
+
+Mit *Richtung/Entfernung* kann der nächste Vertex über die Richtung und die Entfernung im Bezug auf den vorigen Vertex bestimmt werden.
+
+.. image:: img/sketch3.png
+
+Die bereits in den Feldern eingetragenen Werte bezieht sich auf die Position des rechten Mausklicks und können manuell beliebig geändert werden.

@@ -362,8 +362,12 @@ DataLinq
       <add key="allowed-code-api-clients" value="https://my-server/cms" >
       <add key="environment" value="production" /> <!-- default, production, development, test -->
       <add key="add-namespaces" value="" />
+      
       <add key="add-razor-whitelist" value="DXImageTransform.Microsoft." />
       <add key="add-razor-blacklist" value="FobiddenNamespace." />
+
+      <add key="add-css" value="~/content/styles/my-company/default.css?{version}" />
+      <add key="add-js" value="~/scripts/api/three_d.js?{version}" />
    </section>
 
 * ``include``: gibt an, ob DataLinq über diese Instanz angeboten wird.
@@ -395,6 +399,18 @@ DataLinq
 
 * ``add-razor-backlist``:
   Hier kann die *Blacklist* zusätzlich erweitert werden. Standardnäßig enthält die Backlist folgende Begriffe: ``System.``, ``Microsoft.``
+
+* ``add-css``:
+  Über diesen Key können mit Beistrich getrennt benutzerdefinierte CSS Dateien angegeben werden, die in jedem Report View
+  geladen werden, damit bestehende Styles (Farben für Buttons) überschrieben werden.
+  Die Urls können absolute oder relativ zur API Url sein. Damit ein Pfad relativ ist, muss er mit ``~/`` 
+  beginnen (siehe Beispiel oben). Absolute Pfade beginnen mit ``https://``.
+  Zusätzlich kann noch optional ein Platzhalter ``{version}`` angegeben werden. Dieser espricht beim Laden der aktuellen 
+  Versionsnummer der API. Damit kann garantiert werden, dass nach dem Ausrollen einer neuen API Version, auch die CSS
+  neu geladen werden und nicht vom Browser aus dessen Cache kommen.
+
+* ``add-js``:
+  Wie ``add-css``, nur das hier benutzerdefinierte Javascripts allen Report Views hinzugefügt werden.
 
 Um zu Überprüfen, ob die Einstellungen von DataLinq richtig eingestellt sind, dann die API mit dem 
 Pfad ``/datalinq`` aufgerufen werden:
