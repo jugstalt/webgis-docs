@@ -10,6 +10,7 @@ WebGIS Development
    :maxdepth: 2
    :caption: Inhalt:
 
-   API/index.rst
+   API/index
+   plugins/index
    embedded/index
 
