@@ -48,13 +48,13 @@ Im Javascript wird zum Beispiel von vorher folgendermaßen erweitert:
         }
 
         if(!draggableMarker) {
-            draggableMarker = webgis.createMarker({
+            draggableMarker = map.addMarker({
                 lat: lat,
                 lng: lng,
                 icon: 'blue',
                 draggable: true
             });
-            draggableMarker.addTo(map.frameworkElement);
+
             draggableMarker.on('dragend', function(e) {
                 var pos = draggableMarker.getLatLng();
                 commitPosition(pos.lng, pos.lat);
@@ -92,10 +92,10 @@ Im Javascript wird zum Beispiel von vorher folgendermaßen erweitert:
 
                 map.setScale(2000000, [15.2, 47.3]);
 
-                map.frameworkElement.on('click',function(e) {
-                    if(e.latlng) {
-                        console.log('map-click', e.latlng);
-                        setDraggableMarkerPos(e.latlng.lng, e.latlng.lat);
+                map.events.on('click',function(channel, sender, e) {
+                    if(e.lng && e.lat) {
+                        console.log('map-click', e);
+                        setDraggableMarkerPos(e.lng, e.lat);
                     }
                 });
             }
@@ -116,7 +116,7 @@ Im Javascript wird zum Beispiel von vorher folgendermaßen erweitert:
     });
 
 In der ``on_init`` Methode der *Smartmap* wird die Sanduhr und Maßstabsleiste 
-erstellt. Über das ``map.frameworkElement`` eine eine *Eventlistener* für das 
+erstellt. Über ``map.events`` eine ein *Eventlistener* für das 
 ``click`` Ergebnis angelegt. Klickt der Anwender in die Karte, wird diese Funktion 
 aufgerufen und der Marker neu positioniert.
 
@@ -127,7 +127,7 @@ Karte entfernt. Statt dessen wir eine "verschiebbarer" Marker an die entsprechen
 
 In der Funktion ``setDraggableMarkerPos(lng, lat)`` wird der Marker immer an die gewünschte Position 
 gesetzt. Das passiert, wenn der Anwender in die Karte klickt und ein Ergebnis aus der Suche auswählt.
-Ist der Marker noch nicht in der Karte, wird er über ``webgis.createMarker`` mit der Eigenschaft 
+Ist der Marker noch nicht in der Karte, wird er über ``map.addMarker`` mit der Eigenschaft 
 ``draggable: true`` erstellt. Der Marker bekommt ebenfalls einen Eventlistener auf ``dragend``, damit 
 das Backend die neue Position nach dem Verschieben des Markers informiert wird.
 
