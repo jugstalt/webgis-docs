@@ -1,8 +1,9 @@
 Einfache Smartmap Anwendung
 ===========================
 
-In diesem Beispiel wird eine einfache Fall gezeigt, in der eine Karte inklusive Suchfeld auf eine
-Webseite eingebunden wird. Der Anwender kann in der Karte navigieren. Wähle er eine Adresse aus dem 
+In diesem Beispiel wird ein einfacher Anwendungsfall gezeigt, 
+in dem eine Karte inklusive Suchfeld auf eine Webseite eingebunden wird. 
+Der Anwender kann in der Karte navigieren. Wählt er eine Adresse aus dem 
 Suchfeld aus, wird in der Karte an die entsprechenden Position gesprungen und ein *Marker* mit dem 
 Suchtreffer als Text angezeigt:
 
@@ -36,7 +37,7 @@ in dem die *Smartmap* dargestellt werden soll:
     </div>
 
 
-Das einbinden der *Smartmap* erfolgt dann im *Scriptblock* der Seite, bzw. in einer einer eigenen Javascript
+Das Einbinden der *Smartmap* erfolgt im *Scriptblock* der Seite, bzw. in einer einer eigenen Javascript
 Datei, die nach den oben Angeführten Scripts geladen werden muss.
 
 .. code:: javascript
@@ -63,29 +64,32 @@ Datei, die nach den oben Angeführten Scripts geladen werden muss.
         });
     });
 
-Wie für jede WebGIS API Anwendung muss zuerst die `webgis-clientid` angegeben werden.
-Die Domain der Webseite muss für diesen *Client* registriert sein (zB http://localhost).
+
+.. note::
+   
+   Wie für jede WebGIS API Anwendung muss zuerst die `webgis-clientid` angegeben werden.
+   Die Domain der Webseite muss für diesen *Client* registriert sein (zB http://localhost).
 
 Wurde ``webgis`` erfolgreich initialisiert, kann innerhalb der ``webgis.init`` Methode die 
 *Smartmap* erstellt werden. 
 
 Übergeben werden die Kartendienste (``map_options.services``) und der Kartenausschnitt (``map_options.extent``).
 Über ``map_options.enabled`` kann angegeben werden, ob die Karte beim Start aktiv ist.
-Bei Karten, die eine größere Webseite eingebunden werden, wird empfohlen, dass dieser Wert auf ``false``
+Bei Karten, die in eine größere Webseite eingebunden werden, wird empfohlen, dass dieser Wert auf ``false``
 gesetzt wird. Der Anwender muss die Karte dann vor der Verwendung zuerst mit einem Klick aktivieren.
-Das erhöht die *Usability* da ansonsten Scrollen über die Seite unabsichtlich in die Karte gezoomt werden 
-kann und der Anwender schlimmstenfalls nicht mir "normal" auf über die Seite scrollen kann.
+Das erhöht die *Usability*, da ansonsten beim Scrollen über die Seite unabsichtlich in die Karte gezoomt werden 
+kann und der Anwender schlimmstenfalls nicht mehr "normal" auf über die Seite scrollen kann.
 
 Über die ``quick_search_*`` Eigenschaften kann die Suche genauer spezifiziert werden.
-Neben dem Suchdienst, kann eine Platzhalter über das leere Suchfeld angegeben werden. Ebenfalls kann 
-ein Maßstab angegebnen werden, auf den gezoomt wird, wenn der Anwender ein Suchergebnis auswählt.
+Neben dem Suchdienst, kann eine Platzhalter für das leere Suchfeld angegeben werden. Ebenfalls kann 
+ein Maßstab angegeben werden, auf den gezoomt wird, wenn der Anwender ein Suchergebnis auswählt.
 
-Über die ``quick_tools`` wird angeben, welche Schnellwerkzeuge in der Karte neben ``+`` und ``-`` angezeigt werden,
-zB ``webgis.tools.navigation.currentPos`` stellt ein Button zur Verfügung, mit der der Anwender auf seine 
-aktuelle Position in der Karte springen kann.
+Über die ``quick_tools`` wird angeben, welche Schnellwerkzeuge in der Karte neben ``+`` und ``-`` angezeigt werden.
+``webgis.tools.navigation.currentPos`` stellt beispielsweise einen Button zur Verfügung, 
+mit der der Anwender auf seine aktuelle Position in der Karte springen kann.
 
 Ist die *Smartmap* initialisiert, wird die ``on_init`` Funktion aufgerufen. 
-Kann kann wie im Beispiel gezeigt, auf eine einen bestimmen Maßstab gesprungen werden.
+Hier kann, wie im Beispiel gezeigt, auf eine einen bestimmen Maßstab gesprungen werden.
 
 Das komplette Beispiel befindet sich unter:
 

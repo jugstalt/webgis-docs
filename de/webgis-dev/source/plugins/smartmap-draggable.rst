@@ -8,7 +8,7 @@ bereits in der Karte befindet, sollte ebenfalls per *Drag & Drop* an eine belieb
 Stelle gezogen werden können.
 
 Immer wenn die Position des Marker in der Karte neu gesetzt wird, sollte die 
-Webseite darüber informiert werden und die dann beispielsweise an das Server-backend 
+Webseite darüber informiert werden und die Position dann an das Server-backend 
 schicken um weiter Information abzufragen.
 
 .. image:: img/smartmap2.png
@@ -17,9 +17,9 @@ schicken um weiter Information abzufragen.
     Zusätzlich wird hier noch eine Maßstabsleiste mit Sanduhr in die Karte eingebaut.
     Das erfordert zusätzliche *HTML Elemente* und die ``map.ui.createHourglass`` Methode (siehe unten).
 
-Die einzubindenden Script entsprechen denen der einfachen *Smartmap* aus dem letzten Beispiel.
+Die einzubindenden Script entsprechen denen, der einfachen *Smartmap* aus dem letzten Beispiel.
 
-Im HTML Block, kommen jetzt die Element für die Maßstabsleiste dazu:
+Optional kommen hier im HTML Block zusätzlich die Element für die Maßstabsleiste dazu:
 
 .. code:: html
 
@@ -32,7 +32,7 @@ Im HTML Block, kommen jetzt die Element für die Maßstabsleiste dazu:
         </div>
     </div>
 
-Im Javascript wird zum Beispiel von vorher folgendermaßen erweitert:
+Das Javascript wird zum Beispiel von vorher folgendermaßen erweitert:
 
 .. code:: javascript
 
@@ -116,20 +116,20 @@ Im Javascript wird zum Beispiel von vorher folgendermaßen erweitert:
     });
 
 In der ``on_init`` Methode der *Smartmap* wird die Sanduhr und Maßstabsleiste 
-erstellt. Über ``map.events`` eine ein *Eventlistener* für das 
+erstellt. Über ``map.events`` wird ein *Eventlistener* für das 
 ``click`` Ergebnis angelegt. Klickt der Anwender in die Karte, wird diese Funktion 
 aufgerufen und der Marker neu positioniert.
 
 Über die ``eventHandlers`` der *Smartmap* kann auf das ``onfeaturefound`` Event 
 zugegriffen werden. Dieses Event wird immer ausgelöst, wenn der Anwender ein 
-Ergebnis in der Karte findet. In der Methode wird der Suchergebnis-Marker aus der 
-Karte entfernt. Statt dessen wir eine "verschiebbarer" Marker an die entsprechende Position gesetzt.
+Ergebnis über die Such-Eingabebox findet. In der Methode wird der Suchergebnis-Marker aus der 
+Karte zuerst entfernt. Statt dessen wir ein "verschiebbarer" Marker an die entsprechende Position gesetzt.
 
 In der Funktion ``setDraggableMarkerPos(lng, lat)`` wird der Marker immer an die gewünschte Position 
-gesetzt. Das passiert, wenn der Anwender in die Karte klickt und ein Ergebnis aus der Suche auswählt.
+gesetzt. Das passiert, wenn der Anwender in die Karte klickt oder ein Ergebnis aus der Suche auswählt.
 Ist der Marker noch nicht in der Karte, wird er über ``map.addMarker`` mit der Eigenschaft 
 ``draggable: true`` erstellt. Der Marker bekommt ebenfalls einen Eventlistener auf ``dragend``, damit 
-das Backend die neue Position nach dem Verschieben des Markers informiert wird.
+das Backend über die neu Position nach dem Verschieben des Markers informiert wird.
 
 Die Funktion ``commitPosition(lng, lat)`` kann verwendet werden, um die aktuelle Position 
 an das Backend zu übergeben. Im Beispiel wird diese immer Aufgerufen sobald der Marker neue Koordinaten 
