@@ -1,14 +1,4 @@
 {
-    "cSpell.language": "de,de-DE",
-    "cSpell.words": [
-        "bounding",
-        "kartenviewer",
-        "kartenviewers",
-        "redlining",
-        "shapefile",
-        "shapefiles",
-        "vertex"
-    ],
-    "restructuredtext.confPath": "",
-    "esbonio.sphinx.confDir": ""
+    "esbonio.sphinx.confDir": "",
+    "cSpell.language": "en,de-DE"
 }

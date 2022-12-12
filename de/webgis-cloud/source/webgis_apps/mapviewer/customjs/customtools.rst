@@ -199,12 +199,19 @@ Für die Eigenschaft ``command`` können verschiede Platzhalter in dir Url einge
 
     *   Wie oben, nur für Koordinaten im Karten Koordinatensystem.
 
-    ``{wkt}, {wkt-4326}``
+*   ``{wkt}, {wkt_digits_1}, {wkt_digits_2}, {wkt_digits_3}, {wkt-4326}``
 
     *   *ToolTypes:* sketch0d (=point), sketch1d (=line), sketch2d (=polygon)
 
     *   Damit kann über ein benutzerdefiniertes Werkzeug die Sketchgeometrie als Well-Known-Text ``POINT(...), LINESTRING(...), POLYGON(...)`` übergeben werden.
-        Der Geometrie kann in WGS84 oder der aktuellen Kartenprojektion übergeben werden.
+        Der Geometrie kann in WGS84 oder der aktuellen Sketch-Pojektion übergeben werden.
+        Mit den Platzhaltern ``{*wkt_digits_1..3}`` werden die Koordinaten auf die angegeben Stellen gerundet.
+
+*   ``{calc-srs}, {sketch-srs}``
+
+    *   *ToolTypes:* sketch0d, sketch1d, sketch2d
+
+    *   Koordinatensystem, in dem der Sketch, der über ``{wkt}`` übergeben wird, vorliegt. Beide Platzhalter liefern in der Regel die gleichen Werte. 
 
 
 Benutzerdefinierte Werkzeuge mit Eingabefeldern

@@ -40,4 +40,38 @@ muss hier der *ConnectionString* und das *SQL Stamtement* eingeben werden:
 
 Über Platzhalter wie ``{{VORGANG_TEXT}}`` kann dabei auf aktuelle Eingaben zugegriffen werden.
 
+Als Datenquelle für ``db_select`` kann auch ein WebService angeben werden. Das kann beispielsweise auch eine 
+*Datalinq* abfrage sein, die über als JSON abgeholt wird.
 
+Liefert eine Abfrage etwas folgendes Ergebnis:
+
+``https://localhost:44341/datalinq/select/auswahllisten(oJ...token)@color?value=blau``
+
+.. code-block:: javascript
+
+   [
+      {
+        "value": "4711",
+        "name":"Blau"
+      }
+   ]
+
+Zum Einbinden dieses Dienstes muss für die Felder ``ConnectionString`` und ``SqlStatement`` folgendes eingetragen werden:
+
+ConnectionString:
+
+``https://localhost:44341/datalinq/select/auswahllisten(oJ...token)@color``
+
+SqlStatement:
+
+``value={{color}}``
+
+Wobei hier ``color`` das Edit Eingabe/Auswahllisten-Feld ist, das für diesen Autovalue verwendet wird.
+In diesem Beispiel würde als Autovalue der Wert ``Blau`` übernommen werden.
+
+.. note:: 
+   In der Praxis wird nicht empfohlen, *ConnectionString* oder Urls (mit Tokens) wie oben gezeigt an dieser Stelle 
+   ins CMS einzutragen. *ConnectionStrings* und Tokens sollte im Abschnitt ``secrets`` einmal eingetragen werden.
+   An dieser Stelle wird dann nur mehr der Platzhalter für das Secret angegeben:
+
+   ConnectionString: ``{{select-datalinq-endpoint-auswahllisten}}@color``
