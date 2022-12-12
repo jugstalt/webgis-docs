@@ -8,7 +8,7 @@ CMS
     ui
     add_wmts_service
     add_ags_service
-    queries
+    queries/index
     layers
     presentations
     editing/index
