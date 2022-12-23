@@ -21,12 +21,12 @@ Auf diese Werte kann man beispielsweise folgendermaßen zugreifen: ``url-paramet
 Weiters sind auch automatische Attributierungen über räumliche Beziehungen zu anderen Featureklassen möglich,
 beispielsweise:
 
-``NR FROM GDBAbfrage service kataster``
+``NR FROM GDBAbfrage SERVICE kataster``
 
 In das Feld wird das Attribut NR jener Objekte aus dem Thema GDBAbfrage geschrieben, welche sich mit dem gespeicherten 
 Objekt räumlich decken. Gibt es mehrere Ergebnisse, werden diese mit Strichpunkten getrennt.
 
-``TYP FROM kasten service strom@mycms BUFFERDIST 20 SEPERATOR space-space MAX 10``
+``TYP FROM kasten SERVICE strom@mycms BUFFERDIST 20 SEPERATOR space-space MAX 10``
 
 In das Feld wird das Attribute TYP jener Objekte aus dem Thema Kasten geschrieben, welche im Umkreis von 20m
 liegen (BUFFERDIST 20). Gibt es mehrere Ergebnisse, werden diese mittels Leerzeichen-Bindestrich-Leerzeichen 
