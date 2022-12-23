@@ -27,30 +27,30 @@ Für diese Anwendung muss als *Resource* eine **Map Portal Page** angelegt werde
 
 ad 3)
 Sollten nur definierte Anwendergruppen auf die Karten eine *Map Portal Page* zugreifen ist als *Resource* eine
-*Map Portal Login Damain* anzulegen. Unter diese *Domain* können wieder beliebige Logins angelegt werden,
+*Map Portal Login Domain* anzulegen. Unter dieser *Domain* können wieder beliebige Logins angelegt werden,
 mit denen sich Anwender auf der *Map Portal Page* anmelden können. Alle Logins für diese Domain erhalten als 
 Endung den Domainnamen mit vorangestelltem ``@`` Zeichen. Ein Domain Login kann somit die Form einer E-Mail 
-Adresse, wobei der Domainname die Endung der E-Mail Adresse sein.
-Neben *Map Portal Pages* lassen sich mit einer *Domain* auch **(WebGIS) CMS Accounts** berechtigen (siehe 4)
+Adresse haben, wobei der Domainname die Endung der E-Mail Adresse ist.
+Neben *Map Portal Pages* lassen sich mit einer *Domain* auch **(WebGIS) CMS Accounts** berechtigen (siehe 4).
 
 ad 4)
 Zum Einbinden von eigenen Kartendiensten (WMS, WMTS, AGS) ist als *Resource* ein **(WebGIS) CMS Account** anzulegen.
 Über diesen wird definiert, welche Dienste für WebGIS Karten zur Verfügung stehen. Im **(WebGIS) CMS Account**
 kann zusätzlich genau definiert werden:
 
-* Welche Themen von Anwender sichtbar bzw. unsichtbar geschalten werden können.
+* Welche Themen vom Anwender sichtbar bzw. unsichtbar geschalten werden können
 * Welche Themen Abgefragt werden können
 * Welche Themen bearbeitet werden können
 * Darstellungsfilter
-* etc
+* etc.
 
 Müssen die Dienste nur für einen definierten Anwenderkreis zugänglich sein, ist hier als *Resource* ebenfalls ein
 **Map Portal Login Domain** notwendig.
 
 ad 5)
-Steht kein einegen Kartenserver zu bereitstellen der eigenen Geodaten zur Verfügung können über die 
-**WebGIS Cloud** Dienste gehosten werden. Diese können dann in beliebige GIS Anwendungen bzw. über einen 
-**(WebIGS) CMS Account** eine die **WebGIS Cloud** eingebunden werden, sowohl für gehostet Karten als
+Steht kein eigener Kartenserver zu bereitstellen der eigenen Geodaten zur Verfügung, können über die 
+**WebGIS Cloud** Dienste gehostet werden. Diese können dann in beliebige GIS-Anwendungen bzw. über einen 
+**(WebIGS) CMS Account** in die **WebGIS Cloud** eingebunden werden, sowohl für gehostete Karten als
 auch für **WebGIS API Client** Karten auf der eigenen Infrastruktur. 
 
 

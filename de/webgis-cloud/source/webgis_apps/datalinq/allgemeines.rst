@@ -4,7 +4,8 @@
 Allgemeines
 ===========
 
-WebGIS DataLinq ist ein Werkzeug zur einfachen Abfrage von Datenbeständen aus verschiedenen Quellen sowie zur Bereitstellung und Darstellung der Ergebnisse. Der Fokus liegt auf dem einfachen, lesenden und schreibenden Datenzugriff.  
+WebGIS DataLinq ist ein Werkzeug zur einfachen Abfrage von Datenbeständen aus verschiedenen Quellen sowie zur Bereitstellung und Darstellung der Ergebnisse. 
+Der Fokus liegt auf dem einfachen, lesenden und schreibenden Datenzugriff.  
 
 Ziele
 -----

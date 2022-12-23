@@ -1,33 +1,33 @@
 Dynamische Inhalte
 ==================
 
-Wurden in eine Karte *dynamische Inhalte* eingefügt (siehe Abschnitt ``MapBuilder``) können die Marker und Ergebnisse ebenfalls über die ``custom.js`` angepasst werden.
+Wurden in eine Karte *dynamische Inhalte* eingefügt (siehe Abschnitt ``MapBuilder``), können die Marker und Ergebnisse ebenfalls über die ``custom.js`` angepasst werden.
 
 Marker
 ------
 
 Das Anpassen der Marker für *dynamische Inhalte* kann wie bei Abfragemarker über die Auflistung ``webghis.markerIcons[]`` angepasst werden.
-Allerdings lautet die Listenwerte anstelle von ``query_result`` hier ``dynamic_content`` und ``dynamic_content_extenddependent``:
+Allerdings lauten die Listenwerte anstelle von ``query_result`` hier ``dynamic_content`` und ``dynamic_content_extenddependent``:
 
 * ``webghis.markerIcons["dynamic_content"]["default"]``:
-  Definition von *Marker Icons* für allgemeine *dynamische Inhalte*. Standardmaßig werden hier Marker mit Nummern angezeigt.
+  Definition von *Marker Icons* für allgemeine *dynamische Inhalte*. Standardmäßig werden hier Marker mit Nummern angezeigt.
 
 * ``webghis.markerIcons["dynamic_content_extenddependent"]["default"]``:
-  Für *dynamische Inhalte*, die bei jeder Änderung des Kartenausschnittes neu geladen werden. Dazu muss beim beim Erstellen des Inhalt ``Ausschnittsabhängig`` angegeben werden (siehe ``MapBuilder``).
+  Für *dynamische Inhalte*, die bei jeder Änderung des Kartenausschnittes neu geladen werden. Dazu muss beim Erstellen des Inhaltes ``Ausschnittsabhängig`` angegeben werden (siehe ``MapBuilder``).
   Standardmäßig werden hier Marker ohne fortlaufende Nummern angezeigt. Fortlaufende Nummern wie bei *statischen dynamischen Inhalten* würden den Anwender hier nur verwirren, weil beispielsweise 
   beim jedem verschieben der Karte ein Marker eine neue fortlaufende Number bekommen kann.
 
-Schränkt man die ``webghis.markerIcons["dynamic_content"]`` bzw ``webghis.markerIcons["dynamic_content_extenddependent"]`` mit ``["default"]`` ein, gilt die Definition für alle *dynamischen Inhalte*.
-Anstelle von ``["default"]`` kann auch der Anzeigename des *dynamischen Inhalts* angegeben werden, zB ``webghis.markerIcons["dynamic_content_extenddependent"]["Aktuelle Baustellen"]``
+Schränkt man die ``webghis.markerIcons["dynamic_content"]`` bzw. ``webghis.markerIcons["dynamic_content_extenddependent"]`` mit ``["default"]`` ein, gilt die Definition für alle *dynamischen Inhalte*.
+Anstelle von ``["default"]`` kann auch der Anzeigename des *dynamischen Inhalts* angegeben werden, z.B. ``webghis.markerIcons["dynamic_content_extenddependent"]["Aktuelle Baustellen"]``.
 
 .. note::
    Da eine grundlegende Beschreibung für Marker schon im vorherigen Kapitel für Abfrageergebnisse gezeigt wurde und die Vorgehensweise analog ist, werden hier 
    nur ein paar Beispiele aus der Praxis angeführt.
 
-**Beispiel**
+**Beispiel:**
 
 Ein *dynamischer Inhalt* stellt Kunden als Punkt auf der jeweiligen Adresse dar. Die Grundlage ist eine ``API-Abfrage``. 
-Weil auf einer Adresse mehrere Kunden wohnen können (Mehrfamilienhaus) wurde bei der entsprechenden Abfrage ``Union`` eingestellt (siehe Tutorial CMS - Abfragen). Dadurch werden
+Weil auf einer Adresse mehrere Kunden wohnen können (Mehrfamilienhaus), wurde bei der entsprechenden Abfrage ``Union`` eingestellt (siehe Tutorial CMS - Abfragen). Dadurch werden
 Kunden, die sich am selben Adresspunkt befinden zu einem *Objekt/Marker* zusammenfasst. Die ``Properties`` des Features entsprechen durch das Zusammenfassen einem Array (normalerweise allgemeines Objekt bzw. ``Record``).
 Jeder Eintrag in diesem Objekt entspricht einem ``Record`` für einen Kunden.
 
@@ -55,8 +55,8 @@ Ergebnis:
 Hooks 
 -----
 
-Über ``hooks`` kann nach dem Laden eines *dynamischen Inhalts* auf die die Features zugegriffen werden. Dabei können die Features auch geändert werden.
-Ein Anwendungsbeispiel für ``hooks`` ist beispielsweise das Umbenennen oder Einschränken der Attribute, die für den *dynamischen Inhalt* angezeigt werden sollten.
+Über ``hooks`` kann nach dem Laden eines *dynamischen Inhalts* auf die Features zugegriffen werden. Dabei können die Features auch geändert werden.
+Ein Anwendungsbeispiel für ``hooks`` ist beispielsweise das Umbenennen oder Einschränken der Attribute, die für den *dynamischen Inhalt* angezeigt werden sollen.
 
 Folgende Auflistungen stehen dabei zur Verfügung:
 
@@ -100,8 +100,8 @@ Ergebnis:
 
 .. image:: img/dynamic-content2.png
 
-Im letzten Schritt sollte für diesen Dienst auch noch die Marker angepasst werden. Die Einfärbung sollte je nach ``Kategorie`` unterschiedlich sein.
-Außerdem sollte im Marker die ``Objekt Art`` als Text angezeigt werden. Wenn es sich um die Kategorie ``Haltestelle`` handelt sollte als Text das
+Im letzten Schritt sollen für diesen Dienst auch noch die Marker angepasst werden. Die Einfärbung sollte je nach ``Kategorie`` unterschiedlich sein.
+Außerdem sollte im Marker die ``Objekt Art`` als Text angezeigt werden. Wenn es sich um die Kategorie ``Haltestelle`` handelt, sollte als Text das
 zweite Wort von ``Text`` angezeigt werden, weil das in diesem Beispiel immer dem Namen der Haltestelle entspricht (erstes Wort wäre Ort/Gemeinde):
 
 .. code-block :: JavaScript

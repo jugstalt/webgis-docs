@@ -1,7 +1,7 @@
 .. sectnum::
     :start: 6
 
-Tipps und tricks für Views
+Tipps und Tricks für Views
 ==========================
 
 
@@ -123,7 +123,7 @@ Um die Serverlast und v.a. die Ladezeit beim Seitenaufbau am Client gering zu ha
     ====================================    ========================
     
 
-Idealerweise sollten die Ergebnisse durch eine Filterung mit (optionalen) Parametern (siehe :ref:`Kapitel 3.2<Anchor32>`) soweit wie möglich eingeschränkt werden um den AnwenderInnen eine schnellere Auswahl zu ermöglichen und nicht hunderte Zeilen durchsuchen zu müssen.
+Idealerweise sollten die Ergebnisse durch eine Filterung mit (optionalen) Parametern (siehe :ref:`Kapitel 3.2<Anchor32>`) soweit wie möglich eingeschränkt werden, um den AnwenderInnen eine schnellere Auswahl zu ermöglichen und nicht hunderte Zeilen durchsuchen zu müssen.
 
 
 .. _Anchor54 :
@@ -131,7 +131,8 @@ Idealerweise sollten die Ergebnisse durch eine Filterung mit (optionalen) Parame
 Beschränkung / Filtern der Abfrageergebnisse
 --------------------------------------------
 
-Mithilfe von (optionalen) Parameter in den Queries lassen sich Abfrageergebnisse einschränken. In Views kann mit dem ``DataLinqHelper.FilterView`` ein Filter eingebaut werden, der eine einfache und übersichtliche Eingabe / Auswahl dieser Filterparameter ermöglicht. Im Hintergrund werden die Übergabeparameter einfach an die Aufruf-URL (siehe :ref:`Kapitel 4<Anchor4>`) angehängt. Werden bereits beim Aufruf der View über die URL Filter- bzw. Sortierungsparameter definiert, so sind diese in der GUI bereits ausgefüllt bzw. gesetzt.
+Mithilfe von (optionalen) Parameter in den Queries lassen sich Abfrageergebnisse einschränken. In Views kann mit dem ``DataLinqHelper.FilterView`` ein Filter eingebaut werden, der eine einfache und übersichtliche Eingabe / Auswahl dieser Filterparameter ermöglicht. Im Hintergrund werden die Übergabeparameter einfach an die Aufruf-URL (siehe :ref:`Kapitel 4<Anchor4>`) angehängt. 
+Werden bereits beim Aufruf der View über die URL Filter- bzw. Sortierungsparameter definiert, so sind diese in der GUI bereits ausgefüllt bzw. gesetzt.
 
 .. code-block ::
 
@@ -153,8 +154,8 @@ muss im CMS die Abfrage-Methode des Suchfeldes als „In“ definiert werden.
 Falls alle Filterfelder optional sind (also auch ohne eine einzige Einschränkung gesucht werden kann), kann man bei SQL-Statements eine allgemein gültige 
 WHERE-Bedingung definieren und alle anderen optionalen Bedingungen mit „AND …“ anhängen. 
 
-Die Auswahllisten im Filter können kaskadierend sein, das heißt ein Eingabefeld ist von einem anderen Feld abhängig. Immer wenn diesens Feld über die Auswahlliste geändert wird,
-änderen sich der Wert der abhängigen Auswahlliste(n). 
+Die Auswahllisten im Filter können kaskadierend sein, das heißt, ein Eingabefeld ist von einem anderen Feld abhängig. Immer wenn dieses Feld über die Auswahlliste geändert wird,
+ändert sich der Wert der abhängigen Auswahlliste(n). 
 
 .. code-block ::
 
@@ -166,9 +167,9 @@ Die Auswahllisten im Filter können kaskadierend sein, das heißt ein Eingabefel
         }
     )
 
-Das Feld ``TYPE`` ist hier von der Auswahlliste ``APP`` durch den Platzhalter ``[APP]`` abhängig (``APP=[APP]``). Immer wenn im Filter die Auswahl für ``APP`` geändret wird, 
+Das Feld ``TYPE`` ist hier von der Auswahlliste ``APP`` durch den Platzhalter ``[APP]`` abhängig (``APP=[APP]``). Immer wenn im Filter die Auswahl für ``APP`` geändert wird, 
 wird die Auswahlliste ``TYPE`` neu befüllt.
-Die entsprechende Abfrage (hier Datenbankabfrage) muss natürlich den übergebenen Parameter ``APP`` berücksichtigen, zB:
+Die entsprechende Abfrage (hier Datenbankabfrage) muss natürlich den übergebenen Parameter ``APP`` berücksichtigen, z.B.:
 
 .. code-block ::
 
@@ -244,7 +245,9 @@ In der View wird der Filter gerendert:
 Sortieren der Abfrageergebnisse
 -------------------------------
 
-Neben der Filterung steht mit DataLinqHelper.SortView ein weiterer Baustein zur Verfügung, mit dem die Datensätze im View per GUI sortiert werden können. Die Sortier-Felder werden wie die Filterparameter im Hintergrund an der Aufruf-URL mit ``_orderby=…`` angehängt. Absteigende Sortierungen werden mit einem Minus („-“) vor dem Spaltennamen übergeben.
+Neben der Filterung steht mit DataLinqHelper.SortView ein weiterer Baustein zur Verfügung, mit dem die Datensätze im View per GUI sortiert werden können. 
+Die Sortier-Felder werden wie die Filterparameter im Hintergrund an der Aufruf-URL mit ``_orderby=…`` angehängt. 
+Absteigende Sortierungen werden mit einem Minus („-“) vor dem Spaltennamen übergeben.
 
 .. code-block::
 
@@ -256,7 +259,7 @@ Neben der Filterung steht mit DataLinqHelper.SortView ein weiterer Baustein zur 
         }
     ) 
 
-In der Query müssen diese Felder entgegengenommen werden, siehe Statements in :ref:`Kapitel 5.4<Anchor54>` In der View wird das Sortierwerkzeug gerendert:
+In der Query müssen diese Felder entgegengenommen werden, siehe Statements in :ref:`Kapitel 5.4<Anchor54>`, in der View wird das Sortierwerkzeug gerendert:
 
 .. image:: img/ad5_6.png
 
@@ -266,11 +269,15 @@ In der Query müssen diese Felder entgegengenommen werden, siehe Statements in :
 Aktualisierung - Aufteilen von statischen und dynamischen Inhalten
 ------------------------------------------------------------------
 
-Bei der (periodischen) Aktualisierung von Views werden alle Inhalte neu geladen. Falls in den Views CSS-Styles oder JavaScript vorkommt, wird dieses ebenfalls wieder dazu geladen und kann (v.a. bei JavaScript-Triggern) die Seite auf Dauer langsam machen (bis wieder eine „harte“ Aktualisierung mit F5, oder ein neuer Aufruf über die URL erfolgt).
+Bei der (periodischen) Aktualisierung von Views werden alle Inhalte neu geladen. 
+Falls in den Views CSS-Styles oder JavaScript vorkommt, wird dieses ebenfalls wieder dazu geladen und kann (v.a. bei JavaScript-Triggern) die Seite auf Dauer langsam machen (bis wieder eine „harte“ Aktualisierung mit F5, oder ein neuer Aufruf über die URL erfolgt).
 
-Ein Beispiel für View-Inhalte die häufig am selben Client aktualisiert werden könnten Hydrographie-Daten – als eine Art Dashboard, das je Minute aktualisiert wird – sein. In der „einfachen“ Form besteht diese Seite aus den tabellarischen Daten (HTML), Karte (JavaScript), CSS-Styles und JavaScript zum Anzeige der Diagramme – alles in einer einzigen View. Wenn dieser View über den ``DLH.RefreshViewTicker`` alle 60 Sekunden neu geladen wird, kommt jedes Mal JavaScript und CSS dazu – obwohl sich nur die tabellarischen Daten (HTML) ändern.
+Ein Beispiel für View-Inhalte, die häufig am selben Client aktualisiert werden, könnten Hydrographie-Daten – als eine Art Dashboard, das je Minute aktualisiert wird – sein. 
+In der „einfachen“ Form besteht diese Seite aus den tabellarischen Daten (HTML), Karte (JavaScript), CSS-Styles und JavaScript zum Anzeige der Diagramme – alles in einer einzigen View. 
+Wenn dieser View über den ``DLH.RefreshViewTicker`` alle 60 Sekunden neu geladen wird, kommt jedes Mal JavaScript und CSS dazu – obwohl sich nur die tabellarischen Daten (HTML) ändern.
 
-Hier macht es Sinn, den statischen, immer gleich bleibenden Code (JavaScript, CSS) vom dynamischen Teil (HTML) zu trennen und nur diesen neu zu laden. Immer wenn ein View neu geladen wurde, wird das Event „onpageloaded“ gefeuert. Auf dieses Ereignis kann im statischen Teil wird reagiert und bspw. Klick-Listener gesetzt werden:
+Hier macht es Sinn, den statischen, immer gleich bleibenden Code (JavaScript, CSS) vom dynamischen Teil (HTML) zu trennen und nur diesen neu zu laden. 
+Immer wenn ein View neu geladen wurde, wird das Event „onpageloaded“ gefeuert. Auf dieses Ereignis kann im statischen Teil reagiert und bspw. Klick-Listener gesetzt werden:
 
 .. code-block::
 
@@ -287,7 +294,7 @@ Queries mit Domain-Übersetzung
 ------------------------------
 
 Query-Domains kommen zur Anwendung, wenn in einer Tabelle ein Attribut eines Objektes mit einem Wert kodiert wird, bspw. 0 für „Wald“, 1 für „Wiese“ und 2 für „verbautes Gebiet“. 
-In einer Tabellenansicht möchte man diese Werte nun mit den richtigen Namen übersetzen um es den NutzerInnen verständlicher zu machen. 
+In einer Tabellenansicht möchte man diese Werte nun mit den richtigen Namen übersetzen, um es den NutzerInnen verständlicher zu machen. 
 
 .. image:: img/tipps_domains2.png
 

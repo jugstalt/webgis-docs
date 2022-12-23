@@ -12,7 +12,7 @@ Die folgende Themen werden behandelt:
 
 *	Erstellen eines CMS Accounts
 *	Parametrierung von ArcGIS Server Diensten im Web CMS (Layerschaltungen, Darstellungsvarianten, Editthema)
-*	Erstellen eine Map Portal Seite
+*	Erstellen einer Map Portal Seite
 *	Erstellen und Veröffentlichen von Karten auf der Map Portal Seite mit dem MapBuilder
 *	Anpassen von Styles
 
@@ -47,7 +47,7 @@ Um ein Projekt zu erstellen, muss zuerst auf ``Projects``, dann auf ``Add`` und 
 
 .. image:: img/image9.png
 
-Anschlißend ist der Name des Projekts einzugeben.
+Anschließend ist der Name des Projekts einzugeben.
 
 
 .. image:: img/image10.png
@@ -63,7 +63,7 @@ Um eine neue WebGIS API zu erstellen, muss zuerst ``WebGIS API Clients`` ausgew�
 
 .. image:: img/image3.png
 
-Eine Resource muss innerhalb eines bestehenden Projekts angelgt werden. Bitte wähle hier das Projekt aus, in dem die Resource angelgt werden soll.
+Eine Resource muss innerhalb eines bestehenden Projekts angelegt werden. Bitte wähle hier das Projekt aus, in dem die Resource angelegt werden soll.
 
 .. image:: img/image12.png
 

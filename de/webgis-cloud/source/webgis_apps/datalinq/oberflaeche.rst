@@ -33,7 +33,7 @@ Der folgende Screenshot zeigt ein Beispiel für einen aufgeklappten Baum.
 
 .. image:: img/oberfl_sidebar2.png
 
-An der Füllung der Dreiecke ist erkennbar ob sich noch Elemente darunter befinden, somit wird vor allem die Suche nach Views erleichtert. 
+An der Füllung der Dreiecke ist erkennbar, ob sich noch Elemente darunter befinden, somit wird vor allem die Suche nach Views erleichtert. 
 
 **neuen Endpoint/Query/View erstellen**
 
@@ -54,7 +54,7 @@ Tabs
 
 .. image:: img/oberfl_tabs1.png
 
-Ein rotes Ringerl erscheint, sobald Änderungen im File vorgenommen wurden.
+Ein roter Ring erscheint, sobald Änderungen im File vorgenommen wurden.
 
 Wenn viele Tabs gleichzeitig geöffnet sind, kann über das Dreieck rechts ein Fenster geöffnet werden, welches ein übersichtlicheres Navigieren der geöffneten Files ermöglicht.
 
@@ -63,7 +63,7 @@ Wenn viele Tabs gleichzeitig geöffnet sind, kann über das Dreieck rechts ein F
 
 Damit können auch alle ausgewählten Files geschlossen werden, welche davor allerdings gespeichert werden müssen. 
 
-Werden ungespeicherte Files geschlossen, wird der Vorgang abgefangen und muss extra bestätigt werden.
+Werden nicht-gespeicherte Files geschlossen, wird der Vorgang abgefangen und muss extra bestätigt werden.
 
 .. image:: img/oberfl_tabs4.png
 

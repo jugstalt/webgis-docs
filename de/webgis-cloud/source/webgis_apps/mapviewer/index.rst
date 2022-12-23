@@ -1,7 +1,7 @@
 Karten Portal und Viewer
 ========================
 
-Hier werden Themen um parametrieren von Kartenportal und Aufrufmöglichkeiten des *Kartenviewers* behandelt
+Hier werden Themen rund um das Parametrieren vom Kartenportal und Aufrufmöglichkeiten des *Kartenviewers* behandelt.
 
 .. toctree::
    :maxdepth: 1

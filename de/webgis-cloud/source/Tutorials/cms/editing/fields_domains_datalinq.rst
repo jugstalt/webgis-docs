@@ -1,25 +1,25 @@
-Auswahllisten aus WebServices (Datalinq)
+Auswahllisten aus WebServices (DataLinq)
 ========================================
 
-*Datalinq* ist in der *WebGIS API* enthalten und wird hauptsächlich verwendet werden, um Berichte auf Basis von diversen Datenquellen zu erstellen.
+*DataLinq* ist in der *WebGIS API* enthalten und wird hauptsächlich verwendet werden, um Berichte auf Basis von diversen Datenquellen zu erstellen.
 Außerdem können die parametrieren Abfragen als JSON über eine REST Schnittstelle abgeholt werden. Die REST Schnittstelle kann auch als Quelle für 
 Auswahllisten verwendet werden. Zu den vorher gezeigten Quellen hat das den Vorteil, dass *ConnectionString* und *SQL Statements* nicht bei jeder 
 Auswahlliste parametriert werden müssen. Die CMS Parametrierung bleibt von frei von *ConnectionString* und *Datenbank Passwörten*. 
 
-Datalinq kann auf unterschiedliche Quellen zugreifen und die Daten dann über die REST Schnittstelle veröffentlichen:
+DataLinq kann auf unterschiedliche Quellen zugreifen und die Daten dann über die REST Schnittstelle veröffentlichen:
 
 * Datenbankabfragen
 * WebGIS API Abfragen auf Kartendienste, die über das WebGIS CMS parametriert wurden
 * Eine (Plain) Text Listen
 
-In dem hier gezeigten Beispiel sollte Auswahllisten aus *Plain-Text* erstellt werden. Eine Datenbank ist hier nicht notwendig. Das entspricht in etwa 
+In dem hier gezeigten Beispiel sollten Auswahllisten aus *Plain-Text* erstellt werden. Eine Datenbank ist hier nicht notwendig. Das entspricht in etwa 
 der vorher gezeigten Methode mit *statischen Auswahllisten*. Allerdings ist man hier flexibler, die eine Liste immer wieder verwendet werden kann 
-und aktualisierung der Liste sofort auf alle Editmasken durchschlägt.
+und eine Aktualisierung der Liste sofort auf alle Editmasken durchschlägt.
 
 .. note::
    Der Umgang mit *Datalinq* wird in diesem Abschnitt vorausgesetzt. 
 
-Datalinq Endpoint anlegen
+DataLinq Endpoint anlegen
 -------------------------
 
 Im ersten Schritt muss ein neuer *DataLinq* Endpoint angelegt:
@@ -61,7 +61,7 @@ Sollte sich ``value`` und ``label`` unterscheiden, müssen die beiden Werte mit 
    Hier könnte auch ``0:`` geschrieben werden, wenn in der Geo-Datenbank später für Leerwerte der Wert ``0`` stehen sollte.
 
 .. note::
-   Leerzeilen werden diese Liste ignoriert
+   Leerzeilen werden in dieser Liste ignoriert.
 
 Den Editor mit ``Close`` schließen und zum Security Bereich wechseln. Hier sollte der User ``*`` hinzugefügt werden. Das bedeutet, dass jeder Anwender/Client, der den *Endpoint* erreichen 
 kann, auch diese Abfrage abholen kann. Die Berechtigungen könnten hier auch noch weiter eingeschränkt werden. Für das Beispiel reicht es aber, wenn nur der *Entpoint* geschützt ist.
@@ -75,8 +75,8 @@ Das Ergebnis sollte wie folgt aussehen:
 
 .. image:: img/datalinq-domains9.png
 
-Die Abfrage wird angezeigt, weil wir uns in diesem Beispiel auf der API mit dem Benutzer ``subscriber::system`` gemeldet sind, für den der *Endpunkt* sichtbar ist.
-Kopiert den Link in einen anderen Browser (oder neues *Incognito Window*) kommt folgender Fehlermeldung:
+Die Abfrage wird angezeigt, weil wir uns in diesem Beispiel auf der API mit dem Benutzer ``subscriber::system`` gemeldet haben, für den der *Endpunkt* sichtbar ist.
+Kopiert man den Link in einen anderen Browser (oder neues *Incognito Window*) kommt folgender Fehlermeldung:
 
 .. image:: img/datalinq-domains10.png 
 
@@ -91,11 +91,11 @@ Wir haben in diesen Beispiel nur Tokens für den *Endpunkt* definiert. Passt man
 
 .. image:: img/datalinq-domains11.png
 
-Diese Link muss so auch ins CMS übertragen werden.
+Dieser Link muss so auch ins CMS übertragen werden.
 
 .. note::
-   Welcher der beiden Tokens verwendet wird, ist egal. Beide Tokens sind gleichwertig. Der Grund dafür, dass zwei Tokens erstellt werden müssen, ist, dass später eventuell 
-   ein Störungsfreier Wechsel von Tokens möglich ist
+   Welcher der beiden Tokens verwendet wird, ist egal. Beide Tokens sind gleichwertig. Der Grund dafür, dass zwei Tokens erstellt werden müssen ist, dass später eventuell 
+   ein störungsfreier Wechsel von Tokens möglich ist.
 
 Auswahlliste im CMS einbinden 
 -----------------------------
@@ -105,16 +105,16 @@ Hier wird beim jeweiligen *Domain Feld* (Edit Maske) unter *ConnectionString* de
 .. image:: img/datalinq-domains12.png 
 
 .. note::
-   da sich die WebGIS Anwendung nicht mit User und Password bei Datalinq anmelden kann, muss hier der Token mit angeführt werden.
+ Da sich die WebGIS Anwendung nicht mit User und Passwort bei DataLinq anmelden kann, muss hier der Token mit angeführt werden.
 
- Grundsätzlich kann hier jedes *Web Service* angesprochen werden, dass ein JSON Array zurück gibt. Das Array muss einzelne Objekte mit den ``value`` und ``name`` werden enthalten.
- Aus welche Properties die Werte genommen werden kann hier über ``Db-Feld`` und ``Db-Anzeige Feld`` angeführt werden. Die Defaultwerte sind hier ``value`` und ``name``. Für unser
+ Grundsätzlich kann hier jedes *Web Service* angesprochen werden, dass ein JSON Array zurück gibt. Das Array muss einzelne Objekte mit ``value`` und ``name``  enthalten.
+ Aus welche Properties die Werte genommen werden, kann hier über ``Db-Feld`` und ``Db-Anzeige Feld`` angeführt werden. Die Defaultwerte sind hier ``value`` und ``name``. Für unser
  Beispiel könnten diese Werte also auch leer gelassen werden.
 
 Kaskadierende Auswahllisten
 ---------------------------
 
- Auswahllisten können auch von einer übergeordnet Liste abhängig gemacht werden. Möchte man das mit den hier gezeigten ``PlainText`` Datalinq Abfragen umsetzen, wird das in
+ Auswahllisten können auch von einer übergeordnet Liste abhängig gemacht werden. Möchte man das mit den hier gezeigten ``PlainText`` DataLinq-Abfragen umsetzen, wird das in
  der Liste durch Einrückungen umgesetzt (2x Leerzeichen):
 
  .. image:: img/datalinq-domains13.png 
@@ -123,19 +123,19 @@ Ruft man danach die Abfrage wieder ohne Parameter auf, ergibt sich wieder die Li
 
 .. image:: img/datalinq-domains14.png
 
-Möchte möchte man die Modelle für eine bestimmte Marke anzeigen, muss der Parameter ``level0={value}`` übergeben werden:
+Möchte man die Modelle für eine bestimmte Marke anzeigen, muss der Parameter ``level0={value}`` übergeben werden:
 
 .. image:: img/datalinq-domains15.png
 
 .. note::
    Durch Einrückung könnten beliebig viele Ebenen (Levels) eingeführt werden. Die Einschränkung auf eine Ebene erfolgt dann über die Url 
-   mit den Parametern ``level0={value0}&level1={value1}&level2={value2}``
+   mit den Parametern ``level0={value0}&level1={value1}&level2={value2}``.
 
 Im CMS kann die Einschränkung über die ``DB-Where Clause`` angegeben werden:
 
 .. image:: img/datalinq-domains16.png 
 
 .. note::
-   ``MARKE`` ist hier das Datenbank Feld, in das die Automarke über die Auswahlliste geschrieben wurde.
+   ``MARKE`` ist hier das Datenbank-Feld, in das die Automarke über die Auswahlliste geschrieben wurde.
 
 

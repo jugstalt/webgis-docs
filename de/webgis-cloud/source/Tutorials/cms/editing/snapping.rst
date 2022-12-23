@@ -8,11 +8,11 @@ Objekte *gesnappt*, wenn er sich in der Nähe befindet. Für jeden Dienst könne
 erstellt werden, die wiederum beliebig viele Themen enthalten können. 
 *Gesnappt* werden kann auf Knotenpunkt und Kanten.
 
-Der Anwender ist in der Regel dafür verantwortlich, das richtig Snappingthema zu wählen.
+Der Anwender ist in der Regel dafür verantwortlich, das richtige Snappingthema zu wählen.
 Wenn beim Editieren *Snapping* zwingend vorgeben ist oder sich das Snappingthema je nach Editthema unterscheidet,
 empfiehlt es sich, *Snappingthemen* automatisch vorzugeben. 
 
-Dies passiert unter diesem Knoten. Die hier angegeben Snappingthemen werden beim Einstellen einen Editthemas durch
+Dies passiert unter n Knoten. Die hier angegeben Snappingthemen werden beim Einstellen einen Editthemas durch
 den Anwender automatisch gesetzt:
 
 .. image:: img/editing23.png

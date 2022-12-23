@@ -1,7 +1,7 @@
 Instanzrollen
 =============
 
-Beim den Berechtigungen im CMS gibt es eine spezielle Rolle mit dem Prefix ``instance::`` 
+Beim den Berechtigungen im CMS gibt es eine spezielle Rolle mit dem Prefix ``instance::``.
 Diese Berechtigungen beziehen sich auf eine bestimmte WebGIS Instanz.
 
 Ein Anwendungsfall wäre etwa ein exklusives Rechte für einen Knoten auf eine WebGIS-Testinstanz zu berechtigen.
@@ -9,7 +9,7 @@ Ein Anwendungsfall wäre etwa ein exklusives Rechte für einen Knoten auf eine W
 .. image:: img/instance1.png
 
 Dieser Knoten wäre dann für andere Instanzen (Produktivsystem) nicht sichtbar. Damit kann man gewährleisten, dass für den gesamte 
-Zeitraum der Entwicklung von neuen Kartenanwendungen, diese Änderungen nicht im Produktivsystem angezeigt werden, auch wenn das CMS 
+Zeitraum der Entwicklung von neuen Kartenanwendungen diese Änderungen nicht im Produktivsystem angezeigt werden, auch wenn das CMS 
 zwischenzeitlich für diese Instanz veröffentlicht wird.
 
 Welche Instanzrollen von einer WebGIS Instanz möglich sind, wird bei der Eingabe durch Autovervollständigung angezeigt. Dabei muss natürlich

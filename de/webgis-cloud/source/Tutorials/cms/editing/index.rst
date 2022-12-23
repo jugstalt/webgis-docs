@@ -5,15 +5,15 @@ Neben dem Anzeigen von Geodaten können Daten auch erstellt oder bearbeitet werd
 ein eigenes Werkzeug (Bearbeiten, Editing) mit dem sowohl die Geometrie als auch die Sachdaten von Geo-Objekten
 bearbeitet werden kann.
 
-Voraussetzung ist eine (Karten) Dienst, über den die bearbeitung von Daten ermöglicht wird.
+Voraussetzung ist ein (Karten-) Dienst, über den die Bearbeitung von Daten ermöglicht wird.
 Kartendienste, die diese Voraussetzung erfüllen, sind beispielsweise ArcGIS Server FeatureServer Dienste.
-Diese bieten die entsprechenden Metoden über eine REST Schnittstelle an. Dazu sind am ArcGIS Server bestimmte 
+Diese bieten die entsprechenden Methoden über eine REST Schnittstelle an. Dazu sind am ArcGIS Server bestimmte 
 Einstellungen und Berechtigungen zu setzen, die in dieser Dokumentation nicht beschrieben werden. Hier wird davon 
-ausgegangen, dass der gewählte Dienst, alle notwendigen Voraussetzungen erfüllt.
+ausgegangen, dass der gewählte Dienst alle notwendigen Voraussetzungen erfüllt.
 
 .. note::
-   Das Bearbeiten der Geodaten erfolgt ausschließlich über (Feature) Dienste und nicht direkt in einer Datenbank.
-   Da diverse Geodatenbanken oft mehr bieten als "flache" Tabellen, sondern oft auch komplexere Beziehungen
+   Das Bearbeiten der Geodaten erfolgt ausschließlich über (Feature-) Dienste und nicht direkt in einer Datenbank.
+   Da diverse Geodatenbanken oft mehr bieten als "flache" Tabellen, also oft auch komplexere Beziehungen
    und Versionierung, sollte schreibend immer über einen Dienst auf diese Datenbanken zugegriffen werden. 
    Der Dienst ist dann dafür verantwortlich, dass sämtliche Beziehungen beim Schreiben von Daten korrekt 
    behandelt werden. 
@@ -25,10 +25,10 @@ ausgegangen, dass der gewählte Dienst, alle notwendigen Voraussetzungen erfüll
 
 
 Wenn man Editieren über einen ArcGIS Server Dienst über das CMS ermöglichen möchte, wird hier vorausgesetzt, 
-das der Anzeige- und Bearbeitungsdienst (MapServer/FeatureServer) identisch sind.
+dass der Anzeige- und Bearbeitungsdienst (MapServer/FeatureServer) identisch sind.
 
-In diesem Tutorial wird von einem Dienst ausgegangen, der zur Planung von Stromleitungs Projekten dienen sollte.
-Im ArcGIS Server Dienst, befinden entsprechende Punkt-, Linien- und Flächenthemen. Die Beschreibung der Möglichkeiten,
+In diesem Tutorial wird von einem Dienst ausgegangen, der zur Planung von Stromleitungs-Projekten dienen sollte.
+Im ArcGIS Server Dienst, befinden sich entsprechende Punkt-, Linien- und Flächenthemen. Die Beschreibung der Möglichkeiten
 wird an einigen Ausgewählten Themen gezeigt.
 
 .. toctree::

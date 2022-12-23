@@ -1,7 +1,7 @@
 Voraussetzung
 =============
 
-In diesem Dokument wird beschrieben, wie Karten, die für eine Portalseite erstellt wurden parametriert aufgerufen werden könne. Voraussetzung ist hier, dass eine Portalseite existiert, die Karten enthält.
+In diesem Dokument wird beschrieben, wie Karten, die für eine Portalseite erstellt wurden, parametriert aufgerufen werden könne. Voraussetzung ist hier, dass eine Portalseite existiert, die Karten enthält.
 
 Karten sind in einer Portalseite wie in einer Kartensammlung organisiert. Jede Karte hat einen Namen und ist einer Kategorie zugeordnet:
 
@@ -22,7 +22,7 @@ Kartenname	        Der Name der Karte
 ==================  =============================================================================
 
 
-**Achtung:** Beinhaltet der Kartenname oder die Kategorie Sonderzeichen, müssen diese für die Darstellung in der Url kodiert werden. Leerzeichen können mit %20 oder zur besseren lesbarkeit auch mit einer Tilde (~) angegeben werden. ZB. Plaung~und~Kataster
+**Achtung:** Beinhaltet der Kartenname oder die Kategorie Sonderzeichen, müssen diese für die Darstellung in der Url kodiert werden. Leerzeichen können mit %20 oder zur besseren Lesbarkeit auch mit einer Tilde (~) angegeben werden, z.B. *Planung~und~Kataster*.
 
 Will man beispielsweise die Basiskarte direkt aufrufen, lautet die Url:
 

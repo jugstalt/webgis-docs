@@ -5,26 +5,26 @@ Datei ``_config/portal.config``
 -------------------------------
 
 Die Installation des Portals ist optional. Wenn WebGIS 5 nur als API für HTML/Javascript Clients verwendet wird, 
-kann auf herauf auch verzichtet werden. Allerdings können die Kartenanwendungen dann nur ohne Hilfsmittel
+kann darauf auch verzichtet werden. Allerdings können die Kartenanwendungen dann nur ohne Hilfsmittel
 erstellt werden. Ohne die Installation des Portals, steht auch kein MapBuilder zur Verfügung.
 
 Diese Datei wird (falls nicht vorhanden) beim ersten Start der API mit Default Werten angelegt.
 In diesem Abschnitt wird gezeigt, wie diese Datei den eigenen Bedürfnissen für einen 
 produktiven Betrieb angepasst werden kann:
 
-Die Datei ist (wie die ``api.config``) ein XML Datei mit unterschiedlichen ``Schlüssel/Werte`` Paaren.
+Die Datei ist (wie die ``api.config``) ein XML Datei mit unterschiedlichen ``Schlüssel/Werte``-Paaren.
 
 Abschnitt ``Allgemein``
 +++++++++++++++++++++++
 
 * ``company``
-  Hier kann ein eindeutige Kennung für das Unternehmen des Portalbetreibers angeben werden. 
-  zB e, kagis, sagis, …
-  Wird für das Styling verwendet (siehe unten). In einem Unterverzeichnis mit diesem Kürzel, 
+  Hier kann ein eindeutige Kennung für das Unternehmen des Portalbetreibers angeben werden 
+  (z.B. e, kagis, sagis, …).
+  Wird für das Styling verwendet (siehe unten). In einem Unterverzeichnis mit diesem Kürzel
   können Stylesheet Dateien angelegt werden, die bei einem Update nicht verändert werden.
 
 * ``portal-name``
-  Ein Tex, der in der Titelzeile Für alle Portalseiten angezeigt wird (default: *WebGIS Portal*)
+  Ein Text, der in der Titelzeile für alle Portalseiten angezeigt wird (default: *WebGIS Portal*).
 
 * ``portal-name-url``
   Ein Link auf die Webseite des Portalbetreibers. 
@@ -34,14 +34,14 @@ Abschnitt ``Security``
 ++++++++++++++++++++++
 
 * ``security``
-  Gibt an, mit welcher Method sich ein Anwender beim Portal anmeldet. Möglich Werte sind hier: 
+  Gibt an, mit welcher Methode sich ein Anwender beim Portal anmeldet. Mögliche Werte sind hier: 
   ``windows, anonym``.
   Bei benutzerdefinierten Kundeninstallation stehen hier noch weitere Methoden (``pvp``, ``pvp2``, ``token``)
-  zur Verfügung
+  zur Verfügung.
 
 * ``security_allowed_methods``
   Grundsätzlich kann sich ein Anwender auf dem Portal auch mit anderen als der unter security angeführten 
-  Methode anmelden. Dazu übergibt er den gewünschten Anmeldemodus als Url-Parameter, zB ``&security=anonym``. 
+  Methode anmelden. Dazu übergibt er den gewünschten Anmeldemodus als Url-Parameter, z.B. ``&security=anonym``. 
   Welche Methoden hier möglich sind, wird in diesem Key definiert. Hier müssen die erlaubten Methoden mit 
   Beistrich getrennt angeführt werden. Erlaubt man nur eine Methode für die jeweilige Instanz, 
   muss hier aber mindestens der Wert angeben werden, der unter dem Key security steht.
@@ -81,7 +81,7 @@ Abschnitt ``Cache Datenbank``
 +++++++++++++++++++++++++++++
 
 In dieser Datenbank werden die „Sessions“ gespeichert. Darin muss sich die Tabelle ``webgis_cache``, 
-siehe oben befinden. Verwendet man auch die Portal Anwendung, müssen beide Anwendungen (API und Portal) 
+siehe oben, befinden. Verwendet man auch die Portal Anwendung, müssen beide Anwendungen (API und Portal) 
 den selben Session-Cache verwenden.
 
 Hier die gleiche Werte, wie in der ``api.config`` angeben:
@@ -95,7 +95,7 @@ Hier die gleiche Werte, wie in der ``api.config`` angeben:
 Abschnitt ``Cache Aside`` (optional)
 ++++++++++++++++++++++++++++++++++++
 
-Hier die gleiche Werte, wie in der ``api.config`` angeben:
+Hier die gleiche Werte, wie in der ``api.config`` angeben.
 
 Abschnitt ``Subscriber Datenbank``
 ++++++++++++++++++++++++++++++++++
@@ -112,14 +112,14 @@ Abschnitt ``Urls``
   Die Url zur API, wie sie für den Anwender sichtbar ist.
 
 * ``api-internal-url``
-  Das Poral muss teilweise mit der API reden können. zB um auf den Storage zugreifen zu können. 
+  Das Portal muss teilweise mit der API reden können, z.B. um auf den Storage zugreifen zu können. 
   Für diese Kommunikation empfiehlt sich hier eine Interne Url anzugeben. 
-  Wenn beide Applikationen am gleichen Server installiert sein, 
-  zB: http://localhost/webgis-api.
+  Wenn beide Applikationen am gleichen Server installiert sind, 
+  z.B.: http://localhost/webgis-api.
   Grundsätzlich kann hier der gleiche Wert wie bei ``api`` angegeben werden.
 
 * ``portal-url``
-  Die Url zur Portal (diese Anwendung), wie sie für den Anwender sichtbar ist. Diese Url wird beispielsweise 
+  Die Url zum Portal (diese Anwendung), wie sie für den Anwender sichtbar ist. Diese Url wird beispielsweise 
   verwendet, um Links für das Teilen von Karten zu erzeugen.
 
 Abschnitt ``Advanced Security``
@@ -128,11 +128,11 @@ Abschnitt ``Advanced Security``
 * ``allow-subscriber-login``
   Verhindert das Anmelden von Subscribern für diese Instanz. 
   Eine Beschreibung für diesen Key steht in der Auflistung der Keys für die ``api.config`` im Abschnitt 
-  ``Subscriber Registration``
+  ``Subscriber Registration``.
 
 * ``query-custom-map-layout``
   Für den Kartenviewer lassen sich benutzerdefinierte Layouts anlegen (je nach Bildschirmgröße). 
-  Mit diesem Key kann man Benutzerdefinierte Layouts zulassen bzw. untersagen (``true`` / ``false``)
+  Mit diesem Key kann man Benutzerdefinierte Layouts zulassen bzw. untersagen (``true`` / ``false``).
 
 
 

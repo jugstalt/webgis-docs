@@ -2,7 +2,7 @@ Auswahllisten
 -------------
 
 Um die Eingabe von Suchbegriffen für den Anwender zu erleichtern, können Auswahllisten angeboten werden.
-Wenn der Anwender ein Zeichen in einen Suchfeld eingibt, wird im Hintergrund die Datenbank abgefragt und 
+Wenn der Anwender ein Zeichen in einem Suchfeld eingibt, wird im Hintergrund die Datenbank abgefragt und 
 dem Anwender daraus Vorschläge angeboten.
 
 Auswahllisten funktionieren auch kaskadierend: Bereits eingegebene Suchbegriffe können berücksichtigt werden.
@@ -25,7 +25,7 @@ Damit Auswahllisten funktionieren, muss das beim entsprechenden Suchfeld bei den
 .. image:: 
     img/queries11.png
 
-Über den Auswahllisten Editor kann das entsprechende SQL Statement definiert werden:
+Über den Auswahllisten-Editor kann das entsprechende SQL Statement definiert werden:
 
 .. image:: 
     img/queries12.png
@@ -34,17 +34,17 @@ Unter *ConnectionString* kann die Verbindung zur Datenbank angegeben werden, die
 
 .. note:: 
     Verwendet man als Server *ArcGIS Server* oder *gView* (über die GeoServices REST Schnittstelle) muss
-    keine direkte Verbindung zur Datenbank angegeben werden. Hier kann die Abfrage der Auswahllisten Werte
+    keine direkte Verbindung zur Datenbank angegeben werden. Hier kann die Abfrage der Auswahllisten-Werte
     direkt über den *MapServer* erfolgen (empfohlen).
     In diesem Fall gibt man als *ConnectionString* einfach das Kürzel ``#`` an.
 
-Unter *SqlStatement* wird jetzt der Ausdruck angegeben, der für die Suche verwendet wird. Bei einer Datenbank 
+Unter *SqlStatement* wird jetzt der Ausdruck angegeben, der für die Suche verwendet wird. Bei einer Datenbank- 
 Abfrage mit *ConnectionString* ist das in der Regel ein komplettes ``SELECT FROM WHERE`` Statement.
 Verwendet man den *MapServer* zur Abfrage (ConnectionString = ``#``), gibt man hier nur die ``WHERE`` Klausel an (ohne WHERE).
 
-Als Platzhalter können die Namen der Suchbegriffe eingegeben werden (zB ``{{kg}}``, Wildcards nicht vergessen).
+Als Platzhalter können die Namen der Suchbegriffe eingegeben werden (z.B. ``{{kg}}``, Wildcards nicht vergessen).
 
-Für unser Beispiel könnten die SqlStatements wie folgt aussehen:
+Für unser Beispiel könnten die *SqlStatements* wie folgt aussehen:
 
 **KG**
 
@@ -73,7 +73,7 @@ Für unser Beispiel könnten die SqlStatements wie folgt aussehen:
     #endif
 
 Hier wird die Abfrage noch weiter eingeschränkt, wenn bereits eine KG-Nummer oder ein ein KG-Name eingegeben wurde.
-über die ``#if`` Direktiven kann hier erzwungen werden, dass der entsprechende Code Teil nur ins Statement aufgenommen 
+über die ``#if`` Direktiven kann hier erzwungen werden, dass der entsprechende Code-Teil nur ins Statement aufgenommen 
 wird, wenn der Anwender für dieses Feld einen Wert eingegeben hat.
 
 .. note:: 

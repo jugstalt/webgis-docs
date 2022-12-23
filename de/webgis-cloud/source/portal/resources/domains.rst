@@ -4,8 +4,8 @@ Map Portal Login Domain
 Mit *Map Portal Login Domains* können Gruppen von Anwendern angelegt werden, die auf Kartenportale und Kartendienste berechtigt werden können.
 Unter einer *Domain* kann eine beliebige Anzahl von Benutzern angelegt werden, die sich für ein *Karten Portal* anmelden können.
 
-Das Format einer Domain entspricht einer *Web Domain*, zB ``my-company.com``. Die *Domain* muss dabei eindeutig sein. Eine *Domain*, die bereits unter einer 
-anderen *Subscription* angelegt wurde, kann keine zweites mal angelegt werden.
+Das Format einer Domain entspricht einer *Web Domain*, z.B. ``my-company.com``. Die *Domain* muss dabei eindeutig sein. Eine *Domain*, die bereits unter einer 
+anderen *Subscription* angelegt wurde, kann keine zweites Mal angelegt werden.
 
 Die Benutzernamen die zur Anmeldung angelegt werden, müssen innerhalb der *Domain* eindeutig sein. Damit die Logins später *global* eindeutig sind, wird jedem
 Benutzernamen der *Domain-Name* mit vorangestelltem ``@`` angehängt:
@@ -16,13 +16,13 @@ Beispiel: Domain = ``my-domain.com``
 * ``user2@my-domain.com``
 
 *Karten Portale* und *Kartendienste* (CMS Account) können für eine gesamte Domain oder für einzelne User berechtigt werden. 
-Sollten *Karten Portal* und *Kartendienste* von anderen WebPortal-Accounts für diese *Domain* freigeschalten werden, kann eine *Domain* auch geteilt werden (siehe unten, share domains).
+Sollten *Karten Portale* und *Kartendienste* von anderen WebPortal-Accounts für diese *Domain* freigeschalten werden, kann eine *Domain* auch geteilt werden (siehe unten, share domains).
 
 Domain erstellen
 ----------------
 
 Eine Domain wird erstellt, indem man in der *Sidebar* auf **New Resource** und dann auf **Map Portal Login Domain** klickt. Alternativ, kann  man über die *Sidebar* zu **Map Portal Login Domain** springen. 
-Damit werden alle, für die aktuelle Subscription angelegten, *Domains* angezeigt bzw. eine neue Domain erstellt:
+Damit werden alle, für die aktuelle Subscription angelegten *Domains* angezeigt bzw. eine neue Domain erstellt:
 
 Zuerst muss ein eindeutiger *Domain Name* angegeben werden:
 
@@ -31,11 +31,11 @@ Zuerst muss ein eindeutiger *Domain Name* angegeben werden:
 Domain Benutzer erstellen
 -------------------------
 
-Ist das Erstellen der *Domain* erfolgreich, können über die Eingenschaften Seite der *Resource* Benutzer (Logins) angelegt werden:
+Ist das Erstellen der *Domain* erfolgreich, können über die Eigenschaften-Seite der *Resource* Benutzer (Logins) angelegt werden:
 
 .. image:: img/domains2.png
 
-Beim Erstellen eines neuen Benutzers muss ein Benutzernamen/Anmeldename angegeben werden (mindestens 8 Zeichen). Dieser muss innerhalb der Domain eindeutig sein:
+Beim Erstellen eines neuen Benutzers muss ein Benutzername/Anmeldename angegeben werden (mindestens 8 Zeichen). Dieser muss innerhalb der Domain eindeutig sein:
 
 .. image:: img/domains3.png
 
@@ -44,7 +44,7 @@ Beim Erstellen wird für diesen Benutzernamen ein zufälliges, starkes Passwort 
 1. Mit Username und Password
 2. Mithilfe eines Links inklusive *Access Tokens*
 
-Um eine dieser Methoden verfügbar zu machen, muss die Eigenschaften Seite der *Map Portal Domain Benutzer* Resource geöffnet und auf den Reiter ``User`` gewechselt werden:
+Um eine dieser Methoden verfügbar zu machen, muss die Eigenschaften-Seite der *Map Portal Domain Benutzer* Resource geöffnet und auf den Reiter ``User`` gewechselt werden:
 
 .. image:: img/domains4.png
 
@@ -62,22 +62,22 @@ Klickt man auf den Button ``Generate Access Token`` öffnet sich folgender Dialo
 .. image:: img/domains6.png
 
 Hier muss zuerst die Url des *Karten Portals*, für das der Link erzeugt werden sollte (``{portal}``), eingetragen werden. Außerdem muss angeführt werden, wie lange der Link gültig sein sollte.
-Klickt man danach auf ``Generate Url Token``, wird ein Link erzeugt, mit dem an das angeführte Portal aufrufen kann:
+Klickt man danach auf ``Generate Url Token``, wird ein Link erzeugt, mit dem man das angeführte Portal aufrufen kann:
 
 .. image:: img/domains7.png
 
 Diese Methode ist zu bevorzugen, wenn ein Anwender nur einen zeitlich beschränkten Zugang bekommen sollte. Es ist nicht ausreichend, für einen Anwender nur nach Ablauf eines
-Zeitintervalls das Passwort zu ändern. Ein Anwender, der bereits ein Portal benutzt könnte es auch nach den Änderen des Passworts benutzen, solange eine er gültiges ``Cookie`` für die letzte Anmeldung besitzt.
-Mit der *Access Token* Methode wird gewährleistet, dass der erzeugt Link mach dem angegeben Zeitpunkt nicht mehr aufgerufen werden kann.
+Zeitintervalls das Passwort zu ändern. Ein Anwender, der bereits ein Portal benutzt, könnte es auch nach dem Ändern des Passworts benutzen, solange er ein gültiges ``Cookie`` für die letzte Anmeldung besitzt.
+Mit der *Access Token* Methode wird gewährleistet, dass der erzeugt Link nach dem angegeben Zeitpunkt nicht mehr aufgerufen werden kann.
 
 .. note::
-   Es ist nicht gewährleistet, dass das *Karten Portal* das unter ``{portal}`` eingetragen wurde, auch für den Benutzer berechtigt ist. Der *Access Token* gewährleistet nur die Identität des Benutzer.
-   Ob ein Benutzer ein Portal anrufen darf, stellt der Eigentümer des *Karten Portals* ein (siehe unten). Ein hier erstellter Link sollte vor dem Weitergaben immer testen.
+   Es ist nicht gewährleistet, dass das *Karten Portal* das unter ``{portal}`` eingetragen wurde, auch für den Benutzer berechtigt ist. Der *Access Token* gewährleistet nur die Identität des Benutzers.
+   Ob ein Benutzer ein Portal anrufen darf, stellt der Eigentümer des *Karten Portals* ein (siehe unten). Ein hier erstellter Link sollte vor dem Weitergeben immer getestet werden.
    
 Domains und Benutzer berechtigen
 --------------------------------
 
-Eine komplette Domain oder einzelne Benutzer können für eine oder mehrere Karten *Portal Seiten* berechtigt werden. Dazu muss man zur aktuellen Eigenschaften Seite des *Karten Portals* wechseln und auf den
+Eine komplette Domain oder einzelne Benutzer können für eine oder mehrere Karten *Portal Seiten* berechtigt werden. Dazu muss man zur aktuellen Eigenschaften-Seite des *Karten Portals* wechseln und auf den
 Reiter ``Logins`` klicken:
 
 .. image:: img/domains8.png
@@ -85,18 +85,18 @@ Reiter ``Logins`` klicken:
 Möchte man eine komplette Domain für den Zugriff berechtigen, muss ``*@my-domain.com`` ausgewählt werden. Alternativ können auch nur einzelnen User ausgewählt werden.
 
 .. note::
-   werden im *Portal* *Karten-Dienste* angeboten, die nicht frei zugänglich sind und über einen *CMS Account* parametriert wurden, müssen die Berechtigungen auch beim *CMS Account* eingestellt werden.
-   Nur so wird gewährleistet, dass eine veröffentlichtes CMS für diese Anwender sichtbar sind.
+   Werden im *Portal* *Karten-Dienste* angeboten, die nicht frei zugänglich sind und über einen *CMS Account* parametriert wurden, müssen die Berechtigungen auch beim *CMS Account* eingestellt werden.
+   Nur so wird gewährleistet, dass veröffentlichte CMS für diese Anwender sichtbar sind.
    
 Domains für externe Resources berechtigen
 -----------------------------------------
 
-Befinden sich das *Karten Portal* oder der *CMS Account* in einer fremden Subscription (zB. Domain Verwaltung und bereitstellung von Karten/Diensten erfolgt von unterschiedlichen Organisationen) 
-kann eine Domain *geteilt* werden. Durch das Teilen sieht der Eigentümer des *Karten Portals* diese Domain auf der Eigenschaften Seite seiner *Karten Portale* bzw *CMS Accounts*. 
-Dadurch ist ein berechtigen fremder Domains möglich. Der Empfänger einer geteilten Domain hat ansonsten keinen Einfluss auf die Anwender der 
+Befinden sich das *Karten Portal* oder der *CMS Account* in einer fremden Subscription (z.B. Domain Verwaltung und Bereitstellung von Karten/Diensten erfolgt von unterschiedlichen Organisationen) 
+kann eine Domain *geteilt* werden. Durch das Teilen sieht der Eigentümer des *Karten Portals* diese Domain auf der Eigenschaften-Seite seiner *Karten Portale* bzw. seines *CMS Accounts*. 
+Dadurch ist ein Berechtigen fremder Domains möglich. Der Empfänger einer geteilten Domain hat ansonsten keinen Einfluss auf die Anwender der 
 Domain (es können von ihm keine Anwender angelegt oder Passwörter geändert werden).
 
-Zum Teilen einer Domain muss auf die Eigenschaften Seite der Domain gewechselt und auf ``Share`` geklickt werden:
+Zum Teilen einer Domain muss auf die Eigenschaften-Seite der Domain gewechselt und auf ``Share`` geklickt werden:
 
 .. image:: img/domains9.png
 

@@ -11,12 +11,12 @@ Der Navigationsbaum links bildet die Struktur der Endpoints, Queries und Views a
 Endpunkte 
 ---------
 
-Ein neuer Endpunkt kann seitlich an der Sidebar erstellt werden. Das oberste Element bietet die Möglichkeit den Namen für den neuen Endpoint einzugeben und mit *Enter* zu bestätigen.
+Ein neuer Endpunkt kann seitlich an der Sidebar erstellt werden. Das oberste Element bietet die Möglichkeit, den Namen für den neuen Endpoint einzugeben und mit *Enter* zu bestätigen.
 
 .. image:: img/hello_world1.png
 
 .. note::
-   Für die Namen von Endpunkten sind nur bestimmte Zeichen zulässig: Kleinbuchstaben, Nummern und `-`.
+   Für die Namen von Endpunkten sind nur bestimmte Zeichen zulässig: Kleinbuchstaben, Nummern und ``-``.
    Es sollten keine Sonderzeichen verwendet werden, weil der Name von Endpoints, Abfragen und Views später 
    ein Teil der *Aufruf Url* wird.
 
@@ -62,7 +62,7 @@ Ein Klick auf den Endpunkt öffnet den *Eigenschaften Dialog*, in welchem folgen
 
 **Security**
 
-Setzen von autorisierten Usern / Rollen, siehe :ref:`Berechtigung<param_berechtigung>`
+Setzen von autorisierten Usern / Rollen, siehe :ref:`Berechtigung<param_berechtigung>`.
 
 **Info**
 
@@ -89,9 +89,9 @@ Nach der Auswahl eines Endpoints können für diesen Abfragen erstellt werden. D
 
 .. image:: img/hello_world3.png
 
-Klickt man in der Baumansicht auf den neu entstandenen Knoten der Abfrage wird im Content Bereich ein leeres Editorfenster angezeigt. 
-Hier gibt man die eigentlich Abfrage ein, die die Daten liefern sollte. (Beim Endpoint Connection Type *Database* wäre das beispielsweise ein SQL Select Statement. 
-Bei Endpoints von Type *PlainText* kann hier jetzt ein beliebiger Text eingegeben werden, wobei jede Zeile (ausgeschlossen Leerzeilen) als Datensatz Interpretiert wird.)
+Klickt man in der Baumansicht auf den neu entstandenen Knoten der Abfrage, wird im Content Bereich ein leeres Editorfenster angezeigt. 
+Hier gibt man die eigentlich Abfrage ein, die die Daten liefern sollte (beim Endpoint Connection Type *Database* wäre das beispielsweise ein SQL Select Statement). 
+Bei Endpoints von Type *PlainText* kann hier jetzt ein beliebiger Text eingegeben werden, wobei jede Zeile (ausgeschlossen Leerzeilen) als Datensatz interpretiert wird.
 
 Anschließend können folgende Einstellungen getätigt werden.
 
@@ -117,7 +117,7 @@ Anschließend können folgende Einstellungen getätigt werden.
 
     *   Abfrage aus REST-Schnittstellen: URL
 
-*   Auch Parameter, bspw. zur Einschränkung der Ergebnisse sind möglich
+*   Auch Parameter, bspw. zur Einschränkung der Ergebnisse, sind möglich
 
     *   SQL-Parameter: **@Parametername** 
 
@@ -215,7 +215,7 @@ Berechtigung
 
 Für Endpunkte und Abfragen können hierarchisch Berechtigungen gesetzt werden. D.h. wer auf einen Endpunkt nicht zugreifen darf, darf auch nicht dessen Abfragen ausführen. Es können einzelne User oder auch Rollen berechtigt werden, Token- und Portalverbund sind ebenfalls möglich.
 
-Dazu ist die Art (User, Rolle, etc.) zu wählen und der Name einzugeben und mit Klick auf das „+“-Symbol bzw. Enter zu bestätigen. Mit „*“ werden uneingeschränkte Berechtigungen gesetzt.
+Dazu ist die Art (User, Rolle, etc.) zu wählen und der Name einzugeben und mit Klick auf das „+“-Symbol bzw. *Enter* zu bestätigen. Mit „*“ werden uneingeschränkte Berechtigungen gesetzt.
 
 .. image:: img/param_berechtigung.png
 

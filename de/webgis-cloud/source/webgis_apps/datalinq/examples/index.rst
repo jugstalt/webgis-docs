@@ -13,7 +13,7 @@ Beispiele
 Weitere Beispiele
 -----------------
 
-Weiterführende Beispiele und Templates für DataLinq *Views* und *Queries* werden über das Github Respository bereitgestellt:
+Weiterführende Beispiele und Templates für DataLinq *Views* und *Queries* werden über das Github-Repository bereitgestellt:
 
 https://github.com/gis-eni/datalinq
 

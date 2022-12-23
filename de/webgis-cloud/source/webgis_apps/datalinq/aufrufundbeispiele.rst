@@ -40,7 +40,7 @@ Abfrageergebnisse sind entweder als Rohdaten (SELECT) oder in aufbereiteter Form
 
 :grey:`DataLinq-URL /` :brown:`Aufrufart /` :green:`Endpoint` :orange:`@Query` :blue:`(@View)` :purple:`(?Parameter1=Wert1(&Parameter2=..)`
 
-Bpsw. 
+Bspw. 
 
 
 :grey:`http://localhost/api5/datalinq/`:brown:`report/`:green:`ssg-sdet`:orange:`@proj-geb`:blue:`@proj-gebbestand`:purple:`?GebaeudeId=E313049&Bezeichnung=Text123`

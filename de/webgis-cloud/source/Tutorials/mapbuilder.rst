@@ -11,16 +11,16 @@ Im ersten Schritt muss einmal die Ausdehnung (Extents) ausgewählt werden. Wir v
 
 .. image:: img/image45.png
 
-Diese Ausdehnung definiert die Rechtecksausdehnung von Österreich und den Maßstabstufen der Web Mercator Projektion (wird beispielsweise von Google, OpenStreetMap und Basemap.at verwendet).
+Diese Ausdehnung definiert die Rechteckausdehnung von Österreich und die Maßstabsstufen der Web Mercator Projektion (wird beispielsweise von Google, OpenStreetMap und Basemap.at verwendet).
 
-Im nächsten Schritt wählen wir die Dienste (Services) aus. 
+Im nächsten Schritt wählen wir die Dienste (Services) aus: 
 
 .. image:: img/image5.png
 
 Wählen wir hier Dienste aus, sollte die Kartenvorschau aufgebaut werden.
 
 **Hinweis:** Damit die Kartenvorschau aufgebaut werden kann, muss mindestens eine Ausdehnung und ein Dienst ausgewählt werden.
-Hintergrund (Tiling) Dienste müssen zu den Maßstabsgrenzen aus der Ausdehnung passen, damit sie richtig dargestellt werden.
+Hintergrund (Tiling)-Dienste müssen zu den Maßstabsgrenzen aus der Ausdehnung passen, damit sie richtig dargestellt werden.
 
 
 Unter Benutzeroberfläche (UI) stellen nur Darstellungsvarianten, Abfrageergebnisse, Werkzeugkasten, Schnellsuche und App Menü ein:

@@ -1,7 +1,7 @@
 Installation
 ============
 
-Alle WebGIS Web-Applikationen setzen auf (ASP.NET) DotNet Core auf uns sind damit auf unterschiedlichen Plattformen verfügbar.
+Alle WebGIS Web-Applikationen setzen auf (ASP.NET) DotNet Core auf und sind damit auf unterschiedlichen Plattformen verfügbar.
 
 .. toctree::
    :maxdepth: 1

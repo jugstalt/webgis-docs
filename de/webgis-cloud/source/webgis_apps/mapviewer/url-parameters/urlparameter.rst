@@ -15,23 +15,25 @@ Kartenausschnitt und Marker
 
 *   ``bbox``
 
-    Gibt eine Bounding-Box an, auf die Kartenansicht automatisch zoomt. Die Syntax lautet hier: [x-min],[y-min],[x-max],[y-max] bzw. bei geographischen Koordinaten [lng-min],[lat-min],[lng-max],[lat-max] wobei „lng“ für den geographischen Längegrad und „lat“ für den geographischen Beitengrad stehen. Die Werte werden mit Beistrich getrennt. Als Kommazeichen für die einzelnen Werte wird ein „.“ vorausgesetzt.
+    Gibt eine Bounding-Box an, auf die Kartenansicht automatisch zoomt. Die Syntax lautet hier: [x-min],[y-min],[x-max],[y-max] bzw. bei geographischen Koordinaten [lng-min],[lat-min],[lng-max],[lat-max], wobei „lng“ für den geographischen Längengrad und „lat“ für den geographischen Breitengrad stehen. 
+    Die Werte werden mit Beistrich getrennt. Als Kommazeichen für die einzelnen Werte wird ein „.“ vorausgesetzt.
 
     Beispiel: ``&bbox=14.6,47.3,15.2,48.1`` 
 
 *   ``center``
 
-    Gibt das Zentrum an, auf das nach dem Start in der Kartenansicht gesprungen wird. Die Syntax lautet hier: [x],[y] bzw. [lng],[lat]
+    Gibt das Zentrum an, auf das nach dem Start in der Kartenansicht gesprungen wird. Die Syntax lautet hier: [x],[y] bzw. [lng],[lat] 
 
     Die Werte werden mit Beistrich getrennt. Als Kommazeichen für die einzelnen Werte wird ein „.“ vorausgesetzt.
 
     Beispiel: ``&center=14.6,47.3``   
 
-    Wird kein Maßstab angeben (Parameter scale), zoomt die Ansicht auf einem Maßstab 1:1000 
+    Wird kein Maßstab angeben (Parameter scale), zoomt die Ansicht auf einem Maßstab 1:1000.
 
 *   ``srs``
 
-    Der Viewer setzt voraus, dass die Koordinaten für ``bbox`` und ``center`` als geographische Koordinaten in WGS 84 übergeben werden. Ist dies nicht der Fall muss das Koordinatensystem über diesen Parameter spezifiziert werden. Übergeben wird hier der EPSG-Code des Koordinatensystems ohne dem „EPSG:“ Literal, also als Integer Zahl.
+    Der Viewer setzt voraus, dass die Koordinaten für ``bbox`` und ``center`` als geographische Koordinaten in WGS 84 übergeben werden. Ist dies nicht der Fall, muss das Koordinatensystem über diesen Parameter spezifiziert werden. 
+    Übergeben wird hier der EPSG-Code des Koordinatensystems ohne dem „EPSG:“ Literal, also als Integer Zahl.
 
     Beispiel (GK-M34): ``&srs=31256``
 
@@ -46,20 +48,22 @@ Kartenausschnitt und Marker
 
     Beispiel (mind): ``&marker={lng:14.7,lat:47.2}``
 
-    Das Objekt wurd durch geschwungen Klammern abgegrenzt. Die einzelnen Eigenschaften des Objekts werden mittels Beistrich voneinander getrennt. Die Zuweisung einer Eigenschaft folgt mit folgender Syntax: [Eigenschaft]:[Wert] also beispielsweise lng:14.2 
+    Das Objekt wird durch geschwungen Klammern abgegrenzt. Die einzelnen Eigenschaften des Objekts werden mittels Beistrich voneinander getrennt. Die Zuweisung einer Eigenschaft folgt mit folgender Syntax: [Eigenschaft]:[Wert] also beispielsweise lng:14.2 
     
-    Enspricht der Wert einem String muss dieser in einfachen Hochkommata angeführt werden:
+    Entspricht der Wert einem String, muss dieser in einfachen Hochkommata angeführt werden:
 
     Text:‘Popup Text‘
 
     Eine Beschreibung der einzelnen Werte folgt unten.
 
-    Wenn nicht über die Parameter center oder bbox anders definiert, zoomt die Kartenansicht auf den Marker. Der Maßstab kann dafür über den Parameter scale übergeben werden.  
+    Wenn nicht über die Parameter ``center`` oder ``bbox`` anders definiert, zoomt die Kartenansicht auf den Marker. Der Maßstab kann dafür über den Parameter ``scale`` übergeben werden.  
 
 Einen Marker übergeben
 -----------------------
 
-Wie oben schon beschrieben kann über den Parameter ``marker`` ein Marker beim Aufruf in eine Karte übergeben werden. Die Übergabe Syntax ist dabei immer die Darstellung des Markers als Javascript Objekt (siehe oben). Folgende Tabelle führt alle möglichen Eigenschaften dieses Objekts an. Double-Werte sind immer Zahlen mit einen „.“ (Punkt) als Komma Separator. Integer Zahlen dürfen nur aus Zahlen bestehen. Strings müssen mit Hochkommata versehen werden. Die fett gedruckten Eigenschaften müssen angeführt werden:
+Wie oben schon beschrieben, kann über den Parameter ``marker`` ein Marker beim Aufruf in eine Karte übergeben werden. Die Übergabe-Syntax ist dabei immer die Darstellung des Markers als Javascript Objekt (siehe oben). 
+Folgende Tabelle führt alle möglichen Eigenschaften dieses Objekts an. Double-Werte sind immer Zahlen mit einen „.“ (Punkt) als Komma Separator. Integer Zahlen dürfen nur aus Zahlen bestehen. 
+Strings müssen mit Hochkommata versehen werden. Die fett gedruckten Eigenschaften müssen angeführt werden:
 
 
 *   ``lng``
@@ -96,15 +100,15 @@ Wie oben schon beschrieben kann über den Parameter ``marker`` ein Marker beim A
 
     *   *String*
 
-    *   (zZ nicht benutzt, es wird immer der Standardmarker gesetzt)
+    *   (z.Z. nicht benutzt, es wird immer der Standardmarker gesetzt)
 
 *   ``text``
 
     *   *Integer*
 
-    *   Soll der Marker Information in Form von Text besitzen, kann dies über diesen Parameter erfolgen. Der Text wird dann als Popup Text beim Klick auf den Marker angezeigt.
+    *   Soll der Marker Information in Form von Text besitzen, kann dies über diesen Parameter erfolgen. Der Text wird dann als Popup-Text beim Klick auf den Marker angezeigt.
 
-        Innerhalb des des Textes können auch Links auf Bilder angeführt werden. Bilder werden mit einem „img:“ als Prefix gekennzeichnet, also Beispielsweise img:http://…../bild.jpg
+        Innerhalb des Textes können auch Links auf Bilder angeführt werden. Bilder werden mit einem „img:“ als Prefix gekennzeichnet, also beispielsweise *img:http://…../bild.jpg*.
 
 
 *   ``openPopup``
@@ -113,13 +117,13 @@ Wie oben schon beschrieben kann über den Parameter ``marker`` ein Marker beim A
 
     *   true/false
 
-        Wird ein Text übergeben, kann hier angeführt werden, ob der Popup Text automatisch dargestellt wird oder erst durch einen Klick auf den Marker durch den Anwender.
+        Wird ein Text übergeben, kann hier angeführt werden, ob der Popup-Text automatisch dargestellt wird oder erst durch einen Klick auf den Marker durch den Anwender.
 
             
 
 **Beispiele:** 
 
-Ein Marker mit dem Text „Hallo Welt“
+Ein Marker mit dem Text „Hallo Welt“:
 
 .. code-block::
 
@@ -131,7 +135,7 @@ Ein Marker mit projezierten Koordinaten:
 
     &marker={x:-68014.6,y:215601.4,srs:31256}
 
-Ein Marker mit Text und eingeschlossem Bild. Wird nach dem Öffnen des Viewers automatisch angezeigt (``openPopup=true``). Die Zeilenumbrüche dienen hier nur der Veranschaulichung:
+Ein Marker mit Text und eingeschlossenem Bild. Wird nach dem Öffnen des Viewers automatisch angezeigt (``openPopup=true``). Die Zeilenumbrüche dienen hier nur der Veranschaulichung:
 
 .. code-block::
 
@@ -149,7 +153,7 @@ Mehrere Marker übergeben
 ------------------------
 
 Über den Parameter ``markers`` können auch mehrerer Marker übergeben werden. Die Syntax muss dabei einem ``Array`` aus einzelnen Markern entsprechen.
-Die Marker werden hier nicht nur in der Karte angezeigt, sondern werden in der Karte als *Dynamischer Inhalt* übernommen. Über den optionalen Parameter ``markers_name`` 
+Die Marker werden hier nicht nur in der Karte angezeigt, sondern in der Karte als *Dynamischer Inhalt* übernommen. Über den optionalen Parameter ``markers_name`` 
 kann ein Name übergeben werden, mit dem der *Dynamische Inhalt* im TOC angezeigt wird. 
 
 **Beispiel**:
@@ -162,7 +166,7 @@ Abfragen
 --------
 
 An den Viewer kann beim Aufruf eine Abfrage mit Werten übergeben werden. Diese Abfrage ist dann automatisch im Viewer als aktuelles Abfrage/Identifythema aktiv. 
-Wenn optional noch Werte übergeben werden, wird diese Abfrage ausgeführt und auf die Ergebnisse gezoomt. Ergebnisse werden im der Karte selektiert und mit Markern markiert.
+Wenn optional noch Werte übergeben werden, wird diese Abfrage ausgeführt und auf die Ergebnisse gezoomt. Ergebnisse werden in der Karte selektiert und mit Markern markiert.
 
 *   ``query``, ``abfragethema``
 
@@ -176,25 +180,25 @@ Wenn optional noch Werte übergeben werden, wird diese Abfrage ausgeführt und a
 
 *   ``query2``, ``abfragethema2``, ``querythemeid``
 
-    Wird ein Abfrage übergeben, stellt sich das Abfragethema für *Identify* und *Suche* in der Benutzeroberfläche 
-    ebenfalls auf diese dieses Thema.
-    Möchte man das voreingestellte Abfragethema auf ein (anderes) Thema setzen kann einer dieser Parameter verwendet werden.
+    Wird eine Abfrage übergeben, stellt sich das Abfragethema für *Identify* und *Suche* in der Benutzeroberfläche 
+    ebenfalls auf dieses Thema.
+    Möchte man das voreingestellte Abfragethema auf ein (anderes) Thema setzen, kann einer dieser Parameter verwendet werden.
 
     Beispiel: ``querythemeid=bezirke``, ``querythemeid=%23``
 
 .. note::
-   Die Abfrage Id für "sichtbare Themen" ist ``#``. Dieses Zeichen ist allerdings in Urls reserviert und kann nicht 1:1 verwendet 
+   Die Abfrage-Id für "sichtbare Themen" ist ``#``. Dieses Zeichen ist allerdings in Urls reserviert und kann nicht 1:1 verwendet 
    werden, sondern muss als ``%23`` kodiert werden.          
 
 
 Darstellungsfilter
 ------------------
 
-Werden in einer Karte Darstellungsfilter angeboten, kann ein Filter über einen Url parameter übergen werden.
+Werden in einer Karte Darstellungsfilter angeboten, kann ein Filter über einen Url-Parameter übergen werden.
 
 *   ``filter``
 
-    Die id des Filters (wie im CMS)
+    Die id des Filters (wie im CMS).
 
 *   ``filterarg_{argument}`` 
  
@@ -202,12 +206,12 @@ Werden in einer Karte Darstellungsfilter angeboten, kann ein Filter über einen 
 
 *  ``filterservice`` (optional)
 
-   Die Id für den Filter ist nicht eindeutig und kann in unterschiedlichen Diensten vorkommen. Möchte man den Filter für genau einem bestimmten Dienst aktieren,
-   kann die Id des Dienstes hier angegeben werden. Ansonsten wird der Filter für jeden Dienst mit diesem Filter angewendet. Die Dienst Id besteht in der Regel aus ``{Dienst Id}@{CMS Id}``.
-   Eine Alternative ist, den die Dienst-Id gleich über den Parameter ``filter`` zu definieren: ``{service-id}~{filterid}``. 
+   Die Id für den Filter ist nicht eindeutig und kann in unterschiedlichen Diensten vorkommen. Möchte man den Filter für genau einem bestimmten Dienst aktivieren,
+   kann die Id des Dienstes hier angegeben werden. Ansonsten wird der Filter für jeden Dienst mit diesem Filter angewendet. Die Dienst-Id besteht in der Regel aus ``{Dienst Id}@{CMS Id}``.
+   Eine Alternative ist, die Dienst-Id gleich über den Parameter ``filter`` zu definieren: ``{service-id}~{filterid}``. 
 
 .. note::
-   Sollte Filter auch über das Darstellungsfilter Werkzeug angezeigt werden (wenn der Anwender auf das Werkzeug ``Darstellungsfilter`` klickt), MUSS die Dienst Id mitübergeben werden!
+   Sollten Filter auch über das Darstellungsfilter-Werkzeug angezeigt werden (wenn der Anwender auf das Werkzeug ``Darstellungsfilter`` klickt), MUSS die Dienst-Id mitübergeben werden!
    
 Beispiel:
 
@@ -226,25 +230,25 @@ Der Viewer kann mit einem voreingestelltem Werkzeug aufgerufen werden:
 
 *  ``tool``
    
-   mit diesem Parameter wird die es Werkzeugs übergeben, dass beim Aufruf der Karte ausgewählt werden sollte.
+   Mit diesem Parameter wird die Id des Werkzeugs übergeben, dass beim Aufruf der Karte ausgewählt werden sollte.
 
    Beispiel: ``&tool=webgis.tools.measureline``
 
-Die möglichen Werkzeug Ids können unter https://api.webgiscloud.com/rest/tools nachgeschlagen werden.
+Die möglichen Werkzeug-Ids können unter https://api.webgiscloud.com/rest/tools nachgeschlagen werden.
 
 .. note::
-   Es können nur Werkzeuge und keine einfachen Werkzeug Buttons übergeben werden. *Einfache Werkzeugbuttons* sind Werkzeuge,
-   die schon beim anklicken die gewünschte Aktion ausführen wie *gesamter Ausschnitt*, *Refresh*, *Zurück*.
+   Es können nur Werkzeuge und keine einfachen Werkzeug-Buttons übergeben werden. *Einfache Werkzeugbuttons* sind Werkzeuge,
+   die schon beim Anklicken die gewünschte Aktion ausführen, wie *gesamter Ausschnitt*, *Refresh*, *Zurück*.
 
 Sichtbarkeit/Darstellungsvarianten
 ----------------------------------
 
 Um beim Aufruf schon eine bestimmte Darstellung anzugeben, kann hier eine Liste von Darstellungsvarianten angeführt werden. Diese werden dann in der angeführten Reihenfolge „automatisch angeklickt“. 
-Im CMS hat jede Darstellungsvariante beim Dienst eine Url. Im Viewers können diese Darstellungsvarianten allerdings wieder zu Buttons und Checkboxes gruppiert sein, 
+Im CMS hat jede Darstellungsvariante beim Dienst eine Url. Im Viewer können diese Darstellungsvarianten allerdings wieder zu Buttons und Checkboxes gruppiert sein 
 oder sich in Dropdowns befinden. Darum funktioniert die Übergabe der Url einer Darstellungsvariante nur, wenn diese in keiner Gruppe ist. Wenn sich die Darstellungsvariante in einer Gruppe befindet, 
 kann nur die komplette Gruppe als Parameter übergeben werden. Die interne Url für eine Gruppe ist immer dvg_[Name der Gruppe in Kleinbuchstaben, Leerzeichen werden Underscore, …). 
-Wenn man sich nicht sicher ist, wie der interne Name einer Gruppe oder einer Darstellungsvariante unterhalb eines Dropdowns oder einer Gruppe ist, kann dies über die Entwicklungstools des Browsers feststellen (F12).
-Jedes Element, auf das man in Darstellungsvarianten TOC klicken kann hat ein Attribut mit dem Namen „data-dvid“. Der Wert dieses Attributes entspricht der Id, die man über einen parametrierten Aufruf übergeben kann:
+Wenn man sich nicht sicher ist, wie der interne Name einer Gruppe oder einer Darstellungsvariante unterhalb eines Dropdowns oder einer Gruppe ist, kann man dies über die Entwicklungstools des Browsers feststellen (F12).
+Jedes Element, auf das man in Darstellungsvarianten TOC klicken kann, hat ein Attribut mit dem Namen „data-dvid“. Der Wert dieses Attributes entspricht der Id, die man über einen parametrierten Aufruf übergeben kann:
 
 .. image:: img/image3.png
 
@@ -262,9 +266,9 @@ Befindet sich der Layer in einer Gruppe, muss der komplette Pfad mit *Backslash*
 
 .. image:: img/image4.png
 
-würde somit folgenden Layernamen ergeben ``Verwaltungsdaten\Bezirke``
+würde somit folgenden Layernamen ergeben: ``Verwaltungsdaten\Bezirke``.
 
-Mehrere Layer können mit Beistrich getrennt abgeführt werden.
+Mehrere Layer können mit Beistrich getrennt angeführt werden.
 
 *   ``showlayers``, ``sichtbar``
     
@@ -300,7 +304,7 @@ oder mit zusätzlichem Basemap *Overlay* Dienst:
 Snapshots
 ---------
 
-Wurde im *MapBuilder* für eine Karte mehre *Snapshots* angelegt, keine ein bestimmter *Snapshot* über den Url-Parameter ``snapshot`` übergeben werden.
+Wurden im *MapBuilder* für eine Karte mehre *Snapshots* angelegt, kann ein bestimmter *Snapshot* über den Url-Parameter ``snapshot`` übergeben werden.
 Die Karte wird dann mit der für den Snapshot eingestellen Layer-Sichtbarkeit und Ausschnitt geladen.
 
 Beispiel:
@@ -312,7 +316,7 @@ Dienste hinzufügen
 ------------------
 
 Beim Aufruf einer Karten können noch zusätzliche Dienste übergeben werden. Dazu muss über den Parameter ``append-services`` oder ``gdiservices`` eine mit Bestrich getrennt Liste von Dienst Ids übergeben werden.
-Die angeführten Dienste werden in der Reihenfolge in die Karte eingefügt, wie sie übergeben werden. Neue Dienste werden werden einer Karte grundsätzlich ganz eingefügt. Der am letzten eingefügte Dienst überdeckt alle bereits eingefügten Dienst.
+Die angeführten Dienste werden in der Reihenfolge in die Karte eingefügt, wie sie übergeben werden. Neue Dienste werden einer Karte grundsätzlich ganz eingefügt. Der zuletzt eingefügte Dienst überdeckt alle bereits eingefügten Dienste.
 Befindet sich ein Dienst bereits in der Karte, wird dieser ignoriert.
 
 *  ``append-services`` gleichbedeutend mit ``gdiservices``
@@ -322,30 +326,30 @@ Befindet sich ein Dienst bereits in der Karte, wird dieser ignoriert.
 Allgemeine (originäre) Url Parameter
 ------------------------------------
 
-Neben den hier angeführten Url Paramatern können auch allgeime Parameter übergeben werden. Als allgemeiner Parameter wird jeder Parameter behandelt, der keinen oben angeführten Parameter Schlüsselwort (``query``, ``abfragethema``, ...)
+Neben den hier angeführten Url-Parametern können auch allgemeine Parameter übergeben werden. Als allgemeiner Parameter wird jeder Parameter behandelt, der keinem oben angeführten Parameter-Schlüsselwort (``query``, ``abfragethema``, ...)
 entspricht.
 
-Diese Parameter werden als *originale* Aufrufparameter behandelt und bei jedem Request innerhalb der Viewer Session an den Server übergeben. Dort können diese Parameter dann verarbeitet werden.
+Diese Parameter werden als *originale* Aufrufparameter behandelt und bei jedem Request innerhalb der Viewer-Session an den Server übergeben. Dort können diese Parameter dann verarbeitet werden.
 
-**Anwendungsbeispiele für allgemene (originäre) Url Parameter:**
+**Anwendungsbeispiele für allgemeine (originäre) Url Parameter:**
 
 Eine Karte zum Bearbeiten von Projekten soll immer mit einer Projekt-ID aufgerufen werden. In der Karte soll durch einen gesperrten Filter gewährleistet sein, dass nur die Objekte auf dem 
-ensprechenden Projekt dargestellt werden. 
+entsprechenden Projekt dargestellt werden. 
 
 Aufruf: ``http://...?...&project_id=4711...``
 
-Der gesperrte (*locked*) Filter, die der Anwender innerhalb der ViewerSession nicht ändern kann, kann auf *originänre* Url-Parameter folgerndermaßen zugreifen:
+Der gesperrte (*locked*) Filter, die der Anwender innerhalb der Viewer-Session nicht ändern kann, kann auf *originäre* Url-Parameter folgendermaßen zugreifen:
   
 Filter: ``PROJECT_ID='[url-parameter:project_id]'`` 
 
-Über den Prefix ``url-parameter:`` wird zum setzen des Filters auf den Url-Parameter zugegriffen (funktioniert nur für gesperrte Filter)
+Über den Prefix ``url-parameter:`` wird zum setzen des Filters auf den Url-Parameter zugegriffen (funktioniert nur für gesperrte Filter).
 
-Außerdem sollt der Anwender neue und bestehende Objekte editieren können. Damit die Filter funktionieren muss dazu die Projekt-ID automatisch beim Editieren in ein Feld übernommen werden.
-Dazu muss im CMS für dieses Edit Feld bei ``AutoValue`` der Wert ``custom`` eingestellt werden. Im Eingabefeld für den *custom* AutoValue muss man folgendes eingeben:
+Außerdem sollte der Anwender neue und bestehende Objekte editieren können. Damit die Filter funktionieren, muss dazu die Projekt-ID automatisch beim Editieren in ein Feld übernommen werden.
+Dazu muss im CMS für dieses Edit-Feld bei ``AutoValue`` der Wert ``custom`` eingestellt werden. Im Eingabefeld für den *custom* AutoValue muss man folgendes eingeben:
 
 ``url-parameter:project_id``
 
-Auch hier wird über den Prefix ``url-parameter:`` angegeben, das der Wert aus einem *originären* Url Parameter kommt.
+Auch hier wird über den Prefix ``url-parameter:`` angegeben, dass der Wert aus einem *originären* Url Parameter kommt.
 Für weitere Prefixe kann angegeben werden, ob der Wert nur beim INSERT oder UPDATE gesetzt werden soll:
 
 ``oninsert:url-parameter:project_id``

@@ -39,9 +39,9 @@ und dass das Ergebnis ein Höhenwert (Zahl ohne Textzusatz wie müA…) ist:
 Werkzeug XZ (Koordinaten/Höhen)
 -------------------------------
 
-In alten WebGIS 4.0 Installationen lag im API app-Verzeichnis ein Ordner ``system/proj``,
+In der alten WebGIS 4.0 Installationen lag im API app-Verzeichnis ein Ordner ``system/proj``,
 in dem Projektionen definiert wurden. 
-Diese Konfiguration befindet sich ab jetzt unter ``etc/coordinates/proj``
+Diese Konfiguration befindet sich ab jetzt unter ``etc/coordinates/proj``.
 
 Zusätzlich zum bisherigen proj-Ordner, kann in ``etc/coordinates`` jetzt auch noch (optional) 
 ein ``h.xml`` angelegt werden. Hier wird angegeben, welche Höhen zusätzlich zu den Koordinaten 

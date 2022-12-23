@@ -5,7 +5,7 @@ In diesem Abschnitt wird gezeigt, wie WebGIS in einer (Linux) Docker Umgebung ve
 
 Dazu sind die entsprechenden Images aus dem *Docker Store* zu ziehen:
 
-(Comming soon...)
+(Coming soon...)
 
 Danach sollten die Images auf dem lokalem System zur Verfügung stehen. Mit dem Kommando ``docker images`` sollten die Images aufgelistet werden.
 
@@ -15,13 +15,13 @@ Damit die einzelnen *WebGIS Web-Applikationen* intern miteinander reden können,
 
 ``docker network create -d bridge webgis-network``
 
-Beim Anlegen der einzelnen Applikation wird diese Netzwerk an angeben. Wichtig ist hier, dass die Namen der einzelnen Anwendungen eingehalten wird (``webgis-api``, ``webgis-portal`` und ``webgis-cms``).
-Diese Namen sind teil der *Default Konfiguration*, die in den Containern beim Starten erstellt wird. Gleiches gilt für die Ports 5001, 5002 und 5003.
+Beim Anlegen der einzelnen Applikation wird dieses Netzwerk angegeben. Wichtig ist hier, dass die Namen der einzelnen Anwendungen eingehalten werden (``webgis-api``, ``webgis-portal`` und ``webgis-cms``).
+Diese Namen sind Teil der *Default Konfiguration*, die in den Containern beim Starten erstellt wird. Gleiches gilt für die Ports 5001, 5002 und 5003.
 Ein gemeinsames Repository wird in der *Default Konfiguration* unter ``/etc/webgis`` angelegt. Dieses Verzeichnis muss auf das ausführende System gemappt werden.
 Wird zum Testen beispielsweise ``Docker Desktop for Windows`` (mit Linux Containern) verwendet, erfolgt das mit der Option ``-v C:\Docker_Drive\webgis:/etc/webgis``. Unter Linux muss anstelle von C:\Docker_Drive/webgis ein anderes Verzeichnis angeben werden,
-zb: ``-v /etc/webgis:/etc/webgis``.
+z.B.: ``-v /etc/webgis:/etc/webgis``.
 
-Die einzelnen Aufruf zum erstellen der Anwendungen sehen in etwa folgendermaßen aus:
+Die einzelnen Aufruf zum Erstellen der Anwendungen sehen in etwa folgendermaßen aus:
 
 .. code::
   
@@ -29,13 +29,13 @@ Die einzelnen Aufruf zum erstellen der Anwendungen sehen in etwa folgendermaßen
    docker run -d -v C:\Docker_Drive\webgis:/etc/webgis -p 5002:80 --name webgis-portal --network webgis-network webgis_portal:3.21.4504
    docker run -d -v C:\Docker_Drive\webgis:/etc/webgis -p 5003:80 --name webgis-cms --network webgis-network webgis_cms:3.21.4504
 
-Konnten die Anwendungen erfolgreich erstellt werden. Was das erstellen erfolgreich sollte der Befehl ``docker ps`` in etwa folgende Ausgabe liefern:
+ War das erstellen erfolgreich, sollte der Befehl ``docker ps`` in etwa folgende Ausgabe liefern:
 
 .. image:: img/install2.png
 
 Über den Browser (http://localhost:5001) sollte die einzelnen Anwendung aufrufbar sein.
 
-Möchte man die einzelnen Anwendungen nicht mir der Standardkonfiguration starten, können über
+Möchte man die einzelnen Anwendungen nicht mit der Standardkonfiguration starten, können über
 Umgebungsvariablen (``--env VARIABLE=value``) Werte überschrieben werden.
 
 Umgebungsvariablen Image webgis-api

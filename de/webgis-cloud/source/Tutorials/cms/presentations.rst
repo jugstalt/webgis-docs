@@ -1,11 +1,14 @@
 Darstellungsvarianten (Layer-Schaltungen für den Viewer bereitstellen)
 ======================================================================
 
-Dazu um Knoten ``Karten Viewer/Darastellungsvarianten`` wechseln
+Dazu um Knoten ``Karten Viewer/Darstellungsvarianten`` wechseln:
 
 .. image:: img/image128.png
 
-Im ersten Schritt ist ein Container zu erstellen. Dieser stellt die oberste Ebene im Darstellungsvarianten TOC dar. Diese Container können später vom Anwender einzeln aufgeklappt werden. Innerhalb eines Containers können sich die eigentlichen Layer-Schaltungen oder eine/mehrere aufklappbare Gruppe(n)  befinden, die wiederum Layer-Schaltungen enthalten können. Die maximale Tiefe ist also drei. Dies gewährleistet auch, dass der Darstellungsvarianten Baum nicht zu komplex wird und der Anwender in der Regel mit wenigen Klicks zum Ziel kommt.
+Im ersten Schritt ist ein Container zu erstellen. 
+Dieser stellt die oberste Ebene im Darstellungsvarianten-TOC dar. Diese Container können später vom Anwender einzeln aufgeklappt werden. 
+Innerhalb eines Containers können sich die eigentlichen Layer-Schaltungen oder eine/mehrere aufklappbare Gruppe(n)  befinden, die wiederum Layer-Schaltungen enthalten können. 
+Die maximale Tiefe ist also drei. Dies gewährleistet auch, dass der Darstellungsvarianten-Baum nicht zu komplex wird und der Anwender in der Regel mit wenigen Klicks zum Ziel kommt.
 
 Im Tutorial parametrieren wir zwei Dienste:
 
@@ -26,7 +29,7 @@ In diesem Tutorial möchten wir allerdings noch eine aufklappbare Gruppe mit dem
 
 .. image:: img/image130.png
 
-Hier können nun die vorhin erstellten Layer Schaltung hinzugefügt werden. Wenn sich im CMS mehre Dienste befinden, muss im Dialog eventuell noch bis zum gewünschten Dienst navigiert werden:
+Hier können nun die vorhin erstellte Layer-Schaltung hinzugefügt werden. Wenn sich im CMS mehre Dienste befinden, muss im Dialog eventuell noch bis zum gewünschten Dienst navigiert werden:
 
 
 .. image:: img/image131.png

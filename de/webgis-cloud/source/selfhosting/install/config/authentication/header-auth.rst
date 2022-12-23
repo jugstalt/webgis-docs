@@ -19,7 +19,7 @@ und Kartendiensten.
    Das *WebGIS Portal* überprüft nicht, ob die Header Variablen erst vom *Reverse 
    Proxy* gesetzt wurden.
 
-Die *headerbasierte Authentifizierung* wird über die ``portal.config`` Datei über
+Die *headerbasierte Authentifizierung* wird über die ``portal.config``-Datei über
 die *Section* ``header-authentication`` aktiviert:
 
 .. code-block:: xml
@@ -43,11 +43,11 @@ Beschreibung der Keys
 
 * ``use`` (default: false)
   
-  Gibt an, dass die headerbasierte Authentifizierung angewendet wird
+  Gibt an, dass die headerbasierte Authentifizierung angewendet wird.
 
 * ``username-variable``
   
-  Die Header Variable, in der der Benutzername übergeben wird 
+  Die Header Variable, in die der Benutzername übergeben wird .
 
 * ``roles-variable`` 
   
@@ -56,16 +56,16 @@ Beschreibung der Keys
 * ``extract-role-parameters`` default: none 
   
   Rollenparameter sind spezielle Parameter, die einem Anwender zugeordnet werden können.
-  Damit kann eine Rolle noch weiter eingeschränkt. Gibt man einer Anwendergruppe 
+  Damit kann eine Rolle noch weiter eingeschränkt werden. Gibt man einer Anwendergruppe 
   beispielsweise die Rolle ``GEMEINDE`` kann über einen *Rollen Parameter* 
   gesteuert werden, um welche Gemeinde es sich handelt. Alle Anwender sehen dann die
-  *Gemeinde* Anwendung aber über einen Filter später nur hier Gemeinde.
+  *Gemeinde* Anwendung aber über einen Filter später nur die entsprechende Gemeinde.
 
   *Reverse Proxy Systeme* können diese Parameter übergeben. Erfolgt dies über 
-  ``roles-variable`` kann hier angegeben werden, wie das *Parsing* des Rollenwert
+  ``roles-variable``, kann hier angegeben werden, wie das *Parsing* des Rollenwert
   erfolgt.
 
-  Stellt man hier ``insideBrackets`` erwartet das Portal den Rollenparameter innerhalb 
+  Stellt man hier ``insideBrackets``, erwartet das Portal den Rollenparameter innerhalb 
   von Klammern nach der Rolle:
 
   ``role1(param1=1,param2=2);gemeinde(gemnr=123456)``
@@ -80,22 +80,22 @@ Beschreibung der Keys
 
 * ``role-parameters-separator``  (default ``,``)
   
-   Das Trennzeichen das zum *Parsen* einzelner Rollenparameter verwendet werden sollte.
+   Das Trennzeichen, das zum *Parsen* einzelner Rollenparameter verwendet werden sollte.
   
   ``(param1=1,param2=2,...)`` 
 
 * ``user-prefix``, ``role-prefix``
   
   Verwendet man mehrere Authentifizierungsmethoden kann über Namensräume 
-  (Prefixes) unterschieden werden, woher ein Nutzer kommen. Ansonsten kann es
+  (Prefixes) unterschieden werden, woher ein Nutzer kommt. Ansonsten kann es
   zu falschen Interpretationen von Berechtigungen kommen, wenn der gleiche 
-  Name in unterschiedlichen System vorkommt. 
+  Name in unterschiedlichen Systemen vorkommt. 
   Der Namensraum (Prefix) wird mittels ``::`` vom ursprünglichen Namen getrennt.
 
   Beispiel: ``user-prefix = header-user``, ``username = maxmustermann``
   => ``header-user::maxmustermann``  
 
   Im CMS stellt man die entsprechende Berechtigung inklusive Namensraum ein 
-  (``header-user::maxmustermann``)
+  (``header-user::maxmustermann``).
 
 
