@@ -40,3 +40,7 @@ var eni=function($) {
         send2:send2
     };
 }(jQuery);
+
+$(function(){
+    $("a.reference.external").attr('target','_blank');
+});
