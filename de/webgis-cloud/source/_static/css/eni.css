@@ -8,10 +8,11 @@
     color:#000
 }
 
+/*
 span.caption-text {
     color: #80C826;
   }
-
+*/
 .wy-table-responsive table td, 
 .wy-table-responsive table th {
       white-space: normal !important;
@@ -30,4 +31,26 @@ span.caption-text {
   
 .rst-content section ul li p:last-child {
       margin-bottom: 0;
+}
+
+div#top_nav nav {
+      background-color:#80C826 !important;
+}
+
+div.sphinxsidebar {
+      width: 25rem;
+}
+
+div.document {
+      margin-left: 25rem;
+  }
+
+@media (max-width: 75rem) {
+  div.sphinxsidebar {
+      display: none;
+  }
+
+  div.document {
+      margin-left: 0rem;
+  }
 }
