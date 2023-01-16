@@ -45,7 +45,7 @@ Als Datenquelle für ``db_select`` kann auch ein WebService angeben werden. Das 
 
 Eine Abfrage liefert etwa folgendes Ergebnis:
 
-``https://localhost:44341/datalinq/select/auswahllisten(oJ...token)@color?value=blau``
+``https://localhost:44341/datalinq/select/auswahllisten(oJ...token)@color?value=4711``
 
 .. code-block:: javascript
 
@@ -68,6 +68,11 @@ SqlStatement:
 
 Wobei hier ``color`` das Edit Eingabe/Auswahllisten-Feld ist, das für diesen Autovalue verwendet wird.
 In diesem Beispiel würde als Autovalue der Wert ``Blau`` übernommen werden.
+
+.. note::
+   Für den Autovalue wird hier immer das erster Ergebnis verwendet, das zurück gegeben wird. 
+   Wird eine Url Abgefragt, wird der Wert übernommen, der im Feld ``name`` steht. Bei DataLinq PlainText Endpoints heißt das Feld per Definition immer ``text``.
+   Verwendet man im Hintergrund in DataLinq deine Datenbankabfrage, muss man das entsprechende Feld im SQL Statement umbenennen, zB ``SELECT FARBE as name FROM TABLE WHERE ...``.
 
 .. note:: 
    In der Praxis wird nicht empfohlen, *ConnectionString* oder Urls (mit Tokens) wie oben gezeigt an dieser Stelle 
