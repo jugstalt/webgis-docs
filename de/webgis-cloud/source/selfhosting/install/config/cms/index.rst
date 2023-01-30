@@ -149,18 +149,31 @@ Welche Instanzen über die CMS Startseite zum Editieren angezeigt werden, kann �
             "description": "My local WebGIS test and developing API",
             "url": "https://my-server/webgis-api"
          }
-      ]
+      ],
+      "useAppPrefixFilters": true
    }
 
 
-Über das *Array* können mehrere Instanzen angegeben werden. Ruft man eine dieser Instanzen über die CMS Startseite
-auf, erscheint ein Anmeldefenster. Hier muss man sich mit einem *Subscriber* für die jeweilige API Instanz anmelden.
+* ``instances``:
+   Über das *Array* können mehrere Instanzen angegeben werden. Ruft man eine dieser Instanzen über die CMS Startseite
+   auf, erscheint ein Anmeldefenster. Hier muss man sich mit einem *Subscriber* für die jeweilige API Instanz anmelden.
 
 .. note::
   Die jeweilige API Instanz kann über die Konfiguration (api.config: ``datalinq => allowed-code-api-clients``)
   festlegen, von welcher Url DataLinq.Code Editing möglich ist. Ist die entsprechende CMS Instanz dort nicht 
   eingetragen, kommt beim Aufruf eine Fehlermeldung (*Invalid Client*).
 
+* ``useAppPrefixFilters``:
+   Wird diese Option auf ``true`` gesetzt, kann man die einzelnen Endpoints beim Start der *DataLinq.Code* Anwendung filtern. 
+   Dabei wird davon ausgegangen, dass die Bezeichnungen/Namen der Endpoints folgendermaßen organisiert sind:
+
+   ``{APPLICATION}-{db/lov/...}-{etc...}``
+
+   Vor dem ersten ``-`` steht der Name der Applikation. Dahinter gibt es optional weiter Beschreibungen zur Unterscheidung der Endpoints.
+   Eine *Applikation* hat in der Regel mehrere Endpoints (ein Endpoint pro Datenbank - lesend, PlainText für Auswahllisten, ein Endpoint für schreibende Datenbank Zugriffe, ...)
+
+   Wählt man beim Start eine oder mehrere Applikationen aus, werden nur diese im Baum dargestellt. Da erhöht die Performance und die Übersichtlichkeit, wenn viele Applicationen 
+   existieren. Der Filter kann immer wieder neu gesetzt werden, wenn man auf die Überschrift *DataLinq.Code* über dem *Baum* klickt.
 
 Datei ``_config/settings.config``
 ---------------------------------

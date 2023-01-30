@@ -232,11 +232,16 @@ Falls schon aus dem Viewer heraus Parameter ausgewählt werden sollten, die dann
 
    webgis.custom.tools.add({
         name: 'Höhenprofil',
-        command: 'https://server.com/profile?ueberhoehung={ueberhoehung}&hintergrund=bmapgrau&stuetzpunktabstand={stuetzpunktabstand}&polygonzug={wkt}&crs=31256',
+        command: 'https://server.com/profile?ueberhoehung={ueberhoehung}&hintergrund=bmapgrau&stuetzpunktabstand={stuetzpunktabstand}&title={profile_title}&polygonzug={wkt}&crs=31256',
         command_target: 'dialog',
         tooltype: 'sketch1d',
         image: 'profil.png',
         uiElements: [
+            { type: 'label', label: 'Titel' },
+            {
+                id: 'profile_title',
+                type: 'input-text'
+            },
             { type:'label', label:'Überhöhung' },
             {
                 id: 'ueberhoehung',
@@ -264,6 +269,14 @@ Falls schon aus dem Viewer heraus Parameter ausgewählt werden sollten, die dann
 Im Beispiel wird gezeigt, wie ein Werkzeug für Höhenprofile erstellt werden kann. Der Anwender kann im Viewer vor dem Aufruf der Ziel-Url noch eine Überhöhung und einen Stützpunktabstand angeben.
 Die ``id`` des jeweiligen Eingabeelements kann als Platzhalter in der Url verwendet werden.
 
-Der Werkzeugdialog für dieses Beispiel würde wie folgt aussehen:
+Für die Eingabefelder gibt es folgende Typen:
+
+* ``input-text``: Einfaches Text Eingabefeld
+* ``input-textarea``: Eingabefeld für mehrzeiligen Text
+* ``input-number``: Eingabefeld für Nummern
+* ``input-date``: Eingabefeld für Datum mit Uhrzeit
+* ``select``: Auswahlliste. Hier müssen die einzelnen Werte (Options) als Array definiert werden (siehe Beispiel oben) 
+
+Der Werkzeugdialog für dieses Beispiel würde in etwa wie folgt aussehen:
 
 .. image:: img/custom1.png
