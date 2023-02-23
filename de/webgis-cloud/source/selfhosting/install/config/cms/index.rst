@@ -9,16 +9,60 @@ Die Konfiguration der CMS Anwendung erfolgt über die Datei ``webgis-cms/_config
 Dabei handelt es sich um eine JSON Datei (JavaScript Object Notation). Darum ist beim Editieren dieser Datei auf die Besonderheiten der JavaScript Syntax aufzupassen. 
 Nach dem Editieren muss es sich wieder um eine gültige JavaScript Datei handeln. Die Vorlage sieht folgendermaßen aus:
 
-.. image:: img/config1.png
 
-**Hinweis zur Javascript Syntax:**
+.. code-block::
 
-•	Attribute und Werte werden durch ``:`` getrennt, z.B.: ``"force-https": false``
-•	Objekte (mit mehreren Attribute) werden in geschwungene Klammern gesetzt ``{ … }``
-•	Array werden durch eckige Klammern gekennzeichnet ``[ … ]``. Die einzelnen Werte werden mit Beistrich getrennt
-•	In einem Array können Objekte aufgelistet werden (z.B.: cms-items): ``[ { object1 }, {object2} ]``
-•	In einem Array können einzelne Werte (String, Zahlen) aufgelistet werden (z.B.: http-get): ``[ "url1", "url2"]``
-•	Ein Backslash ``\`` ist in einer Zeichenkette in JavaScript ein besonderes Zeichen. Um tatsächlich einen Backslash anzugeben, muss hier ein doppelter ``\\`` gegeben werden (siehe im Beispiel bei den Pfaden). Ansonsten ist das config File kein gültiges JSON File mehr!!!
+   {
+    "company":"e",
+    "force-https": false,
+    "services-default-url-scheme": "https://",
+    "webgis-portal-instance":"http://localhost/portal",
+    "cms-display-url": "https://myserver.com/cms",   // optional
+    "cms-items": [
+    {
+        "id": "webgis-release-default",
+        "name": "WebGIS Release Default",
+        "path": "c:/cms/param/webgis-release-default",
+        "scheme": "webgis",
+        "deployments": [
+          {
+            "name": "default",
+            "target": "c:/cms/publish/cms-default.xml",
+            "replacement-file": "",
+            "postEvents":{
+                "commands":[
+                  
+                ],
+                "http-get":[
+                  "http://localhost/api/cache/clear"
+                ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+
+
+.. note::
+   **Hinweis zur Javascript Syntax:**
+
+  •	Attribute und Werte werden durch ``:`` getrennt, z.B.: ``"force-https": false``
+  •	Objekte (mit mehreren Attribute) werden in geschwungene Klammern gesetzt ``{ … }``
+  •	Array werden durch eckige Klammern gekennzeichnet ``[ … ]``. Die einzelnen Werte werden mit Beistrich getrennt
+  •	In einem Array können Objekte aufgelistet werden (z.B.: cms-items): ``[ { object1 }, {object2} ]``
+  •	In einem Array können einzelne Werte (String, Zahlen) aufgelistet werden (z.B.: http-get): ``[ "url1", "url2"]``
+  •	Ein Backslash ``\`` ist in einer Zeichenkette in JavaScript ein besonderes Zeichen. Um tatsächlich einen Backslash anzugeben, muss hier ein doppelter ``\\`` gegeben werden (siehe im Beispiel bei den Pfaden). Ansonsten ist das config File kein gültiges JSON File mehr!!!
+
+* ``webgis-portal-instance``: 
+  Die (interne) Url zum WebGIS Portal. Wird benötigt, wenn CMS Knoten berechtigt werden sollten. Über diesen Link holt sich 
+  die CMS Applikation der verfügbaren User und Gruppen ab (z.B. AD-User/Gruppen). Da diese Abfrage auf die Portal-Anwendung 
+  von Server zu Server erfolgt, kann hier auch eine interne Url angegeben werden. Befinden sich beide Applikationen am gleichen
+  Server funktioniert beispielsweise auch ``http://localhost/webgis-portal``.
+
+* ``cms-display-url``:
+  Dieser optionale Parameter kann angegeben werden, wenn das CMS hinter einen Reverse-Proxy Server betrieben wird und die Applikation 
+  nicht weiß, was die eigentlich für den Anwender sichtbare Url ist. Diese Url kann hier angegeben werden.
 
 Mit einem Web CMS können mehrere Bäume verwaltet werden. Pro Baum wird ein Objekt im cms-items-Array angelegt.
 Der Wert für cms-items muss ein Array sein. Ein cms-item-Objekt hat dann wieder einzelne Werte. Die beiden gelb markierten Werte (path, target) 
@@ -50,7 +94,7 @@ Knoten ``cms-item``
   Ein Array von Deployment-Objekten. Pro Baum können 1:n Deployments angelegt werden. 
   Das Ergebnis eines Deployments ist eine cms.xml Datei, die ins WebGIS eingebunden werden kann.
 
-  .. code::
+.. code-block::
 
     [
         {
