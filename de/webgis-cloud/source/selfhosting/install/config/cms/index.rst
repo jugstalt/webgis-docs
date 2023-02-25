@@ -278,12 +278,34 @@ In dieses Formular User und Passwort eingaben und auf ``Create`` klicken:
 
 Das Code Snippet kopieren und an die entsprechende Stelle an die Datei ``_config/application-security.config`` kopieren:
 
-.. image:: img/config-security3.png
+.. code-block::
+
+   {
+      "users": [
+        {
+         "name": "admin",
+         "password": "tcwXYZ55..."
+        }
+      ]
+   } 
 
 ``Users`` ist hier wieder ein Array. Es können theoretisch auch mehrere User 
 angelegt und mit Beistrich getrennt angeführt werden:
 
-.. image:: img/config-security4.png 
+.. code-block::
+
+   {
+      "users": [
+        {
+         "name": "admin",
+         "password": "tcwXYZ55..."
+        },
+        {
+         "name": "admin2",
+         "password": "dA8NR..."
+        }
+      ]
+   } 
 
 Beim nächsten Aufruf des Web CMS muss ein User mit Passwort eingegeben werden (event. ApplicationPool durchstarten).
 
@@ -291,7 +313,22 @@ Zusätzlich zur Anmeldung über eine Login Formular kann die Anmeldung auch übe
 Windows Authentifizierung oder einen OpenID Connection Server (Auth0, Azure AD, usw.) erfolgen.
 Eine Beispiel application-security.config für für Windows-Authentifizierung:
 
-.. image:: img/config-security5.png 
+.. code-block::
+
+   {
+      "identityType": "windows",
+      "users": [
+        {
+         "name": "domain\\user1",
+        },
+        {
+         "name": "domain\\user2",
+        },
+        {
+         "name": "domain\\admin123",
+        }
+      ]
+   } 
 
 Hier werden drei User aus der Windows Domäne (z.B. domain) für den Zugriff auf das 
 CMS berechtigt. Wichtig ist bei dieser Methode, dass auf die WebApplication im 
@@ -300,7 +337,17 @@ IIS Windows Authentifizierung eingestellt wird (keine anonyme Anmeldung).
 Möchten man für die Anmeldungen einen OpenId Connection Konformen Anmeldeserver verwenden, 
 könnte die ``application-security.config`` wir folgt aussehen:
 
-.. image:: img/config-security6.png 
+.. code-block::
+
+   {
+      "identityType": "oidc",
+      "oidc": {
+         "authority": "https://server.com/identity",
+         "clientId": "cms-local-oidc",
+         "clientSecret": "secret123",
+         "requiredRole": "gis-admin-webgis-cms"
+      }
+   } 
 
 Hier dürfen in alle Anwender, die die Rolle „gis-admin-webgis-cms“ haben, 
 ins CMS einsteigen. ``ClientId`` und ``ClientSecret`` müssen am OpenId Server eingestellt werden. 

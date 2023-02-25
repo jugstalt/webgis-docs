@@ -26,7 +26,10 @@ Datenquellen
 Folgende Datenquelle können für die Abfrage herangezogen werden:
 
 * Datenbanken
-* ArcGIS Server REST-API
+* WebGIS REST-API Abfragen
+* GeoJson
+* GeoRss
+* Plain Text: die Abfragen sind Listen von Werten als Text. Ideal für Auswahllisten
 * Eine andere WebGIS DataLinq Anwendung
 
 Ausgabemöglichkeiten
@@ -35,4 +38,4 @@ Ausgabemöglichkeiten
 Die Ausgabe der Ergebnisse ist in folgender Form verfügbar:
 
 * Rohdaten der Abfrage als JSON
-* Darstellung als HTML über ASP.NET Razor Markup  
+* Darstellung als HTML über ASP.NET Razor Markup

@@ -9,6 +9,7 @@ Beispiele
 
     helloworld
     editcustomers
+    geojson
 
 Weitere Beispiele
 -----------------

@@ -34,31 +34,44 @@ Ein Klick auf den Endpunkt öffnet den *Eigenschaften Dialog*, in welchem folgen
 
 *   Type
 
-    *   Database: DB-Verbindung, bspw. 
+    *   **Database**: DB-Verbindung, bspw. 
 
         .. code-block::
 
             SQL:Server=db123.firma.at\instanz;Database=ssg;User Id=user1;Password=pwd1;
 
-    *   Api: ArcGIS Rest Schnittstelle, bspw. http://localhost/test_api5
-
-        *   Falls der Dienst berechtigt ist, können die Zugangsdaten eines berechtigten Subscribers mit 
-
-            .. code-block::
-
-                service=http://server123.at/api5test;user=username;pwd=12345
-        
-            angegeben werden
-
-    *   DataLinq: Eine andere WebGIS DataLinq Anwendung, bspw.
+    *   **Api**: WebGIS API REST Schnittstelle, bspw. ``http://localhost/test_api5``
+        Falls der Dienst berechtigt ist, können die Zugangsdaten eines berechtigten Subscribers mit 
 
         .. code-block::
 
-            ...
+            service=http://server123.at/api5test;user=username;pwd=12345
+        
+        angegeben werden.
 
-    *   PlainText: PlainText bedeutet, dass Daten später in den Abfragen zeilenweise als Text eingetragen werden. Die Angabe eines Connection Strings entfällt für diesen Connection Type.
+    *   **GeoRss**: Ein GeoRss Dienst. Im *ConnectionString* kann der erste Teil der Connection
+        angegeben werden. Das kann zB. der Server sein: ``https//some.georss.com``.
+        Unter dem Endpunkt können mehrerer *Queries* angeben werden. Diese entsprechen bei GeoRss
+        den Url Pfaden auf diesem Server: ``/services/rss``.
 
-    *   Plugins, bspw. Wetterdienste, Twitter, etc.
+        .. note::
+            Die beiden Url Teile aus Endpoint (ConnectionString) und Query werden beim Abholen
+            des Dienstes einfach zusammengesetzt. Die beiden Teile müssen eine gültige Url ergeben.
+            Eine Query muss daher beispielsweise mit einem ``/`` beginnen, um einen Pfad zu definieren. 
+
+        Ist der Dienst über *Standard-Authentication* mit User und Passwort geschützt, kann der ConnectionString
+        folgendermaßen angegeben werden:
+
+        .. code-block::
+
+            service=https//some.georss.com;user=username;pwd=12345
+
+    *   **GeoJson**: Ein GeoJon Service. Die Vorgehensweise ist hier gleich wie bei **GeoRss** (siehe oben)
+
+    *   **DataLinq**: Eine andere WebGIS DataLinq Anwendung. Der ConnectionString entspricht 
+        der Url der DataLinq Applikation
+
+    *   **PlainText**: PlainText bedeutet, dass Daten später in den Abfragen zeilenweise als Text eingetragen werden. Die Angabe eines Connection Strings entfällt für diesen Connection Type.
 
 **Security**
 
@@ -129,11 +142,11 @@ Anschließend können folgende Einstellungen getätigt werden.
             FROM projekt_gebaeude 
                 WHERE gebaeudeid = @GebaeudeId
 
-    *   REST: **{{Parametername}}** 
+    *   WebGIS REST API, GeoRss, GeoJson: **{{Parametername}}** 
     
         .. code-block:: REST
 
-            URL/gebaeude?gebaeudeid={{GebaeudeId}}&…
+            URL-PFAD/gebaeude?gebaeudeid={{GebaeudeId}}&…
 
         Bei der REST-Abfrage müssen die Parameter im CMS als Suchbegriff definiert sein.
 
@@ -155,7 +168,7 @@ Anschließend können folgende Einstellungen getätigt werden.
 
         .. code-block:: REST
 
-            URL/gebaeude?gebaeudeart={{GebaeudeArt}}
+            URL-PFAD/gebaeude?gebaeudeart={{GebaeudeArt}}
             #if dachfarbe
                     &farbe = @dachfarbe
             #endif
