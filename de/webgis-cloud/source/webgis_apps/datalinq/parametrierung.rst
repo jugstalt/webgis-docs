@@ -71,8 +71,13 @@ Ein Klick auf den Endpunkt öffnet den *Eigenschaften Dialog*, in welchem folgen
     *   **DataLinq**: Eine andere WebGIS DataLinq Anwendung. Der ConnectionString entspricht 
         der Url der DataLinq Applikation
 
-    *   **PlainText**: PlainText bedeutet, dass Daten später in den Abfragen zeilenweise als Text eingetragen werden. Die Angabe eines Connection Strings entfällt für diesen Connection Type.
+    *   **PlainText**: PlainText bedeutet, dass Daten später in den Abfragen zeilenweise als Text 
+    *   eingetragen werden. Die Angabe eines Connection Strings entfällt für diesen Connection Type.
 
+    *   **TextFile**: Die Quelle sind lose Text Dateien. Das können einfache ``*.txt`` oder ``*.log`` Dateien 
+        oder ``*.csv`` Dateien sein. Der ConnectionString ist bei diesem Typ das Verzeichnis, in dem 
+        sich die Dateien befinden, zB. ``C:\logs``
+  
 **Security**
 
 Setzen von autorisierten Usern / Rollen, siehe :ref:`Berechtigung<param_berechtigung>`.
@@ -102,9 +107,14 @@ Nach der Auswahl eines Endpoints können für diesen Abfragen erstellt werden. D
 
 .. image:: img/hello_world3.png
 
-Klickt man in der Baumansicht auf den neu entstandenen Knoten der Abfrage, wird im Content Bereich ein leeres Editorfenster angezeigt. 
-Hier gibt man die eigentlich Abfrage ein, die die Daten liefern sollte (beim Endpoint Connection Type *Database* wäre das beispielsweise ein SQL Select Statement). 
-Bei Endpoints von Type *PlainText* kann hier jetzt ein beliebiger Text eingegeben werden, wobei jede Zeile (ausgeschlossen Leerzeilen) als Datensatz interpretiert wird.
+Klickt man in der Baumansicht auf den neu entstandenen Knoten der Abfrage, wird im Content Bereich ein 
+leeres Editorfenster angezeigt.  Hier gibt man die eigentlich Abfrage ein, die die Daten liefern sollte 
+(beim Endpoint Connection Type *Database* wäre das beispielsweise ein SQL Select Statement). 
+
+Bei Endpoints von Type *PlainText* kann hier jetzt ein beliebiger Text eingegeben werden, wobei jede 
+Zeile (ausgeschlossen Leerzeilen) als Datensatz interpretiert wird.
+
+Bei Endpoints vom Type *Textfile* wird hier der Filename des Textfiles eingetragen.
 
 Anschließend können folgende Einstellungen getätigt werden.
 
@@ -171,6 +181,25 @@ Anschließend können folgende Einstellungen getätigt werden.
             URL-PFAD/gebaeude?gebaeudeart={{GebaeudeArt}}
             #if dachfarbe
                     &farbe = @dachfarbe
+            #endif
+
+    *   Textfiles (bei Endpoint Typ **TextFile**).
+
+        .. code-block::
+            
+            // filename
+            my-log.csv
+
+            // Optionale Parameter:
+
+            // maximale Anzahl von Zeilen die gelesen werden
+            maxlines=10
+            // von wo wird gelesen: von oben (top) oder von unten (bottom)
+            from=bottom
+
+            // Textfilter, der auf die einzelnen Zeilen angewendet wird
+            #if filter
+                filter={{filter}}
             #endif
 
 
