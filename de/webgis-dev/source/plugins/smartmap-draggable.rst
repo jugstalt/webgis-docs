@@ -70,7 +70,7 @@ Das Javascript wird zum Beispiel von vorher folgendermaßen erweitert:
         console.log('commit coordinates to server', lng, lat);
     };
 
-    $('#smartmap-container').webgis_smartmap({
+    webgis.$('#smartmap-container').webgis_smartmap({
             map_options: {
                 services: 'geoland_bm@webgiscloud',
                 extent: 'web_mercator_at@webgiscloud',
@@ -85,7 +85,7 @@ Das Javascript wird zum Beispiel von vorher folgendermaßen erweitert:
                 map = options.map;
                 // UI
                 // temporäre DOM Elemente in den webgis-contaier kopiren
-                $('#map-container-ui').children().each(function () {
+                webgis.$('#map-container-ui').children().each(function () {
                     $(this).appendTo($(options.webgisContainer));
                 });
                 options.map.ui.createHourglass('#map-container-hourglass');

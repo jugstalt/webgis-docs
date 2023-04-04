@@ -209,7 +209,7 @@ Die Funktion ist asynkron, der zweite Parameter ist eine Funktion, die aufgerufe
         scale: 1000               // defaullt: aktueller Maßstab in der Karte
     },
     function(result) {
-        $('<img />').attr('src', result.url).appendTo('body');
+        webgis.$('<img />').attr('src', result.url).appendTo('body');
     });
 
 

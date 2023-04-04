@@ -153,7 +153,7 @@ Erzeugt einen Link zum Abholen das aktuellen Legendbildes für den Dienst. Die L
         type: 'get',
         success: function(result) {
             if (result && result.url) {
-                $('<img>').attr('src', result.url).appendTo('body');
+                webgis.$('<img>').attr('src', result.url).appendTo('body');
             }
         }
     });
@@ -175,7 +175,7 @@ Der Übergabeparameter muss ein Objekt mit den Werten ``width`` und ``height`` s
 
 .. code-block:: javascript
 
-    $("<div>").css('background', 'url(' + service.getPreviewUrl({width: 200, height: 200}) + ')').appendTo('body');
+    webgis.$("<div>").css('background', 'url(' + service.getPreviewUrl({width: 200, height: 200}) + ')').appendTo('body');
 
 
 .. _layerInScaleAnchor :

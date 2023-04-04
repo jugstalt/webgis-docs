@@ -152,7 +152,7 @@ Wenn man hier eine andere Darstellung möchte, kann das mit folgenden Beispielen
 
     webgis.hooks["query_result_feature"]["grundstuecke"] = function (map, $parent, feature, base) {
         base(map, $parent, feature);
-        $("<a style='color:gray;font-size:.9em' href='http://bev.gv.at' target='_blank'>(c) 2017 BEV</a>").appendTo($parent);
+        webgis.$("<a style='color:gray;font-size:.9em' href='http://bev.gv.at' target='_blank'>(c) 2017 BEV</a>").appendTo($parent);
     };
 
 Der „Hook“ wird aufgerufen, wenn ein Ergebnis für die Vorschau gerendert wird. Es wird die Karte, das Parent-HTML-Element, das Feature und die Ursprungs- oder Default-Funktion übergeben. 

@@ -283,7 +283,7 @@ Immer wenn ein View neu geladen wurde, wird das Event „onpageloaded“ gefeuer
 
     <script> 
         webgis_datalinq.events.on('onpageloaded, function(channel, sender, args){ 
-            $(".TABDET.clickable tbody tr.extended-click").on("click", function() { 
+            webgis.$(".TABDET.clickable tbody tr.extended-click").on("click", function() { 
                 var id = $(this).attr("stoer_id"); 
                 ... 
 

@@ -46,7 +46,7 @@ Datei, die nach den oben Angeführten Scripts geladen werden muss.
     webgis.clientid = 'ba2c101cbe6d40ad96c897be5dadf2eb';  // only an example client id, not valid
 
     webgis.init(function () {    
-        $('#smartmap-container').webgis_smartmap({
+        webgis.$('#smartmap-container').webgis_smartmap({
             map_options: {
                 services: 'geoland_bm@webgiscloud',
                 extent: 'web_mercator_at@webgiscloud',
