@@ -223,12 +223,14 @@ Datei ``_config/settings.config``
 ---------------------------------
 
 In dieser optionalen Datei können allgemeine Einstellung für die WebGIS CMS Applikation eingetragen werden. Ein Anwendungsfall
-ist derzeit das Einstellen eines Proxy Servers. Bindet man Dienste aus dem Internet ein, kann für den Zugriff ein Proxy Server notwendig sein.
+ist derzeit die Angabe eines Logging Files oder das Einstellen eines Proxy Servers. 
+Bindet man Dienste aus dem Internet ein, kann für den Zugriff ein Proxy Server notwendig sein.
 Mit folgender Einstellung kann über diese Datei ein *Proxy Server* angegeben werden, der für jeden Zugriff auf das Internet angewendet wird:
 
 .. code-block::
 
    {
+      "logging_connection_string": "C:\\cms\\cms-logging.csv",
       "proxy": {
          "use": true,
          "server": "webproxy.mydomain.com",
@@ -241,8 +243,17 @@ Mit folgender Einstellung kann über diese Datei ein *Proxy Server* angegeben we
    }
 
 
-``user``, ``password`` und ``domain`` sind optional. Bei ``ignore`` können mehrere Regeln mit ``;`` getrennt angegeben werden. Beginnt der aufgerufene Server mit 
-einer dieser Zeichenkette, wird der Proxy ignoriert. Hier können ebenfalls reguläre Ausdrücke eingetragen werden.
+* ``logging_connection_string``:
+   Hier kann der Pfad zu einem Logging File angegeben werden. Mit dem Logfile kann nachvollzogen werden, welche User Änderungen im CMS durchgeführt hat, 
+   bzw. wann und von wem ein CMS zuletzt veröffentlicht wurde.
+   Das das Logging File die Endung ``csv`` wird eine CSV Datei mit ``;`` als Trennzeichen erzeugt. Ansonsten werden die Logs als Text (eine Zeile pro Eintrag) gespeichert.
+
+   Tipp: Über DataLinq (Endpoint mit Connection Type TextFile) kann diese Datei gelesen und die Logs über den Browser zugänglich gemacht werden.
+   
+
+* ``proxy``
+   ``user``, ``password`` und ``domain`` sind optional. Bei ``ignore`` können mehrere Regeln mit ``;`` getrennt angegeben werden. Beginnt der aufgerufene Server mit 
+   einer dieser Zeichenkette, wird der Proxy ignoriert. Hier können ebenfalls reguläre Ausdrücke eingetragen werden.
 
 Datei ``_config/application-security.config``
 ---------------------------------------------
