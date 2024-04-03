@@ -240,6 +240,16 @@ Die möglichen Werkzeug-Ids können unter https://api.webgiscloud.com/rest/tools
    Es können nur Werkzeuge und keine einfachen Werkzeug-Buttons übergeben werden. *Einfache Werkzeugbuttons* sind Werkzeuge,
    die schon beim Anklicken die gewünschte Aktion ausführen, wie *gesamter Ausschnitt*, *Refresh*, *Zurück*.
 
+Für das Editwerkzeug ``&tool=webgis.tools.editing.edit`` können optional noch weitere Parameter übergeben werden:
+
+* ``editthemeid``: Die ``Id`` des Editthemas, das aktiv gestetzt werden sollte. Die ``Id`` ist im CMS beim entsprechenden Editthema nachzuschlagen.
+* ``ed_[FIELD_NAME]``: Der Wert für ein Feld in der Editmaske.
+* ``tooloption``: Das Edit-Subwerkzeug, dass ausgewählt werden sollte. ``&tooloption=newfeature`` => es wird die Editmaske geöffnet, um einen neues Feature zu bearbeiten.
+  
+.. note::
+   Der Parameter ``tooloption`` funktioniert nur, wenn die Karte am Desktop mit dem *WebGIS 6 Desktop Layout* geöffnet wurde. 
+   Ist dies nicht der Fall, muss der Anwender selbstständig auf ``Neues Objekt`` klicken. 
+
 Sichtbarkeit/Darstellungsvarianten
 ----------------------------------
 
