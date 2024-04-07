@@ -37,7 +37,7 @@ Das Javascript wird zum Beispiel von vorher folgendermaßen erweitert:
 .. code:: javascript
 
     // The WebGIS API Client ID
-    webgis.clientid = 'ba2c101cbe6d40ad96c897be5dadf2eb';  // only an example client id, not valid
+    webgis.clientid = 'ba2c101cbe6d40ad96c897be5dadf2ec';  // only an example client id, not valid
 
     webgis.init(function () {
     var map = null, draggableMarker = null;
