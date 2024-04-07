@@ -45,7 +45,21 @@ pip install -U sphinx sphinx-autobuild
 
 Falls pip nicht gefunden wird, fehlt eventuell noch ein Verweise auf die Python Installation (und Python/Scripts) in der Umgebungsvariable `PATH`
 
+Nach der Installation muss noch die Umgebungsvariable ``SPHINXBUILD`` auf die sphinx-build.exe gesetzt werden.
+Der Installationspfad wird nach dem installieren von *sphinx* über *pip* angezeigt.
+
+Weiters ist noch das entsprechende Layout für die Hilfe zu installieren. Das ist derzeit:
+
+```
+pip install piccolo-theme
+```
+und 
+```
+pip install sphinx_rtd_theme
+```
+
 ## GIT
 
 Ob die GIT Kommandozeilentools bereits funktioniern, kann überprüft werden, indem man `git` in ein Terminal Fenster eingibt. Ist Git noch nicht am Rechner vorhanden, findet man eine Setup Programm
 auf der GIT Homepage
+
